@@ -53,7 +53,7 @@
 			<h1 id="Events">Upcoming Events</h1>
 			<p>search <input type="text" placeholder="search events" ng-model="eventsearch"></p>
 			<div class="row-fluid" ng-show="events">
-				<div class="event col-md-4" ng-repeat="event in events | filter:eventsearch | future" >
+				<div class="event col-md-4" ng-repeat="event in events | filter:eventsearch | future | reverse" >
 					<h2>{{event.name}}</h2>
 					<h3>{{event.start_time | date}}</h3>
 					<p><a href="https://www.facebook.com/events/{{event.id}}" target="_blank">fb link</a>

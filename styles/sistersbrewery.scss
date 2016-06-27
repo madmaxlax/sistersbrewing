@@ -17,3 +17,10 @@ iframe{
       text-align:right;
     }
 }
+
+.event p{
+  max-height:200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

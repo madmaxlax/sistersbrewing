@@ -22,12 +22,11 @@ window.fbAsyncInit = function() {
 
 (function() {
   var app = angular.module('myapp', []);
-  app.
-  filter('future', function() {
+  app.filter('future', function() {
     return function(items) {
       var filtered = [];
       angular.forEach(items, function(event) {
-        console.log(event);
+        //console.log(event);
         if (event && event.start_time) {
           if (Date.parse(event.start_time) > Date.now()) {
             filtered.push(event);
@@ -35,6 +34,11 @@ window.fbAsyncInit = function() {
         }
       });
       return filtered;
+    };
+  });
+  app.filter('reverse', function() {
+    return function(items) {
+      return items.slice().reverse();
     };
   });
   //create a factory to do FB calls
