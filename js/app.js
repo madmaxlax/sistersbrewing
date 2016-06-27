@@ -23,13 +23,18 @@ window.fbAsyncInit = function() {
 (function() {
   var app = angular.module('myapp', []);
   app.
-  filter('isFutureEvent', function() {
-    return function(event) {
-      if (event && event.start_time) {
-        return Date.parse(event.start_time) > Date.now();
-      } else {
-        return false;
-      }
+  filter('future', function() {
+    return function(items) {
+      var filtered = [];
+      angular.forEach(items, function(event) {
+        console.log(event);
+        if (event && event.start_time) {
+          if (Date.parse(event.start_time) > Date.now()) {
+            filtered.push(event);
+          }
+        }
+      });
+      return filtered;
     };
   });
   //create a factory to do FB calls
