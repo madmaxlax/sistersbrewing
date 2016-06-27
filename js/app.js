@@ -22,7 +22,16 @@ window.fbAsyncInit = function() {
 
 (function() {
   var app = angular.module('myapp', []);
-
+  app.
+  filter('isFutureEvent', function() {
+    return function(event) {
+      if (event && event.start_time) {
+        return Date.parse(event.start_time) > Date.now();
+      } else {
+        return false;
+      }
+    };
+  });
   //create a factory to do FB calls
   app.factory('facebookService', function($q) {
     return {
@@ -75,6 +84,15 @@ window.fbAsyncInit = function() {
     //       ref.parentNode.insertBefore(js, ref);
 
     //     }(document));
+
+
+    //filter for events being older
+    $scope.isFuture = function(event) {
+      return function(item) {
+        return item[Date.parse(event.start_time)] > Date.now();
+      }
+    }
+
 
     //try fb call
     $scope.events = false;

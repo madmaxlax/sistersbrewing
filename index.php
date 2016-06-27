@@ -53,12 +53,15 @@
 			<h1 id="Events">Events</h1>
 			<p>search <input type="text" placeholder="search events" ng-model="eventsearch"></p>
 			<div class="row-fluid" ng-show="events">
-				<div class="event col-md-4" ng-repeat="event in events | filter:eventsearch" ng-hide="Date.Parse(event.start_time) < Date.now()">
+				<div class="event col-md-4" ng-repeat="event in events | filter:eventsearch | filter:isFutureEvent" >
 					<h2>{{event.name}}</h2>
 					<h3>{{event.start_time}}</h3>
-					<p>{{event.description}}</p>
+					<p><a href="https://www.facebook.com/events/{{event.id}}" target="_blank">fb link</a>
+						<br>
+						{{event.description}}</p>
 				</div>
 			</div>
+			<div class="clearfix"></div>
 			<h1 id="wheretofindus">Where to Find us</h1>
 			<!--<div class="embed-responsive">-->
 			<div id="findmap">
