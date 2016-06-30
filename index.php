@@ -80,7 +80,7 @@
 						<strong>Still in production?</strong> <i class="fa fa-check" ng-show="beer.beer.is_in_production"></i> <i class="fa fa-times" ng-hide="beer.beer.is_in_production"></i><br/>
 						
 						<strong>ABV: </strong> {{beer.beer.beer_abv}}% <span ng-show="beer.beer.beer_ibu"> <strong>IBU: </strong> {{beer.beer.beer_ibu}}</span> <br/>
-						<strong>Brewed Since: </strong>{{beer.beer.created_at | date:'MMM yyyy'}} <br/>
+						<strong>Brewed Since: </strong>{{ beer.beer.created_at | date:'MMM yyyy'}} <br/>
 						<strong>Description: </strong> {{beer.beer.beer_description}} <br/>
 						
 					</p>
