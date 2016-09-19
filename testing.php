@@ -141,15 +141,15 @@
 			</div>
 		</div>
 	</div>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-resource.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-animate.min.js"></script>
 	<script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script>
 	<!-- Tether for Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<script src="./js/app.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/app-test.js"></script>
 
 </body>
 
