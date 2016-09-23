@@ -37,6 +37,31 @@ $font-family-base: $sb-main-font;//override bootstrap
   color: $brand-primary;
 }
 
+.nav-link{
+  color: $sb-main-text-color;
+  font-size: 22px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+.header-text{
+  text-align: center;
+  min-width: 90%;
+  margin: auto;
+}
+
+.footer {
+    background-color: $sb-footer-background-color;
+}
+.news-and-events-section a, .footer a {
+  text-decoration: underline;
+  
+  &:hover{
+    text-decoration:none;
+  }
+}
+
 iframe{
   border:0;
 }
@@ -77,8 +102,4 @@ iframe{
 .ng-enter.ng-enter-active {
   opacity:1;
   max-height:30px;
-}
-
-.footer {
-    background-color: $sb-footer-background-color;
 }
