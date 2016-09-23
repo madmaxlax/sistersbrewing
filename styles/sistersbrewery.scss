@@ -1,22 +1,40 @@
 @import "scss/bootstrap";
 
+$sb-main-background-color: #f4f7f8; //kinda bluish white
+$body-bg: $sb-main-background-color; //override bootstrap
+
+$sb-main-text-color: black; 
+$body-color:$sb-main-text-color; // override bootstrap
+
+$sb-link-color: #0c8fb9; //bluish
+$brand-primary: $sb-link-color;
+
+$sb-footer-background-color: #ffd590; //yellow orange
+$sb-logo-font:"Modern20BT-RomanB";
+
+$sb-main-font: "'Raleway', sans-serif";
+$font-family-base: $sb-main-font;//override bootstrap
+
+@font-face {
+  font-family: 'Modern20BT-RomanB';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Modern20BT-RomanB'), local('Modern20BT-RomanB-Regular'), url(./ufonts.com_modern20bt-romanb-opentype.otf) format('otf'), url(./fonts/Modern20BTRoman.ttf) format('ttf');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+.logo-text{
+  font-family: 'Modern20BT-RomanB';
+}
+
+.secondary-color{
+  color: $brand-primary;
+}
+
 iframe{
   border:0;
 }
 //small change
-.footer {
-    background-color: black;
-    color: white;
-    bottom: 0;
-    width: 100%;
-    a {
-      color: #337ab7;
-    }
-    .footer-link
-    {
-      text-align:right;
-    }
-}
+
 .content-body
 {
   padding-top:54px;
@@ -52,4 +70,8 @@ iframe{
 .ng-enter.ng-enter-active {
   opacity:1;
   max-height:30px;
+}
+
+.footer {
+    background-color: $sb-footer-background-color;
 }

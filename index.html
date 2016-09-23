@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!-- <html lang="en" ng-app="myapp"> -->
+<html lang="en">
+
+<head>
+    <title>The Sisters Brewery</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="styles/sistersbrewery.css">
+
+
+</head>
+
+<body data-spy="scroll" data-target="#navscrollspy" data-offset="200">
+    <div class="container-fluid main-content">
+        <div class="header navbar">
+            <a class="navbar-brand" href="#">The Sisters Brewery Logo</a>
+            <div class="pull-right">
+                <button class="navbar-toggler hidden-sm-up pull-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
+    		&#9776;
+			</button>
+                <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+                    <ul class="nav navbar-nav hidden-sm-down" ng-if="eventresults.length > 0 ">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.facebook.com/events/{{eventresults[0].id}}">Next Event: <strong>{{eventresults[0].name}}</strong> ({{eventresults[0].start_time | date: 'EEE MMM d'}})</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav pull-xs-right">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Beers">Beers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#FindBeer">Find Our Beer</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#News">News & Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#About">Our Story</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#wheretofindus">Where To Find Our Beers</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="header-text">
+            <h1>The Sisters Brewery</h1>
+            <p>We are Annamijn and Josefine Beijeman. <br/> Two sisters brewing craft beer with our father Wilfran.<br/> Besides
+                making delicious craft beer we create an artwork of every beer produced. </p>
+        </div>
+        <div class="beer-hexes" id="Beers">
+            <div class="beer-hex beer-hex-hi"></div>
+            <div class="beer-hex beer-hex-lo"></div>
+            <div class="beer-hex beer-hex-hi"></div>
+            <div class="beer-hex beer-hex-lo"></div>
+            <div class="beer-hex beer-hex-hi"></div>
+        </div>
+        <div class="news-and-events-section" id="News">
+            <div class="upcoming-events">
+                <h1>Upcoming Events</h1>
+                <div class="event">
+                    <div class="event-date">
+                        22.12.2016
+                    </div>
+                    <div class="event-image"></div>
+                    <div class="event-header">Ultricies Ipsum Cursus Tortor</div>
+                    <div class="event-subheader">July 18 2016 | Madrid, ES</div>
+                    <div class="event-text">Etiam porta sem malesuada magning elit. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam.
+                        Pellentesque ornare sem lacinia quam venenatis vestibulum. <a href="#Eventlink">View event</a></div>
+                </div>
+
+                <div class="event">
+                    <div class="event-date">
+                        22.12.2016
+                    </div>
+                    <div class="event-image"></div>
+                    <div class="event-header">Ultricies Ipsum Cursus Tortor</div>
+                    <div class="event-subheader">July 18 2016 | Madrid, ES</div>
+                    <div class="event-text">Etiam porta sem malesuada magning elit. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam.
+                        Pellentesque ornare sem lacinia quam venenatis vestibulum. <a href="#Eventlink">View event</a></div>
+                </div>
+
+                <div class="event">
+                    <div class="event-date">
+                        22.12.2016
+                    </div>
+                    <div class="event-image"></div>
+                    <div class="event-header">Ultricies Ipsum Cursus Tortor</div>
+                    <div class="event-subheader">July 18 2016 | Madrid, ES</div>
+                    <div class="event-text">Etiam porta sem malesuada magning elit. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam.
+                        Pellentesque ornare sem lacinia quam venenatis vestibulum. <a href="#Eventlink">View event</a></div>
+                </div>
+                <button type="button" class="btn btn-primary btn-more-events">View More Events</button>
+            </div>
+            <div class="posts">
+                <div class="post">
+                    <div class="post-image"></div>
+                    <div class="post-header">Risus Dolor Elit Condimentum</div>
+                    <div class="post-subheader">July 18 2016 | Madrid, ES</div>
+                    <div class="post-text">Etiam porta sem malesuada magning elit. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam.
+                        Pellentesque ornare sem lacinia quam venenatis vestibulum. <a href="#Eventlink">View event</a></div>
+                </div>
+                <div class="post">
+                    <div class="post-image"></div>
+                    <div class="post-header">Risus Dolor Elit Condimentum</div>
+                    <div class="post-subheader">July 18 2016 | Madrid, ES</div>
+                    <div class="post-text">Etiam porta sem malesuada magning elit. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam.
+                        Pellentesque ornare sem lacinia quam venenatis vestibulum. <a href="#Eventlink">View event</a></div>
+                </div>
+                <div class="post">
+                    <div class="post-image"></div>
+                    <div class="post-header">Risus Dolor Elit Condimentum</div>
+                    <div class="post-subheader">July 18 2016 | Madrid, ES</div>
+                    <div class="post-text">Etiam porta sem malesuada magning elit. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam.
+                        Pellentesque ornare sem lacinia quam venenatis vestibulum. <a href="#Eventlink">View event</a></div>
+                </div>
+                <div class="post">
+                    <div class="post-image"></div>
+                    <div class="post-header">Risus Dolor Elit Condimentum</div>
+                    <div class="post-subheader">July 18 2016 | Madrid, ES</div>
+                    <div class="post-text">Etiam porta sem malesuada magning elit. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam.
+                        Pellentesque ornare sem lacinia quam venenatis vestibulum. <a href="#Eventlink">View event</a></div>
+                </div>
+                <div class="post">
+                    <div class="post-image"></div>
+                    <div class="post-header">Risus Dolor Elit Condimentum</div>
+                    <div class="post-subheader">July 18 2016 | Madrid, ES</div>
+                    <div class="post-text">Etiam porta sem malesuada magning elit. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam.
+                        Pellentesque ornare sem lacinia quam venenatis vestibulum. <a href="#Eventlink">View event</a></div>
+                </div>
+                <button type="button" class="btn btn-primary btn-more-posts">View More Posts</button>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid footer">
+        <div class="footer-logo">
+            <a href="./">logo</a>
+        </div>
+        <div class="footer-contact-info">
+            <p><a href="mailto:info@thesistersbrewery.com">info@thesistersbrewery.com</a></p>
+            <p>+31 (6) 8123 42 21</p>
+            <p>The Sisters Brewery <br/> Stationsweg 57 <br/> 3621LK Breukelen</p>
+            <p>KvK 63757974</p>
+        </div>
+        <div class="footer-byline">
+            <div class="col-xs-6">Site by Max & Flex</div>
+            <div class="col-xs-6 footer-link"><a class="" href="http://madmaxlax.com">madmaxlax.com</a></div>
+        </div>
+        <div class="footer-social-links">
+            <a href="facebook.com" class="social-button" target="_blank">F</a>
+            <a href="twitter.com" class="social-button" target="_blank">T</a>
+            <a href="insta.com" class="social-button" target="_blank">I</a>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-resource.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-animate.min.js"></script>
+    <script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script>
+    <!-- Tether for Bootstrap -->
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/app-test.js"></script>
+
+</body>
+
+</html>
