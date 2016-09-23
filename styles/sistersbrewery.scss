@@ -61,7 +61,22 @@ $font-family-base: $sb-main-font;//override bootstrap
     text-decoration:none;
   }
 }
+.beer-hexes
+{
+  .beer-hex{
+    display: inline;
+  }
+  .beer-hex-hi{
+    margin-top: -10px
+  }
+  .beer-hex-lo{
+    margin-top: 10px
+  }
+}
 
+
+
+//stuff for testing site
 iframe{
   border:0;
 }
