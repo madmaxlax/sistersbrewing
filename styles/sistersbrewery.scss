@@ -1,4 +1,4 @@
-@import "scss/bootstrap";
+//variables and overrides, with sass this needs to happen before the import
 
 $sb-main-background-color: #f4f7f8; //kinda bluish white
 $body-bg: $sb-main-background-color; //override bootstrap
@@ -10,20 +10,27 @@ $sb-link-color: #0c8fb9; //bluish
 $brand-primary: $sb-link-color;
 
 $sb-footer-background-color: #ffd590; //yellow orange
-$sb-logo-font:"Modern20BT-RomanB";
+$sb-logo-font:"Modern20BT-RomanB", Times New Roman, serif;
 
-$sb-main-font: "'Raleway', sans-serif";
+$sb-main-font: 'Raleway', sans-serif;
 $font-family-base: $sb-main-font;//override bootstrap
+
+//grab actual bootstrap files
+@import "scss/bootstrap";
+
+//site-specific classes
 
 @font-face {
   font-family: 'Modern20BT-RomanB';
   font-style: normal;
   font-weight: 400;
-  src: local('Modern20BT-RomanB'), local('Modern20BT-RomanB-Regular'), url(./ufonts.com_modern20bt-romanb-opentype.otf) format('otf'), url(./fonts/Modern20BTRoman.ttf) format('ttf');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+  src: local('Modern20BT-RomanB'), local('Modern20BT-RomanB-Regular'), 
+  url(./styles/fonts/ufonts.com_modern20bt-romanb-opentype.otf) format('opentype'), 
+  url(./styles/fonts/Modern20BTRoman.ttf) format('truetype');
+  
 }
 .logo-text{
-  font-family: 'Modern20BT-RomanB';
+  font-family: $sb-logo-font;
 }
 
 .secondary-color{
