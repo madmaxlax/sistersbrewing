@@ -1,7 +1,8 @@
 //variables and overrides, with sass this needs to happen before the import
 
-$sb-main-background-color: #f4f7f8; //kinda bluish white
+$sb-main-background-color: white;//#f4f7f8; //kinda bluish white
 $body-bg: $sb-main-background-color; //override bootstrap
+$sb-alt-background: f5f0e7;//yellowish grey
 
 $sb-main-text-color: black; 
 $body-color:$sb-main-text-color; // override bootstrap
@@ -10,7 +11,7 @@ $sb-link-color: #0c8fb9; //bluish
 $brand-primary: $sb-link-color;
 
 $sb-footer-background-color: #ffd590; //yellow orange
-$sb-logo-font:"Modern20BT-RomanB", Times New Roman, serif;
+$sb-logo-font: 'Old Standard TT', serif;
 
 $sb-main-font: 'Raleway', sans-serif;
 $font-family-base: $sb-main-font;//override bootstrap
@@ -19,7 +20,7 @@ $font-family-base: $sb-main-font;//override bootstrap
 @import "scss/bootstrap";
 
 //site-specific classes
-
+/* 
 @font-face {
   font-family: 'Modern20BT-RomanB';
   font-style: normal;
@@ -28,13 +29,17 @@ $font-family-base: $sb-main-font;//override bootstrap
   url(./styles/fonts/ufonts.com_modern20bt-romanb-opentype.otf) format('opentype'), 
   url(./styles/fonts/Modern20BTRoman.ttf) format('truetype');
   
-}
+} */
 .logo-text{
   font-family: $sb-logo-font;
 }
 
 .secondary-color{
   color: $brand-primary;
+}
+
+.alt-background-color{
+  background-color: $sb-alt-background;
 }
 
 .nav-link{
