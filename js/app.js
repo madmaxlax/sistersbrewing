@@ -23,8 +23,8 @@ var brewery = false;
 }(document, 'script', 'facebook-jssdk'));
 
 (function() {
-  var app = angular.module('myapp', ['ngAnimate']);
-  app.filter('future', function() {
+  var app = angular.module('SistersBrewApp', ['ngAnimate','ngRoute', 'ngResource']);
+  angular.module('SistersBrewApp').filter('future', function() {
     return function(items) {
       var filtered = [];
       angular.forEach(items, function(event) {
@@ -39,13 +39,13 @@ var brewery = false;
       return filtered;
     };
   });
-  app.filter('reverse', function() {
+  angular.module('SistersBrewApp').filter('reverse', function() {
     return function(items) {
       return items.slice().reverse();
     };
   });
   //create a factory to do FB calls
-  app.factory('facebookService', function($q) {
+  angular.module('SistersBrewApp').factory('facebookService', function($q) {
     return {
       FBCall: function(querystring, options) {
         var deferred = $q.defer();
@@ -59,11 +59,36 @@ var brewery = false;
         });
         return deferred.promise;
       }
-    }
+    };
   });
 
-  //set up controller
-  app.controller('appController', function(facebookService, $scope, $window, $http) {
+  angular.module('SistersBrewApp').config(function($routeProvider){
+        $routeProvider
+        // .when('/beers',{
+        //     templateUrl: 'pages/beer.html',
+        //     controller: 'NotesIndexController',
+        //     controllerAs: 'indexController'
+        // })
+        .when('/beers/:selectedbeer',{
+            templateUrl: 'pages/beer.html',
+            controller: 'BeerController',
+            controllerAs: 'BeerCtrlr'
+        })
+        .when('/about',{
+            templateUrl: 'pages/about.html',
+            controller: 'AboutController',
+            controllerAs: 'AboutCtrlr'
+        })
+        .when('/',{
+            templateUrl: 'pages/index.html',
+            controller: 'IndexController',
+            controllerAs: 'IndexCtrlr'
+          })
+        .otherwise( {redirectTo: '/'});
+    });
+
+  //set up main app controller
+  angular.module('SistersBrewApp').controller('appController', function(facebookService, $scope, $window, $http) {
     //     $window.fbAsyncInit = function() {
 
     //       //initialize FB
@@ -141,6 +166,17 @@ var brewery = false;
       //do something
     };
   });
+  angular.module('SistersBrewApp').controller('BeerController', function($scope, $routeParams, $http) {
+    $scope.routeSelectedBeer = $routeParams.selectedbeer;
+  });
+  
+  angular.module('SistersBrewApp').controller('AboutController', function($scope, $routeParams, $http) {
+    
+  });
+  
+  angular.module('SistersBrewApp').controller('IndexController', function($scope, $routeParams, $http) {
+    
+  });
 })();
 
 //easing scrolling
@@ -165,23 +201,3 @@ $(function() {
     }
   });
 });
-
-// $(document).ready(function() {
-//   $.ajaxSetup({
-//     cache: true
-//   });
-//   $.getScript('//connect.facebook.net/en_US/sdk.js', function() {
-//     FB.init({
-//       appId: '1007778489291152',
-//       xfbml: true,
-//       version: 'v2.6' // or v2.0, v2.1, v2.2, v2.3
-//     });
-//     FB.api(
-//       "/thesistersbrewery/events?access_token=1007778489291152|u2Rs03TsG_yGoAxzC8ZUdpgEOwA",
-//       function(response) {
-//         console.log(response);
-//         if (response && !response.error) {}
-//       }
-//     );
-//   });
-// });
