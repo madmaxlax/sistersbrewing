@@ -1,3 +1,11 @@
 A beer has been selected
-{{$routeParams.selectedbeer}}
+<div ng-style="{'background-color':beersDB[routeSelectedBeer].backgroundColor}">
+<h1>{{beersDB[routeSelectedBeer].name}} <super>{{beersDB[routeSelectedBeer].new?"New!":""}}</super></h1>
+<p>{{beersDB[routeSelectedBeer].longDesc}}</p>
+<img ng-src="beersDB[routeSelectedBeer].labelImageUrl" alt="beer label">
+<div class="beer-artist">
+Artist: <a ng-href="beersDB[routeSelectedBeer].artistUrl" class="beer-artist-link">{{beersDB[routeSelectedBeer].artist}}</a>
+</div>
+
+</div>
 {{routeSelectedBeer}}

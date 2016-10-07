@@ -14,7 +14,7 @@
 
 </head>
 
-<body data-spy="scroll" data-target="#navscrollspy" data-offset="200">
+<body data-spy="scroll" data-target="#navscrollspy" data-offset="200" ng-cloak="" ng-controller="appController as ctrlr">
     <div class="container-fluid main-content">
         <div class="header navbar">
             <a class="navbar-brand logo-text" href="#">The Sisters Brewery Logo</a>
@@ -39,7 +39,7 @@
                             <a class="nav-link" href="#News">News & Events</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#About">Our Story</a>
+                            <a class="nav-link" href="#/about">Our Story</a>
                         </li>
                     </ul>
                 </div>
@@ -51,11 +51,13 @@
                 making delicious craft beer we create an artwork of every beer produced. </p>
         </div>
         <div class="beer-hexes" id="Beers">
-            <div class="beer-hex beer-hex-hi">Worker</div>
-            <div class="beer-hex beer-hex-lo">Drone 2</div>
-            <div class="beer-hex beer-hex-hi">Honey Bee</div>
-            <div class="beer-hex beer-hex-lo">bees</div>
-            <div class="beer-hex beer-hex-hi">imperial</div>
+            <div ng-repeat="(beerId,beer) in beersDB" class="beer-hex beer-hex-hi">
+                <a ng-href="#/beers/{{beerId}}">{{beer.name}}</a>
+            </div>
+            <!--<div class="beer-hex beer-hex-lo"><a href="#/beers/Drone">Drone</a></div>
+            <div class="beer-hex beer-hex-hi"><a href="#/beers/Honey">Honey bee</a></div>
+            <div class="beer-hex beer-hex-lo"><a href="#/beers/bees">BEES?!</a></div>
+            <div class="beer-hex beer-hex-hi"><a href="#/beers/imperial">imperial</a></div>-->
         </div>
         <div class="angular-view-section" ng-view="">
 
@@ -166,7 +168,8 @@
     <script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script>
     <!-- Tether for Bootstrap -->
     <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/app-test.js"></script>
+    <script src="./js/beersdb.js"></script>
+    <script src="./js/app.js"></script>
 
 </body>
 
