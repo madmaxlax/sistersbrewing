@@ -1,4 +1,5 @@
 /// <reference path="C:\Apps\GitHub\sistersbrewing\js\beersdb.js" />
+/// <reference path="C:\Apps\Dropbox\Dev\typings\angularjs\angular.d.ts" />
 
 window.fbAsyncInit = function () {
   FB.init({
@@ -62,6 +63,7 @@ var brewery = false;
           });
         } else {
           // alert the user
+          console.log("FB not ready yet");
         }
 
         return deferred.promise;
@@ -86,6 +88,11 @@ var brewery = false;
         controller: 'AboutController',
         controllerAs: 'AboutCtrlr'
       })
+      .when('/contact', {
+        templateUrl: 'pages/contact.html',
+        controller: 'ContactController',
+        controllerAs: 'ContactCtrlr'
+      })
       .when('/', {
         templateUrl: 'pages/index.html',
         controller: 'IndexController',
@@ -93,7 +100,7 @@ var brewery = false;
       })
       .otherwise({ redirectTo: '/' });
   });
-
+  //////Main controller
   //set up main app controller
   angular.module('SistersBrewApp').controller('appController', function (facebookService, $scope, $window, $http) {
 
@@ -124,35 +131,64 @@ var brewery = false;
       });
     //try fb call
     //events
-    facebookService.FBCall("/thesistersbrewery/events?access_token=1007778489291152|u2Rs03TsG_yGoAxzC8ZUdpgEOwA")
-      .then(function (response) {
-        console.log(response);
-        $scope.events = response.data;
-      });
+    $scope.getFBEvents = function () {
+      facebookService.FBCall("/thesistersbrewery/events?access_token=1007778489291152|u2Rs03TsG_yGoAxzC8ZUdpgEOwA")
+        .then(function (response) {
+          console.log(response);
+          $scope.events = response.data;
+          //stop watching FB
+          $scope.FBListener();
+        });
+      //$scope.FBListener();
+    };
 
     //feed posts (only get 10?)
-    facebookService.FBCall("/thesistersbrewery/posts?limit=10&access_token=1007778489291152|u2Rs03TsG_yGoAxzC8ZUdpgEOwA")
-      .then(function (response) {
-        console.log(response);
-        $scope.posts = response.data;
-      });
-
-    //examples
-    this.member = " ";
-    this.method = function () {
-      //do something
+    $scope.getFBPosts = function () {
+      facebookService.FBCall("/thesistersbrewery/posts?limit=10&access_token=1007778489291152|u2Rs03TsG_yGoAxzC8ZUdpgEOwA")
+        .then(function (response) {
+          console.log(response);
+          $scope.posts = response.data;
+          //stop watching FB
+          $scope.FBListener();
+        });
     };
+
+    //setup watch for FB API to be ready
+    $scope.FBListener = $scope.$watch(function () {
+      return $window.FB;
+    }, function (newVal, oldVal) {
+      // FB API loaded, make calls
+      console.log("FB is ready");
+      //functions that do FB API calls
+      $scope.getFBEvents();
+      $scope.getFBPosts();
+    });
   });
+  
   angular.module('SistersBrewApp').controller('BeerController', function ($scope, $routeParams, $http) {
     $scope.routeSelectedBeer = $routeParams.selectedbeer;
   });
 
   angular.module('SistersBrewApp').controller('AboutController', function ($scope, $routeParams, $http) {
+  });
 
+  angular.module('SistersBrewApp').controller('ContactController', function ($scope, $routeParams, $http) {
   });
 
   angular.module('SistersBrewApp').controller('IndexController', function ($scope, $routeParams, $http) {
+  });
 
+  angular.module('SistersBrewApp').directive('sbFbEvent',function(){
+    return{
+      restrict: 'E',
+      templateUrl: 'js/directives/event.html'
+    };
+  });
+  angular.module('SistersBrewApp').directive('sbFbPost',function(){
+    return{
+      restrict: 'E',
+      templateUrl: 'js/directives/post.html'
+    };
   });
 })();
 

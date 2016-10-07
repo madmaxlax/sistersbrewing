@@ -1,0 +1,9 @@
+<div class="event">
+    <div class="event-date">
+        22.12.2016
+    </div>
+    <div class="event-image"></div>
+    <div class="event-header">{{event.name}}</div>
+    <div class="event-subheader">{{event.start_time | date}} | {{event.place.location.city}} {{event.place.location.country}}</div>
+    <div class="event-text">{{event.description}} <a href="https://www.facebook.com/events/{{event.id}}" target="_blank">View event</a></div>
+</div>

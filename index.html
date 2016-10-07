@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="SistersBrewApp"> 
+<html lang="en" ng-app="SistersBrewApp">
 <!--<html lang="en">-->
 
 <head>
@@ -65,7 +65,9 @@
         <div class="news-and-events-section row" id="News">
             <div class="upcoming-events col-sm-4">
                 <h1>Upcoming Events</h1>
-                <div class="event">
+                <div class="alert alert-info" ng-if="events === false">Loading events ... </div>
+                <sb-fb-event ng-repeat="event in events"></sb-fb-event>
+                <!--            <div class="event">
                     <div class="event-date">
                         22.12.2016
                     </div>
@@ -74,90 +76,55 @@
                     <div class="event-subheader">July 18 2016 | Madrid, ES</div>
                     <div class="event-text">Etiam porta sem malesuada magning elit. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam.
                         Pellentesque ornare sem lacinia quam venenatis vestibulum. <a href="#Eventlink">View event</a></div>
-                </div>
+                </div>-->
 
-                <div class="event">
-                    <div class="event-date">
-                        22.12.2016
-                    </div>
-                    <div class="event-image"></div>
-                    <div class="event-header">Ultricies Ipsum Cursus Tortor</div>
-                    <div class="event-subheader">July 18 2016 | Madrid, ES</div>
-                    <div class="event-text">Etiam porta sem malesuada magning elit. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam.
-                        Pellentesque ornare sem lacinia quam venenatis vestibulum. <a href="#Eventlink">View event</a></div>
-                </div>
-
-                <div class="event">
-                    <div class="event-date">
-                        22.12.2016
-                    </div>
-                    <div class="event-image"></div>
-                    <div class="event-header">Ultricies Ipsum Cursus Tortor</div>
-                    <div class="event-subheader">July 18 2016 | Madrid, ES</div>
-                    <div class="event-text">Etiam porta sem malesuada magning elit. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam.
-                        Pellentesque ornare sem lacinia quam venenatis vestibulum. <a href="#Eventlink">View event</a></div>
-                </div>
-                <button type="button" class="btn btn-primary btn-more-events">View More Events</button>
+                <a class="btn btn-primary btn-more-events" title="View events on our FB page" href="https://www.facebook.com/thesistersbrewery/events" target="_blank">View More Events</a>
             </div>
             <div class="posts col-sm-8">
                 <h1>What We’ve Been Up To</h1>
+                <div class="alert alert-info" ng-if="posts === false">Loading posts ... </div>
+                <sb-fb-post ng-repeat="post in posts"></sb-fb-post>
+<!--
                 <div class="post">
                     <div class="post-image"></div>
                     <div class="post-header">Risus Dolor Elit Condimentum</div>
                     <div class="post-subheader">July 18 2016 | Madrid, ES</div>
                     <div class="post-text">Etiam porta sem malesuada magning elit. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam.
                         Pellentesque ornare sem lacinia quam venenatis vestibulum. <a href="#Eventlink">View event</a></div>
-                </div>
-                <div class="post">
-                    <div class="post-image"></div>
-                    <div class="post-header">Risus Dolor Elit Condimentum</div>
-                    <div class="post-subheader">July 18 2016 | Madrid, ES</div>
-                    <div class="post-text">Etiam porta sem malesuada magning elit. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam.
-                        Pellentesque ornare sem lacinia quam venenatis vestibulum. <a href="#Eventlink">View event</a></div>
-                </div>
-                <div class="post">
-                    <div class="post-image"></div>
-                    <div class="post-header">Risus Dolor Elit Condimentum</div>
-                    <div class="post-subheader">July 18 2016 | Madrid, ES</div>
-                    <div class="post-text">Etiam porta sem malesuada magning elit. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam.
-                        Pellentesque ornare sem lacinia quam venenatis vestibulum. <a href="#Eventlink">View event</a></div>
-                </div>
-                <div class="post">
-                    <div class="post-image"></div>
-                    <div class="post-header">Risus Dolor Elit Condimentum</div>
-                    <div class="post-subheader">July 18 2016 | Madrid, ES</div>
-                    <div class="post-text">Etiam porta sem malesuada magning elit. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam.
-                        Pellentesque ornare sem lacinia quam venenatis vestibulum. <a href="#Eventlink">View event</a></div>
-                </div>
-                <div class="post">
-                    <div class="post-image"></div>
-                    <div class="post-header">Risus Dolor Elit Condimentum</div>
-                    <div class="post-subheader">July 18 2016 | Madrid, ES</div>
-                    <div class="post-text">Etiam porta sem malesuada magning elit. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam.
-                        Pellentesque ornare sem lacinia quam venenatis vestibulum. <a href="#Eventlink">View event</a></div>
-                </div>
-                <button type="button" class="btn btn-primary btn-more-posts">View More Posts</button>
+                </div>-->
+                
+                <a class="btn btn-primary btn-more-posts"  title="View events on our FB page" href="https://www.facebook.com/thesistersbrewery/" target="_blank">View More Posts</a>
             </div>
         </div>
     </div>
     <div class="container-fluid footer">
-        <div class="footer-logo">
-            <a href="./">logo</a>
-        </div>
-        <div class="footer-contact-info">
-            <p><a href="mailto:info@thesistersbrewery.com">info@thesistersbrewery.com</a></p>
-            <p>+31 (6) 8123 42 21</p>
-            <p>The Sisters Brewery <br/> Stationsweg 57 <br/> 3621LK Breukelen</p>
-            <p>KvK 63757974</p>
-        </div>
-        <div class="footer-byline">
-            <div class="col-xs-6">Site by Max & Flex</div>
-            <div class="col-xs-6 footer-link"><a class="" href="http://madmaxlax.com">madmaxlax.com</a></div>
-        </div>
-        <div class="footer-social-links">
-            <a href="facebook.com" class="social-button" target="_blank">F</a>
-            <a href="twitter.com" class="social-button" target="_blank">T</a>
-            <a href="insta.com" class="social-button" target="_blank">I</a>
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="footer-logo">
+                    <a href="./">logo</a>
+                </div>
+                <div class="footer-contact-info">
+                    <p><a href="mailto:info@thesistersbrewery.com">info@thesistersbrewery.com</a></p>
+                    <p>+31 (6) 8123 42 21</p>
+                    <p>The Sisters Brewery <br/> Stationsweg 57 <br/> 3621LK Breukelen</p>
+                    <p>KvK 63757974</p>
+                </div>
+            </div>
+            <div class="col-xs-6">
+
+                <div class="footer-social-links">
+                    <a href="facebook.com" class="social-button" target="_blank" title="Sisters Brewery on Facebook"><i class="fa fa-facebook"></i> Facebook</a>
+                    <a href="twitter.com" class="social-button" target="_blank" title="Sisters Brewery on Spotify"><i class="fa fa-spotify"></i> Spotify</a>
+                </div>
+                <div class="footer-byline">
+                    <div class="col-xs-6">Site by Max & Flex</div>
+                    <div class="col-xs-6 footer-link"><a class="" href="http://madmaxlax.com">madmaxlax.com</a></div>
+                </div>
+
+
+            </div>
+            <div class="col-xs-6">
+            </div>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
