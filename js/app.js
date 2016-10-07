@@ -126,6 +126,12 @@ var brewery = false;
         console.log(data);
         brewery = data.data.response.brewery;
         $scope.brewery = data.data.response.brewery;
+        //reformat array to access by beer ID
+        $scope.brewery.beersById = data.data.response.brewery.beer_list.items.reduce(function(obj, item){
+          obj[item.beer.bid.toString()] = item.beer;
+          return obj;
+        },{});
+        console.log($scope.brewery.beersById);
       }).catch(function (data, status, headers, config) {
         console.log("Error getting data ", data);
       });

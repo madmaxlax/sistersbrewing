@@ -1,6 +1,11 @@
 A beer has been selected
 <div ng-style="{'background-color':beersDB[routeSelectedBeer].backgroundColor}">
-<h1>{{beersDB[routeSelectedBeer].name}} <super>{{beersDB[routeSelectedBeer].new?"New!":""}}</super></h1>
+<h1>{{beersDB[routeSelectedBeer].name}} <sup>{{beersDB[routeSelectedBeer].new?"New!":""}}</sup></h1>
+<p>Untappd: Ratings: {{brewery.beersById[beersDB[routeSelectedBeer].untappdId].rating_count}} 
+    Avg Rating: {{brewery.beersById[beersDB[routeSelectedBeer].untappdId].rating_score}} <i class="fa fa-star"></i><br>
+    <a ng-href="https://untappd.com/b/{{brewery.beersById[beersDB[routeSelectedBeer].untappdId].beer_slug}}/{{brewery.beersById[beersDB[routeSelectedBeer].untappdId].bid}}" target="_blank">View on untappd <i class="fa fa-beer"></i></a> <br>
+    {{brewery.beersById[beersDB[routeSelectedBeer].untappdId].beer_description}}
+     </p>
 <p>{{beersDB[routeSelectedBeer].longDesc}}</p>
 <img ng-src="beersDB[routeSelectedBeer].labelImageUrl" alt="beer label">
 <div class="beer-artist">
