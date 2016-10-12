@@ -17,9 +17,7 @@
 <body data-spy="scroll" data-target="#navscrollspy" data-offset="200" ng-cloak="" ng-controller="appController as ctrlr">
 	<div class="container-fluid main-content">
 		<div class="header navbar">
-			<a class="navbar-brand" href="#">
-                <img class="logo" src="imgs/logo.png">
-            </a>
+			<a class="navbar-brand logo-text" href="#">The Sisters Brewery Logo</a>
 			<div class="pull-right">
 				<button class="navbar-toggler hidden-sm-up pull-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
     		&#9776;
@@ -52,19 +50,10 @@
 			<p>We are Annamijn and Josefine Beijeman. <br/> Two sisters brewing craft beer with our father Wilfran.<br/> Besides making delicious craft beer we create an artwork of every beer produced. </p>
 		</div>
 		<div class="beer-hexes" id="Beers">
-			<sb-beer-hex></sb-beer-hex>
 			<ul id="hexGrid">
-				<li ng-repeat="(beerId,beer) in beersDB" class="beer-hex beer-hex-hi hex">
-					<div class="hex-out">
-						<a class="hex-in" ng-href="#/beers/{{beerId}}">
-							<img src="./imgs/drone.jpg" alt="Beer label">
-							<!--ng-src="{{beer.labelImageUrl}}" -->
-							<h1>{{beer.name}}</h1>
-							<p>{{beer.shortDesc}}</p>
-						</a>
-					</div>
-				</li>
+				<sb-beer-hex ng-repeat="(beerId,beer) in beersDB"></sb-beer-hex>
 			</ul>
+			<div class="clearfix"></div>
 		</div>
 		<div class="angular-view-section" ng-view="">
 

@@ -184,6 +184,13 @@ var brewery = false;
   angular.module('SistersBrewApp').controller('IndexController', function ($scope, $routeParams, $http) {
   });
 
+  angular.module('SistersBrewApp').directive('sbBeerHex',function(){
+    return{
+      restrict: 'E',
+      templateUrl: 'js/directives/beerhex.html'
+    };
+  });
+  
   angular.module('SistersBrewApp').directive('sbFbEvent',function(){
     return{
       restrict: 'E',

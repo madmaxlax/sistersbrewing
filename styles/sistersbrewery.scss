@@ -1,10 +1,10 @@
 //variables and overrides, with sass this needs to happen before the import
 
-$sb-main-background-color: #fff;//#f4f7f8; //kinda bluish white
+$sb-main-background-color: white;//#f4f7f8; //kinda bluish white
 $body-bg: $sb-main-background-color; //override bootstrap
-$sb-alt-background: #f5f0e7;//yellowish grey
+$sb-alt-background: f5f0e7;//yellowish grey
 
-$sb-main-text-color: #333;
+$sb-main-text-color: black; 
 $body-color:$sb-main-text-color; // override bootstrap
 
 $sb-link-color: #0c8fb9; //bluish
@@ -12,7 +12,6 @@ $brand-primary: $sb-link-color;
 
 $sb-footer-background-color: #ffd590; //yellow orange
 $sb-logo-font: 'Old Standard TT', serif;
-$header-font: $sb-logo-font;
 
 $sb-main-font: 'Raleway', sans-serif;
 $font-family-base: $sb-main-font;//override bootstrap
@@ -34,24 +33,10 @@ $font-family-base: $sb-main-font;//override bootstrap
   url(./styles/fonts/Modern20BTRoman.ttf) format('truetype');
   
 } */
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: $header-font;
+.logo-text{
+  font-family: $sb-logo-font;
 }
 
-
-
-.header.navbar {
-  .logo {
-    height: 100px;
-  }
-  .navbar-nav {
-    margin-top: 27px;
-  }
-  .navbar-nav .nav-item + .nav-item {
-    margin-left: 2rem;
-  }
-}
 .secondary-color{
   color: $brand-primary;
 }
@@ -62,25 +47,26 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-link{
   color: $sb-main-text-color;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
   font-style: normal;
   font-stretch: normal;
 }
 
-.header-text {
+.header-text{
   text-align: center;
   min-width: 90%;
-  margin: 40px auto;
+  margin: 0 auto 0 auto;
 }
 
 .footer {
     background-color: $sb-footer-background-color;
 }
 .news-and-events-section a, .footer a {
-  border-bottom: 1px solid;
-  &:hover {
-    text-decoration: none;
+  text-decoration: underline;
+  
+  &:hover{
+    text-decoration:none;
   }
 }
 .beer-hexes
