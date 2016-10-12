@@ -1,3 +1,8 @@
+$hex-rotate-amount: -60deg; //was 60deg
+$hex-in-rotate-amount: 60deg;
+$hex-child-rotate-amount: -60deg;
+$hex-skew:30deg;
+
 #hexGrid {
     overflow: hidden;
     width: 90%;
@@ -18,9 +23,9 @@
     overflow: hidden;
     visibility: hidden;
     outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
-    -webkit-transform: rotate(-60deg) skewY(30deg) translatez(-1px);
-        -ms-transform: rotate(-60deg) skewY(30deg) translatez(-1px);
-            transform: rotate(-60deg) skewY(30deg) translatez(-1px);
+    -webkit-transform: rotate($hex-child-rotate-amount) skewY($hex-skew) translatez(-1px);
+        -ms-transform: rotate($hex-rotate-amount) skewY($hex-skew) translatez(-1px);
+            transform: rotate($hex-rotate-amount) skewY($hex-skew) translatez(-1px);
 }
 .hex * {
     position: absolute;
@@ -34,9 +39,9 @@
     text-align: center;
     color: #fff;
     overflow: hidden;
-    -webkit-transform: skewY(-30deg) rotate(60deg);
-        -ms-transform: skewY(-30deg) rotate(60deg);
-            transform: skewY(-30deg) rotate(60deg);
+    -webkit-transform: skewY(-30deg) rotate($hex-in-rotate-amount);
+        -ms-transform: skewY(-30deg) rotate($hex-in-rotate-amount);
+            transform: skewY(-30deg) rotate($hex-in-rotate-amount);
 }
 
 /*** HEX CONTENT **********************************************************************/
@@ -52,6 +57,7 @@
     width: 102%;
     left:-1%; /* prevent line on the right where background doesn't cover image */
     padding: 5%;
+    margin:0;
     box-sizing:border-box;
     background-color: rgba(0, 128, 128, 0.8);
     font-weight: 300;
@@ -98,7 +104,7 @@
 @media (min-width:1201px) { /* <- 5-4  hexagons per row */
     .hex {
         width: 19.2%; /* = (100-4) / 5 */
-        padding-bottom: 22.170%; /* =  width / sin(60deg) */
+        padding-bottom: 22.170%; /* =  width / sin($hex-rotate-amount) */
     }
     .hex:nth-child(9n+6),
     .hex:nth-child(9n+7),
@@ -106,9 +112,9 @@
     .hex:nth-child(9n+9) {
         margin-top: -4.676%;
         margin-bottom: -4.676%;
-        -webkit-transform: translateX(50%) rotate(-60deg) skewY(30deg);
-            -ms-transform: translateX(50%) rotate(-60deg) skewY(30deg);
-                transform: translateX(50%) rotate(-60deg) skewY(30deg);
+        -webkit-transform: translateX(50%) rotate($hex-child-rotate-amount) skewY($hex-skew);
+            -ms-transform: translateX(50%) rotate($hex-child-rotate-amount) skewY($hex-skew);
+                transform: translateX(50%) rotate($hex-child-rotate-amount) skewY($hex-skew);
     }
     .hex:nth-child(9n+6):last-child,
     .hex:nth-child(9n+7):last-child,
@@ -137,16 +143,16 @@
 @media (max-width: 1200px) and (min-width:901px) {/* <- 4-3  hexagons per row */
     .hex {
         width: 24.25%; /* = (100-3) / 4 */
-        padding-bottom: 28.001%; /* =  width / sin(60deg) */
+        padding-bottom: 28.001%; /* =  width / sin($hex-rotate-amount) */
     }
     .hex:nth-child(7n+5),
     .hex:nth-child(7n+6),
     .hex:nth-child(7n+7) {
         margin-top: -6.134%;
         margin-bottom: -6.134%;
-        -webkit-transform: translateX(50%) rotate(-60deg) skewY(30deg);
-            -ms-transform: translateX(50%) rotate(-60deg) skewY(30deg);
-                transform: translateX(50%) rotate(-60deg) skewY(30deg);
+        -webkit-transform: translateX(50%) rotate($hex-child-rotate-amount) skewY($hex-skew);
+            -ms-transform: translateX(50%) rotate($hex-child-rotate-amount) skewY($hex-skew);
+                transform: translateX(50%) rotate($hex-child-rotate-amount) skewY($hex-skew);
     }
     .hex:nth-child(7n+5):last-child,
     .hex:nth-child(7n+6):last-child,
@@ -178,9 +184,9 @@
     .hex:nth-child(5n+5) {
         margin-top: -8.564%;
         margin-bottom: -8.564%;
-        -webkit-transform: translateX(50%) rotate(-60deg) skewY(30deg);
-            -ms-transform: translateX(50%) rotate(-60deg) skewY(30deg);
-                transform: translateX(50%) rotate(-60deg) skewY(30deg);
+        -webkit-transform: translateX(50%) rotate($hex-child-rotate-amount) skewY($hex-skew);
+            -ms-transform: translateX(50%) rotate($hex-child-rotate-amount) skewY($hex-skew);
+                transform: translateX(50%) rotate($hex-child-rotate-amount) skewY($hex-skew);
     }
     .hex:nth-child(5n+4):last-child,
     .hex:nth-child(5n+5):last-child {
@@ -206,9 +212,9 @@
     .hex:nth-child(3n+3) {
         margin-top: -13.423%;
         margin-bottom: -13.423%;
-        -webkit-transform: translateX(50%) rotate(-60deg) skewY(30deg);
-            -ms-transform: translateX(50%) rotate(-60deg) skewY(30deg);
-                transform: translateX(50%) rotate(-60deg) skewY(30deg);
+        -webkit-transform: translateX(50%) rotate($hex-child-rotate-amount) skewY($hex-skew);
+            -ms-transform: translateX(50%) rotate($hex-child-rotate-amount) skewY($hex-skew);
+                transform: translateX(50%) rotate($hex-child-rotate-amount) skewY($hex-skew);
     }
     .hex:nth-child(3n+3):last-child {
         margin-bottom: 0;

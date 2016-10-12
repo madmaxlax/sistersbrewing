@@ -5004,6 +5004,7 @@ a.text-danger:focus, a.text-danger:hover {
   left: -1%;
   /* prevent line on the right where background doesn't cover image */
   padding: 5%;
+  margin: 0;
   box-sizing: border-box;
   background-color: rgba(0, 128, 128, 0.8);
   font-weight: 300;
@@ -5050,7 +5051,7 @@ a.text-danger:focus, a.text-danger:hover {
     width: 19.2%;
     /* = (100-4) / 5 */
     padding-bottom: 22.170%;
-    /* =  width / sin(60deg) */ }
+    /* =  width / sin($hex-rotate-amount) */ }
 
   .hex:nth-child(9n+6),
   .hex:nth-child(9n+7),
@@ -5090,7 +5091,7 @@ a.text-danger:focus, a.text-danger:hover {
     width: 24.25%;
     /* = (100-3) / 4 */
     padding-bottom: 28.001%;
-    /* =  width / sin(60deg) */ }
+    /* =  width / sin($hex-rotate-amount) */ }
 
   .hex:nth-child(7n+5),
   .hex:nth-child(7n+6),
