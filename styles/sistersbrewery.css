@@ -4949,7 +4949,8 @@ a.text-danger:focus, a.text-danger:hover {
     display: none !important; } }
 
 .news-and-events-section {
-  padding: 20px; }
+  padding: 20px;
+  background-color: #f5f0e7; }
 
 .card {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
@@ -5113,8 +5114,12 @@ a.text-danger:focus, a.text-danger:hover {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Old Standard TT", serif; }
 
-.logo-text {
-  font-family: "Old Standard TT", serif; }
+.header.navbar .logo {
+  height: 100px; }
+.header.navbar .navbar-nav {
+  margin-top: 27px; }
+.header.navbar .navbar-nav .nav-item + .nav-item {
+  margin-left: 2rem; }
 
 .secondary-color {
   color: #0c8fb9; }
@@ -5124,7 +5129,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-link {
   color: #333;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 600;
   font-style: normal;
   font-stretch: normal; }
@@ -5132,7 +5137,7 @@ h1, h2, h3, h4, h5, h6 {
 .header-text {
   text-align: center;
   min-width: 90%;
-  margin: auto; }
+  margin: 40px auto; }
 
 .footer {
   background-color: #ffd590; }
