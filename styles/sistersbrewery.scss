@@ -20,6 +20,7 @@ $font-family-base: $sb-main-font;//override bootstrap
 @import "scss/bootstrap";
 @import "posts.scss";
 @import "beers.scss";
+@import "hex.scss";
 
 //site-specific classes
 /* 
@@ -71,13 +72,13 @@ $font-family-base: $sb-main-font;//override bootstrap
 .beer-hexes
 {
   .beer-hex{
-    display: inline;
+/*     display: inline; */
   }
   .beer-hex-hi{
-    margin-top: -10px
+/*     margin-top: -10px */
   }
   .beer-hex-lo{
-    margin-top: 10px
+/*     margin-top: 10px */
   }
 }
 
