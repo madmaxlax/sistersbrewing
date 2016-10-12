@@ -50,19 +50,19 @@
 			<p>We are Annamijn and Josefine Beijeman. <br/> Two sisters brewing craft beer with our father Wilfran.<br/> Besides making delicious craft beer we create an artwork of every beer produced. </p>
 		</div>
 		<div class="beer-hexes" id="Beers">
+			<sb-beer-hex></sb-beer-hex>
 			<ul id="hexGrid">
 				<li ng-repeat="(beerId,beer) in beersDB" class="beer-hex beer-hex-hi hex">
-					<a class="hexIn" ng-href="#/beers/{{beerId}}">
- 						<img src="./imgs/drone.jpg" alt="Beer label"> <!--ng-src="{{beer.labelImageUrl}}" -->
-						<h1>{{beer.name}}</h1>
-						<p>{{beer.shortDesc}}</p>
-					</a>
+					<div class="hex-out">
+						<a class="hexIn" ng-href="#/beers/{{beerId}}">
+							<img src="./imgs/drone.jpg" alt="Beer label">
+							<!--ng-src="{{beer.labelImageUrl}}" -->
+							<h1>{{beer.name}}</h1>
+							<p>{{beer.shortDesc}}</p>
+						</a>
+					</div>
 				</li>
 			</ul>
-			<!--<div class="beer-hex beer-hex-lo"><a href="#/beers/Drone">Drone</a></div>
-            <div class="beer-hex beer-hex-hi"><a href="#/beers/Honey">Honey bee</a></div>
-            <div class="beer-hex beer-hex-lo"><a href="#/beers/bees">BEES?!</a></div>
-            <div class="beer-hex beer-hex-hi"><a href="#/beers/imperial">imperial</a></div>-->
 		</div>
 		<div class="angular-view-section" ng-view="">
 
@@ -72,14 +72,14 @@
 				<h1>Upcoming Events</h1>
 				<div class="alert alert-info" ng-if="events === false">Loading events ... </div>
 				<sb-fb-event ng-repeat="event in events"></sb-fb-event>
-                <a class="btn btn-primary btn-more-events" title="View events on our FB page" href="https://www.facebook.com/thesistersbrewery/events" target="_blank">View More Events</a>
-            </div>
-            <div class="posts col-sm-8">
-                <h1>What We’ve Been Up To</h1>
-                <div class="alert alert-info" ng-if="posts === false">Loading posts ... </div>
-                <div class="card-columns">
-                    <sb-fb-post ng-repeat="post in posts"></sb-fb-post>
-                </div>
+				<a class="btn btn-primary btn-more-events" title="View events on our FB page" href="https://www.facebook.com/thesistersbrewery/events" target="_blank">View More Events</a>
+			</div>
+			<div class="posts col-sm-8">
+				<h1>What We’ve Been Up To</h1>
+				<div class="alert alert-info" ng-if="posts === false">Loading posts ... </div>
+				<div class="card-columns">
+					<sb-fb-post ng-repeat="post in posts"></sb-fb-post>
+				</div>
 
 
 				<a class="btn btn-primary btn-more-posts" title="View events on our FB page" href="https://www.facebook.com/thesistersbrewery/" target="_blank">View More Posts</a>
