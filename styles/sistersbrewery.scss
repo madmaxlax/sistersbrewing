@@ -18,6 +18,8 @@ $font-family-base: $sb-main-font;//override bootstrap
 
 //grab actual bootstrap files
 @import "scss/bootstrap";
+@import "posts.scss";
+@import "beers.scss";
 
 //site-specific classes
 /* 
