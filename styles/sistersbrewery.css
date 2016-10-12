@@ -256,8 +256,8 @@ body {
   font-family: "Raleway", sans-serif;
   font-size: 1rem;
   line-height: 1.5;
-  color: black;
-  background-color: white; }
+  color: #333;
+  background-color: #fff; }
 
 [tabindex="-1"]:focus {
   outline: none !important; }
@@ -519,7 +519,7 @@ dl.row > dd + dt {
 
 .img-thumbnail {
   padding: 0.25rem;
-  background-color: white;
+  background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 0.25rem;
   transition: all .2s ease-in-out;
@@ -1684,7 +1684,7 @@ pre {
   .table tbody + tbody {
     border-top: 2px solid #eceeef; }
   .table .table {
-    background-color: white; }
+    background-color: #fff; }
 
 .table-sm th,
 .table-sm td {
@@ -2518,7 +2518,7 @@ input[type="button"].btn-block {
   padding: 5px 0;
   margin: 2px 0 0;
   font-size: 1rem;
-  color: black;
+  color: #333;
   text-align: left;
   list-style: none;
   background-color: #fff;
@@ -3030,7 +3030,7 @@ input[type="button"].btn-block {
   .nav-tabs .nav-item.open .nav-link:focus,
   .nav-tabs .nav-item.open .nav-link:hover {
     color: #55595c;
-    background-color: white;
+    background-color: #fff;
     border-color: #ddd #ddd transparent; }
   .nav-tabs .dropdown-menu {
     margin-top: -1px;
@@ -4948,6 +4948,7 @@ a.text-danger:focus, a.text-danger:hover {
   .hidden-print {
     display: none !important; } }
 
+<<<<<<< 86305b246b650da8bf751b4770073d2c01396a44
 #hexGrid {
   overflow: hidden;
   width: 90%;
@@ -5178,6 +5179,58 @@ a.text-danger:focus, a.text-danger:hover {
 @media (max-width: 400px) {
   #hexGrid {
     font-size: 13px; } }
+=======
+.card {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5); }
+  .card .card-image img {
+    width: 100%; }
+  .card .card-body {
+    padding: 10px; }
+    .card .card-body .card-title {
+      font-size: 18px;
+      font-weight: 500;
+      color: #0c8fb9;
+      margin-bottom: 5px;
+      line-height: 22px; }
+      .card .card-body .card-title a,
+      .card .card-body .card-title a:hover {
+        text-decoration: none;
+        border: 0; }
+    .card .card-body .card-subheader {
+      font-size: 12px;
+      margin-bottom: 10px; }
+    .card .card-body .card-text {
+      font-size: 14px; }
+
+.event.card .event-date {
+  position: absolute;
+  border: solid 2px #0c8fb9;
+  background-color: #fff;
+  font-size: 18px;
+  color: #0c8fb9;
+  top: 10px;
+  left: -10px;
+  padding: 5px; }
+.event.card .event-date::after {
+  content: '';
+  position: absolute;
+  left: -2px;
+  bottom: -12px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-top: 10px solid #0c8fb9;
+  clear: both; }
+
+@media (min-width: 1200px) {
+  .card-columns {
+    column-count: 3;
+    /*column-gap: $card-columns-lg-up-column-gap;*/ } }
+@media (min-width: 544px) {
+  .card-columns {
+    column-count: 2;
+    column-gap: 1.25rem; } }
+>>>>>>> styles for the cards for posts and events
 /* 
 @font-face {
   font-family: 'Modern20BT-RomanB';
@@ -5195,10 +5248,10 @@ a.text-danger:focus, a.text-danger:hover {
   color: #0c8fb9; }
 
 .alt-background-color {
-  background-color: f5f0e7; }
+  background-color: #f5f0e7; }
 
 .nav-link {
-  color: black;
+  color: #333;
   font-size: 22px;
   font-weight: 600;
   font-style: normal;
@@ -5213,7 +5266,7 @@ a.text-danger:focus, a.text-danger:hover {
   background-color: #ffd590; }
 
 .news-and-events-section a, .footer a {
-  text-decoration: underline; }
+  border-bottom: 1px solid; }
   .news-and-events-section a:hover, .footer a:hover {
     text-decoration: none; }
 
