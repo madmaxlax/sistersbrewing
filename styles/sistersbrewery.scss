@@ -12,6 +12,7 @@ $brand-primary: $sb-link-color;
 
 $sb-footer-background-color: #ffd590; //yellow orange
 $sb-logo-font: 'Old Standard TT', serif;
+$header-font: $sb-logo-font;
 
 $sb-main-font: 'Raleway', sans-serif;
 $font-family-base: $sb-main-font;//override bootstrap
@@ -33,6 +34,13 @@ $font-family-base: $sb-main-font;//override bootstrap
   url(./styles/fonts/Modern20BTRoman.ttf) format('truetype');
   
 } */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $header-font;
+}
+
+
+
 .logo-text{
   font-family: $sb-logo-font;
 }
