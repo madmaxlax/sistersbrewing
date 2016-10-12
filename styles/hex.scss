@@ -12,6 +12,9 @@ $hex-skew:30deg;
   width: 10000px;
   overflow: hidden;
   margin: 0px 0 0 0;
+  padding: 0 0 0 0;
+  display:block;
+  list-style: none;
 }
 .hex-wrapper
 {
@@ -21,6 +24,10 @@ $hex-skew:30deg;
 }
 .hex-wrapper-odd {
   margin: 0 0 0 -50px;
+}
+
+.hex-wrapper-odd.hex-wrapper-first {
+  margin: 0 0 0 0px;
 }
 .hex-wrapper-even {
   margin: 110px 0 0 -50px;
