@@ -41,8 +41,17 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
-.logo-text{
-  font-family: $sb-logo-font;
+
+.header.navbar {
+  .logo {
+    height: 100px;
+  }
+  .navbar-nav {
+    margin-top: 27px;
+  }
+  .navbar-nav .nav-item + .nav-item {
+    margin-left: 2rem;
+  }
 }
 
 .secondary-color{

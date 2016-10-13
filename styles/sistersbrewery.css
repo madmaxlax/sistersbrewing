@@ -5148,8 +5148,12 @@ a.text-danger:focus, a.text-danger:hover {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Old Standard TT", serif; }
 
-.logo-text {
-  font-family: "Old Standard TT", serif; }
+.header.navbar .logo {
+  height: 100px; }
+.header.navbar .navbar-nav {
+  margin-top: 27px; }
+.header.navbar .navbar-nav .nav-item + .nav-item {
+  margin-left: 2rem; }
 
 .secondary-color {
   color: #0c8fb9; }
