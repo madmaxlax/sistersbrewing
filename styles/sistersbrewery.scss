@@ -33,10 +33,17 @@ $font-family-base: $sb-main-font;//override bootstrap
   url(./styles/fonts/Modern20BTRoman.ttf) format('truetype');
   
 } */
-.logo-text{
-  font-family: $sb-logo-font;
+.header.navbar {
+  .logo {
+    height: 100px;
+  }
+  .navbar-nav {
+    margin-top: 27px;
+  }
+  .navbar-nav .nav-item + .nav-item {
+    margin-left: 2rem;
+  }
 }
-
 .secondary-color{
   color: $brand-primary;
 }
@@ -47,7 +54,7 @@ $font-family-base: $sb-main-font;//override bootstrap
 
 .nav-link{
   color: $sb-main-text-color;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 600;
   font-style: normal;
   font-stretch: normal;
@@ -56,7 +63,7 @@ $font-family-base: $sb-main-font;//override bootstrap
 .header-text{
   text-align: center;
   min-width: 90%;
-  margin: 0 auto 0 auto;
+  margin: 40px auto 40px auto;
 }
 
 .footer {
