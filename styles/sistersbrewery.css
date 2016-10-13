@@ -256,8 +256,8 @@ body {
   font-family: "Raleway", sans-serif;
   font-size: 1rem;
   line-height: 1.5;
-  color: black;
-  background-color: white; }
+  color: #333;
+  background-color: #fff; }
 
 [tabindex="-1"]:focus {
   outline: none !important; }
@@ -519,7 +519,7 @@ dl.row > dd + dt {
 
 .img-thumbnail {
   padding: 0.25rem;
-  background-color: white;
+  background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 0.25rem;
   transition: all .2s ease-in-out;
@@ -1684,7 +1684,7 @@ pre {
   .table tbody + tbody {
     border-top: 2px solid #eceeef; }
   .table .table {
-    background-color: white; }
+    background-color: #fff; }
 
 .table-sm th,
 .table-sm td {
@@ -2518,7 +2518,7 @@ input[type="button"].btn-block {
   padding: 5px 0;
   margin: 2px 0 0;
   font-size: 1rem;
-  color: black;
+  color: #333;
   text-align: left;
   list-style: none;
   background-color: #fff;
@@ -3030,7 +3030,7 @@ input[type="button"].btn-block {
   .nav-tabs .nav-item.open .nav-link:focus,
   .nav-tabs .nav-item.open .nav-link:hover {
     color: #55595c;
-    background-color: white;
+    background-color: #fff;
     border-color: #ddd #ddd transparent; }
   .nav-tabs .dropdown-menu {
     margin-top: -1px;
@@ -4950,7 +4950,7 @@ a.text-danger:focus, a.text-danger:hover {
 
 .news-and-events-section {
   padding: 20px;
-  background-color: f5f0e7; }
+  background-color: #f5f0e7; }
 
 .card {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
@@ -4980,7 +4980,7 @@ a.text-danger:focus, a.text-danger:hover {
 .event.card .event-date {
   position: absolute;
   border: solid 2px #0c8fb9;
-  background-color: white;
+  background-color: #fff;
   font-size: 18px;
   color: #0c8fb9;
   top: 10px;
@@ -5145,6 +5145,9 @@ a.text-danger:focus, a.text-danger:hover {
   url(./styles/fonts/Modern20BTRoman.ttf) format('truetype');
   
 } */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Old Standard TT", serif; }
+
 .logo-text {
   font-family: "Old Standard TT", serif; }
 
@@ -5152,10 +5155,10 @@ a.text-danger:focus, a.text-danger:hover {
   color: #0c8fb9; }
 
 .alt-background-color {
-  background-color: f5f0e7; }
+  background-color: #f5f0e7; }
 
 .nav-link {
-  color: black;
+  color: #333;
   font-size: 22px;
   font-weight: 600;
   font-style: normal;
@@ -5164,13 +5167,13 @@ a.text-danger:focus, a.text-danger:hover {
 .header-text {
   text-align: center;
   min-width: 90%;
-  margin: 0 auto 0 auto; }
+  margin: auto; }
 
 .footer {
   background-color: #ffd590; }
 
 .news-and-events-section a, .footer a {
-  text-decoration: underline; }
+  border-bottom: 1px solid; }
   .news-and-events-section a:hover, .footer a:hover {
     text-decoration: none; }
 
