@@ -24,23 +24,24 @@ $font-family-base: $sb-main-font;//override bootstrap
 @import "hex.scss";
 
 //site-specific classes
-/* 
+/*
 @font-face {
   font-family: 'Modern20BT-RomanB';
   font-style: normal;
   font-weight: 400;
-  src: local('Modern20BT-RomanB'), local('Modern20BT-RomanB-Regular'), 
-  url(./styles/fonts/ufonts.com_modern20bt-romanb-opentype.otf) format('opentype'), 
+  src: local('Modern20BT-RomanB'), local('Modern20BT-RomanB-Regular'),
+  url(./styles/fonts/ufonts.com_modern20bt-romanb-opentype.otf) format('opentype'),
   url(./styles/fonts/Modern20BTRoman.ttf) format('truetype');
-  
 } */
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $header-font;
+  margin-top: 1rem;
 }
 
-
-
+p {
+  font-size: 14px;
+}
 
 .header.navbar {
   .logo {
@@ -76,8 +77,39 @@ h1, h2, h3, h4, h5, h6 {
   margin: 30px auto 70px;
 }
 
+.section {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.footer-container {
+  background-color: $sb-alt-background;
+}
+
 .footer {
-    background-color: $sb-footer-background-color;
+  padding: 2rem;
+  .footer-logo img {
+    width: 75%;
+  }
+  .footer-social-links {
+    text-align:right;
+    a {
+      border-bottom: 0;
+      font-size: 22px;
+      background-color: $sb-link-color;
+      color: #fff;
+      border-radius: 50px;
+      padding: 10px 17px;
+      margin: 0 5px;
+      &:hover {
+        color: #fff;
+        background-color: #075771;
+      }
+      &.spotify {
+        padding: 10px 14px;
+      }
+    }
+  }
 }
 .news-and-events-section a, .footer a {
   border-bottom: 1px solid;
@@ -85,6 +117,14 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
   }
 }
+
+.about-us-section {
+  .photo img {
+    margin-top: 1rem;
+    width: 100%;
+  }
+}
+
 .beer-hexes
 {
   .beer-hex{

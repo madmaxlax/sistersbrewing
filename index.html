@@ -41,7 +41,7 @@
 							<a class="nav-link" href="#News">News & Events</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#/about">Our Story</a>
+							<a class="nav-link" href="#about">Our Story</a>
 						</li>
 					</ul>
 				</div>
@@ -60,7 +60,7 @@
 		<div class="angular-view-section" ng-view="">
 
 		</div>
-		<div class="news-and-events-section row" id="News">
+		<div class="news-and-events-section row section" id="News">
 			<div class="upcoming-events col-sm-3">
 				<h3>Upcoming Events</h3>
 				<div class="alert alert-info" ng-if="events === false">Loading events ... </div>
@@ -78,13 +78,38 @@
 				<a class="btn btn-primary btn-more-posts" title="View events on our FB page" href="https://www.facebook.com/thesistersbrewery/" target="_blank">View More Posts</a>
 			</div>
 		</div>
+
+    <div class="about-us-section row section" id="about">
+      <div class="col-sm-5 col-xs-12 photo">
+        <div class="col-sm-12">
+          <img src="imgs/about-us.jpg">
+        </div>
+      </div>
+      <div class="col-sm-7 col-xs-12 description">
+        <h2>Our Story</h2>
+        <p>
+          We, as The Sisters Brewery, are a team of two sisters and our father; Annamijn, Josefien and Wilfran Beijeman. Together we brew strong craft beer with a female touch to it. We noticed that in today's world, craft beers have started to be appreciated more, where the beer drinkers are no longer the stereotypical beer drinking man. Women are discovering the variety of craft beers. As The Sisters Brewery we want to give our beers a female touch for all the female craft beer drinkers as well. The female touch in our beers does not mean that our beers are exclusive for women; our beers are for men and women but with a focus on the female beer drinkers. The focus can be seen in different aspects of our beers from the packaging and design to the taste. During the development of our recipes most of the people tasting the beers were women. Furthermore you can find the female touch in our labels, designed by female artists. And not to forget two out of three in this family business are from the female gender ;)
+        </p>
+        <p>
+          As The Sisters Brewery we try to combine the old and the new, to create an authentic taste and atmosphere. The authenticity of our beers is not only evident in our recipes and flavours but can also be found in the labels and names of our beers. Each beer that The Sisters Brewery offers includes its own philosophy, story and high standards. With every beer we produce, our aim is to deliver a piece of art with a delicious and authentic taste and appearance.
+        </p>
+        <p>
+          The naming of our beers comes from our surname; Beijeman. It means Beekeeper. All the names of our beers has something to do with bees and beekeeping.
+        </p>
+      </div>
+    </div>
+
+
+
 	</div>
-	<div class="container-fluid footer">
-		<div class="row">
-			<div class="col-xs-6">
+	<div class="container-fluid footer-container">
+		<div class="row footer">
+			<div class="col-sm-2 col-xs-12">
 				<div class="footer-logo">
-					<a href="./">logo</a>
+					<img class="logo" src="imgs/logo.png">
 				</div>
+      </div>
+      <div class="col-sm-5 col-xs-12">
 				<div class="footer-contact-info">
 					<p><a href="mailto:info@thesistersbrewery.com">info@thesistersbrewery.com</a></p>
 					<p>+31 (6) 8123 42 21</p>
@@ -92,20 +117,18 @@
 					<p>KvK 63757974</p>
 				</div>
 			</div>
-			<div class="col-xs-6">
+			<div class="col-sm-5 col-xs-12">
 
 				<div class="footer-social-links">
-					<a href="facebook.com" class="social-button" target="_blank" title="Sisters Brewery on Facebook"><i class="fa fa-facebook"></i> Facebook</a>
-					<a href="twitter.com" class="social-button" target="_blank" title="Sisters Brewery on Spotify"><i class="fa fa-spotify"></i> Spotify</a>
+					<a href="facebook.com" class="social-button facebook" target="_blank" title="Sisters Brewery on Facebook"><i class="fa fa-facebook"></i></a>
+					<a href="spotify.com" class="social-button spotify" target="_blank" title="Sisters Brewery on Spotify"><i class="fa fa-spotify"></i></a>
 				</div>
+        <!-- FOR NOW
 				<div class="footer-byline">
-					<div class="col-xs-6">Site by Max & Flex</div>
+					<p class="col-xs-6">Site by Max & Flex</p>
 					<div class="col-xs-6 footer-link"><a class="" href="http://madmaxlax.com">madmaxlax.com</a></div>
 				</div>
-
-
-			</div>
-			<div class="col-xs-6">
+        -->
 			</div>
 		</div>
 	</div>
