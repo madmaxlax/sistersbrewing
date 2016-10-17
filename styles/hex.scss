@@ -2,6 +2,10 @@ $hex-rotate-amount: -60deg; //was 60deg
 $hex-in-rotate-amount: 60deg;
 $hex-child-rotate-amount: -60deg;
 $hex-skew:30deg;
+$hex-paacing-base: -152px; //what the math works out to with the hexes
+$hex-spacing-between: 12px; //actual spacing between jagged 
+$hex-spacing: $hex-paacing-base + $hex-spacing-between;
+$hex-jagged-spacing:100px;
 
 .beer-hexes
 {
@@ -15,7 +19,7 @@ $hex-skew:30deg;
 /*   display:none; */
 }
 #hexGrid {
-  width: 5000px;
+  width: 2200px;
   overflow: hidden;
   margin: 0px 0 0 0;
   padding: 0 0 0 0;
@@ -27,17 +31,17 @@ $hex-skew:30deg;
 {
   overflow:hidden;
   float:left;
-  width: 250px;
+/*   width: 250px; */
 }
 .hex-wrapper-odd {
-  margin: 0 0 0 -50px;
+  margin: 0 0 0 $hex-spacing;
 }
 
 .hex-wrapper-odd.hex-wrapper-first {
   margin: 0 0 0 0px;
 }
 .hex-wrapper-even {
-  margin: 110px 0 0 -50px;
+  margin: $hex-jagged-spacing 0 0 $hex-spacing;
 }
 .hex {
   width: 400px;

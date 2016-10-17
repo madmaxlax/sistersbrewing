@@ -5016,7 +5016,7 @@ a.text-danger:focus, a.text-danger:hover {
   /*   display:none; */ }
 
 #hexGrid {
-  width: 5000px;
+  width: 2200px;
   overflow: hidden;
   margin: 0px 0 0 0;
   padding: 0 0 0 0;
@@ -5027,16 +5027,16 @@ a.text-danger:focus, a.text-danger:hover {
 .hex-wrapper {
   overflow: hidden;
   float: left;
-  width: 250px; }
+  /*   width: 250px; */ }
 
 .hex-wrapper-odd {
-  margin: 0 0 0 -50px; }
+  margin: 0 0 0 -140px; }
 
 .hex-wrapper-odd.hex-wrapper-first {
   margin: 0 0 0 0px; }
 
 .hex-wrapper-even {
-  margin: 110px 0 0 -50px; }
+  margin: 100px 0 0 -140px; }
 
 .hex {
   width: 400px;
@@ -5144,6 +5144,9 @@ a.text-danger:focus, a.text-danger:hover {
             transform:translateY(0%) translatez(-1px);
 } */
 /*** SPACING AND SIZING *****************************************************************/
+.beer-detail-label {
+  float: right; }
+
 /*
 @font-face {
   font-family: 'Modern20BT-RomanB';
