@@ -1,12 +1,23 @@
 <div ng-style="{'background-color':beersDB[routeSelectedBeer].backgroundColor}" class="beer-detail">
-  <img ng-src="{{beersDB[routeSelectedBeer].labelImageUrl}}" height="200px" alt="beer label" class="beer-detail-label">
-  <h1>{{beersDB[routeSelectedBeer].name}} <sup>{{beersDB[routeSelectedBeer].new?"New!":""}}</sup></h1>
-  <p>Untappd: Ratings: {{brewery.beersById[beersDB[routeSelectedBeer].untappdId].rating_count}} Avg Rating: {{brewery.beersById[beersDB[routeSelectedBeer].untappdId].rating_score}} <i class="fa fa-star"></i><br>
-    <a ng-href="https://untappd.com/b/{{brewery.beersById[beersDB[routeSelectedBeer].untappdId].beer_slug}}/{{brewery.beersById[beersDB[routeSelectedBeer].untappdId].bid}}" target="_blank">View on untappd <i class="fa fa-beer"></i></a> <br> {{brewery.beersById[beersDB[routeSelectedBeer].untappdId].beer_description}}
-  </p>
-  <p>{{beersDB[routeSelectedBeer].longDesc}}</p>
-  <div class="beer-artist">
-    Artist: <a ng-href="beersDB[routeSelectedBeer].artistUrl" class="beer-artist-link">{{beersDB[routeSelectedBeer].artist}}</a>
+  <div class="row">
+    <div class="col-sm-4">
+      <img ng-src="{{beersDB[routeSelectedBeer].labelImageUrl}}" height="200px" alt="beer label" class="beer-detail-label">
+    </div>
+    <div class="col-sm-8">
+      <h1>{{beersDB[routeSelectedBeer].name}} <sup>{{beersDB[routeSelectedBeer].new?"New!":""}}</sup></h1>
+      <p>
+        Untappd: Ratings: {{brewery.beersById[beersDB[routeSelectedBeer].untappdId].rating_count}} Avg Rating: {{brewery.beersById[beersDB[routeSelectedBeer].untappdId].rating_score}} <i class="fa fa-star"></i>
+        <br>
+        <a ng-href="https://untappd.com/b/{{brewery.beersById[beersDB[routeSelectedBeer].untappdId].beer_slug}}/{{brewery.beersById[beersDB[routeSelectedBeer].untappdId].bid}}" target="_blank">View on untappd <i class="fa fa-beer"></i></a>
+        <br>
+        {{brewery.beersById[beersDB[routeSelectedBeer].untappdId].beer_description}}
+      </p>
+      <p>
+        {{beersDB[routeSelectedBeer].longDesc}}
+      </p>
+      <div class="beer-artist">
+        Artist: <a ng-href="beersDB[routeSelectedBeer].artistUrl" class="beer-artist-link">{{beersDB[routeSelectedBeer].artist}}</a>
+      </div>
+    </div>
   </div>
-
 </div>

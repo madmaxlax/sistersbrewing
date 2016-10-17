@@ -84,6 +84,29 @@ p {
   margin-bottom: 50px;
 }
 
+.news-and-events-section {
+  height: 100%;
+  position: relative;
+  text-align: center;
+  h3 {
+    text-align: left;
+  }
+  .vertical-line {
+    position: absolute;
+    height: 100%;
+    left: 30%;
+    top: 2rem;
+    height: calc(100% - 2rem - 20px);
+    width: 2px;
+    background-color: #DAD3C7;
+  }
+  @media (max-width: 544px) {
+    .vertical-line {
+      display: none;
+    }
+  }
+}
+
 .footer-container {
   background-color: $sb-alt-background;
 }

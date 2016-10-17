@@ -11,7 +11,7 @@ $hex-jagged-spacing:100px;
 {
   max-width:100%;
   overflow-x:scroll;
-  box-shadow: inset -15px 0px 10px -10px rgba(0,0,0,0.5);
+  /*box-shadow: inset -15px 0px 10px -10px rgba(0,0,0,0.5); FOR NOW */
 /*   -ms-overflow-style: none;  // IE 10+ */
 /*   overflow: -moz-scrollbars-none;  // Firefox */
 }
@@ -86,8 +86,8 @@ $hex-jagged-spacing:100px;
 }
 .hex img
 {
-  height: 230px;
-  left: 20%;
+  height: 200px;
+  left: 13%;
 }
 .hex h1{
   color:white;
@@ -95,6 +95,7 @@ $hex-jagged-spacing:100px;
   width: 100%;
   margin: 75px 0 0 0;
   text-shadow: 3px 0px 2px rgba(150, 150, 150, 1);
+  display: none; /** FOR NOW */
 }
 .hex p {
   text-align:center;

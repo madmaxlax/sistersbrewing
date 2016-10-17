@@ -67,11 +67,12 @@
 				<sb-fb-event ng-repeat="event in events | future | reverse | limitTo:5"></sb-fb-event>
 				<a class="btn btn-primary btn-more-events" title="View events on our FB page" href="https://www.facebook.com/thesistersbrewery/events" target="_blank">View More Events</a>
 			</div>
+      <div class="vertical-line"></div>
 			<div class="posts col-sm-8 offset-sm-1">
 				<h3>Recent News</h3>
 				<div class="alert alert-info" ng-if="posts === false">Loading posts ... </div>
 				<div class="card-columns">
-					<sb-fb-post ng-repeat="post in posts | limitTo:10"></sb-fb-post>
+					<sb-fb-post ng-repeat="post in posts | limitTo:9"></sb-fb-post>
 				</div>
 
 
