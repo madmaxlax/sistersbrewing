@@ -28,7 +28,7 @@ Porter is a type of dark beer, coming from London, it was first made during the 
         artist: "Kiana Girigorie",
         artistUrl:"http://instagram.com/kiana.girigorie",
         backgroundColor: '#2ab8e8',
-        labelImageUrl: './imgs/wide-labeldrone.jpg',
+        labelImageUrl: './imgs/wide-label-drone.jpg',
         untappdId:'1234842',
         order: 2
     },
