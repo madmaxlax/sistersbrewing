@@ -1,19 +1,22 @@
 <div class="event card">
-    <div class="event-date">
-        {{event.start_time | date}}
-    </div>
-    <div class="card-image">
-      <img class="card-img-top" src="https://unsplash.it/330/?random">
-    </div>
-    <div class="card-body">
-	    <div class="card-title">
-        <a href="https://www.facebook.com/events/{{event.id}}" target="_blank">{{event.name}}</a>
-      </div>
-	    <div class="card-subheader">{{event.start_time | date}} | {{event.place.location.city}} {{event.place.location.country}}</div>
-	    <div class="card-text">{{event.description}} <a href="https://www.facebook.com/events/{{event.id}}" target="_blank">View event</a></div>
+	<div class="event-date">
+		{{event.start_time | date}}
+	</div>
+	<div class="card-image">
+		<!--       <img class="card-img-top" src="https://unsplash.it/330/?random"> -->
+		<a href="https://www.facebook.com/events/{{event.id}}" target="_blank">
+			<img class="card-img-top" ng-src="{{event.cover.source?event.cover.source:'http://madmaxlax.com/sites/sistersbrewing/imgs/logo.png'}}">
+		</a>
+	</div>
+	<div class="card-body">
+		<div class="card-title">
+			<a href="https://www.facebook.com/events/{{event.id}}" target="_blank">{{event.name}}</a>
+		</div>
+		<div class="card-subheader">{{event.start_time | date}} | {{event.place.location.city}} {{event.place.location.country}}</div>
+		<div class="card-text">{{event.description | limitTo:200}}... <a href="https://www.facebook.com/events/{{event.id}}" target="_blank">View event</a></div>
 	</div>
 </div>
 
 <!-- MAXWELL -->
 <!-- if no card-title, put description in card-text -->
-<!-- hide past events, and put the most recent event first -->
+<!-- hide past events, and put the most recent event first DONE -->

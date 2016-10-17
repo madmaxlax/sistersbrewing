@@ -35,7 +35,7 @@
 							<a class="nav-link" href="#Beers">Beers</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#FindBeer">Find Our Beer</a>
+							<a class="nav-link" href="#/wheretofindus">Find Our Beer</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#News">News & Events</a>
@@ -53,7 +53,7 @@
 		</div>
 		<div class="beer-hexes" id="Beers">
 			<ul id="hexGrid">
-				<sb-beer-hex ng-repeat="(beerId,beer) in beersDB"></sb-beer-hex>
+				<sb-beer-hex ng-repeat="(beerId,beer) in beersDB | orderObjectBy:'order'"></sb-beer-hex>
 			</ul>
 			<div class="clearfix"></div>
 		</div>
@@ -64,14 +64,14 @@
 			<div class="upcoming-events col-sm-3">
 				<h3>Upcoming Events</h3>
 				<div class="alert alert-info" ng-if="events === false">Loading events ... </div>
-				<sb-fb-event ng-repeat="event in events"></sb-fb-event>
+				<sb-fb-event ng-repeat="event in events | future | reverse | limitTo:5"></sb-fb-event>
 				<a class="btn btn-primary btn-more-events" title="View events on our FB page" href="https://www.facebook.com/thesistersbrewery/events" target="_blank">View More Events</a>
 			</div>
 			<div class="posts col-sm-8 offset-sm-1">
 				<h3>Recent News</h3>
 				<div class="alert alert-info" ng-if="posts === false">Loading posts ... </div>
 				<div class="card-columns">
-					<sb-fb-post ng-repeat="post in posts"></sb-fb-post>
+					<sb-fb-post ng-repeat="post in posts | limitTo:10"></sb-fb-post>
 				</div>
 
 

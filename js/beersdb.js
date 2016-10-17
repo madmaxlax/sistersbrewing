@@ -4,6 +4,7 @@
 var beersDB = {
     queenbee:{
         name:"Queen Bee",
+        urlName:'queenbee',
         shortDesc: "The Queen Bee is a delicious dry hopped IPA (7.7%) with a smooth citrus hoppy flavor.",
         longDesc: "Queen Bee is an India Pale Ale.\
 \
@@ -13,11 +14,13 @@ IPA is a very popular craft beer and a beer to enjoy quietly and slowly.",
         artist: "Kiana Girigorie",
         artistUrl:"http://instagram.com/kiana.girigorie",
         backgroundColor: '#e3b9b6',
-        labelImageUrl: 'imgs/queenbee.jpg',
+        labelImageUrl: './imgs/wide-label-queenbee.jpg',
         untappdId:'1232681',
+        order: 1 
     },
     drone:{
         name:"Drone",
+        urlName:'drone',
         shortDesc: "The Drone, our fantastic Porter (5.8%) has aromas of roasted malt, chocolate, caramel and coffee.",
         longDesc: 'Drone is a Porter.\
 \
@@ -25,11 +28,13 @@ Porter is a type of dark beer, coming from London, it was first made during the 
         artist: "Kiana Girigorie",
         artistUrl:"http://instagram.com/kiana.girigorie",
         backgroundColor: '#2ab8e8',
-        labelImageUrl: 'imgs/drone.jpg',
+        labelImageUrl: './imgs/wide-labeldrone.jpg',
         untappdId:'1234842',
+        order: 2
     },
     honeyblonde:{
         name:"Honey Blonde",
+        urlName:'honeyblonde',
         shortDesc: "ANice blonde beer, the Honey (7.9%) with notes of lemon, orange and star anise",
         longDesc: "Honey is a Blonde.\
 \
@@ -37,11 +42,13 @@ A Blonde is a beer with a golden yellow colour. Basically is a Blonde beer a bee
         artist: "Luna Bongers",
         artistUrl:"http://instagram.com/Luna Bongers",
         backgroundColor: '#f1f0ed',
-        labelImageUrl: 'imgs/honeyblonde.jpg',
+        labelImageUrl: './imgs/wide-label-honey.jpg',
         untappdId:'1372507',
+        order: 3
     },
     worker:{
         name:"Worker",
+        urlName:'worker',
         shortDesc: "Our tasty Imperial Saison, the Worker (9.4%), prickly sweet, over-ripe peaches, dates, stone fruit and the rye is very apparent and gives the beer a spicy floral taste.",
         longDesc: "Worker is an Imperial Saison.\
 \
@@ -49,71 +56,84 @@ Saison is a Belgian type of beer (beer style) of top fermentation with an alcoho
         artist: "Kiana Girigorie",
         artistUrl:"http://instagram.com/kiana.girigorie",
         backgroundColor: '#c0bbdc',
-        labelImageUrl: 'imgs/worker.jpg',
+        labelImageUrl: './imgs/wide-label-worker.jpg',
         untappdId:'1372512',
+        order: 4
     },
     smoker:{
         name:"Smoker",
+        urlName:'smoker',
         shortDesc: "Smoker (5,4%), a subtle Rauchbier. Very clean smokiness with pleasant sweetness and complex flavours of the malt.",
         longDesc: "",
         artist: "Bernadette Leijdekkers",
         artistUrl:"http://www.leijdekkers.nl/",
         backgroundColor: '#31a2af',
-        labelImageUrl: 'imgs/worker.jpg',
+        labelImageUrl: './imgs/wide-label-smoker.jpg',
         untappdId:'1549422',
+        order: 5
     },
     hive:{
         new:true,
         name:"Hive",
+        urlName:'hive',
         shortDesc: "New beer!",
         longDesc: "",
         artist: "Bernadette Leijdekkers",
         artistUrl:"http://www.leijdekkers.nl/",
         backgroundColor: '#d55f2a',
-        labelImageUrl: 'imgs/worker.jpg',
+        labelImageUrl: './imgs/wide-label-hive.jpg',
         untappdId:'1572399',
+        order: 6
     },
     drone2:{
         name:"Drone²",
+        urlName:'drone2',
         shortDesc: "Drone² (8,5%), an Imperial version of the Drone. We increased the ingredients to get more aromas of roasted malt, chocolate, caramel and coffee!!!",
         longDesc: "",
         artist: "Kiana Girigorie",
         artistUrl:"http://instagram.com/kiana.girigorie",
         backgroundColor: '#339cd7',
-        labelImageUrl: 'imgs/drone2.jpg',
+        labelImageUrl: './imgs/wide-label-drone2.jpg',
         untappdId:'1549431',
+        order: 7
     },
     nectar:{
         name:"Nectar",
+        urlName:'nectar',
         shortDesc: "Nectar (10,7%), our Barleywine has a nice balance of malt and bitterness. The hops and malt work very well together.",
         longDesc: "",
         artist: "Cristiaan Lieverse",
         artistUrl:"http://www.christiaanlieverse.com/",
         backgroundColor: '#99a1b6',
-        labelImageUrl: 'beer.jpg',
+        labelImageUrl: './imgs/wide-label-nectar.jpg',
         untappdId:'1549433',
+        order: 8
     },
     abelha:{
         name:"Abelha",
+        urlName:'abelha',
         new:true,
         shortDesc: "--",
         longDesc: "",
         artist: "  ",
         artistUrl:"",
         backgroundColor: '',
-        labelImageUrl: 'Abelha.jpg',
+        labelImageUrl: './imgs/Abelha.jpg',
         untappdId:'1635987',
+        order: 9
     },
     bzzz:{
         name:"Bzzz",
+        urlName:'bzzz',
         new:true,
         shortDesc: "--",
         longDesc: "",
         artist: "  ",
         artistUrl:"",
         backgroundColor: '',
-        labelImageUrl: 'bzzz.jpg',
+        labelImageUrl: './imgs/bzzz.jpg',
         untappdId:'1750801',
+        order: 10
     }
     /*,
     newbeer:{
