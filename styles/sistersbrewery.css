@@ -5171,15 +5171,20 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Old Standard TT", serif;
   margin-top: 1rem; }
 
+div.main-content {
+  padding: 125px; }
+
 p {
   font-size: 14px; }
 
-.header.navbar .logo {
-  height: 100px; }
-.header.navbar .navbar-nav {
-  margin-top: 27px; }
-.header.navbar .navbar-nav .nav-item + .nav-item {
-  margin-left: 2rem; }
+.header.navbar {
+  background-color: #fff; }
+  .header.navbar .logo {
+    height: 100px; }
+  .header.navbar .navbar-nav {
+    margin-top: 27px; }
+  .header.navbar .navbar-nav .nav-item + .nav-item {
+    margin-left: 2rem; }
 
 .secondary-color {
   color: #0c8fb9; }
@@ -5217,7 +5222,7 @@ p {
     height: calc(100% - 2rem - 20px);
     width: 2px;
     background-color: #DAD3C7; }
-  @media (max-width: 544px) {
+  @media (max-width: 543px) {
     .news-and-events-section .vertical-line {
       display: none; } }
 

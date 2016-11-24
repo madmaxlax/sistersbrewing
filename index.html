@@ -16,7 +16,7 @@
 
 <body data-spy="scroll" data-target="#navscrollspy" data-offset="200" ng-cloak="" ng-controller="appController as ctrlr">
 	<div class="container-fluid main-content">
-		<div class="header navbar">
+		<div class="header navbar navbar-fixed-top">
 			<a class="navbar-brand" href="#">
 				<img class="logo" src="imgs/logo.png">
 			</a>
@@ -25,11 +25,11 @@
     		&#9776;
 			</button>
 				<div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
-					<ul class="nav navbar-nav hidden-sm-down" ng-if="eventresults.length > 0 ">
+<!-- 					<ul class="nav navbar-nav hidden-sm-down" ng-if="eventresults.length > 0 ">
 						<li class="nav-item">
 							<a class="nav-link" href="https://www.facebook.com/events/{{eventresults[0].id}}">Next Event: <strong>{{eventresults[0].name}}</strong> ({{eventresults[0].start_time | date: 'EEE MMM d'}})</a>
 						</li>
-					</ul>
+					</ul> -->
 					<ul class="nav navbar-nav pull-xs-right">
 						<li class="nav-item">
 							<a class="nav-link" href="#Beers">Beers</a>
@@ -42,6 +42,9 @@
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#about">Our Story</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="sistersbrewerymerch.com" target="_blank">Merch <i class="fa fa-external-link-square"></i></a>
 						</li>
 					</ul>
 				</div>

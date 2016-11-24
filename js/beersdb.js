@@ -13,7 +13,7 @@ India Pale Ale, abbreviated IPA is a style of beer within the category of Pale A
 IPA is a very popular craft beer and a beer to enjoy quietly and slowly.",
         artist: "Kiana Girigorie",
         artistUrl:"http://instagram.com/kiana.girigorie",
-        backgroundColor: '#e3b9b6',
+        backgroundColor: '#edefed',
         labelImageUrl: './imgs/wide-label-queenbee.jpg',
         untappdId:'1232681',
         order: 1 
@@ -80,7 +80,7 @@ Saison is a Belgian type of beer (beer style) of top fermentation with an alcoho
         longDesc: "",
         artist: "Bernadette Leijdekkers",
         artistUrl:"http://www.leijdekkers.nl/",
-        backgroundColor: '#d55f2a',
+        backgroundColor: '#c3dbe4',
         labelImageUrl: './imgs/wide-label-hive.jpg',
         untappdId:'1572399',
         order: 6

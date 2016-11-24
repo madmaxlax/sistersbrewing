@@ -40,7 +40,9 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $header-font;
   margin-top: 1rem;
 }
-
+div.main-content{
+  padding: 125px
+}
 p {
   font-size: 14px;
 }
@@ -55,6 +57,7 @@ p {
   .navbar-nav .nav-item + .nav-item {
     margin-left: 2rem;
   }
+  background-color:$sb-main-background-color;
 }
 
 .secondary-color{
@@ -100,7 +103,7 @@ p {
     width: 2px;
     background-color: #DAD3C7;
   }
-  @media (max-width: 544px) {
+  @include media-breakpoint-down(xs) {
     .vertical-line {
       display: none;
     }
