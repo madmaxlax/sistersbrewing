@@ -26,7 +26,7 @@ var brewery = false;
 }(document, 'script', 'facebook-jssdk'));
 
 (function() {
-  var app = angular.module('SistersBrewApp', ['ngAnimate', 'ngRoute', 'ngResource']);
+  var app = angular.module('SistersBrewApp', ['ngAnimate', 'ngRoute', 'ngResource', 'ngMap']);
   angular.module('SistersBrewApp').filter('future', function() {
     return function(items) {
       var filtered = [];
@@ -226,6 +226,17 @@ var brewery = false;
     };
   });
 
+  angular.module('SistersBrewApp').directive('sbBeersMap', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'js/directives/beersmap.html',
+      link: function(scope, element, attrs, NgMap) {
+        scope.mapMarkers = [];
+        
+      }
+    };
+  });
+  
   angular.module('SistersBrewApp').directive('sbFbEvent', function() {
     return {
       restrict: 'E',
