@@ -7,6 +7,13 @@ $hex-spacing-between: 12px; //actual spacing between jagged
 $hex-spacing: $hex-paacing-base + $hex-spacing-between;
 $hex-jagged-spacing:100px;
 
+
+
+.test-hexes img {
+  height: 200px;
+}
+
+
 .beer-hexes
 {
   max-width:100%;

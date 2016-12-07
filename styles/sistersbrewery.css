@@ -4956,10 +4956,10 @@ a.text-danger:focus, a.text-danger:hover {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
   margin-left: 3px;
   text-align: left; }
-  .card .card-image {
-    /* TEMPORARY */ }
-    .card .card-image img {
-      width: 100%; }
+  .card .card-image img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover; }
   .card .card-body {
     padding: 10px; }
     .card .card-body .card-title {
@@ -5006,6 +5006,9 @@ a.text-danger:focus, a.text-danger:hover {
   .card-columns {
     column-count: 2;
     column-gap: 1.25rem; } }
+.test-hexes img {
+  height: 200px; }
+
 .beer-hexes {
   max-width: 100%;
   overflow-x: scroll;
@@ -5178,6 +5181,7 @@ p {
   font-size: 14px; }
 
 .header.navbar {
+  /*box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.08);*/
   background-color: #fff; }
   .header.navbar .logo {
     height: 100px; }
