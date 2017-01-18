@@ -109,19 +109,19 @@ Saison is a Belgian type of beer (beer style) of top fermentation with an alcoho
         untappdId:'1549433',
         order: 8
     },
-    abelha:{
-        name:"Abelha",
-        urlName:'abelha',
-        new:true,
-        shortDesc: "--",
-        longDesc: "",
-        artist: "  ",
-        artistUrl:"",
-        backgroundColor: '',
-        labelImageUrl: './imgs/Abelha.jpg',
-        untappdId:'1635987',
-        order: 9
-    },
+    // abelha:{
+    //     name:"Abelha",
+    //     urlName:'abelha',
+    //     new:true,
+    //     shortDesc: "--",
+    //     longDesc: "",
+    //     artist: "  ",
+    //     artistUrl:"",
+    //     backgroundColor: '',
+    //     labelImageUrl: './imgs/Abelha.jpg',
+    //     untappdId:'1635987',
+    //     order: 9
+    // },
     bzzz:{
         name:"Bzzz",
         urlName:'bzzz',
