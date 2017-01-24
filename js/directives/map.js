@@ -143,12 +143,19 @@ var map;
                         var marker = new google.maps.Marker({
                             position: { lat: beerSpot['Latitude'], lng: beerSpot['Longitude'] },
                             map: map,
-                            title: beerSpot['Name']
+                            title: beerSpot['Name'],
+                            icon: "./imgs/beericon30x30.png"
+                            // icon: {
+                            //     url: "imgs/beericon.png",
+                            //     size: new google.maps.Size(20, 32),
+                            //     origin: new google.maps.Point(0, 0),
+                            //     anchor: new google.maps.Point(0, 32)
+                            // }
                         });
 
                         //set up the info window 
                         var infoWindow = new google.maps.InfoWindow({
-                            content: '<h1>' + beerSpot['Name'] + '</h1>' +
+                            content: '<h4>' + beerSpot['Name'] + '</h4>' +
                             '<br /> ' + beerSpot['Full Address'] +
                             '<br /> <a href="https://maps.google.com/?f=d&daddr=' + encodeURIComponent(beerSpot['Name'] + ',' + beerSpot['Full Address']) + '" target="_blank">Get Directions </a>'
                         });
