@@ -1,10 +1,5 @@
-.news-and-events-section {
-  padding: 20px;
-  background-color: $sb-alt-background;
-}
 
 .card {
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
   margin-left: 3px;
   text-align: left;
   .card-image {
@@ -68,13 +63,13 @@
 
 @include media-breakpoint-up(xl) {
   .card-columns {
-    column-count: 3;
+    column-count: 4;
     /*column-gap: $card-columns-lg-up-column-gap;*/
   }
 }
 @include media-breakpoint-up(sm) {
   .card-columns {
-    column-count: 2;
+    column-count: 3;
     column-gap: $card-columns-sm-up-column-gap;
   }
 }

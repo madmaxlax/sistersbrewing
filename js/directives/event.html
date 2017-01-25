@@ -1,4 +1,4 @@
-<div class="event card">
+<div class="col-sm-4 col-xs-12"><div class="event card">
 	<div class="event-date">
 		{{event.start_time | date}}
 	</div>
@@ -15,6 +15,7 @@
 		<div class="card-subheader">{{event.start_time | date}} | {{event.place.location.city}} {{event.place.location.country}}</div>
 		<div class="card-text">{{event.description | limitTo:200}}... <a href="https://www.facebook.com/events/{{event.id}}" target="_blank">View event</a></div>
 	</div>
+</div>
 </div>
 
 <!-- MAXWELL -->

@@ -40,6 +40,12 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $header-font;
   margin-top: 1rem;
 }
+h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 2.75em;
+  text-align: center;
+}
 div.main-content{
   padding-top: 125px
 }
@@ -81,6 +87,10 @@ p {
   text-align: center;
   min-width: 90%;
   margin: 30px auto 70px;
+  font-size: 16px;
+  .logo-text {
+    font-size: 3em;
+  }
 }
 
 .section {
@@ -92,22 +102,10 @@ p {
   height: 100%;
   position: relative;
   text-align: center;
-  h3 {
-    text-align: left;
-  }
-  .vertical-line {
-    position: absolute;
-    height: 100%;
-    left: 30%;
-    top: 2rem;
-    height: calc(100% - 2rem - 20px);
-    width: 2px;
-    background-color: #DAD3C7;
-  }
-  @include media-breakpoint-down(xs) {
-    .vertical-line {
-      display: none;
-    }
+  padding: 20px;
+  background-color: $sb-alt-background;
+  .news-section {
+    margin-top: 40px;
   }
 }
 
@@ -149,7 +147,6 @@ p {
 
 .about-us-section {
   .photo img {
-    margin-top: 1rem;
     width: 100%;
   }
 }
