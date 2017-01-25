@@ -4,7 +4,7 @@
       <img ng-src="{{beersDB[routeSelectedBeer].labelImageUrl}}" height="200px" alt="beer label" class="beer-detail-label">
     </div>
     <div class="col-sm-8">
-      <h1>{{beersDB[routeSelectedBeer].name}} <sup>{{beersDB[routeSelectedBeer].new?"New!":""}}</sup></h1>
+      <h2>{{beersDB[routeSelectedBeer].name}} <sup>{{beersDB[routeSelectedBeer].new?"New!":""}}</sup></h2>
       <p>
         Untappd: Ratings: {{brewery.beersById[beersDB[routeSelectedBeer].untappdId].rating_count}} Avg Rating: {{brewery.beersById[beersDB[routeSelectedBeer].untappdId].rating_score}} <i class="fa fa-star"></i>
         <br>

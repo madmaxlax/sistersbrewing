@@ -7,20 +7,20 @@ $hex-spacing-between: 12px; //actual spacing between jagged
 $hex-spacing: $hex-paacing-base + $hex-spacing-between;
 $hex-jagged-spacing:100px;
 
-.test-hexes {
+.hexs-container {
   margin: auto;
   font-size: 0;
-  margin-top: 50px;
-}
-.test-hexes img {
-  width: auto;
-  margin-left: -3%;
-}
-.test-hexes img:nth-child(odd) {
-  margin-top: 0 !important;
-}
-.test-hexes img:first-child {
-  margin-left: 0;
+  a {
+    &:first-child img {
+      margin-left: 0;
+    }
+    img {
+      width: auto;
+      margin-left: -3%;
+    }
+  }
+
+
 }
 
 .beer-hexes

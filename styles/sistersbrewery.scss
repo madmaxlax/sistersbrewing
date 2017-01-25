@@ -55,6 +55,11 @@ div.main-content{
 p {
   font-size: 14px;
 }
+.subtitle {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 20px;
+}
 
 .header.navbar {
   /*box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.08);*/
@@ -89,30 +94,25 @@ p {
 .header-text{
   text-align: center;
   min-width: 90%;
-  margin: 30px auto 70px;
+  margin: 30px auto 0;
   p {
     font-size: 18px;
   }
 }
 
 .section {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 25px;
+  padding-bottom: 25px;
 }
 
 .beer-section {
-  .subtitle {
-    font-size: 16px;
-    text-align: center;
-  }
+
 }
 
 .news-and-events-section {
   height: 100%;
   position: relative;
   text-align: center;
-  padding: 20px;
-  margin-top:-50px;//fix awkward white area betweeen find beers and events
   background-color: $sb-alt-background;
   .news-section {
     margin-top: 40px;

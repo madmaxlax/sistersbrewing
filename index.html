@@ -50,49 +50,56 @@
 				</div>
 			</div>
 		</div>
-		<div class="header-text">
+		<div class="header-text col-xs-12">
 			<h1 class="logo-text">The Sisters Brewery</h1>
 			<p>We are Annamijn and Josefine Beijeman. <br/> Two sisters brewing craft beer with our father Wilfran.<br/> Besides making
 				delicious craft beer we create an artwork of every beer produced. </p>
 		</div>
 
-		<div class="beer-section section">
-			<h2>Beers</h2>
-			<p class="subtitle"> Click on a beer below to find out more about it </p>
-			<div class="test-hexes">
-				<a class="" ng-href="#/beers/drone"><img src="imgs/cheating/drone.png"></img>
-				</a>
-				<a class="" ng-href="#/beers/queenbee"><img src="imgs/cheating/queen-bee.png"></img>
-				</a>
-				<a class="" ng-href="#/beers/honeyblonde"><img src="imgs/cheating/honey.png"></img>
-				</a>
-				<a class="" ng-href="#/beers/worker"><img src="imgs/cheating/worker.png"></img>
-				</a>
-				<a class="" ng-href="#/beers/smoker"><img src="imgs/cheating/smoker.png"></img>
-				</a>
-				<a class="" ng-href="#/beers/hive"><img src="imgs/cheating/hive.png"></img>
-				</a>
-				<a class="" ng-href="#/beers/drone2"><img src="imgs/cheating/drone2.png"></img>
-				</a>
-				<a class="" ng-href="#/beers/nectar"><img src="imgs/cheating/nectar.png"></img></a>
-			</div>
+		<div class="beer-section section col-xs-12">
+      <h2> Beers </h2>
+      <div class="hexs-container" ng-style="{'background-color':beersDB[routeSelectedBeer].backgroundColor}">
+        <a class="" ng-href="#/beers/drone">
+          <img src="imgs/cheating/drone.png"></img>
+        </a>
+        <a class="" ng-href="#/beers/queenbee">
+          <img src="imgs/cheating/queen-bee.png"></img>
+        </a>
+        <a class="" ng-href="#/beers/honeyblonde">
+          <img src="imgs/cheating/honey.png"></img>
+        </a>
+        <a class="" ng-href="#/beers/worker">
+          <img src="imgs/cheating/worker.png"></img>
+        </a>
+        <a class="" ng-href="#/beers/smoker">
+          <img src="imgs/cheating/smoker.png"></img>
+        </a>
+        <a class="" ng-href="#/beers/hive">
+          <img src="imgs/cheating/hive.png"></img>
+        </a>
+        <a class="" ng-href="#/beers/drone2">
+          <img src="imgs/cheating/drone2.png"></img>
+        </a>
+        <a class="" ng-href="#/beers/nectar">
+          <img src="imgs/cheating/nectar.png"></img></a>
+      </div>
+      <div class="angular-view-section" ng-view="">
+        <!-- beers~! -->
+      </div>
 		</div>
 
-		<div class="beer-hexes" id="Beers">
+		<div class="beer-hexes" id="Beers" hidden>
 			<ul id="hexGrid">
 				<sb-beer-hex ng-repeat="(beerId,beer) in beersDB | orderObjectBy:'order'"></sb-beer-hex>
 			</ul>
 			<div class="clearfix"></div>
 		</div>
-		<div class="angular-view-section" ng-view="">
-			<!-- beers~! -->
-		</div>
 
-
-		<div class="find-us-section section" id="FindUs">
-			<h2>Find Our Beers!</h2>
+		<div class="find-us-section section col-xs-12" id="FindUs">
+			<h2>Find Our Beers</h2>
 			<sb-beers-map></sb-beers-map>
 		</div>
+
 		<div class="news-and-events-section section col-xs-12" id="News">
 			<div class="row">
 				<div class="upcoming-events col-sm-12">
@@ -206,12 +213,15 @@
 			var window_width = $(window).width();
 			var num_beers = 8;
 			var hex_width = (window_width / num_beers) + 25;
-			$('.test-hexes img ').css('width', hex_width);
-			$('.test-hexes img ').css('margin-top', hex_width - 33);
+
+			$('.hexs-container img ').css('width', hex_width);
+			$('.hexs-container img').css('margin-top', (hex_width - 33)/2);
+      $('.hexs-container a:nth-child(odd) img').css('margin-top', -((hex_width - 33)/2));
 
 			var hex_container = (hex_width) * 8;
 			var margins = ((hex_container * 17) / 100);
-			$('.test-hexes').css('width', hex_container - margins);
+
+			$('.hexs-container').css('width', hex_container - margins);
 		}
 
 
