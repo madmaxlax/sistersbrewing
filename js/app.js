@@ -130,9 +130,10 @@ var brewery = false;
         controllerAs: 'FindUsCtrlr'
       })
       .when('/', {
-        templateUrl: 'pages/index.html',
-        controller: 'IndexController',
-        controllerAs: 'IndexCtrlr'
+        redirectTo: '/beers/drone'        
+        // templateUrl: 'pages/index.html',
+        // controller: 'IndexController',
+        // controllerAs: 'IndexCtrlr'
       })
       .otherwise({
         redirectTo: '/'
