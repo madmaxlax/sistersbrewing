@@ -95,7 +95,7 @@ var places;
 //make it global...also maybe make it an angular factory or service later
 var map;
 (function () {
-    angular.module('SistersBrewApp').factory('googleMapsService', function () {
+    angular.module('SistersBrewApp').factory('googleMapsService', ['facebookService', function (facebookService) {
         //var thisMapService = this;
         var serviceObj = {
             //the global map variable
@@ -1249,7 +1249,7 @@ var map;
                     //set up the info window 
                     var infoWindow = new google.maps.InfoWindow({
                         content: '<h4>' + eventLocation.name + '</h4>' +
-                        '<br /> ' + eventLocation.description +
+                        '<br /> ' + facebookService.textShorten(eventLocation.description, 300) +
                         '<br /> ' +
                         //'<a href="https://maps.google.com/?f=d&daddr=' + encodeURIComponent(eventLocation.name + ',' + eventLocation.place.location.street, + ' ' + eventLocation.place.location.city) + '" target="_blank">Get Directions</a> ' +
                         '<a href="https://www.facebook.com/events/' + eventLocation.id + '" target="_blank">View event in FB</a>'
@@ -1269,7 +1269,7 @@ var map;
                     });
                 });
             },
-            showInfoWindow: function ($event, infoWindow, marker) {
+            showInfoWindow: function (infoWindow, marker) {
                 if (serviceObj.prev_infoWindow) {
                     serviceObj.prev_infoWindow.close();
                 }
@@ -1277,14 +1277,11 @@ var map;
                 serviceObj.prev_infoWindow = infoWindow;
                 infoWindow.open(serviceObj.map, marker);
 
-                if ($event != null){
-                    $event.preventDefault();
-                }
             }
         };
 
         return serviceObj;
-    });
+    }]);
     angular.module('SistersBrewApp').directive('sbBeersMap', ['googleMapsService', function (googleMapsService) {
         return {
             restrict: 'E',
@@ -1296,14 +1293,14 @@ var map;
                     //eventually add way to get current location
                     googleMapsService.map = new google.maps.Map(document.getElementById('map'), {
                         center: { lat: 52.3665982, lng: 4.8851904 },//[52.3665982, 4.8851904]
-                        zoom: 10,
+                        zoom: 9,
                         styles: mapsStylesWhite,
                         scrollwheel: false,
                         draggable: false
                     });
 
                     googleMapsService.prev_infoWindow = false;
-                    //when map is clicked
+                    //when map is clicked, enable drag and 
                     google.maps.event.addListener(googleMapsService.map, "mousedown", function (event) {
                         this.setOptions({ scrollwheel: true, draggable: true });
 
@@ -1334,7 +1331,7 @@ var map;
                         var infoWindow = new google.maps.InfoWindow({
                             content: '<h4>' + beerSpot.Name + '</h4>' +
                             '<br /> ' + beerSpot['Full Address'] +
-                            '<br /> <a href="https://maps.google.com/?f=d&daddr=' + encodeURIComponent(beerSpot.Name + ',' + beerSpot['Full Address']) + '" target="_blank">Get Directions </a>'
+                            '<br /> <a href="https://maps.google.com/?f=d&daddr=' + encodeURIComponent(beerSpot.Name + ',' + beerSpot['Full Address']) + '" target="_blank">Get Directions <i class="fa fa-car"></i></a>'
                         });
 
                         //make the info window open when clicked 
