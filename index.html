@@ -25,7 +25,7 @@
     		&#9776;
 			</button>
 				<div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
-<!-- 					<ul class="nav navbar-nav hidden-sm-down" ng-if="eventresults.length > 0 ">
+					<!-- 					<ul class="nav navbar-nav hidden-sm-down" ng-if="eventresults.length > 0 ">
 						<li class="nav-item">
 							<a class="nav-link" href="https://www.facebook.com/events/{{eventresults[0].id}}">Next Event: <strong>{{eventresults[0].name}}</strong> ({{eventresults[0].start_time | date: 'EEE MMM d'}})</a>
 						</li>
@@ -52,23 +52,31 @@
 		</div>
 		<div class="header-text">
 			<h1 class="logo-text">The Sisters Brewery</h1>
-			<p>We are Annamijn and Josefine Beijeman. <br/> Two sisters brewing craft beer with our father Wilfran.<br/> Besides making delicious craft beer we create an artwork of every beer produced. </p>
+			<p>We are Annamijn and Josefine Beijeman. <br/> Two sisters brewing craft beer with our father Wilfran.<br/> Besides making
+				delicious craft beer we create an artwork of every beer produced. </p>
 		</div>
 
-    <div class="beer-section section">
-      <h2>Beers</h2>
-      <p class="subtitle"> Click on a beer below to find out more about it </p>
-<div class="test-hexes">
-<img src="imgs/cheating/drone.png"></img>
-<img src="imgs/cheating/queen-bee.png"></img>
-<img src="imgs/cheating/honey.png"></img>
-<img src="imgs/cheating/worker.png"></img>
-<img src="imgs/cheating/smoker.png"></img>
-<img src="imgs/cheating/hive.png"></img>
-<img src="imgs/cheating/drone2.png"></img>
-<img src="imgs/cheating/nectar.png"></img>
-</div>
-    </div>
+		<div class="beer-section section">
+			<h2>Beers</h2>
+			<p class="subtitle"> Click on a beer below to find out more about it </p>
+			<div class="test-hexes">
+				<a class="" ng-href="#/beers/drone"><img src="imgs/cheating/drone.png"></img>
+				</a>
+				<a class="" ng-href="#/beers/queenbee"><img src="imgs/cheating/queen-bee.png"></img>
+				</a>
+				<a class="" ng-href="#/beers/honeyblonde"><img src="imgs/cheating/honey.png"></img>
+				</a>
+				<a class="" ng-href="#/beers/worker"><img src="imgs/cheating/worker.png"></img>
+				</a>
+				<a class="" ng-href="#/beers/smoker"><img src="imgs/cheating/smoker.png"></img>
+				</a>
+				<a class="" ng-href="#/beers/hive"><img src="imgs/cheating/hive.png"></img>
+				</a>
+				<a class="" ng-href="#/beers/drone2"><img src="imgs/cheating/drone2.png"></img>
+				</a>
+				<a class="" ng-href="#/beers/nectar"><img src="imgs/cheating/nectar.png"></img></a>
+			</div>
+		</div>
 
 		<div class="beer-hexes" id="Beers">
 			<ul id="hexGrid">
@@ -77,7 +85,7 @@
 			<div class="clearfix"></div>
 		</div>
 		<div class="angular-view-section" ng-view="">
-		<!-- beers~! -->
+			<!-- beers~! -->
 		</div>
 
 
@@ -93,7 +101,8 @@
 						<div class="alert alert-info" ng-if="googleMapsService.events === false">Loading events ... </div>
 						<sb-fb-event ng-repeat="event in googleMapsService.events | reverse | limitTo:3"></sb-fb-event>
 					</div>
-					<a class="btn btn-primary btn-more-events" title="View events on our FB page" href="https://www.facebook.com/thesistersbrewery/events" target="_blank">View more events</a>
+					<a class="btn btn-primary btn-more-events" title="View events on our FB page" href="https://www.facebook.com/thesistersbrewery/events"
+						target="_blank">View more events</a>
 				</div>
 
 				<div class="news-section col-sm-12">
@@ -102,32 +111,45 @@
 					<div class="card-columns">
 						<sb-fb-post ng-repeat="post in posts | limitTo:9"></sb-fb-post>
 					</div>
-					<a class="btn btn-primary btn-more-posts" title="View events on our FB page" href="https://www.facebook.com/thesistersbrewery/" target="_blank">Read more news</a>
+					<a class="btn btn-primary btn-more-posts" title="View events on our FB page" href="https://www.facebook.com/thesistersbrewery/"
+						target="_blank">Read more news</a>
 				</div>
 			</div>
 		</div>
 
-    <div class="about-us-section section col-xs-12" id="about">
-    	<div class="row">
-        <h2>Our Story</h2>
-        <div class="col-sm-5 col-xs-12 photo">
-          <div class="col-sm-12">
-            <img src="imgs/about-us.jpg">
-          </div>
-        </div>
-        <div class="col-sm-7 col-xs-12 description">
-          <p>
-            We, as The Sisters Brewery, are a team of two sisters and our father; Annamijn, Josefien and Wilfran Beijeman. Together we brew strong craft beer with a female touch to it. We noticed that in today's world, craft beers have started to be appreciated more, where the beer drinkers are no longer the stereotypical beer drinking man. Women are discovering the variety of craft beers. As The Sisters Brewery we want to give our beers a female touch for all the female craft beer drinkers as well. The female touch in our beers does not mean that our beers are exclusive for women; our beers are for men and women but with a focus on the female beer drinkers. The focus can be seen in different aspects of our beers from the packaging and design to the taste. During the development of our recipes most of the people tasting the beers were women. Furthermore you can find the female touch in our labels, designed by female artists. And not to forget two out of three in this family business are from the female gender ;)
-          </p>
-          <p>
-            As The Sisters Brewery we try to combine the old and the new, to create an authentic taste and atmosphere. The authenticity of our beers is not only evident in our recipes and flavours but can also be found in the labels and names of our beers. Each beer that The Sisters Brewery offers includes its own philosophy, story and high standards. With every beer we produce, our aim is to deliver a piece of art with a delicious and authentic taste and appearance.
-          </p>
-          <p>
-            The naming of our beers comes from our surname; Beijeman. It means Beekeeper. All the names of our beers has something to do with bees and beekeeping.
-          </p>
-        </div>
-      </div>
-    </div>
+		<div class="about-us-section section col-xs-12" id="about">
+			<div class="row">
+				<h2>Our Story</h2>
+				<div class="col-sm-5 col-xs-12 photo">
+					<div class="col-sm-12">
+						<img src="imgs/about-us.jpg">
+					</div>
+				</div>
+				<div class="col-sm-7 col-xs-12 description">
+					<p>
+						We, as The Sisters Brewery, are a team of two sisters and our father; Annamijn, Josefien and Wilfran Beijeman. Together we
+						brew strong craft beer with a female touch to it. We noticed that in today's world, craft beers have started to be
+						appreciated more, where the beer drinkers are no longer the stereotypical beer drinking man. Women are discovering
+						the variety of craft beers. As The Sisters Brewery we want to give our beers a female touch for all the female craft
+						beer drinkers as well. The female touch in our beers does not mean that our beers are exclusive for women; our beers
+						are for men and women but with a focus on the female beer drinkers. The focus can be seen in different aspects of our
+						beers from the packaging and design to the taste. During the development of our recipes most of the people tasting
+						the beers were women. Furthermore you can find the female touch in our labels, designed by female artists. And not
+						to forget two out of three in this family business are from the female gender ;)
+					</p>
+					<p>
+						As The Sisters Brewery we try to combine the old and the new, to create an authentic taste and atmosphere. The authenticity
+						of our beers is not only evident in our recipes and flavours but can also be found in the labels and names of our beers.
+						Each beer that The Sisters Brewery offers includes its own philosophy, story and high standards. With every beer we
+						produce, our aim is to deliver a piece of art with a delicious and authentic taste and appearance.
+					</p>
+					<p>
+						The naming of our beers comes from our surname; Beijeman. It means Beekeeper. All the names of our beers has something to
+						do with bees and beekeeping.
+					</p>
+				</div>
+			</div>
+		</div>
 
 
 
@@ -138,8 +160,8 @@
 				<div class="footer-logo">
 					<img class="logo" src="imgs/logo.png">
 				</div>
-      </div>
-      <div class="col-sm-5 col-xs-12">
+			</div>
+			<div class="col-sm-5 col-xs-12">
 				<div class="footer-contact-info">
 					<p><a href="mailto:info@thesistersbrewery.com">info@thesistersbrewery.com</a></p>
 					<p>+31 (6) 8123 42 21</p>
@@ -153,7 +175,7 @@
 					<a href="facebook.com" class="social-button facebook" target="_blank" title="Sisters Brewery on Facebook"><i class="fa fa-facebook"></i></a>
 					<a href="spotify.com" class="social-button spotify" target="_blank" title="Sisters Brewery on Spotify"><i class="fa fa-spotify"></i></a>
 				</div>
-        <!-- FOR NOW
+				<!-- FOR NOW
 				<div class="footer-byline">
 					<p class="col-xs-6">Site by Max & Flex</p>
 					<div class="col-xs-6 footer-link"><a class="" href="http://madmaxlax.com">madmaxlax.com</a></div>
@@ -175,27 +197,27 @@
 	<script src="./js/app.js"></script>
 	<script src="./js/directives/map.js"></script>
 	<!--<script src="./js/ng-map.min.js"></script>-->
-  <script>
-    $(document).ready(hexWidth);
-    $(window).on('resize',hexWidth);
+	<script>
+		$(document).ready(hexWidth);
+		$(window).on('resize', hexWidth);
 
 
-    function hexWidth() {
-      var window_width= $( window ).width();
-      var num_beers= 8;
-      var hex_width= (window_width/num_beers) + 25;
-      $('.test-hexes img ').css('width',hex_width);
-      $('.test-hexes img ').css('margin-top',hex_width-33);
+		function hexWidth() {
+			var window_width = $(window).width();
+			var num_beers = 8;
+			var hex_width = (window_width / num_beers) + 25;
+			$('.test-hexes img ').css('width', hex_width);
+			$('.test-hexes img ').css('margin-top', hex_width - 33);
 
-      var hex_container = (hex_width)*8;
-      var margins= ((hex_container*17)/100);
-      $('.test-hexes').css('width',hex_container-margins);
-    }
-
-
+			var hex_container = (hex_width) * 8;
+			var margins = ((hex_container * 17) / 100);
+			$('.test-hexes').css('width', hex_container - margins);
+		}
 
 
-  </script>
+
+
+	</script>
 
 
 </body>
