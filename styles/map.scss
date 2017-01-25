@@ -1,4 +1,18 @@
-#findmap #map {
-    height: 300px;
-    width: 100%;
+.find-us-section{
+    // display: none;
+}
+#findmap{
+    
+    #map {
+        height: 300px;
+        // display: none;
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+        * {
+            -webkit-box-sizing: inherit;
+            -moz-box-sizing: inherit;
+            box-sizing: inherit;
+        }
+    }
 }

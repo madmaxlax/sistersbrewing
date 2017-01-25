@@ -120,7 +120,7 @@ var map;
                     map = new google.maps.Map(document.getElementById('map'), {
                         center: { lat: 52.3665982, lng: 4.8851904 },//[52.3665982, 4.8851904]
                         zoom: 13,
-                        styles: mapStyles,
+                        //styles: mapStyles,
                         scrollwheel: false,
                         draggable: false
                     });
