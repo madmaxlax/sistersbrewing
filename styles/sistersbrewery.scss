@@ -103,6 +103,7 @@ p {
   position: relative;
   text-align: center;
   padding: 20px;
+  margin-top:-50px;//fix awkward white area betweeen find beers and events
   background-color: $sb-alt-background;
   .news-section {
     margin-top: 40px;

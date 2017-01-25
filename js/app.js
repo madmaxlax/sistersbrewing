@@ -178,7 +178,7 @@ var brewery = false;
     $scope.getFBEvents = function () {
       facebookService.FBCall("/thesistersbrewery/events?fields=cover,name,start_time,description,place&access_token=1007778489291152|u2Rs03TsG_yGoAxzC8ZUdpgEOwA")
         .then(function (response) {
-          console.log(response);
+          //console.log(response);
           //use the future filter only to show future events
           googleMapsService.events = futureFilter(response.data);
           googleMapsService.addEventsToMap();

@@ -95,8 +95,62 @@ var places;
 //make it global...also maybe make it an angular factory or service later
 var map;
 (function () {
-    angular.module('SistersBrewApp').factory('googleMapsService', ['facebookService', function (facebookService) {
+    angular.module('SistersBrewApp').factory('googleMapsService', ['facebookService', '$http', function (facebookService, $http) {
         //var thisMapService = this;
+
+        //function for radians conversion
+        var rad = function (x) { return x * Math.PI / 180; };
+        var tryLocWithIP = function () {
+            var url = "http://freegeoip.net/json/";
+
+            $http.get(url).
+                then(function (data, status, headers, config) {
+                    console.log(data);
+                    var position = { coords: data.data };
+                    geo_success(position);
+                }).catch(function (data, status, headers, config) {
+                    console.log("Error getting data " + status);
+                });
+        };
+
+        var wpid = false;
+        var currentLocMarker = false;
+        var geo_success = function (position) {
+            var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+            serviceObj.map.setCenter(pos);
+            findClosestMarker(position.coords.latitude, position.coords.longitude);
+        };
+        var geo_failure = function (error) {
+            console.log('No geo location possible');
+            console.log(error);
+            tryLocWithIP();
+        };
+        //math function for finding closest marker
+        var findClosestMarker = function (lat, lng) {
+            var R = 6371; // radius of earth in km
+            var distances = [];
+            var closest = -1;
+            for (i = 0; i < serviceObj.locationMarkers.length; i++) {
+                var mlat = serviceObj.locationMarkers[i].position.lat();
+                var mlng = serviceObj.locationMarkers[i].position.lng();
+                var dLat = rad(mlat - lat);
+                var dLong = rad(mlng - lng);
+                var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                    Math.cos(rad(lat)) * Math.cos(rad(lat)) * Math.sin(dLong / 2) * Math.sin(dLong / 2);
+                var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+                var d = R * c;
+                distances[i] = d;
+                if (closest == -1 || d < distances[closest]) {
+                    closest = i;
+                }
+            }
+            console.log(serviceObj.locationMarkers[closest]);
+            new google.maps.event.trigger(serviceObj.locationMarkers[closest], 'click');
+        };
+
         var serviceObj = {
             //the global map variable
             map: false,
@@ -1227,6 +1281,7 @@ var map;
             ],
             //var for the last-opened info window to be able to close it later
             prev_infoWindow: false,
+            locationMarkers: [],
             events: [],
             addEventsToMap: function () {
                 this.events.forEach(function (eventLocation) {
@@ -1249,7 +1304,7 @@ var map;
                     //set up the info window 
                     var infoWindow = new google.maps.InfoWindow({
                         content: '<h4>' + eventLocation.name + '</h4>' +
-                        '<br /> ' + facebookService.textShorten(eventLocation.description, 300) +
+                        '<br /> ' + facebookService.textShorten(eventLocation.description, 150) +
                         '<br /> ' +
                         //'<a href="https://maps.google.com/?f=d&daddr=' + encodeURIComponent(eventLocation.name + ',' + eventLocation.place.location.street, + ' ' + eventLocation.place.location.city) + '" target="_blank">Get Directions</a> ' +
                         '<a href="https://www.facebook.com/events/' + eventLocation.id + '" target="_blank">View event in FB</a>'
@@ -1276,7 +1331,52 @@ var map;
 
                 serviceObj.prev_infoWindow = infoWindow;
                 infoWindow.open(serviceObj.map, marker);
+            },
+            setUpFindNearest: function () {
+                // if (navigator && navigator.geolocation) {
+                //add button for current location and closest spot
+                var controlDiv = document.createElement('div');
+                // Set CSS for the control border.
+                var controlUI = document.createElement('div');
+                controlUI.style.backgroundColor = '#fff';
+                controlUI.style.border = '2px solid #fff';
+                controlUI.style.borderRadius = '3px';
+                controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
+                controlUI.style.cursor = 'pointer';
+                controlUI.style.marginBottom = '22px';
+                controlUI.style.textAlign = 'center';
+                controlUI.title = 'Click to find the closest beer to you!';
+                controlDiv.appendChild(controlUI);
 
+                // Set CSS for the control interior.
+                var controlText = document.createElement('div');
+                controlText.style.color = 'rgb(25,25,25)';
+                controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
+                controlText.style.fontSize = '16px';
+                controlText.style.lineHeight = '38px';
+                controlText.style.paddingLeft = '5px';
+                controlText.style.paddingRight = '5px';
+                controlText.innerHTML = 'Find Closest';
+                controlUI.appendChild(controlText);
+
+                // Setup the click event listeners: simply set the map to Chicago.
+                controlUI.addEventListener('click', function () {
+                    serviceObj.findNearest();
+                });
+                controlDiv.index = 1;
+                serviceObj.map.controls[google.maps.ControlPosition.TOP_CENTER].push(controlDiv);
+                // }
+                // else {
+                //     console.log("Finding location not possible in this browser");
+                // }
+            },
+            findNearest: function () {
+                if (navigator && navigator.geolocation) {
+                    wpid = navigator.geolocation.getCurrentPosition(geo_success, geo_failure);
+                }
+                else {
+                    tryLocWithIP();
+                }
             }
         };
 
@@ -1301,7 +1401,7 @@ var map;
 
                     googleMapsService.prev_infoWindow = false;
                     //when map is clicked, enable drag and 
-                    google.maps.event.addListener(googleMapsService.map, "mousedown", function (event) {
+                    google.maps.event.addListener(googleMapsService.map, "click", function (event) {
                         this.setOptions({ scrollwheel: true, draggable: true });
 
                         //close any open infoWindows
@@ -1311,7 +1411,7 @@ var map;
                         }
                     });
 
-                    //add markers
+                    //add markers for beer locations
                     googleMapsService.sellerLocations.forEach(function (beerSpot) {
                         //set up the marker
                         var marker = new google.maps.Marker({
@@ -1326,7 +1426,7 @@ var map;
                             //     anchor: new google.maps.Point(0, 32)
                             // }
                         });
-
+                        googleMapsService.locationMarkers.push(marker);
                         //set up the info window 
                         var infoWindow = new google.maps.InfoWindow({
                             content: '<h4>' + beerSpot.Name + '</h4>' +
@@ -1346,8 +1446,12 @@ var map;
                         });
                     });
 
-                    //add events to map
+                    //add events to map (will attempt, if events have loaded)
                     googleMapsService.addEventsToMap();
+
+                    //function to set up the find nearest beer spot button
+                    googleMapsService.setUpFindNearest();
+
                 } else {
                     // alert the user
                     console.log("google not ready yet");
