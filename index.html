@@ -85,8 +85,8 @@
 			<div class="upcoming-events col-sm-12">
 				<h2>Upcoming Events</h2>
 				<div class="row">
-					<div class="alert alert-info" ng-if="events === false">Loading events ... </div>
-					<sb-fb-event ng-repeat="event in events | future | reverse | limitTo:3"></sb-fb-event>
+					<div class="alert alert-info" ng-if="googleMapsService.events === false">Loading events ... </div>
+					<sb-fb-event ng-repeat="event in googleMapsService.events | reverse | limitTo:3"></sb-fb-event>
 				</div>
 				<a class="btn btn-primary btn-more-events" title="View events on our FB page" href="https://www.facebook.com/thesistersbrewery/events" target="_blank">View more events</a>
 			</div>
