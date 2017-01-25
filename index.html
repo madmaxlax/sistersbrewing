@@ -55,17 +55,20 @@
 			<p>We are Annamijn and Josefine Beijeman. <br/> Two sisters brewing craft beer with our father Wilfran.<br/> Besides making delicious craft beer we create an artwork of every beer produced. </p>
 		</div>
 
-
-		<div class="test-hexes" hidden>
-			<img src="imgs/cheating/drone.png"></img>
-			<img src="imgs/cheating/drone2.png"></img>
-			<img src="imgs/cheating/hive.png"></img>
-			<img src="imgs/cheating/honey.png"></img>
-			<img src="imgs/cheating/nectar.png"></img>
-			<img src="imgs/cheating/queen-bee.png"></img>
-			<img src="imgs/cheating/smoker.png"></img>
-			<img src="imgs/cheating/worker.png"></img>
-		</div>
+    <div class="beer-section section">
+      <h2>Beers</h2>
+      <p class="subtitle"> Click on a beer below to find out more about it </p>
+<div class="test-hexes">
+<img src="imgs/cheating/drone.png"></img>
+<img src="imgs/cheating/queen-bee.png"></img>
+<img src="imgs/cheating/honey.png"></img>
+<img src="imgs/cheating/worker.png"></img>
+<img src="imgs/cheating/smoker.png"></img>
+<img src="imgs/cheating/hive.png"></img>
+<img src="imgs/cheating/drone2.png"></img>
+<img src="imgs/cheating/nectar.png"></img>
+</div>
+    </div>
 
 		<div class="beer-hexes" id="Beers">
 			<ul id="hexGrid">
@@ -76,6 +79,7 @@
 		<div class="angular-view-section" ng-view="">
 		<!-- beers~! -->
 		</div>
+
 
 		<div class="find-us-section section" id="FindUs">
 			<h2>Find Our Beers!</h2>
@@ -171,6 +175,27 @@
 	<script src="./js/app.js"></script>
 	<script src="./js/directives/map.js"></script>
 	<!--<script src="./js/ng-map.min.js"></script>-->
+  <script>
+    $(document).ready(hexWidth);
+    $(window).on('resize',hexWidth);
+
+
+    function hexWidth() {
+      var window_width= $( window ).width();
+      var num_beers= 8;
+      var hex_width= (window_width/num_beers) + 25;
+      $('.test-hexes img ').css('width',hex_width);
+      $('.test-hexes img ').css('margin-top',hex_width-33);
+
+      var hex_container = (hex_width)*8;
+      var margins= ((hex_container*17)/100);
+      $('.test-hexes').css('width',hex_container-margins);
+    }
+
+
+
+
+  </script>
 
 
 </body>

@@ -40,6 +40,9 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $header-font;
   margin-top: 1rem;
 }
+h1 {
+  font-size: 3.5em;
+}
 h2 {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -87,15 +90,21 @@ p {
   text-align: center;
   min-width: 90%;
   margin: 30px auto 70px;
-  font-size: 16px;
-  .logo-text {
-    font-size: 3em;
+  p {
+    font-size: 18px;
   }
 }
 
 .section {
   margin-top: 50px;
   margin-bottom: 50px;
+}
+
+.beer-section {
+  .subtitle {
+    font-size: 16px;
+    text-align: center;
+  }
 }
 
 .news-and-events-section {
