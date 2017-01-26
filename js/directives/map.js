@@ -95,7 +95,7 @@ var places;
 //make it global...also maybe make it an angular factory or service later
 var map;
 (function () {
-    angular.module('SistersBrewApp').factory('googleMapsService', ['facebookService', '$http', function (facebookService, $http) {
+    angular.module('SistersBrewApp').factory('googleMapsService', ['facebookService', '$http', '$document', function (facebookService, $http, $document) {
         //var thisMapService = this;
 
         //function for radians conversion
@@ -1284,6 +1284,102 @@ var map;
             disableScrollingZoom: function () {
                 serviceObj.map.setOptions({ scrollwheel: false, draggable: false });
             },
+            mapsClickedOrFocused: false,
+            mapsClickedListener: false,
+            setupOutsideClickListener: function ($event) {
+                //console.log($event);
+                //console.log($event.target.firstChild.nodeName);
+
+                //clicked on something outside the map
+                if ($event.target.firstChild == null || $event.target.firstChild.nodeName.toLowerCase() !== "iframe") {
+                    //console.log("clicked outside of map");
+                    //disable scrolling on map
+                    serviceObj.disableScrollingZoom();
+                    //cancel the listener
+                    //$document.off('click', serviceObj.setupOutsideClickListener);
+
+                    serviceObj.mapsClickedOrFocused = false;
+                }
+            },
+            initiateMap: function () {
+                serviceObj.googleLoaded = true;
+                //create the map, center it on Amsterdam
+                //eventually add way to get current location
+                serviceObj.map = new google.maps.Map(document.getElementById('map'), {
+                    center: { lat: 52.3665982, lng: 4.8851904 },//[52.3665982, 4.8851904]
+                    zoom: 9,
+                    styles: mapsStylesWhite,
+                    scrollwheel: false,
+                    draggable: false
+                });
+
+                serviceObj.prev_infoWindow = false;
+                //when map is clicked, enable drag and 
+                google.maps.event.addListener(serviceObj.map, "click", function (event) {
+                    if (!serviceObj.mapsClickedOrFocused) {
+                        this.setOptions({ scrollwheel: true, draggable: true });
+
+                        //setup listeners for outside of map click
+                        //check for clicks anywhere
+                        mapsClickedListener = $document.on("click", serviceObj.setupOutsideClickListener);
+
+                        //mindful of cleanup
+                        $document.on('$destroy', function () {
+                            //$document.off('click', serviceObj.setupOutsideClickListener);
+                            mapsClickedListener();
+                        });
+
+                        //close any open infoWindows
+                        //disabled for now, sometimes annoying to lose the window
+                        // if (serviceObj.prev_infoWindow) {
+                        //     serviceObj.prev_infoWindow.close();
+                        //     serviceObj.prev_infoWindow = false;
+                        // }
+                        serviceObj.mapsClickedOrFocused = true;
+                    }
+                });
+
+                //add markers for beer locations
+                serviceObj.sellerLocations.forEach(function (beerSpot) {
+                    //set up the marker
+                    var marker = new google.maps.Marker({
+                        position: { lat: beerSpot.Latitude, lng: beerSpot.Longitude },
+                        map: serviceObj.map,
+                        title: beerSpot.Name,
+                        icon: "./imgs/beericon30x30.png"
+                        // icon: {
+                        //     url: "imgs/beericon.png",
+                        //     size: new google.maps.Size(20, 32),
+                        //     origin: new google.maps.Point(0, 0),
+                        //     anchor: new google.maps.Point(0, 32)
+                        // }
+                    });
+                    serviceObj.locationMarkers.push(marker);
+                    //set up the info window 
+                    var infoWindow = new google.maps.InfoWindow({
+                        content: '<h4>' + beerSpot.Name + '</h4>' +
+                        '<br /> ' + beerSpot['Full Address'] +
+                        '<br /> <a href="https://maps.google.com/?f=d&daddr=' + encodeURIComponent(beerSpot.Name + ',' + beerSpot['Full Address']) + '" target="_blank">Get Directions <i class="fa fa-car"></i></a>'
+                    });
+
+                    //make the info window open when clicked 
+                    //how to close?
+                    marker.addListener('click', function () {
+                        if (serviceObj.prev_infoWindow) {
+                            serviceObj.prev_infoWindow.close();
+                        }
+
+                        serviceObj.prev_infoWindow = infoWindow;
+                        infoWindow.open(serviceObj.map, marker);
+                    });
+                });
+
+                //add events to map (will attempt, if events have loaded)
+                serviceObj.addEventsToMap();
+
+                //function to set up the find nearest beer spot button
+                serviceObj.setUpFindNearest();
+            },
             //var for the last-opened info window to be able to close it later
             prev_infoWindow: false,
             locationMarkers: [],
@@ -1396,74 +1492,8 @@ var map;
                 var googleWatcher = false;
 
                 //function to set up map
-                var initiateMap = function () {
-                    scope.googleLoaded = true;
-                    //create the map, center it on Amsterdam
-                    //eventually add way to get current location
-                    googleMapsService.map = new google.maps.Map(document.getElementById('map'), {
-                        center: { lat: 52.3665982, lng: 4.8851904 },//[52.3665982, 4.8851904]
-                        zoom: 9,
-                        styles: mapsStylesWhite,
-                        scrollwheel: false,
-                        draggable: false
-                    });
-
-                    googleMapsService.prev_infoWindow = false;
-                    //when map is clicked, enable drag and 
-                    google.maps.event.addListener(googleMapsService.map, "click", function (event) {
-                        this.setOptions({ scrollwheel: true, draggable: true });
-
-                        //close any open infoWindows
-                        //disabled for now, sometimes annoying to lose the window
-                        // if (googleMapsService.prev_infoWindow) {
-                        //     googleMapsService.prev_infoWindow.close();
-                        //     googleMapsService.prev_infoWindow = false;
-                        // }
-                    });
-
-                    //add markers for beer locations
-                    googleMapsService.sellerLocations.forEach(function (beerSpot) {
-                        //set up the marker
-                        var marker = new google.maps.Marker({
-                            position: { lat: beerSpot.Latitude, lng: beerSpot.Longitude },
-                            map: googleMapsService.map,
-                            title: beerSpot.Name,
-                            icon: "./imgs/beericon30x30.png"
-                            // icon: {
-                            //     url: "imgs/beericon.png",
-                            //     size: new google.maps.Size(20, 32),
-                            //     origin: new google.maps.Point(0, 0),
-                            //     anchor: new google.maps.Point(0, 32)
-                            // }
-                        });
-                        googleMapsService.locationMarkers.push(marker);
-                        //set up the info window 
-                        var infoWindow = new google.maps.InfoWindow({
-                            content: '<h4>' + beerSpot.Name + '</h4>' +
-                            '<br /> ' + beerSpot['Full Address'] +
-                            '<br /> <a href="https://maps.google.com/?f=d&daddr=' + encodeURIComponent(beerSpot.Name + ',' + beerSpot['Full Address']) + '" target="_blank">Get Directions <i class="fa fa-car"></i></a>'
-                        });
-
-                        //make the info window open when clicked 
-                        //how to close?
-                        marker.addListener('click', function () {
-                            if (googleMapsService.prev_infoWindow) {
-                                googleMapsService.prev_infoWindow.close();
-                            }
-
-                            googleMapsService.prev_infoWindow = infoWindow;
-                            infoWindow.open(googleMapsService.map, marker);
-                        });
-                    });
-
-                    //add events to map (will attempt, if events have loaded)
-                    googleMapsService.addEventsToMap();
-
-                    //function to set up the find nearest beer spot button
-                    googleMapsService.setUpFindNearest();
-                };
                 if (typeof (google) != 'undefined' && google != null) {
-                    initiateMap();
+                    googleMapsService.initiateMap();
                 } else {
                     // alert the user
                     console.log("google not ready yet");
@@ -1475,19 +1505,15 @@ var map;
                             // FB API loaded, make calls
                             console.log("google is ready");
                             //set up map
-                            initiateMap();
+                            googleMapsService.initiateMap();
                             //close the watcher
                             googleWatcher();
                         }
                     });
-
                 }
-
             }
         };
     }]);
-
-
 })();
 
 places = [
