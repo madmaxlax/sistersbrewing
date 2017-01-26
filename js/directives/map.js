@@ -1281,7 +1281,7 @@ var map;
                     "Longitude": 5.2287678
                 }
             ],
-            disableScrollingZoom: function (){
+            disableScrollingZoom: function () {
                 serviceObj.map.setOptions({ scrollwheel: false, draggable: false });
             },
             //var for the last-opened info window to be able to close it later
@@ -1387,13 +1387,17 @@ var map;
 
         return serviceObj;
     }]);
-    angular.module('SistersBrewApp').directive('sbBeersMap', ['googleMapsService', function (googleMapsService) {
+    angular.module('SistersBrewApp').directive('sbBeersMap', ['googleMapsService', '$document', function (googleMapsService, $document) {
         return {
             restrict: 'E',
             templateUrl: 'js/directives/beersmap.html',
             link: function (scope, element, attrs) {
-                console.log("link");
-                if (typeof (google) != 'undefined' && google != null) {
+                //var that will hold the watcher for google api to load (if needed/google hasn't loaded yet, pretty rare as its quick)
+                var googleWatcher = false;
+
+                //function to set up map
+                var initiateMap = function () {
+                    scope.googleLoaded = true;
                     //create the map, center it on Amsterdam
                     //eventually add way to get current location
                     googleMapsService.map = new google.maps.Map(document.getElementById('map'), {
@@ -1457,10 +1461,26 @@ var map;
 
                     //function to set up the find nearest beer spot button
                     googleMapsService.setUpFindNearest();
-
+                };
+                if (typeof (google) != 'undefined' && google != null) {
+                    initiateMap();
                 } else {
                     // alert the user
                     console.log("google not ready yet");
+                    //set up a watch
+                    googleWatcher = $scope.$watch(function () {
+                        return $window.google;
+                    }, function (newVal, oldVal) {
+                        if (typeof (google) != 'undefined' && google != null) {
+                            // FB API loaded, make calls
+                            console.log("google is ready");
+                            //set up map
+                            initiateMap();
+                            //close the watcher
+                            googleWatcher();
+                        }
+                    });
+
                 }
 
             }

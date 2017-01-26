@@ -109,11 +109,15 @@ p {
 
 }
 
+.find-us-section{
+  padding:0; //I think the edge-to-edge look is good for the map
+}
 .news-and-events-section {
   height: 100%;
   position: relative;
   text-align: center;
   background-color: $sb-alt-background;
+  margin-top: 0px; //to ignore white space between map
   .news-section {
     margin-top: 40px;
   }
