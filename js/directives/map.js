@@ -120,7 +120,8 @@ var map;
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
             };
-            serviceObj.map.setCenter(pos);
+            serviceObj.map.setZoom(11);
+            serviceObj.map.panTo(pos);
             findClosestMarker(position.coords.latitude, position.coords.longitude);
         };
         var geo_failure = function (error) {
@@ -147,7 +148,8 @@ var map;
                     closest = i;
                 }
             }
-            console.log(serviceObj.locationMarkers[closest]);
+            //console.log(serviceObj.locationMarkers[closest]);
+            //zoom and open the closest marker
             new google.maps.event.trigger(serviceObj.locationMarkers[closest], 'click');
         };
 
@@ -1279,6 +1281,9 @@ var map;
                     "Longitude": 5.2287678
                 }
             ],
+            disableScrollingZoom: function (){
+                serviceObj.map.setOptions({ scrollwheel: false, draggable: false });
+            },
             //var for the last-opened info window to be able to close it later
             prev_infoWindow: false,
             locationMarkers: [],
@@ -1405,10 +1410,11 @@ var map;
                         this.setOptions({ scrollwheel: true, draggable: true });
 
                         //close any open infoWindows
-                        if (googleMapsService.prev_infoWindow) {
-                            googleMapsService.prev_infoWindow.close();
-                            googleMapsService.prev_infoWindow = false;
-                        }
+                        //disabled for now, sometimes annoying to lose the window
+                        // if (googleMapsService.prev_infoWindow) {
+                        //     googleMapsService.prev_infoWindow.close();
+                        //     googleMapsService.prev_infoWindow = false;
+                        // }
                     });
 
                     //add markers for beer locations
