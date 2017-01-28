@@ -152,7 +152,7 @@ var brewery = false;
     //make the beersDB available to the main scope
     $scope.beersDB = beersDB;
 
-    $scope.linkTo = function (eID) {
+    $scope.linkTo = function (eID, $event) {
       console.log(eID);
       //$location.url(id);
       // This scrolling function 
@@ -201,6 +201,7 @@ var brewery = false;
         } return y;
       }
       $event.stopPropagation();
+      $event.preventDefault();
     };
 
     $scope.posts = false;
@@ -263,7 +264,7 @@ var brewery = false;
         $scope.getFBPosts();
         $scope.FBListener();
         //refresh scrollspy
-        console.log("refreshing scroll");
+        //console.log("refreshing scroll");
         $('[data-spy="scroll"]').each(function () {
           var $spy = $(this).scrollspy('refresh')
         });
