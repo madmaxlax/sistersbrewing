@@ -10,18 +10,57 @@ $hex-jagged-spacing:100px;
 .hexs-container {
   margin: auto;
   font-size: 0;
+  display: inline-block;
   a {
-    &:first-child img {
-      margin-left: 0;
+    display:inline-block;
+    position: relative;
+    text-align: center;
+    font-family: $sb-logo-font;
+    color: #000;
+    &:first-child {
+      img {
+        margin-left: 0;
+      }
+      .beer-name {
+        left: 3vw;
+      }
+    }
+    &:nth-child(even) img {
+      margin-top: 5vw;
+      &:hover {
+
+      }
+    }
+    &:nth-child(odd) img {
+      margin-top: -5vw;
+      &:hover {
+
+      }
     }
     img {
-      width: auto;
-      margin-left: -3%;
+      width: 14vw;
+      margin-left: -3vw;
+      &:hover {
+        transition: all .2s ease-in-out;
+      }
+    }
+    .beer-name {
+      display: none;
+      font-size: 1.25rem;
+      position: absolute;
+      bottom: -25px;
+      left: 0;
+      width: 8vw;
+      border-bottom: 2px solid #000;
+    }
+    &:hover {
+      .beer-name {
+        display: inline;
+      }
     }
   }
-
-
 }
+
 
 .beer-hexes
 {

@@ -59,36 +59,44 @@
 		</div>
 
 		<div class="beer-section section col-xs-12" id="Beers">
-			<h2> Beers </h2>
-			<div class="hexs-container" ng-style="{'background-color':beersDB[routeSelectedBeer].backgroundColor}">
-				<a class="" ng-href="#/beers/drone">
-					<img src="imgs/cheating/drone.png"></img>
-				</a>
-				<a class="" ng-href="#/beers/queenbee">
-					<img src="imgs/cheating/queen-bee.png"></img>
-				</a>
-				<a class="" ng-href="#/beers/honeyblonde">
-					<img src="imgs/cheating/honey.png"></img>
-				</a>
-				<a class="" ng-href="#/beers/worker">
-					<img src="imgs/cheating/worker.png"></img>
-				</a>
-				<a class="" ng-href="#/beers/smoker">
-					<img src="imgs/cheating/smoker.png"></img>
-				</a>
-				<a class="" ng-href="#/beers/hive">
-					<img src="imgs/cheating/hive.png"></img>
-				</a>
-				<a class="" ng-href="#/beers/drone2">
-					<img src="imgs/cheating/drone2.png"></img>
-				</a>
-				<a class="" ng-href="#/beers/nectar">
-					<img src="imgs/cheating/nectar.png"></img>
-				</a>
-			</div>
-			<div class="angular-view-section" ng-view="">
-				<!-- beers~! -->
-			</div>
+      <h2> Beers </h2>
+      <div class="hexs-container" ng-style="{'background-color':beersDB[routeSelectedBeer].backgroundColor}">
+        <a class="" ng-href="#/beers/drone">
+          <img src="imgs/cheating/drone.png"></img>
+          <span class="beer-name"> Drone </span>
+        </a>
+        <a class="" ng-href="#/beers/queenbee">
+          <img src="imgs/cheating/queen-bee.png"></img>
+          <span class="beer-name"> Queen Bee </span>
+        </a>
+        <a class="" ng-href="#/beers/honeyblonde">
+          <img src="imgs/cheating/honey.png"></img>
+          <span class="beer-name"> Honey </span>
+        </a>
+        <a class="" ng-href="#/beers/worker">
+          <img src="imgs/cheating/worker.png"></img>
+          <span class="beer-name"> Worker </span>
+        </a>
+        <a class="" ng-href="#/beers/smoker">
+          <img src="imgs/cheating/smoker.png"></img>
+          <span class="beer-name"> Smoker </span>
+        </a>
+        <a class="" ng-href="#/beers/hive">
+          <img src="imgs/cheating/hive.png"></img>
+          <span class="beer-name"> Hive </span>
+        </a>
+        <a class="" ng-href="#/beers/drone2">
+          <img src="imgs/cheating/drone2.png"></img>
+          <span class="beer-name"> Drone2 </span>
+        </a>
+        <a class="" ng-href="#/beers/nectar">
+          <img src="imgs/cheating/nectar.png"></img>
+          <span class="beer-name"> Nectar </span>
+        </a>
+      </div>
+      <div class="angular-view-section beer-info" ng-view="">
+        <!-- beers~! -->
+      </div>
 		</div>
 
 		<div class="beer-hexes" id="Beers" hidden>
@@ -207,6 +215,7 @@
 	<script src="./js/beersdb.js"></script>
 	<script src="./js/app.js"></script>
 	<script src="./js/directives/map.js"></script>
+<<<<<<< Updated upstream
 	<script>
 		$(document).ready(hexWidth);
 		$(window).on('resize', hexWidth);
@@ -229,8 +238,10 @@
 
 
 
+=======
+	<!--<script src="./js/ng-map.min.js"></script>-->
+>>>>>>> Stashed changes
 
-	</script>
 
 
 </body>
