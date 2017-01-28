@@ -48,14 +48,13 @@ $hex-jagged-spacing:100px;
       display: none;
       font-size: 1.25rem;
       position: absolute;
-      bottom: -25px;
       left: 0;
       width: 8vw;
       border-bottom: 2px solid #000;
     }
     &:hover {
       .beer-name {
-        display: inline;
+        display: block;
       }
     }
   }
