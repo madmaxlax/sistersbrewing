@@ -281,7 +281,7 @@ var brewery = false;
     //if no beer selected, choose drone
     if ($routeParams.selectedbeer == null || $routeParams.selectedbeer === '') {
       //console.log('using default drone');
-      selectedbeer = "drone";
+      selectedbeer = "honeyblonde";
     }
     //console.log(selectedbeer);
     $scope.routeSelectedBeer = selectedbeer;
