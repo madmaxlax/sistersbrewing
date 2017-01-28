@@ -277,7 +277,7 @@ var brewery = false;
 
   angular.module('SistersBrewApp').controller('BeerController', function ($scope, $routeParams, $http) {
     var selectedbeer = $routeParams.selectedbeer;
-    console.log($routeParams);
+    //console.log($routeParams);
     //if no beer selected, choose drone
     if ($routeParams.selectedbeer == null || $routeParams.selectedbeer === '') {
       //console.log('using default drone');
