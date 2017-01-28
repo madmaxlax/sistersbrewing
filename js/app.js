@@ -216,38 +216,41 @@ var brewery = false;
     $http.get('https://api.untappd.com/v4/brewery/info/225097?client_id=43158D6116E0305CADB971CC65769720271E6D6A&client_secret=E1E244AD4D1699C1D3BE949A89EFE7B51E0BE0D5').
       then(function (data, status, headers, config) {
         //console.log(data);
-        brewery = data.data.response.brewery;
+        //brewery = data.data.response.brewery;
         $scope.brewery = data.data.response.brewery;
         //reformat array to access by beer ID
-        // $scope.brewery.beersById = data.data.response.brewery.beer_list.items.reduce(function (obj, item) {
+        $scope.brewery.beersById = data.data.response.brewery.beer_list.items.reduce(function (obj, item) {
+          obj[item.beer.bid.toString()] = item.beer;
+          return obj;
+        }, {});
+        angular.forEach($scope.brewery.beersById,function(beer, beerID){
+          $http.get('https://api.untappd.com/v4/beer/checkins/' + beerID + '?client_id=43158D6116E0305CADB971CC65769720271E6D6A&client_secret=E1E244AD4D1699C1D3BE949A89EFE7B51E0BE0D5').
+            then(function (data, status, headers, config) {
+              //add checkin info 
+              console.log(data);
+              $scope.brewery.beersById[beerID].checkinData = data.data.response.checkins;
+            }).catch(function (data, status, headers, config) {
+              console.log("Error getting check in data", data);
+            });
+        });
+        // brewery.beersById = data.data.response.brewery.beer_list.items.reduce(function (obj, item) {
         //   obj[item.beer.bid.toString()] = item.beer;
         //   $http.get('https://api.untappd.com/v4/beer/checkins/' + item.beer.bid.toString() + '?client_id=43158D6116E0305CADB971CC65769720271E6D6A&client_secret=E1E244AD4D1699C1D3BE949A89EFE7B51E0BE0D5').
         //     then(function (data, status, headers, config) {
         //       //add checkin info 
-        //       console.log(data);
+        //       //console.log(data);
         //       obj[item.beer.bid.toString()].checkinData = data.data.response.checkins;
         //     }).catch(function (data, status, headers, config) {
         //       console.log("Error getting check in ", data);
         //     });
         //   return obj;
         // }, {});
-        brewery.beersById = data.data.response.brewery.beer_list.items.reduce(function (obj, item) {
-          obj[item.beer.bid.toString()] = item.beer;
-          $http.get('https://api.untappd.com/v4/beer/checkins/' + item.beer.bid.toString() + '?client_id=43158D6116E0305CADB971CC65769720271E6D6A&client_secret=E1E244AD4D1699C1D3BE949A89EFE7B51E0BE0D5').
-            then(function (data, status, headers, config) {
-              //add checkin info 
-              console.log(data);
-              obj[item.beer.bid.toString()].checkinData = data.data.response.checkins;
-            }).catch(function (data, status, headers, config) {
-              console.log("Error getting check in ", data);
-            });
-          return obj;
-        }, {});
         //console.log($scope.brewery.beersById);
       }).catch(function (data, status, headers, config) {
         console.log("Error getting data ", data);
       });
-    //try fb call
+
+      
     //events
     $scope.getFBEvents = function () {
       facebookService.FBCall("/thesistersbrewery/events?fields=cover,name,start_time,description,place&access_token=1007778489291152|u2Rs03TsG_yGoAxzC8ZUdpgEOwA")

@@ -6,15 +6,19 @@
     <div class="col-sm-8">
       <h2>{{beersDB[routeSelectedBeer].name}} <sup>{{beersDB[routeSelectedBeer].new?"New!":""}}</sup></h2>
       <p>
-        Untappd: Ratings: {{brewery.beersById[beersDB[routeSelectedBeer].untappdId].rating_count}} Avg Rating: {{brewery.beersById[beersDB[routeSelectedBeer].untappdId].rating_score}} <i class="fa fa-star"></i>
-        <br>
-          <div ng-repeat="checkin in brewery.beersById[beersDB[routeSelectedBeer].untappdId].checkins.items">
-            {{checkin.user.user_name}} <img ng-src="checkin.media.items[0].photo.photo_img_md" alt="">
+        <div class="untappd-info">
+          Untappd: Ratings: {{brewery.beersById[beersDB[routeSelectedBeer].untappdId].rating_count}} Avg Rating: {{brewery.beersById[beersDB[routeSelectedBeer].untappdId].rating_score}}
+          <i class="fa fa-star"></i>
+          <br>
+          <div ng-repeat="checkin in brewery.beersById[beersDB[routeSelectedBeer].untappdId].checkinData.items">
+            {{checkin.user.user_name}} <img ng-src="{{checkin.media.items[0].photo.photo_img_md}}" alt="">
+            {{checkin.comments[0]}}
           </div>
+        </div>
         <br />
-        <a ng-href="https://untappd.com/b/{{brewery.beersById[beersDB[routeSelectedBeer].untappdId].beer_slug}}/{{brewery.beersById[beersDB[routeSelectedBeer].untappdId].bid}}" target="_blank">View on untappd <i class="fa fa-beer"></i></a>
-        <br>
-        {{brewery.beersById[beersDB[routeSelectedBeer].untappdId].beer_description}}
+        <a ng-href="https://untappd.com/b/{{brewery.beersById[beersDB[routeSelectedBeer].untappdId].beer_slug}}/{{brewery.beersById[beersDB[routeSelectedBeer].untappdId].bid}}"
+          target="_blank">View on untappd <i class="fa fa-beer"></i></a>
+        <br> {{brewery.beersById[beersDB[routeSelectedBeer].untappdId].beer_description}}
       </p>
       <p>
         {{beersDB[routeSelectedBeer].longDesc}}
