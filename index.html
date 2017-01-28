@@ -215,32 +215,8 @@
 	<script src="./js/beersdb.js"></script>
 	<script src="./js/app.js"></script>
 	<script src="./js/directives/map.js"></script>
-<<<<<<< Updated upstream
-	<script>
-		$(document).ready(hexWidth);
-		$(window).on('resize', hexWidth);
-
-
-		function hexWidth() {
-			var window_width = $(window).width();
-			var num_beers = 8;
-			var hex_width = (window_width / num_beers) + 25;
-
-			$('.hexs-container img ').css('width', hex_width);
-			$('.hexs-container img').css('margin-top', (hex_width - 33)/2);
-      $('.hexs-container a:nth-child(odd) img').css('margin-top', -((hex_width - 33)/2));
-
-			var hex_container = (hex_width) * 8;
-			var margins = ((hex_container * 17) / 100);
-
-			$('.hexs-container').css('width', hex_container - margins);
-		}
-
-
-
-=======
 	<!--<script src="./js/ng-map.min.js"></script>-->
->>>>>>> Stashed changes
+
 
 
 
