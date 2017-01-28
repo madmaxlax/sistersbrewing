@@ -1347,12 +1347,7 @@ var map;
                         map: serviceObj.map,
                         title: beerSpot.Name,
                         icon: "./imgs/beericon30x30.png"
-                        // icon: {
-                        //     url: "imgs/beericon.png",
-                        //     size: new google.maps.Size(20, 32),
-                        //     origin: new google.maps.Point(0, 0),
-                        //     anchor: new google.maps.Point(0, 32)
-                        // }
+                        //TODO better beer icon
                     });
                     serviceObj.locationMarkers.push(marker);
                     //set up the info window 
@@ -1391,13 +1386,7 @@ var map;
                         position: { lat: eventLocation.place.location.latitude, lng: eventLocation.place.location.longitude },
                         map: serviceObj.map,
                         title: eventLocation.name,
-                        //icon: "./imgs/beericon30x30.png"
-                        // icon: {
-                        //     url: "imgs/beericon.png",
-                        //     size: new google.maps.Size(20, 32),
-                        //     origin: new google.maps.Point(0, 0),
-                        //     anchor: new google.maps.Point(0, 32)
-                        // }
+                        //icon: "TODO EVENT MARKER"
                     });
                     eventLocation.marker = marker;
 
