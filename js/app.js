@@ -108,31 +108,34 @@ var brewery = false;
         controller: 'BeerController',
         controllerAs: 'BeerCtrlr'
       })
-      .when('/about', {
-        templateUrl: 'pages/about.html',
-        controller: 'AboutController',
-        controllerAs: 'AboutCtrlr'
-      })
-      .when('/contact', {
-        templateUrl: 'pages/contact.html',
-        controller: 'ContactController',
-        controllerAs: 'ContactCtrlr'
-      })
-      .when('/wheretofindus', {
-        templateUrl: 'pages/findus.html',
-        controller: 'FindUsController',
-        controllerAs: 'FindUsCtrlr'
-      })
-      .when('/wheretofindus/:selectedCity', {
-        templateUrl: 'pages/findus.html',
-        controller: 'FindUsController',
-        controllerAs: 'FindUsCtrlr'
-      })
+      // .when('/about', {
+      //   templateUrl: 'pages/about.html',
+      //   controller: 'AboutController',
+      //   controllerAs: 'AboutCtrlr'
+      // })
+      // .when('/contact', {
+      //   templateUrl: 'pages/contact.html',
+      //   controller: 'ContactController',
+      //   controllerAs: 'ContactCtrlr'
+      // })
+      // .when('/wheretofindus', {
+      //   templateUrl: 'pages/findus.html',
+      //   controller: 'FindUsController',
+      //   controllerAs: 'FindUsCtrlr'
+      // })
+      // .when('/wheretofindus/:selectedCity', {
+      //   templateUrl: 'pages/findus.html',
+      //   controller: 'FindUsController',
+      //   controllerAs: 'FindUsCtrlr'
+      // })
       .when('/', {
         //redirectTo: '/beers/drone'        
-        templateUrl: 'pages/index.html',
-        controller: 'IndexController',
-        controllerAs: 'IndexCtrlr'
+        // templateUrl: 'pages/index.html',
+        // controller: 'IndexController',
+        // controllerAs: 'IndexCtrlr'
+        templateUrl: 'pages/beer.html',
+        controller: 'BeerController',
+        controllerAs: 'BeerCtrlr'
       })
       .otherwise({
         redirectTo: '/'
@@ -273,7 +276,16 @@ var brewery = false;
   });
 
   angular.module('SistersBrewApp').controller('BeerController', function ($scope, $routeParams, $http) {
-    $scope.routeSelectedBeer = $routeParams.selectedbeer;
+    var selectedbeer = $routeParams.selectedbeer;
+    console.log($routeParams);
+    //if no beer selected, choose drone
+    if ($routeParams.selectedbeer == null || $routeParams.selectedbeer === '') {
+      console.log('using default drone');
+      selectedbeer = "drone";
+    }
+    console.log(selectedbeer);
+    $scope.routeSelectedBeer = selectedbeer;
+    $scope.$parent.routeSelectedBeer = selectedbeer;
   });
 
   angular.module('SistersBrewApp').controller('AboutController', function ($scope, $routeParams, $http) { });
