@@ -36,6 +36,9 @@ $font-family-base: $sb-main-font;//override bootstrap
   url(./styles/fonts/Modern20BTRoman.ttf) format('truetype');
 } */
 
+body {
+  position: relative;
+}
 h1, h2, h3, h4, h5, h6 {
   font-family: $header-font;
   margin-top: 1rem;
@@ -73,6 +76,9 @@ p {
     margin-left: 2rem;
   }
   background-color:$sb-main-background-color;
+  .active {
+    color:$sb-link-color;
+  }
 }
 
 .secondary-color{

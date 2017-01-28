@@ -14,7 +14,7 @@
 
 </head>
 
-<body data-spy="scroll" data-target="#navscrollspy" data-offset="200" ng-cloak="" ng-controller="appController as ctrlr">
+<body data-spy="scroll" data-target="#scrollSpy" data-offset="200" ng-cloak="" ng-controller="appController as ctrlr">
 	<div class="main-content">
 		<div class="header navbar navbar-fixed-top">
 			<a class="navbar-brand" href="#">
@@ -30,23 +30,25 @@
 							<a class="nav-link" href="https://www.facebook.com/events/{{eventresults[0].id}}">Next Event: <strong>{{eventresults[0].name}}</strong> ({{eventresults[0].start_time | date: 'EEE MMM d'}})</a>
 						</li>
 					</ul> -->
-					<ul class="nav navbar-nav pull-xs-right">
-						<li class="nav-item">
-							<a class="nav-link" ng-click="linkTo('Beers')" href="">Beers</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" ng-click="linkTo('FindUs')" href="">Find Our Beer</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" ng-click="linkTo('News')" href=""> Events & News</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" ng-click="linkTo('about')" href="">Our Story</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="http://madmaxlax.com/sites/sistersbrewing/merchsoon.html" target="_blank">Merch <i class="fa fa-external-link-square"></i></a>
-						</li>
-					</ul>
+					<div id="scrollSpy">
+						<ul class="nav navbar-nav pull-xs-right">
+							<li class="nav-item">
+								<a class="nav-link" ng-click="linkTo('Beers')" href="#Beers">Beers</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" ng-click="linkTo('FindUs')" href="#FindUs">Find Our Beer</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" ng-click="linkTo('News')" href="#News"> Events & News</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" ng-click="linkTo('about')" href="#About">Our Story</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="http://madmaxlax.com/sites/sistersbrewing/merchsoon.html" target="_blank">Merch <i class="fa fa-external-link-square"></i></a>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -57,35 +59,36 @@
 		</div>
 
 		<div class="beer-section section col-xs-12" id="Beers">
-      <h2> Beers </h2>
-      <div class="hexs-container" ng-style="{'background-color':beersDB[routeSelectedBeer].backgroundColor}">
-        <a class="" ng-href="#/beers/drone">
-          <img src="imgs/cheating/drone.png"></img>
-        </a>
-        <a class="" ng-href="#/beers/queenbee">
-          <img src="imgs/cheating/queen-bee.png"></img>
-        </a>
-        <a class="" ng-href="#/beers/honeyblonde">
-          <img src="imgs/cheating/honey.png"></img>
-        </a>
-        <a class="" ng-href="#/beers/worker">
-          <img src="imgs/cheating/worker.png"></img>
-        </a>
-        <a class="" ng-href="#/beers/smoker">
-          <img src="imgs/cheating/smoker.png"></img>
-        </a>
-        <a class="" ng-href="#/beers/hive">
-          <img src="imgs/cheating/hive.png"></img>
-        </a>
-        <a class="" ng-href="#/beers/drone2">
-          <img src="imgs/cheating/drone2.png"></img>
-        </a>
-        <a class="" ng-href="#/beers/nectar">
-          <img src="imgs/cheating/nectar.png"></img></a>
-      </div>
-      <div class="angular-view-section" ng-view="">
-        <!-- beers~! -->
-      </div>
+			<h2> Beers </h2>
+			<div class="hexs-container" ng-style="{'background-color':beersDB[routeSelectedBeer].backgroundColor}">
+				<a class="" ng-href="#/beers/drone">
+					<img src="imgs/cheating/drone.png"></img>
+				</a>
+				<a class="" ng-href="#/beers/queenbee">
+					<img src="imgs/cheating/queen-bee.png"></img>
+				</a>
+				<a class="" ng-href="#/beers/honeyblonde">
+					<img src="imgs/cheating/honey.png"></img>
+				</a>
+				<a class="" ng-href="#/beers/worker">
+					<img src="imgs/cheating/worker.png"></img>
+				</a>
+				<a class="" ng-href="#/beers/smoker">
+					<img src="imgs/cheating/smoker.png"></img>
+				</a>
+				<a class="" ng-href="#/beers/hive">
+					<img src="imgs/cheating/hive.png"></img>
+				</a>
+				<a class="" ng-href="#/beers/drone2">
+					<img src="imgs/cheating/drone2.png"></img>
+				</a>
+				<a class="" ng-href="#/beers/nectar">
+					<img src="imgs/cheating/nectar.png"></img>
+				</a>
+			</div>
+			<div class="angular-view-section" ng-view="">
+				<!-- beers~! -->
+			</div>
 		</div>
 
 		<div class="beer-hexes" id="Beers" hidden>
@@ -124,7 +127,7 @@
 			</div>
 		</div>
 
-		<div class="about-us-section section col-xs-12" id="about">
+		<div class="about-us-section section col-xs-12" id="About">
 			<div class="row">
 				<h2>Our Story</h2>
 				<div class="col-sm-5 col-xs-12 photo">
@@ -200,10 +203,10 @@
 	<script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script>
 	<!-- Tether for Bootstrap -->
 	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/angular-scroll.min.js"></script>
 	<script src="./js/beersdb.js"></script>
 	<script src="./js/app.js"></script>
 	<script src="./js/directives/map.js"></script>
-	<!--<script src="./js/ng-map.min.js"></script>-->
 	<script>
 		$(document).ready(hexWidth);
 		$(window).on('resize', hexWidth);
