@@ -58,9 +58,9 @@
 				delicious craft beer we create an artwork of every beer produced. </p>
 		</div>
 
-		<div class="beer-section section col-xs-12" id="Beers">
+		<div class="beer-section section col-xs-12"  ng-style="{'background-color':beersDB[routeSelectedBeer].backgroundColor}" id="Beers">
       <h2> Beers </h2>
-      <div class="hexs-container" ng-style="{'background-color':beersDB[routeSelectedBeer].backgroundColor}">
+      <div class="hexs-container">
         <a class="" ng-href="#/beers/drone">
           <img src="imgs/cheating/drone.png"></img>
           <span class="beer-name"> Drone </span>
