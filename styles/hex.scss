@@ -52,12 +52,7 @@ $hex-jagged-spacing:100px;
       width: 8vw;
       border-bottom: 2px solid #000;
     }
-    &:hover {
-      .beer-name {
-        display: block;
-      }
-    }
-    &.active {
+    &:hover, &.active {
       .beer-name {
         display: block;
       }

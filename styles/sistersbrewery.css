@@ -5031,9 +5031,7 @@ a.text-danger:focus, a.text-danger:hover {
       left: 0;
       width: 8vw;
       border-bottom: 2px solid #000; }
-    .hexs-container a:hover .beer-name {
-      display: block; }
-    .hexs-container a.active .beer-name {
+    .hexs-container a:hover .beer-name, .hexs-container a.active .beer-name {
       display: block; }
 
 .beer-hexes {
