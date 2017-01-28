@@ -1,4 +1,4 @@
-<a class="" ng-href="#/beers/{{beer.urlName}}">
+<a ng-class="{active:beer.urlName===routeSelectedBeer}" ng-href="#/beers/{{beer.urlName}}">
   <img src="{{beer.hexImageUrl}}"></img>
   <span class="beer-name"> {{beer.name}} </span>
 </a>
