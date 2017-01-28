@@ -16,6 +16,7 @@ IPA is a very popular craft beer and a beer to enjoy quietly and slowly.",
         backgroundColor: '#edefed',
         labelImageUrl: './imgs/wide-label-queenbee.jpg',
         untappdId:'1232681',
+        hexImageUrl:'imgs/cheating/queen-bee.png',
         order: 1 
     },
     drone:{
@@ -30,6 +31,7 @@ Porter is a type of dark beer, coming from London, it was first made during the 
         backgroundColor: '#2ab8e8',
         labelImageUrl: './imgs/wide-label-drone.jpg',
         untappdId:'1234842',
+        hexImageUrl:'imgs/cheating/drone.png',
         order: 2
     },
     honeyblonde:{
@@ -44,6 +46,7 @@ A Blonde is a beer with a golden yellow colour. Basically is a Blonde beer a bee
         backgroundColor: '#f1f0ed',
         labelImageUrl: './imgs/wide-label-honey.jpg',
         untappdId:'1372507',
+        hexImageUrl:'imgs/cheating/honey.png',
         order: 3
     },
     worker:{
@@ -58,6 +61,7 @@ Saison is a Belgian type of beer (beer style) of top fermentation with an alcoho
         backgroundColor: '#c0bbdc',
         labelImageUrl: './imgs/wide-label-worker.jpg',
         untappdId:'1372512',
+        hexImageUrl:'imgs/cheating/worker.png',
         order: 4
     },
     smoker:{
@@ -70,6 +74,7 @@ Saison is a Belgian type of beer (beer style) of top fermentation with an alcoho
         backgroundColor: '#31a2af',
         labelImageUrl: './imgs/wide-label-smoker.jpg',
         untappdId:'1549422',
+        hexImageUrl:'imgs/cheating/smoker.png',
         order: 5
     },
     hive:{
@@ -83,6 +88,7 @@ Saison is a Belgian type of beer (beer style) of top fermentation with an alcoho
         backgroundColor: '#c3dbe4',
         labelImageUrl: './imgs/wide-label-hive.jpg',
         untappdId:'1572399',
+        hexImageUrl:'imgs/cheating/hive.png',
         order: 6
     },
     drone2:{
@@ -95,6 +101,7 @@ Saison is a Belgian type of beer (beer style) of top fermentation with an alcoho
         backgroundColor: '#339cd7',
         labelImageUrl: './imgs/wide-label-drone2.jpg',
         untappdId:'1549431',
+        hexImageUrl:'imgs/cheating/drone2.png',
         order: 7
     },
     nectar:{
@@ -107,6 +114,7 @@ Saison is a Belgian type of beer (beer style) of top fermentation with an alcoho
         backgroundColor: '#99a1b6',
         labelImageUrl: './imgs/wide-label-nectar.jpg',
         untappdId:'1549433',
+        hexImageUrl:'imgs/cheating/nectar.png',
         order: 8
     },
     // abelha:{
@@ -122,19 +130,20 @@ Saison is a Belgian type of beer (beer style) of top fermentation with an alcoho
     //     untappdId:'1635987',
     //     order: 9
     // },
-    bzzz:{
-        name:"Bzzz",
-        urlName:'bzzz',
-        new:true,
-        shortDesc: "--",
-        longDesc: "",
-        artist: "  ",
-        artistUrl:"",
-        backgroundColor: '',
-        labelImageUrl: './imgs/bzzz.jpg',
-        untappdId:'1750801',
-        order: 10
-    }
+    // bzzz:{
+    //     name:"Bzzz",
+    //     urlName:'bzzz',
+    //     new:true,
+    //     shortDesc: "--",
+    //     longDesc: "",
+    //     artist: "  ",
+    //     artistUrl:"",
+    //     backgroundColor: '',
+    //     labelImageUrl: './imgs/bzzz.jpg',
+    //     untappdId:'1750801',
+    //     hexImageUrl:'',
+    //     order: 10
+    // }
     /*,
     newbeer:{
         name:"New Beer",

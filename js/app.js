@@ -280,10 +280,10 @@ var brewery = false;
     console.log($routeParams);
     //if no beer selected, choose drone
     if ($routeParams.selectedbeer == null || $routeParams.selectedbeer === '') {
-      console.log('using default drone');
+      //console.log('using default drone');
       selectedbeer = "drone";
     }
-    console.log(selectedbeer);
+    //console.log(selectedbeer);
     $scope.routeSelectedBeer = selectedbeer;
     $scope.$parent.routeSelectedBeer = selectedbeer;
   });
@@ -302,6 +302,7 @@ var brewery = false;
   angular.module('SistersBrewApp').directive('sbBeerHex', function () {
     return {
       restrict: 'E',
+      replace: true,
       templateUrl: 'js/directives/beerhex.html'
     };
   });

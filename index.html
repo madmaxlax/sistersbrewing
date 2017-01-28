@@ -58,53 +58,55 @@
 				delicious craft beer we create an artwork of every beer produced. </p>
 		</div>
 
-		<div class="beer-section section col-xs-12"  ng-style="{'background-color':beersDB[routeSelectedBeer].backgroundColor}" id="Beers">
-      <h2> Beers </h2>
-      <div class="hexs-container">
-        <a class="" ng-href="#/beers/drone">
-          <img src="imgs/cheating/drone.png"></img>
-          <span class="beer-name"> Drone </span>
-        </a>
-        <a class="" ng-href="#/beers/queenbee">
-          <img src="imgs/cheating/queen-bee.png"></img>
-          <span class="beer-name"> Queen Bee </span>
-        </a>
-        <a class="" ng-href="#/beers/honeyblonde">
-          <img src="imgs/cheating/honey.png"></img>
-          <span class="beer-name"> Honey </span>
-        </a>
-        <a class="" ng-href="#/beers/worker">
-          <img src="imgs/cheating/worker.png"></img>
-          <span class="beer-name"> Worker </span>
-        </a>
-        <a class="" ng-href="#/beers/smoker">
-          <img src="imgs/cheating/smoker.png"></img>
-          <span class="beer-name"> Smoker </span>
-        </a>
-        <a class="" ng-href="#/beers/hive">
-          <img src="imgs/cheating/hive.png"></img>
-          <span class="beer-name"> Hive </span>
-        </a>
-        <a class="" ng-href="#/beers/drone2">
-          <img src="imgs/cheating/drone2.png"></img>
-          <span class="beer-name"> Drone2 </span>
-        </a>
-        <a class="" ng-href="#/beers/nectar">
-          <img src="imgs/cheating/nectar.png"></img>
-          <span class="beer-name"> Nectar </span>
-        </a>
-      </div>
-      <div class="angular-view-section beer-info" ng-view="">
-        <!-- beers~! -->
-      </div>
+		<div class="beer-section section col-xs-12" ng-style="{'background-color':beersDB[routeSelectedBeer].backgroundColor}" id="Beers">
+			<h2> Beers </h2>
+			<div class="hexs-container">
+				<sb-beer-hex ng-repeat="(beerId,beer) in beersDB | orderObjectBy:'order'"></sb-beer-hex>
+
+				<!--<a class="" ng-href="#/beers/drone">
+					<img src="imgs/cheating/drone.png"></img>
+					<span class="beer-name"> Drone </span>
+				</a>
+				<a class="" ng-href="#/beers/queenbee">
+					<img src="imgs/cheating/queen-bee.png"></img>
+					<span class="beer-name"> Queen Bee </span>
+				</a>
+				<a class="" ng-href="#/beers/honeyblonde">
+					<img src="imgs/cheating/honey.png"></img>
+					<span class="beer-name"> Honey </span>
+				</a>
+				<a class="" ng-href="#/beers/worker">
+					<img src="imgs/cheating/worker.png"></img>
+					<span class="beer-name"> Worker </span>
+				</a>
+				<a class="" ng-href="#/beers/smoker">
+					<img src="imgs/cheating/smoker.png"></img>
+					<span class="beer-name"> Smoker </span>
+				</a>
+				<a class="" ng-href="#/beers/hive">
+					<img src="imgs/cheating/hive.png"></img>
+					<span class="beer-name"> Hive </span>
+				</a>
+				<a class="" ng-href="#/beers/drone2">
+					<img src="imgs/cheating/drone2.png"></img>
+					<span class="beer-name"> Drone2 </span>
+				</a>
+				<a class="" ng-href="#/beers/nectar">
+					<img src="imgs/cheating/nectar.png"></img>
+					<span class="beer-name"> Nectar </span>
+				</a>-->
+			</div>
+			<div class="angular-view-section beer-info" ng-view="">
+				<!-- beers~! -->
+			</div>
 		</div>
 
-		<div class="beer-hexes" id="Beers" hidden>
+		<!--<div class="beer-hexes" id="Beers" hidden>
 			<ul id="hexGrid">
 				<sb-beer-hex ng-repeat="(beerId,beer) in beersDB | orderObjectBy:'order'"></sb-beer-hex>
 			</ul>
 			<div class="clearfix"></div>
-		</div>
+		</div>-->
 
 		<div class="find-us-section section col-xs-12" id="FindUs">
 			<h2>Find Our Beers</h2>
