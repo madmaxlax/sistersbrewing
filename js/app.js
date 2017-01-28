@@ -45,8 +45,7 @@ var brewery = false;
   });
   angular.module('SistersBrewApp').filter('reverse', function () {
     return function (items) {
-      if(typeof (items) == 'undefined' || items == null || items.length < 1)
-      {
+      if (typeof (items) == 'undefined' || items == null || items.length < 1) {
         return items;
       }
       return items.slice().reverse();
@@ -130,10 +129,10 @@ var brewery = false;
         controllerAs: 'FindUsCtrlr'
       })
       .when('/', {
-        redirectTo: '/beers/drone'        
-        // templateUrl: 'pages/index.html',
-        // controller: 'IndexController',
-        // controllerAs: 'IndexCtrlr'
+        //redirectTo: '/beers/drone'        
+        templateUrl: 'pages/index.html',
+        controller: 'IndexController',
+        controllerAs: 'IndexCtrlr'
       })
       .otherwise({
         redirectTo: '/'
@@ -141,7 +140,7 @@ var brewery = false;
   });
   //////Main controller
   //set up main app controller
-  angular.module('SistersBrewApp').controller('appController', function (facebookService, googleMapsService, $scope, $window, $http, futureFilter) {
+  angular.module('SistersBrewApp').controller('appController', function (facebookService, googleMapsService, $scope, $window, $http, futureFilter, $location) {
 
     //filter for events being older
     $scope.isFuture = function (event) {
@@ -153,6 +152,57 @@ var brewery = false;
     //make the beersDB available to the main scope
     $scope.beersDB = beersDB;
 
+    $scope.linkTo = function (eID) {
+      console.log(eID);
+      //$location.url(id);
+      // This scrolling function 
+        // is from http://www.itnewb.com/tutorial/Creating-the-Smooth-Scroll-Effect-with-JavaScript
+        var offset = 100;
+        var startY = currentYPosition();
+        var stopY = elmYPosition(eID)-offset;
+        var distance = stopY > startY ? stopY - startY : startY - stopY;
+        if (distance < 100) {
+            scrollTo(0, stopY); return;
+        }
+        var speed = Math.round(distance / 100);
+        if (speed >= 20) speed = 20;
+        var step = Math.round(distance / 25);
+        var leapY = stopY > startY ? startY + step : startY - step;
+        var timer = 0;
+        if (stopY > startY) {
+            for ( var i=startY; i<stopY; i+=step ) {
+                setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+                leapY += step; if (leapY > stopY) leapY = stopY; timer++;
+            } return;
+        }
+        for ( var i=startY; i>stopY; i-=step ) {
+            setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+            leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
+        }
+        
+        function currentYPosition() {
+            // Firefox, Chrome, Opera, Safari
+            if (self.pageYOffset) return self.pageYOffset;
+            // Internet Explorer 6 - standards mode
+            if (document.documentElement && document.documentElement.scrollTop)
+                return document.documentElement.scrollTop;
+            // Internet Explorer 6, 7 and 8
+            if (document.body.scrollTop) return document.body.scrollTop;
+            return 0;
+        }
+        
+        function elmYPosition(eID) {
+            var elm = document.getElementById(eID);
+            var y = elm.offsetTop;
+            var node = elm;
+            while (node.offsetParent && node.offsetParent != document.body) {
+                node = node.offsetParent;
+                y += node.offsetTop;
+            } return y;
+        }
+
+
+    };
 
     $scope.posts = false;
     $scope.brewery = false;
@@ -195,7 +245,7 @@ var brewery = false;
       facebookService.FBCall("/thesistersbrewery/posts?fields=picture,place,full_picture,message,story,created_time&limit=10&access_token=1007778489291152|u2Rs03TsG_yGoAxzC8ZUdpgEOwA")
         .then(function (response) {
           //console.log(response);
-          
+
           $scope.posts = response.data;
           //stop watching FB
           $scope.FBListener();
@@ -257,23 +307,23 @@ var brewery = false;
 
 //easing scrolling
 //no easing /jquery UI needed
-$(function () {
-  $('a[href*=#]:not([href=#])').click(function () {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      var hashstring = this.hash.slice(1);
-      target = target.length ? target : $('[name=' + hashstring + ']');
-      if (target.length) {
-        //change page title? 
-        document.title = $(this).text() + " | Sisters Brewery";
+// $(function () {
+//   $('a[href*=#]:not([href=#])').click(function () {
+//     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+//       var target = $(this.hash);
+//       var hashstring = this.hash.slice(1);
+//       target = target.length ? target : $('[name=' + hashstring + ']');
+//       if (target.length) {
+//         //change page title? 
+//         document.title = $(this).text() + " | Sisters Brewery";
 
-        $('html,body').stop().animate({
-          scrollTop: target.offset().top - 100
-        }, 1000, function () {
-          location.hash = hashstring; //attach the hash (#jumptarget) to the pageurl
-        });
-        return false;
-      }
-    }
-  });
-});
+//         $('html,body').stop().animate({
+//           scrollTop: target.offset().top - 100
+//         }, 1000, function () {
+//           location.hash = hashstring; //attach the hash (#jumptarget) to the pageurl
+//         });
+//         return false;
+//       }
+//     }
+//   });
+// });

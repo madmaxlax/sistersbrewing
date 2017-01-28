@@ -32,16 +32,16 @@
 					</ul> -->
 					<ul class="nav navbar-nav pull-xs-right">
 						<li class="nav-item">
-							<a class="nav-link" href="#Beers">Beers</a>
+							<a class="nav-link" ng-click="linkTo('Beers')" href="">Beers</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#FindUs">Find Our Beer</a>
+							<a class="nav-link" ng-click="linkTo('FindUs')" href="">Find Our Beer</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#News"> Events & News</a>
+							<a class="nav-link" ng-click="linkTo('News')" href=""> Events & News</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#about">Our Story</a>
+							<a class="nav-link" ng-click="linkTo('about')" href="">Our Story</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="http://madmaxlax.com/sites/sistersbrewing/merchsoon.html" target="_blank">Merch <i class="fa fa-external-link-square"></i></a>
@@ -56,7 +56,7 @@
 				delicious craft beer we create an artwork of every beer produced. </p>
 		</div>
 
-		<div class="beer-section section col-xs-12">
+		<div class="beer-section section col-xs-12" id="Beers">
       <h2> Beers </h2>
       <div class="hexs-container" ng-style="{'background-color':beersDB[routeSelectedBeer].backgroundColor}">
         <a class="" ng-href="#/beers/drone">
