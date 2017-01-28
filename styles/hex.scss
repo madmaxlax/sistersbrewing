@@ -57,6 +57,11 @@ $hex-jagged-spacing:100px;
         display: block;
       }
     }
+    &.active {
+      .beer-name {
+        display: block;
+      }
+    }
   }
 }
 
