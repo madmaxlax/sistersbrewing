@@ -1346,8 +1346,7 @@ var map;
                         position: { lat: beerSpot.Latitude, lng: beerSpot.Longitude },
                         map: serviceObj.map,
                         title: beerSpot.Name,
-                        icon: "./imgs/beericon30x30.png"
-                        //TODO better beer icon
+                        icon: "./imgs/BeerLocationIcon.png"
                     });
                     serviceObj.locationMarkers.push(marker);
                     //set up the info window 
@@ -1386,7 +1385,7 @@ var map;
                         position: { lat: eventLocation.place.location.latitude, lng: eventLocation.place.location.longitude },
                         map: serviceObj.map,
                         title: eventLocation.name,
-                        //icon: "TODO EVENT MARKER"
+                        icon: './imgs/EventLocationIcon.png'
                     });
                     eventLocation.marker = marker;
 

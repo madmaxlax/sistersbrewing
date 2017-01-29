@@ -258,8 +258,7 @@ var brewery = false;
         //console.log($scope.brewery.beersById);
       }).catch(function (data, status, headers, config) {
         console.log("Error getting untappd data ", data);
-        if(data.data != null && data.data.meta != null && data.data.meta.error_detail != null)
-        {
+        if (data.data != null && data.data.meta != null && data.data.meta.error_detail != null) {
           console.warn("Untappd error: " + data.data.meta.error_detail);
         }
       });
@@ -298,18 +297,26 @@ var brewery = false;
     }, function (newVal, oldVal) {
       if (typeof (FB) != 'undefined' && FB != null) {
         // FB API loaded, make calls
-        console.log("FB is ready");
-        //functions that do FB API calls
-        $scope.getFBEvents();
-        $scope.getFBPosts();
-        $scope.FBListener();
-        //refresh scrollspy
-        //console.log("refreshing scroll");
-        $('[data-spy="scroll"]').each(function () {
-          var $spy = $(this).scrollspy('refresh')
-        });
+        $scope.FBisReady();
       }
     });
+    //try once right away 
+    if (typeof (FB) != 'undefined' && FB != null) {
+      // FB API loaded, make calls
+      $scope.FBisReady();
+    }
+    $scope.FBisReady = function () {
+      console.log("FB is ready");
+      //functions that do FB API calls
+      $scope.getFBEvents();
+      $scope.getFBPosts();
+      $scope.FBListener();
+      //refresh scrollspy
+      //console.log("refreshing scroll");
+      $('[data-spy="scroll"]').each(function () {
+        var $spy = $(this).scrollspy('refresh')
+      });
+    };
   });
 
   angular.module('SistersBrewApp').controller('BeerController', function ($scope, $routeParams, $http) {
