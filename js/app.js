@@ -55,23 +55,30 @@ var brewery = false;
     };
   });
   //create a factory to do FB calls
-  angular.module('SistersBrewApp').factory('facebookService', function ($q) {
+  angular.module('SistersBrewApp').factory('facebookService', function ($q, $http) {
     return {
       FBCall: function (querystring, options) {
         var deferred = $q.defer();
-        if (typeof (FB) != 'undefined' && FB != null) {
-          FB.api(querystring, options, function (response) {
-            if (!response || response.error) {
-              console.log(response);
-              deferred.reject('Error occured');
-            } else {
-              deferred.resolve(response);
-            }
+        // if (typeof (FB) != 'undefined' && FB != null) {
+        //   FB.api(querystring, options, function (response) {
+        //     if (!response || response.error) {
+        //       console.log(response);
+        //       deferred.reject('Error occured');
+        //     } else {
+        //       deferred.resolve(response);
+        //     }
+        //   });
+        // } else {
+        //   // alert the user
+        //   console.log("FB not ready yet");
+        // }
+        $http.get('https://graph.facebook.com' + querystring).
+          then(function (data, status, headers, config) {
+            deferred.resolve(data);
+          }).catch(function (data, status, headers, config) {
+            console.log("error with FB call", data);
+            deferred.reject('Error occured');
           });
-        } else {
-          // alert the user
-          console.log("FB not ready yet");
-        }
 
         return deferred.promise;
       },
@@ -148,17 +155,16 @@ var brewery = false;
   //set up main app controller
   angular.module('SistersBrewApp').controller('appController', function (facebookService, googleMapsService, $scope, $window, $http, futureFilter, $location, $document) {
 
-    window.fbAsyncInit = function () {
-      FB.init({
-        appId: '1007778489291152',
-        xfbml: true,
-        version: 'v2.6'
-      });
-      FB.getLoginStatus(function (response) {
-        $scope.FBisReady();
-      });
-
-    };
+    // window.fbAsyncInit = function () {
+    //   FB.init({
+    //     appId: '1007778489291152',
+    //     xfbml: true,
+    //     version: 'v2.6'
+    //   });
+    //   FB.getLoginStatus(function (response) {
+    //     $scope.FBisReady();
+    //   });
+    // };
     //filter for events being older
     $scope.isFuture = function (event) {
       return function (item) {
@@ -233,13 +239,13 @@ var brewery = false;
         .then(function (response) {
           //console.log(response);
           //use the future filter only to show future events
-          googleMapsService.events = futureFilter(response.data);
+          googleMapsService.events = futureFilter(response.data.data);
           googleMapsService.addEventsToMap();
           $scope.googleMapsService = googleMapsService;
           //stop watching FB
-          $scope.FBListener();
+          //$scope.FBListener();
         });
-      $scope.FBListener();
+      //$scope.FBListener();
     };
 
     //feed posts (only get 10?)
@@ -248,42 +254,44 @@ var brewery = false;
         .then(function (response) {
           //console.log(response);
 
-          $scope.posts = response.data;
+          $scope.posts = response.data.data;
           //stop watching FB
-          $scope.FBListener();
+          //$scope.FBListener();
         });
     };
 
-    //setup watch for FB API to be ready
-    $scope.FBListener = $scope.$watch(function () {
-      return $window.FB;
-    }, function (newVal, oldVal) {
-      if (typeof (FB) != 'undefined' && FB != null) {
-        // FB API loaded, make calls
-        $scope.FBisReady();
-      }
-    });
-    angular.element(document).ready(function () {
-      //try once right away 
-      if (typeof (FB) != 'undefined' && FB != null) {
-        // FB API loaded, make calls
-        $scope.FBisReady();
-      }
-    });
-    $scope.FBisReady = function () {
-      console.log("FB is ready");
-      //functions that do FB API calls
-      $scope.getFBEvents();
-      $scope.getFBPosts();
-      $scope.FBListener();
-      //refresh scrollspy
-      //console.log("refreshing scroll");
-      $('[data-spy="scroll"]').each(function () {
-        var $spy = $(this).scrollspy('refresh')
-      });
-    };
-    //get untapped info
     $http.defaults.cache = true;
+    $scope.getFBEvents();
+    $scope.getFBPosts();
+    // //setup watch for FB API to be ready
+    // $scope.FBListener = $scope.$watch(function () {
+    //   return $window.FB;
+    // }, function (newVal, oldVal) {
+    //   if (typeof (FB) != 'undefined' && FB != null) {
+    //     // FB API loaded, make calls
+    //     $scope.FBisReady();
+    //   }
+    // });
+    // angular.element(document).ready(function () {
+    //   //try once right away 
+    //   if (typeof (FB) != 'undefined' && FB != null) {
+    //     // FB API loaded, make calls
+    //     $scope.FBisReady();
+    //   }
+    // });
+    // $scope.FBisReady = function () {
+    //   console.log("FB is ready");
+    //   //functions that do FB API calls
+    //   $scope.getFBEvents();
+    //   $scope.getFBPosts();
+    //   $scope.FBListener();
+    //   //refresh scrollspy
+    //   //console.log("refreshing scroll");
+    //   $('[data-spy="scroll"]').each(function () {
+    //     var $spy = $(this).scrollspy('refresh')
+    //   });
+    // };
+    //get untapped info
     $http.get('https://api.untappd.com/v4/brewery/info/225097?client_id=43158D6116E0305CADB971CC65769720271E6D6A&client_secret=E1E244AD4D1699C1D3BE949A89EFE7B51E0BE0D5').
       then(function (data, status, headers, config) {
         //console.log(data);
