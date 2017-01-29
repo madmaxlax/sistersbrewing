@@ -1,14 +1,17 @@
 /// <reference path="C:\Apps\GitHub\sistersbrewing\js\beersdb.js" />
 /// <reference path="C:\Apps\Dropbox\Dev\typings\angularjs\angular.d.ts" />
 
-window.fbAsyncInit = function () {
-  FB.init({
-    appId: '1007778489291152',
-    xfbml: true,
-    version: 'v2.6'
-  });
+// window.fbAsyncInit = function () {
+//   FB.init({
+//     appId: '1007778489291152',
+//     xfbml: true,
+//     version: 'v2.6'
+//   });
+//   FB.getLoginStatus(function (response) {
+//     runFbInitCriticalCode();
+//   });
 
-};
+// };
 
 var brewery = false;
 
@@ -143,8 +146,19 @@ var brewery = false;
   });
   //////Main controller
   //set up main app controller
-  angular.module('SistersBrewApp').controller('appController', function (facebookService, googleMapsService, $scope, $window, $http, futureFilter, $location) {
+  angular.module('SistersBrewApp').controller('appController', function (facebookService, googleMapsService, $scope, $window, $http, futureFilter, $location, $document) {
 
+    window.fbAsyncInit = function () {
+      FB.init({
+        appId: '1007778489291152',
+        xfbml: true,
+        version: 'v2.6'
+      });
+      FB.getLoginStatus(function (response) {
+        $scope.FBisReady();
+      });
+
+    };
     //filter for events being older
     $scope.isFuture = function (event) {
       return function (item) {
@@ -211,6 +225,61 @@ var brewery = false;
     $scope.brewery = false;
 
 
+    //events
+    $scope.getFBEvents = function () {
+      facebookService.FBCall("/thesistersbrewery/events?fields=cover,name,start_time,description,place&access_token=1007778489291152|u2Rs03TsG_yGoAxzC8ZUdpgEOwA")
+        .then(function (response) {
+          //console.log(response);
+          //use the future filter only to show future events
+          googleMapsService.events = futureFilter(response.data);
+          googleMapsService.addEventsToMap();
+          $scope.googleMapsService = googleMapsService;
+          //stop watching FB
+          $scope.FBListener();
+        });
+      $scope.FBListener();
+    };
+
+    //feed posts (only get 10?)
+    $scope.getFBPosts = function () {
+      facebookService.FBCall("/thesistersbrewery/posts?fields=picture,place,full_picture,message,story,created_time&limit=10&access_token=1007778489291152|u2Rs03TsG_yGoAxzC8ZUdpgEOwA")
+        .then(function (response) {
+          //console.log(response);
+
+          $scope.posts = response.data;
+          //stop watching FB
+          $scope.FBListener();
+        });
+    };
+
+    //setup watch for FB API to be ready
+    $scope.FBListener = $scope.$watch(function () {
+      return $window.FB;
+    }, function (newVal, oldVal) {
+      if (typeof (FB) != 'undefined' && FB != null) {
+        // FB API loaded, make calls
+        $scope.FBisReady();
+      }
+    });
+    angular.element(document).ready(function () {
+      //try once right away 
+      if (typeof (FB) != 'undefined' && FB != null) {
+        // FB API loaded, make calls
+        $scope.FBisReady();
+      }
+    });
+    $scope.FBisReady = function () {
+      console.log("FB is ready");
+      //functions that do FB API calls
+      $scope.getFBEvents();
+      $scope.getFBPosts();
+      $scope.FBListener();
+      //refresh scrollspy
+      //console.log("refreshing scroll");
+      $('[data-spy="scroll"]').each(function () {
+        var $spy = $(this).scrollspy('refresh')
+      });
+    };
     //get untapped info
     $http.defaults.cache = true;
     $http.get('https://api.untappd.com/v4/brewery/info/225097?client_id=43158D6116E0305CADB971CC65769720271E6D6A&client_secret=E1E244AD4D1699C1D3BE949A89EFE7B51E0BE0D5').
@@ -262,61 +331,6 @@ var brewery = false;
           console.warn("Untappd error: " + data.data.meta.error_detail);
         }
       });
-
-
-    //events
-    $scope.getFBEvents = function () {
-      facebookService.FBCall("/thesistersbrewery/events?fields=cover,name,start_time,description,place&access_token=1007778489291152|u2Rs03TsG_yGoAxzC8ZUdpgEOwA")
-        .then(function (response) {
-          //console.log(response);
-          //use the future filter only to show future events
-          googleMapsService.events = futureFilter(response.data);
-          googleMapsService.addEventsToMap();
-          $scope.googleMapsService = googleMapsService;
-          //stop watching FB
-          $scope.FBListener();
-        });
-      $scope.FBListener();
-    };
-
-    //feed posts (only get 10?)
-    $scope.getFBPosts = function () {
-      facebookService.FBCall("/thesistersbrewery/posts?fields=picture,place,full_picture,message,story,created_time&limit=10&access_token=1007778489291152|u2Rs03TsG_yGoAxzC8ZUdpgEOwA")
-        .then(function (response) {
-          //console.log(response);
-
-          $scope.posts = response.data;
-          //stop watching FB
-          $scope.FBListener();
-        });
-    };
-
-    //setup watch for FB API to be ready
-    $scope.FBListener = $scope.$watch(function () {
-      return $window.FB;
-    }, function (newVal, oldVal) {
-      if (typeof (FB) != 'undefined' && FB != null) {
-        // FB API loaded, make calls
-        $scope.FBisReady();
-      }
-    });
-    //try once right away 
-    if (typeof (FB) != 'undefined' && FB != null) {
-      // FB API loaded, make calls
-      $scope.FBisReady();
-    }
-    $scope.FBisReady = function () {
-      console.log("FB is ready");
-      //functions that do FB API calls
-      $scope.getFBEvents();
-      $scope.getFBPosts();
-      $scope.FBListener();
-      //refresh scrollspy
-      //console.log("refreshing scroll");
-      $('[data-spy="scroll"]').each(function () {
-        var $spy = $(this).scrollspy('refresh')
-      });
-    };
   });
 
   angular.module('SistersBrewApp').controller('BeerController', function ($scope, $routeParams, $http) {
