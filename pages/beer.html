@@ -6,12 +6,12 @@
     <div class="col-sm-8">
       <h2>{{beersDB[routeSelectedBeer].name}} <sup>{{beersDB[routeSelectedBeer].new?"New!":""}}</sup></h2>
       <p>
-        <div class="untappd-info">
+        <div class="untappd-info" ng-show="brewery.beersById != null">
           Untappd: Ratings: {{brewery.beersById[beersDB[routeSelectedBeer].untappdId].rating_count}} Avg Rating: {{brewery.beersById[beersDB[routeSelectedBeer].untappdId].rating_score}}
           <i class="fa fa-star"></i>
           <br>
           <div ng-repeat="checkin in brewery.beersById[beersDB[routeSelectedBeer].untappdId].checkinData.items">
-            {{checkin.user.user_name}} <img ng-src="{{checkin.media.items[0].photo.photo_img_md}}" alt="">
+            {{checkin.user.user_name}} <img ng-src="{{checkin.media.items[0].photo.photo_img_md}}" style="width:100px;height:100px" alt="">
             {{checkin.comments[0]}}
           </div>
         </div>

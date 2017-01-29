@@ -223,16 +223,26 @@ var brewery = false;
           obj[item.beer.bid.toString()] = item.beer;
           return obj;
         }, {});
-        angular.forEach($scope.brewery.beersById,function(beer, beerID){
-          $http.get('https://api.untappd.com/v4/beer/checkins/' + beerID + '?client_id=43158D6116E0305CADB971CC65769720271E6D6A&client_secret=E1E244AD4D1699C1D3BE949A89EFE7B51E0BE0D5').
-            then(function (data, status, headers, config) {
-              //add checkin info 
-              console.log(data);
-              $scope.brewery.beersById[beerID].checkinData = data.data.response.checkins;
-            }).catch(function (data, status, headers, config) {
-              console.log("Error getting check in data", data);
-            });
-        });
+        //get at least the first check in data for first beer
+        var beerID = '1372507'; //id for default beer, honeyblonde
+        $http.get('https://api.untappd.com/v4/beer/checkins/' + beerID + '?client_id=43158D6116E0305CADB971CC65769720271E6D6A&client_secret=E1E244AD4D1699C1D3BE949A89EFE7B51E0BE0D5').
+          then(function (data, status, headers, config) {
+            //add checkin info 
+            //console.log(data);
+            $scope.brewery.beersById[beerID].checkinData = data.data.response.checkins;
+          }).catch(function (data, status, headers, config) {
+            console.log("Error getting check in data", data);
+          });
+        // angular.forEach($scope.brewery.beersById,function(beer, beerID){
+        //   $http.get('https://api.untappd.com/v4/beer/checkins/' + beerID + '?client_id=43158D6116E0305CADB971CC65769720271E6D6A&client_secret=E1E244AD4D1699C1D3BE949A89EFE7B51E0BE0D5').
+        //     then(function (data, status, headers, config) {
+        //       //add checkin info 
+        //       console.log(data);
+        //       $scope.brewery.beersById[beerID].checkinData = data.data.response.checkins;
+        //     }).catch(function (data, status, headers, config) {
+        //       console.log("Error getting check in data", data);
+        //     });
+        // });
         // brewery.beersById = data.data.response.brewery.beer_list.items.reduce(function (obj, item) {
         //   obj[item.beer.bid.toString()] = item.beer;
         //   $http.get('https://api.untappd.com/v4/beer/checkins/' + item.beer.bid.toString() + '?client_id=43158D6116E0305CADB971CC65769720271E6D6A&client_secret=E1E244AD4D1699C1D3BE949A89EFE7B51E0BE0D5').
@@ -247,10 +257,10 @@ var brewery = false;
         // }, {});
         //console.log($scope.brewery.beersById);
       }).catch(function (data, status, headers, config) {
-        console.log("Error getting data ", data);
+        console.log("Error getting untappd data ", data);
       });
 
-      
+
     //events
     $scope.getFBEvents = function () {
       facebookService.FBCall("/thesistersbrewery/events?fields=cover,name,start_time,description,place&access_token=1007778489291152|u2Rs03TsG_yGoAxzC8ZUdpgEOwA")
@@ -309,6 +319,21 @@ var brewery = false;
     //console.log(selectedbeer);
     $scope.routeSelectedBeer = selectedbeer;
     $scope.$parent.routeSelectedBeer = selectedbeer;
+
+    //get checkin info if not already
+    if ($scope.brewery.beersById != null && $scope.brewery.beersById[beersDB[selectedbeer].untappdId].checkinData == null) {
+      var beerID = beersDB[routeSelectedBeer].untappdId;
+
+      $http.get('https://api.untappd.com/v4/beer/checkins/' + beerID + '?client_id=43158D6116E0305CADB971CC65769720271E6D6A&client_secret=E1E244AD4D1699C1D3BE949A89EFE7B51E0BE0D5').
+        then(function (data, status, headers, config) {
+          //add checkin info 
+          console.log(data);
+          $scope.brewery.beersById[beerID].checkinData = data.data.response.checkins;
+        }).catch(function (data, status, headers, config) {
+          console.log("Error getting check in data", data);
+        });
+    }
+
   });
 
   angular.module('SistersBrewApp').controller('AboutController', function ($scope, $routeParams, $http) { });
