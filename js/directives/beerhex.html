@@ -1,4 +1,4 @@
-<a ng-class="{active:beer.urlName===routeSelectedBeer, new:beer.new}" ng-href="#/beers/{{beer.urlName}}">
+<a ng-class="{active:beer.urlName===routeSelectedBeer, new:beer.new}" ng-href="#/beers/{{beer.urlName}}" ng-click="linkTo('beer-detail',$event,true)">
   <img ng-src="{{beer.hexImageUrl}}"></img>
   <span class="beer-name"> {{beer.name}} </span>
 </a>

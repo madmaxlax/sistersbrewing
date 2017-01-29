@@ -1,4 +1,4 @@
-<div ng-style="{'background-color':beersDB[routeSelectedBeer].backgroundColor}" class="beer-detail">
+<div ng-style="{'background-color':beersDB[routeSelectedBeer].backgroundColor}" class="beer-detail" id="beer-detail">
   <div class="row">
     <div class="col-sm-4">
       <img ng-src="{{beersDB[routeSelectedBeer].labelImageUrl}}" height="200px" alt="beer label" class="beer-detail-label">
@@ -10,9 +10,11 @@
           Untappd: Ratings: {{brewery.beersById[beersDB[routeSelectedBeer].untappdId].rating_count}} Avg Rating: {{brewery.beersById[beersDB[routeSelectedBeer].untappdId].rating_score}}
           <i class="fa fa-star"></i>
           <br>
-          <div ng-repeat="checkin in brewery.beersById[beersDB[routeSelectedBeer].untappdId].checkinData.items">
-            {{checkin.user.user_name}} <img ng-src="{{checkin.media.items[0].photo.photo_img_md}}" style="width:100px;height:100px" alt="">
-            {{checkin.comments[0]}}
+          <div class="check-info" hidden>
+            <div ng-repeat="checkin in brewery.beersById[beersDB[routeSelectedBeer].untappdId].checkinData.items">
+              {{checkin.user.user_name}} <img ng-src="{{checkin.media.items[0].photo.photo_img_md}}" style="width:100px;height:100px"
+                alt=""> {{checkin.comments[0]}}
+            </div>
           </div>
         </div>
         <br />

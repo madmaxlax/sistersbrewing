@@ -169,7 +169,7 @@ var brewery = false;
     //make the beersDB available to the main scope
     $scope.beersDB = beersDB;
 
-    $scope.linkTo = function (eID, $event) {
+    $scope.linkTo = function (eID, $event, disableStoppingDefault) {
       //console.log(eID);
       //$location.url(id);
       // This scrolling function 
@@ -217,8 +217,10 @@ var brewery = false;
           y += node.offsetTop;
         } return y;
       }
-      $event.stopPropagation();
-      $event.preventDefault();
+      if (!disableStoppingDefault) {
+        $event.stopPropagation();
+        $event.preventDefault();
+      }
     };
 
     $scope.posts = false;
@@ -347,12 +349,12 @@ var brewery = false;
 
     //get checkin info if not already
     if ($scope.brewery.beersById != null && $scope.brewery.beersById[beersDB[selectedbeer].untappdId].checkinData == null) {
-      var beerID = beersDB[routeSelectedBeer].untappdId;
+      var beerID = beersDB[selectedbeer].untappdId;
 
       $http.get('https://api.untappd.com/v4/beer/checkins/' + beerID + '?client_id=43158D6116E0305CADB971CC65769720271E6D6A&client_secret=E1E244AD4D1699C1D3BE949A89EFE7B51E0BE0D5').
         then(function (data, status, headers, config) {
           //add checkin info 
-          console.log(data);
+          //console.log(data);
           $scope.brewery.beersById[beerID].checkinData = data.data.response.checkins;
         }).catch(function (data, status, headers, config) {
           console.log("Error getting check in data", data);
