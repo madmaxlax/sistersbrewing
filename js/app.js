@@ -156,7 +156,7 @@ var brewery = false;
     $scope.beersDB = beersDB;
 
     $scope.linkTo = function (eID, $event) {
-      console.log(eID);
+      //console.log(eID);
       //$location.url(id);
       // This scrolling function 
       // is from http://www.itnewb.com/tutorial/Creating-the-Smooth-Scroll-Effect-with-JavaScript
@@ -258,6 +258,10 @@ var brewery = false;
         //console.log($scope.brewery.beersById);
       }).catch(function (data, status, headers, config) {
         console.log("Error getting untappd data ", data);
+        if(data.data != null && data.data.meta != null && data.data.meta.error_detail != null)
+        {
+          console.warn("Untappd error: " + data.data.meta.error_detail);
+        }
       });
 
 
