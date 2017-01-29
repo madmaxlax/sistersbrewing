@@ -4,7 +4,7 @@
 #findmap{
     
     #map {
-        height: 300px;
+        height: 500px;
         // display: none;
         -webkit-box-sizing: content-box;
         -moz-box-sizing: content-box;
@@ -14,5 +14,11 @@
             -moz-box-sizing: inherit;
             box-sizing: inherit;
         }
+    }
+}
+
+@media only screen and (max-width : 768px) {
+    #findmap #map {
+        height: 300px;
     }
 }

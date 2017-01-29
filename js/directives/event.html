@@ -12,9 +12,16 @@
 		<div class="card-title">
 			<a href="https://www.facebook.com/events/{{event.id}}" target="_blank">{{event.name}}</a>
 		</div>
-		<div class="card-subheader">{{event.start_time | date}} | {{event.place.location.city}} {{event.place.location.country}}</div>
-		<div class="card-text">{{event.description | limitTo:200}}... <a class="btn btn-primary pull-right" href="#FindUs" ng-click="googleMapsService.showInfoWindow(event.infoWindow, event.marker);linkTo('FindUs', $event)">Show in map <i class="fa fa-map-o"></i></a> 
-		<br> <a href="https://www.facebook.com/events/{{event.id}}" target="_blank">View event in <i class="fa fa-facebook"></i></a></div>
+		<div class="card-subheader">
+			{{event.start_time | date}}
+			|
+			{{event.place.location.city}} {{event.place.location.country}}
+			|
+			<a class="" href="#FindUs" ng-click="googleMapsService.showInfoWindow(event.infoWindow, event.marker);linkTo('map', $event)">
+				<i class="fa fa-map-marker"></i> Show on map
+			</a>
+		</div>
+		<div class="card-text">{{event.description | limitTo:200}}... <a href="https://www.facebook.com/events/{{event.id}}" target="_blank"> View event on Facebook</a></div>
 		<div class="clearfix"></div>
 	</div>
 </div>

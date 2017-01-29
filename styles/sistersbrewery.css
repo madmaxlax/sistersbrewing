@@ -4970,6 +4970,9 @@ a.text-danger:focus, a.text-danger:hover {
     .card .card-body .card-subheader {
       font-size: 12px;
       margin-bottom: 10px; }
+      .card .card-body .card-subheader a {
+        text-decoration: none;
+        border-bottom: 0; }
     .card .card-body .card-text {
       font-size: 14px; }
 
@@ -5241,7 +5244,7 @@ a.text-danger:focus, a.text-danger:hover {
     text-align: left; }
 
 #findmap #map {
-  height: 300px;
+  height: 500px;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box; }
@@ -5250,6 +5253,9 @@ a.text-danger:focus, a.text-danger:hover {
     -moz-box-sizing: inherit;
     box-sizing: inherit; }
 
+@media only screen and (max-width: 768px) {
+  #findmap #map {
+    height: 300px; } }
 /*
 @font-face {
   font-family: 'Modern20BT-RomanB';
@@ -5368,7 +5374,7 @@ p {
     text-align: left; }
 
 .find-us-section {
-  padding: 0; }
+  padding: 20px 0 0 0; }
 
 .news-and-events-section {
   height: 100%;
