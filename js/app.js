@@ -172,6 +172,12 @@ var brewery = false;
       };
     };
 
+    $scope.scrollIfSmallScreen = function ($event) {
+      if (window.innerWidth < 769) {
+        $scope.linkTo('beer-detail', $event, true);
+      }
+    };
+
     //make the beersDB available to the main scope
     $scope.beersDB = beersDB;
 
