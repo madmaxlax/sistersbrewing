@@ -5325,12 +5325,12 @@ p {
     transform: rotate(360deg); } }
 /* END LOADER  */
 .header.navbar {
-  /*box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.08);*/
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
   background-color: #fff; }
   .header.navbar .logo {
-    height: 100px; }
+    height: 75px; }
   .header.navbar .navbar-nav {
-    margin-top: 27px; }
+    margin-top: 23px; }
   .header.navbar .navbar-nav .nav-item + .nav-item {
     margin-left: 2rem; }
   .header.navbar .active {
