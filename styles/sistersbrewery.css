@@ -5025,48 +5025,81 @@ a.text-danger:focus, a.text-danger:hover {
       .hexs-container a img:hover {
         transition: all .2s ease-in-out; }
     .hexs-container a .beer-name {
-      display: none;
+      display: block;
+      opacity: 0;
+      transition: all .4s ease-in-out;
       font-size: 1.25rem;
       position: absolute;
       left: 0;
       width: 8vw;
       border-bottom: 2px solid #000; }
     .hexs-container a:hover .beer-name, .hexs-container a.active .beer-name {
-      display: block; }
+      display: block;
+      opacity: 1; }
 
-.beer-hexes {
-  max-width: 100%;
-  overflow-x: scroll;
-  /*box-shadow: inset -15px 0px 10px -10px rgba(0,0,0,0.5); FOR NOW */
-  /*   -ms-overflow-style: none;  // IE 10+ */
-  /*   overflow: -moz-scrollbars-none;  // Firefox */ }
+/* Large Devices, Wide Screens */
+/* Medium Devices, Desktops */
+/* Small Devices, Tablets */
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  .hexs-container a:first-child img {
+    margin-left: -3vw; }
+  .hexs-container a:first-child .beer-name {
+    left: -3vw; }
+  .hexs-container a:nth-child(even) img {
+    margin-top: 10vw; }
+  .hexs-container a:nth-child(odd) img {
+    margin-top: -10vw; }
+  .hexs-container a img {
+    width: 45vw;
+    margin-left: -3vw; }
+  .hexs-container a .beer-name {
+    font-size: 1rem;
+    width: 25vw;
+    left: -3vw;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto; } }
+/* Custom, iPhone Retina */
+/*** OLD HEX STUFF  *****
 
+
+.beer-hexes
+{
+  max-width:100%;
+  overflow-x:scroll;
+  box-shadow: inset -15px 0px 10px -10px rgba(0,0,0,0.5);
+   -ms-overflow-style: none;  
+   overflow: -moz-scrollbars-none;  
+}
 .beer-hexes::-webkit-scrollbar {
-  /*   display:none; */ }
-
+  display:none; 
+}
 #hexGrid {
   width: 2200px;
   overflow: hidden;
   margin: 0px 0 0 0;
   padding: 0 0 0 0;
-  display: block;
+  display:block;
   list-style: none;
-  /*   z-index:1; */ }
-
-.hex-wrapper {
-  overflow: hidden;
-  float: left;
-  /*   width: 250px; */ }
-
+  z-index:1; 
+}
+.hex-wrapper
+{
+  overflow:hidden;
+  float:left;
+   width: 250px; 
+}
 .hex-wrapper-odd {
-  margin: 0 0 0 -140px; }
+  margin: 0 0 0 $hex-spacing;
+}
 
 .hex-wrapper-odd.hex-wrapper-first {
-  margin: 0 0 0 0px; }
-
+  margin: 0 0 0 0px;
+}
 .hex-wrapper-even {
-  margin: 100px 0 0 -140px; }
-
+  margin: $hex-jagged-spacing 0 0 $hex-spacing;
+}
 .hex {
   width: 400px;
   height: 200px;
@@ -5078,9 +5111,9 @@ a.text-danger:focus, a.text-danger:hover {
   -moz-transform: rotate(120deg);
   -ms-transform: rotate(120deg);
   -o-transform: rotate(120deg);
-  transform: rotate(120deg); }
-
-.hex-out {
+  transform: rotate(120deg);
+}
+.hex-out{
   overflow: hidden;
   width: 100%;
   height: 100%;
@@ -5089,44 +5122,45 @@ a.text-danger:focus, a.text-danger:hover {
   -moz-transform: rotate(-60deg);
   -ms-transform: rotate(-60deg);
   -o-transform: rotate(-60deg);
-  transform: rotate(-60deg); }
-
+  transform: rotate(-60deg);
+}
 .hex-in, a.hex-in {
   width: 100%;
   height: 100%;
-  display: block;
+  display:block;
   visibility: visible;
-  background-color: lightgreen;
+  background-color:lightgreen;
   -webkit-transform: rotate(-60deg);
-  -moz-transform: rotate(-60deg);
-  -ms-transform: rotate(-60deg);
-  -o-transform: rotate(-60deg);
-  transform: rotate(-60deg); }
-
+     -moz-transform: rotate(-60deg);
+      -ms-transform: rotate(-60deg);
+       -o-transform: rotate(-60deg);
+          transform: rotate(-60deg);
+}
 .hex-in * {
-  position: absolute;
-  visibility: visible;
-  outline: 1px solid transparent; }
-
-.hex img {
+    position: absolute;
+    visibility: visible;
+    outline: 1px solid transparent;
+}
+.hex img
+{
   height: 200px;
-  left: 13%; }
-
-.hex h1 {
-  color: white;
-  text-align: center;
+  left: 13%;
+}
+.hex h1{
+  color:white;
+  text-align:center;
   width: 100%;
   margin: 75px 0 0 0;
-  text-shadow: 3px 0px 2px #969696;
-  display: none;
-  /** FOR NOW */ }
-
+  text-shadow: 3px 0px 2px rgba(150, 150, 150, 1);
+  display: none; 
+}
 .hex p {
-  text-align: center;
+  text-align:center;
   color: white;
-  width: 100%;
-  bottom: 0; }
-
+  width:100%;
+  bottom: 0;
+}
+**/
 /*** HEX CONTENT **********************************************************************/
 /* .hex img {
     left: -100%;
