@@ -62,39 +62,6 @@
 			<h2> Beers </h2>
 			<div class="hexs-container">
 				<sb-beer-hex ng-repeat="(beerId,beer) in beersDB | orderObjectBy:'order'"></sb-beer-hex>
-
-				<!--<a class="" ng-href="#/beers/drone">
-					<img src="imgs/cheating/drone.png"></img>
-					<span class="beer-name"> Drone </span>
-				</a>
-				<a class="" ng-href="#/beers/queenbee">
-					<img src="imgs/cheating/queen-bee.png"></img>
-					<span class="beer-name"> Queen Bee </span>
-				</a>
-				<a class="" ng-href="#/beers/honeyblonde">
-					<img src="imgs/cheating/honey.png"></img>
-					<span class="beer-name"> Honey </span>
-				</a>
-				<a class="" ng-href="#/beers/worker">
-					<img src="imgs/cheating/worker.png"></img>
-					<span class="beer-name"> Worker </span>
-				</a>
-				<a class="" ng-href="#/beers/smoker">
-					<img src="imgs/cheating/smoker.png"></img>
-					<span class="beer-name"> Smoker </span>
-				</a>
-				<a class="" ng-href="#/beers/hive">
-					<img src="imgs/cheating/hive.png"></img>
-					<span class="beer-name"> Hive </span>
-				</a>
-				<a class="" ng-href="#/beers/drone2">
-					<img src="imgs/cheating/drone2.png"></img>
-					<span class="beer-name"> Drone2 </span>
-				</a>
-				<a class="" ng-href="#/beers/nectar">
-					<img src="imgs/cheating/nectar.png"></img>
-					<span class="beer-name"> Nectar </span>
-				</a>-->
 			</div>
 			<div class="angular-view-section beer-info" ng-view="">
 				<!-- beers~! -->
@@ -118,7 +85,7 @@
 				<div class="upcoming-events col-sm-12">
 					<h2>Upcoming Events</h2>
 					<div class="row">
-						<div class="alert alert-info" ng-if="posts === false">Loading events ... </div>
+						<div class="loader" id="loader-1" ng-if="posts === false"></div>
 						<sb-fb-event ng-repeat="event in googleMapsService.events | reverse | limitTo:3"></sb-fb-event>
 					</div>
 					<a class="btn btn-primary btn-more-events" title="View events on our FB page" href="https://www.facebook.com/thesistersbrewery/events"
@@ -127,7 +94,7 @@
 
 				<div class="news-section col-sm-12">
 					<h2>Recent News</h2>
-					<div class="alert alert-info" ng-if="posts === false">Loading posts ... </div>
+					<div class="loader" id="loader-1" ng-if="posts === false"></div>
 					<div class="card-columns">
 						<sb-fb-post ng-repeat="post in posts | limitTo:9"></sb-fb-post>
 					</div>
@@ -170,8 +137,6 @@
 				</div>
 			</div>
 		</div>
-
-
 
 	</div>
 	<div class="container-fluid footer-container col-xs-12">
@@ -218,9 +183,6 @@
 	<script src="./js/app.js"></script>
 	<script src="./js/directives/map.js"></script>
 	<!--<script src="./js/ng-map.min.js"></script>-->
-
-
-
 
 </body>
 
