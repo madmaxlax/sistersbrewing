@@ -69,7 +69,36 @@ $hex-jagged-spacing:100px;
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
-
+  .hexs-container {
+    a {
+      &:first-child {
+        img {
+          margin-left: -3vw;
+        }
+        .beer-name {
+          left: -3vw;
+        }
+      }
+      &:nth-child(even) img {
+        margin-top: 10vw;
+      }
+      &:nth-child(odd) img {
+        margin-top: -10vw;
+      }
+      img {
+        width: 25vw;
+        margin-left: -3vw;
+      }
+      .beer-name {
+        font-size: 1.2rem;
+        width: 13vw;
+        left: -3vw;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
 }
 
 /* Extra Small Devices, Phones */
