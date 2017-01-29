@@ -5385,7 +5385,8 @@ p {
 .footer {
   padding: 2rem; }
   .footer .footer-logo img {
-    width: 75%; }
+    width: 75%;
+    margin-bottom: 20px; }
   .footer .footer-social-links {
     text-align: right; }
     .footer .footer-social-links a {
