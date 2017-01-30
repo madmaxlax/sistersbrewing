@@ -1,2 +1,2 @@
-node-sass --source-map true .\sistersbrewery.scss > sistersbrewery.css 
-node-sass --output-style .\compressed sistersbrewery.scss > sistersbrewery.min.css 
+node-sass --source-map true --source-map-contents --output-style compressed .\sistersbrewery.scss sistersbrewery.css -o .\ 
+rem node-sass --output-style compressed .\sistersbrewery.scss > sistersbrewery.min.css 
