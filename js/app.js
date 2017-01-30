@@ -191,7 +191,9 @@ var brewery = false;
     $scope.linkTo = function (eID, $event, disableStoppingDefault) {
       
       //close the menu
-      angular.element('#menu-icon-toggler').click();
+      if(!angular.element('#menu-icon-toggler').hasClass('collapsed')){
+        angular.element('#menu-icon-toggler').click();
+      }
 
       //console.log(eID);
       //$location.url(id);
