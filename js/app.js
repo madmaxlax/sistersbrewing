@@ -189,6 +189,10 @@ var brewery = false;
     $scope.beersDB = beersDB;
 
     $scope.linkTo = function (eID, $event, disableStoppingDefault) {
+      
+      //close the menu
+      angular.element('#menu-icon-toggler').click();
+
       //console.log(eID);
       //$location.url(id);
       // This scrolling function 
@@ -240,6 +244,7 @@ var brewery = false;
         $event.stopPropagation();
         $event.preventDefault();
       }
+
     };
 
     $scope.posts = false;
