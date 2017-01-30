@@ -97,7 +97,7 @@
 					<h2>Recent News</h2>
 					<div class="loader" id="loader-1" ng-if="posts === false"></div>
 					<div class="card-columns">
-						<sb-fb-post ng-repeat="post in posts | limitTo:9"></sb-fb-post>
+						<sb-fb-post ng-repeat="post in posts | limitTo:(isMobile()?6:9)"></sb-fb-post>
 					</div>
 					<a class="btn btn-primary btn-more-posts" title="View events on our FB page" href="https://www.facebook.com/thesistersbrewery/"
 						target="_blank">Read more news</a>
