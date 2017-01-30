@@ -12,7 +12,7 @@
       </p>
           <span ng-show="brewery.beersById != null">Info from Untappd: </span>
           <a ng-href="https://untappd.com/b/{{brewery.beersById[beersDB[routeSelectedBeer].untappdId].beer_slug}}/{{brewery.beersById[beersDB[routeSelectedBeer].untappdId].bid}}"
-            target="_blank">View on Untappd.com
+            target="_blank">Check out {{beersDB[routeSelectedBeer].name}} on Untappd.com
             <i class="fa fa-external-link-square"></i>
             <!--<i class="fa fa-beer"></i>-->
             </a>
