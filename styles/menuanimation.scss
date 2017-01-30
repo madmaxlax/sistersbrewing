@@ -1,0 +1,87 @@
+$menu-animation-base-size: 2px;
+/* Icon 1 */
+.navbar-toggler{
+    #nav-icon4 {
+    width: $menu-animation-base-size*20;
+    height: $menu-animation-base-size*15;
+    position: relative;
+    margin: 6px auto 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    }
+
+    #nav-icon4 span {
+    display: block;
+    position: absolute;
+    height: $menu-animation-base-size*3;
+    width: 100%;
+    background: black;
+    border-radius: $menu-animation-base-size*3;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+    }
+
+    #nav-icon4 span:nth-child(1) {
+    top: 0px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+    }
+
+    #nav-icon4 span:nth-child(2) {
+    top: $menu-animation-base-size*6;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+    }
+
+    #nav-icon4 span:nth-child(3) {
+    top: $menu-animation-base-size*12;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+    }
+}
+.navbar-toggler:not(.collapsed){
+    //when menu activated, turns into an X
+    #nav-icon4 span:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: -$menu-animation-base-size;
+    left: $menu-animation-base-size*2.6667
+    }
+
+    #nav-icon4 span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+    }
+
+    #nav-icon4 span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: $menu-animation-base-size*13;
+    left: $menu-animation-base-size*2.6667;
+    }
+}

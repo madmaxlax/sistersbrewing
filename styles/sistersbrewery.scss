@@ -24,6 +24,7 @@ $font-family-base: $sb-main-font;//override bootstrap
 @import "hex.scss";
 @import "beerdetail.scss";
 @import "map.scss";
+@import "menuanimation.scss";
 
 //site-specific classes
 /*
@@ -127,7 +128,7 @@ p {
       margin-left: 2rem;
     }
   }
-  .collapse.in{
+  .collapsing,.collapse.in{
     ul.navbar-nav
     { 
       // clear: both;
