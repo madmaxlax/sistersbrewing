@@ -42,7 +42,7 @@ Porter is a type of dark beer, coming from London, it was first made during the 
 \
 A Blonde is a beer with a golden yellow colour. Basically is a Blonde beer a beer of high fermentation. The taste of the beer is generally smooth. The light malts have usually not such a distinct flavor, so the flavor comes from the hops and the yeast.",
         artist: "Luna Bongers",
-        artistUrl:"http://instagram.com/Luna Bongers",
+        artistUrl:"http://instagram.com/LunaBongers",
         backgroundColor: '#f5f0e7',
         labelImageUrl: './imgs/wide-label-honey.jpg',
         untappdId:'1372507',
