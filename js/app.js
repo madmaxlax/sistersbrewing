@@ -180,6 +180,10 @@ var brewery = false;
     $scope.isMobile = function(){
       return window.innerWidth < 769;
     };
+    
+    $scope.isXL = function(){
+      return window.innerWidth > 1199;
+    };
 
     //make the beersDB available to the main scope
     $scope.beersDB = beersDB;

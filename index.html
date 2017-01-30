@@ -24,6 +24,7 @@
 				<button class="navbar-toggler hidden-sm-up pull-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
     		&#9776;
 			</button>
+			</div>
 				<div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
 					<!-- 					<ul class="nav navbar-nav hidden-sm-down" ng-if="eventresults.length > 0 ">
 						<li class="nav-item">
@@ -31,7 +32,7 @@
 						</li>
 					</ul> -->
 					<div id="scrollSpy">
-						<ul class="nav navbar-nav pull-xs-right">
+						<ul class="nav navbar-nav">
 							<li class="nav-item">
 								<a class="nav-link" ng-click="linkTo('Beers', $event)" href="#Beers">Beers</a>
 							</li>
@@ -50,7 +51,6 @@
 						</ul>
 					</div>
 				</div>
-			</div>
 		</div>
 		<div class="header-text col-xs-12">
 			<img class="logo" src="imgs/logo.png">
@@ -87,7 +87,7 @@
 					<h2>Upcoming Events</h2>
 					<div class="row">
 						<div class="loader" id="loader-1" ng-if="posts === false"></div>
-						<sb-fb-event ng-repeat="event in googleMapsService.events | reverse | limitTo:3"></sb-fb-event>
+						<sb-fb-event ng-repeat="event in googleMapsService.events | reverse | limitTo:(isXL()?4:3)"></sb-fb-event>
 					</div>
 					<a class="btn btn-primary btn-more-events" title="View events on our FB page" href="https://www.facebook.com/thesistersbrewery/events"
 						target="_blank">View more events</a>
@@ -97,7 +97,7 @@
 					<h2>Recent News</h2>
 					<div class="loader" id="loader-1" ng-if="posts === false"></div>
 					<div class="card-columns">
-						<sb-fb-post ng-repeat="post in posts | limitTo:(isMobile()?6:9)"></sb-fb-post>
+						<sb-fb-post ng-repeat="post in posts | limitTo:(isMobile()?6:(isXL()?12:9))"></sb-fb-post>
 					</div>
 					<a class="btn btn-primary btn-more-posts" title="View events on our FB page" href="https://www.facebook.com/thesistersbrewery/"
 						target="_blank">Read more news</a>
