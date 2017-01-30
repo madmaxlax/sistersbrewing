@@ -60,8 +60,13 @@ $menu-animation-base-size: 2px;
     transform-origin: left center;
     }
 }
+//when menu activated, turns into an X
 .navbar-toggler:not(.collapsed){
-    //when menu activated, turns into an X
+    // height:0px;
+    // padding:0px;
+    #nav-icon4 {
+        // margin-bottom: 200px;
+    }
     #nav-icon4 span:nth-child(1) {
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);

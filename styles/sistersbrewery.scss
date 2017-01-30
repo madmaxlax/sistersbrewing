@@ -123,8 +123,9 @@ p {
     margin-top:.1rem;
     font-size: 2.25rem;
   }
-  @include media-breakpoint-up(sm) { 
-    .navbar-nav .nav-item + .nav-item {
+  .navbar-nav .nav-item + .nav-item {
+    margin-left: 0;
+    @include media-breakpoint-up(sm) { 
       margin-left: 2rem;
     }
   }
