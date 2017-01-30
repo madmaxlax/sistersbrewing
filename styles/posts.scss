@@ -1,4 +1,10 @@
-
+.news-and-events-section>.row
+{
+  @include media-breakpoint-down(md) { 
+    margin-left:0;
+    margin-right:0;
+  }
+}
 .card {
   margin-left: 3px;
   text-align: left;
@@ -66,15 +72,23 @@
 }
 
 
+
+@include media-breakpoint-up(md) {
+  .card-columns {
+    column-count: 3;
+    column-gap: $card-columns-sm-up-column-gap;
+  }
+}
+@include media-breakpoint-down(md) {
+  .card-columns {
+    column-count: 1;
+    column-gap: $card-columns-sm-up-column-gap;
+  }
+}
+
 @include media-breakpoint-up(xl) {
   .card-columns {
     column-count: 4;
     /*column-gap: $card-columns-lg-up-column-gap;*/
-  }
-}
-@include media-breakpoint-up(sm) {
-  .card-columns {
-    column-count: 3;
-    column-gap: $card-columns-sm-up-column-gap;
   }
 }
