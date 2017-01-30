@@ -10,13 +10,14 @@
       <p>
         {{beersDB[routeSelectedBeer].longDesc}}
       </p>
-          <span ng-show="brewery.beersById != null">Info from Untappd: </span>
-          <a ng-href="https://untappd.com/b/{{brewery.beersById[beersDB[routeSelectedBeer].untappdId].beer_slug}}/{{brewery.beersById[beersDB[routeSelectedBeer].untappdId].bid}}"
-            target="_blank">Check out {{beersDB[routeSelectedBeer].name}} on Untappd.com
-            <i class="fa fa-external-link-square"></i>
-            <!--<i class="fa fa-beer"></i>-->
-            </a>
-      <div class="untappd-info" ng-show="brewery.beersById != null">
+      <div class="untappd-section">
+        <span ng-show="brewery.beersById != null">Info from Untappd: </span>
+        <a ng-href="https://untappd.com/b/{{brewery.beersById[beersDB[routeSelectedBeer].untappdId].beer_slug}}/{{brewery.beersById[beersDB[routeSelectedBeer].untappdId].bid}}"
+          target="_blank">Check out {{beersDB[routeSelectedBeer].name}} on Untappd.com
+          <i class="fa fa-external-link-square"></i>
+          <!--<i class="fa fa-beer"></i>-->
+          </a>
+        <div class="untappd-info" ng-show="brewery.beersById != null">
           <p>{{brewery.beersById[beersDB[routeSelectedBeer].untappdId].beer_description}}
           <br />
           <strong>{{brewery.beersById[beersDB[routeSelectedBeer].untappdId].rating_count}}</strong> Checkins
@@ -29,7 +30,8 @@
             </div>
           </div> 
         </div>
-        <br />
+      </div>
+      <br />
       <div class="beer-artist">
         Label Artist: <a ng-href="beersDB[routeSelectedBeer].artistUrl" class="beer-artist-link">{{beersDB[routeSelectedBeer].artist}}</a>
       </div>
