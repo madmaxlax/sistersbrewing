@@ -110,7 +110,10 @@ p {
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.08);
   background-color:$sb-main-background-color;
   .logo {
-    height: 75px;
+    height: 55px;
+    @include media-breakpoint-up(md) { 
+      height: 75px;
+    }
   }
   .navbar-nav {
     margin-top: 23px;
