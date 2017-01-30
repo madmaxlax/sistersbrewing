@@ -73,19 +73,24 @@
 
 
 
+@include media-breakpoint-down(xs) {
+  .card-columns {
+    column-count: 1;
+    column-gap: $card-columns-sm-up-column-gap;
+  }
+}
+@include media-breakpoint-up(sm) {
+  .card-columns {
+    column-count: 2;
+    column-gap: $card-columns-sm-up-column-gap;
+  }
+}
 @include media-breakpoint-up(md) {
   .card-columns {
     column-count: 3;
     column-gap: $card-columns-sm-up-column-gap;
   }
 }
-@include media-breakpoint-down(md) {
-  .card-columns {
-    column-count: 1;
-    column-gap: $card-columns-sm-up-column-gap;
-  }
-}
-
 @include media-breakpoint-up(xl) {
   .card-columns {
     column-count: 4;

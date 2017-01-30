@@ -5,36 +5,30 @@
     </div>
     <div class="col-sm-8 beer-description">
       <h2>{{beersDB[routeSelectedBeer].name}} <sup>{{beersDB[routeSelectedBeer].new?"New!":""}}</sup></h2>
-
-        <br> 
+      <ul class="beer-meta">
+        <li>5.8% ABV</li>
+        <li class="sep">|</li>
+        <li>58 IBUs</li>
+        <li class="sep">|</li>
+        <li>American IPA</li>
+      </ul>
       <p>
         {{beersDB[routeSelectedBeer].longDesc}}
       </p>
-      <div class="untappd-section">
-        <span ng-show="brewery.beersById != null">Info from Untappd: </span>
-        <a ng-href="https://untappd.com/b/{{brewery.beersById[beersDB[routeSelectedBeer].untappdId].beer_slug}}/{{brewery.beersById[beersDB[routeSelectedBeer].untappdId].bid}}"
-          target="_blank">Check out {{beersDB[routeSelectedBeer].name}} on Untappd.com
-          <i class="fa fa-external-link-square"></i>
-          <!--<i class="fa fa-beer"></i>-->
-          </a>
-        <div class="untappd-info" ng-show="brewery.beersById != null">
-          <p>{{brewery.beersById[beersDB[routeSelectedBeer].untappdId].beer_description}}
-          <br />
-          <strong>{{brewery.beersById[beersDB[routeSelectedBeer].untappdId].rating_count}}</strong> Checkins
-            <br/> Average Rating: <strong>{{brewery.beersById[beersDB[routeSelectedBeer].untappdId].rating_score |number:1}} / 5</strong> <i class="fa fa-star"></i>
-          </p>
-          <div class="check-info" hidden>
-            <div ng-repeat="checkin in brewery.beersById[beersDB[routeSelectedBeer].untappdId].checkinData.items">
-              {{checkin.user.user_name}} <img ng-src="{{checkin.media.items[0].photo.photo_img_md}}" style="width:100px;height:100px"
-                alt=""> {{checkin.comments[0]}}
-            </div>
-          </div> 
-        </div>
-      </div>
-      <br />
       <div class="beer-artist">
-        Label Artist: <a ng-href="{{beersDB[routeSelectedBeer].artistUrl}}" class="beer-artist-link">{{beersDB[routeSelectedBeer].artist}}</a>
+        <i class="fa fa-paint-brush" aria-hidden="true"></i> Label created by: <a ng-href="{{beersDB[routeSelectedBeer].artistUrl}}" target="_blank" class="beer-artist-link">{{beersDB[routeSelectedBeer].artist}}</a>
       </div>
+      <p>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <span class="rating">
+          {{brewery.beersById[beersDB[routeSelectedBeer].untappdId].rating_score |number:1}}/5
+        </span>
+        out of {{brewery.beersById[beersDB[routeSelectedBeer].untappdId].rating_count}} ratings.
+        <a ng-href="https://untappd.com/b/{{brewery.beersById[beersDB[routeSelectedBeer].untappdId].beer_slug}}/{{brewery.beersById[beersDB[routeSelectedBeer].untappdId].bid}}" target="_blank">
+          See more on Untappd.
+        </a>
+      </p>
+      <br />
     </div>
   </div>
 </div>
