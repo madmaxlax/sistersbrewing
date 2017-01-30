@@ -177,21 +177,24 @@ var brewery = false;
         $scope.linkTo('beer-detail', $event, true);
       }
     };
-    $scope.isMobile = function(){
-      return window.innerWidth < 769;
+    $scope.isMobile = function () {
+      return $window.innerWidth < 769;
     };
-    
-    $scope.isXL = function(){
-      return window.innerWidth > 1199;
+    $scope.isXL = function () {
+      return $window.innerWidth > 1199;
     };
-
+    $scope.eventsLimit = ($scope.isXL)()?4:3;
+    angular.element($window).bind('resize', function () {
+      $scope.eventsLimit = ($scope.isXL)()?4:3;
+      $scope.$apply();
+    });
     //make the beersDB available to the main scope
     $scope.beersDB = beersDB;
 
     $scope.linkTo = function (eID, $event, disableStoppingDefault) {
-      
+
       //close the menu
-      if(!angular.element('#menu-icon-toggler').hasClass('collapsed')){
+      if (!angular.element('#menu-icon-toggler').hasClass('collapsed')) {
         angular.element('#menu-icon-toggler').click();
       }
 

@@ -1353,7 +1353,7 @@ var map;
                     var infoWindow = new google.maps.InfoWindow({
                         content: '<h4>' + beerSpot.Name + '</h4>' +
                         '<br /> ' + beerSpot['Full Address'] +
-                        '<br /> <a href="https://maps.google.com/?f=d&daddr=' + encodeURIComponent(beerSpot.Name + ',' + beerSpot['Full Address']) + '" target="_blank">Get Directions <i class="fa fa-car"></i></a>'
+                        '<br /> <a href="https://maps.google.com/?f=d&daddr=' + encodeURIComponent(beerSpot.Name + ',' + beerSpot['Full Address']) + '" target="_blank"><i class="fa fa-car"></i> Get Directions</a>'
                     });
 
                     //make the info window open when clicked 

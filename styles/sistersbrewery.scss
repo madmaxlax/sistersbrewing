@@ -118,6 +118,9 @@ p {
   }
   .navbar-nav {
     margin-top: 23px;
+    @include media-breakpoint-up(md) { 
+      float: right;
+    }
   }
   button.navbar-toggler{
     margin-top:.1rem;
@@ -129,6 +132,8 @@ p {
       margin-left: 2rem;
     }
   }
+  
+  @include media-breakpoint-down(md) { 
   .collapsing,.collapse.in{
     ul.navbar-nav
     { 
@@ -143,6 +148,7 @@ p {
         text-align: center;
       }
     }
+  }
   }
   .active {
     color:$sb-link-color;
