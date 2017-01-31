@@ -5019,12 +5019,6 @@ a.text-danger:focus, a.text-danger:hover {
   .card-columns {
     column-count: 4;
     /*column-gap: $card-columns-lg-up-column-gap;*/ } }
-@media (min-width: 992px) {
-  .beer-description {
-    max-height: 400px;
-    overflow-y: auto;
-    overflow-x: hidden; } }
-
 .hexs-container {
   margin: auto;
   font-size: 0;
@@ -5278,6 +5272,12 @@ a.text-danger:focus, a.text-danger:hover {
   .beer-detail .rating {
     font-weight: bold; }
 
+@media (min-width: 992px) {
+  .beer-description {
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden; } }
+
 #findmap #map {
   height: 500px;
   -webkit-box-sizing: content-box;
@@ -5498,6 +5498,8 @@ p {
 
 .find-us-section {
   padding: 20px 0 0 0; }
+  .find-us-section h2 {
+    margin-bottom: 10px; }
 
 .news-and-events-section {
   height: 100%;

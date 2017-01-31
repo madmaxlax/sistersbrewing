@@ -1352,7 +1352,7 @@ var map;
                     //set up the info window 
                     var infoWindow = new google.maps.InfoWindow({
                         content: '<h4>' + beerSpot.Name + '</h4>' +
-                        '<br /> ' + beerSpot['Full Address'] +
+                        beerSpot['Full Address'] +
                         '<br /> <a href="https://maps.google.com/?f=d&daddr=' + encodeURIComponent(beerSpot.Name + ',' + beerSpot['Full Address']) + '" target="_blank"><i class="fa fa-car"></i> Get Directions</a>'
                     });
 
@@ -1427,25 +1427,32 @@ var map;
                 var controlDiv = document.createElement('div');
                 // Set CSS for the control border.
                 var controlUI = document.createElement('div');
-                controlUI.style.backgroundColor = '#fff';
-                controlUI.style.border = '2px solid #fff';
-                controlUI.style.borderRadius = '3px';
+                controlUI.style.backgroundColor = '#D32F2F';
+                controlUI.style.borderRadius = '0 0 3px 3px';
                 controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
                 controlUI.style.cursor = 'pointer';
                 controlUI.style.marginBottom = '22px';
                 controlUI.style.textAlign = 'center';
                 controlUI.title = 'Click to find the closest beer to you!';
-                controlDiv.appendChild(controlUI);
+                $(controlUI).hover(
+                    function onMouseEnter() {
+                        this.style.backgroundColor = "#962020";
+                    },
+                    function onMouseLeave() {
+                        this.style.backgroundColor = "rgb(211,47,47)";
+                    }
+                );
+                                controlDiv.appendChild(controlUI);
 
                 // Set CSS for the control interior.
                 var controlText = document.createElement('div');
-                controlText.style.color = 'rgb(25,25,25)';
-                controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
+                controlText.style.color = 'rgb(255,255,255)';
+                controlText.style.fontFamily = 'Raleway,Arial,sans-serif';
                 controlText.style.fontSize = '16px';
                 controlText.style.lineHeight = '38px';
-                controlText.style.paddingLeft = '5px';
-                controlText.style.paddingRight = '5px';
-                controlText.innerHTML = 'Find Closest';
+                controlText.style.paddingLeft = '10px';
+                controlText.style.paddingRight = '10px';
+                controlText.innerHTML = '<i class="fa fa-location-arrow" aria-hidden="true"></i> Find closest to me';
                 controlUI.appendChild(controlText);
 
                 // Setup the click event listeners: simply set the map to Chicago.

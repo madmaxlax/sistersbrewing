@@ -7,7 +7,7 @@ $sb-alt-background: #f5f0e7;//yellowish grey
 $sb-main-text-color: #333;
 $body-color:$sb-main-text-color; // override bootstrap
 
-$sb-link-color: #D32F2F; //bluish
+$sb-link-color: #D32F2F; //red
 $brand-primary: $sb-link-color;
 
 $sb-footer-background-color: #ffd590; //yellow orange
@@ -20,7 +20,6 @@ $font-family-base: $sb-main-font;//override bootstrap
 //grab actual bootstrap files
 @import "scss/bootstrap";
 @import "posts.scss";
-@import "beers.scss";
 @import "hex.scss";
 @import "beerdetail.scss";
 @import "map.scss";
@@ -197,6 +196,9 @@ p {
 
 .find-us-section{
   padding: 20px 0 0 0;
+  h2 {
+    margin-bottom: 10px;
+  }
 }
 .news-and-events-section {
   height: 100%;
