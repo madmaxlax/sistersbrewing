@@ -6,11 +6,9 @@
     <div class="col-sm-8 beer-description">
       <h2>{{beersDB[routeSelectedBeer].name}} <sup>{{beersDB[routeSelectedBeer].new?"New!":""}}</sup></h2>
       <ul class="beer-meta">
-        <li>5.8% ABV</li>
+        <li>{{beersDB[routeSelectedBeer].ABV}}% ABV</li>
         <li class="sep">|</li>
-        <li>58 IBUs</li>
-        <li class="sep">|</li>
-        <li>American IPA</li>
+        <li>{{beersDB[routeSelectedBeer].beerType}}</li>
       </ul>
       <p>
         {{beersDB[routeSelectedBeer].longDesc}}
