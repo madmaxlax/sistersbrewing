@@ -32,3 +32,10 @@
     font-size: 18px;
   }
 }
+.beer-description{
+    @include media-breakpoint-up(lg) {
+        max-height: 400px;//this is roughly the height of the beer labels
+        overflow-y: auto; //some, like drone, have huge descriptions
+        overflow-x: hidden; 
+    }
+}
