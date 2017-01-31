@@ -11,6 +11,7 @@
   .card-image {
     img {
       width: 100%;
+      min-height: 180px;
       max-height: 250px;
       object-fit: cover;
       object-position: 50% 40%;

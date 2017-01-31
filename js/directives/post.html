@@ -1,18 +1,11 @@
 <div class="post card">
 	<div class="card-image">
-		<!--       <img class="card-img-top" src="https://unsplash.it/330/?random"> -->
 		<a href="https://www.facebook.com/{{post.id}}" target="_blank">
 			<img class="card-img-top" ng-src="{{post.full_picture?post.full_picture:'http://madmaxlax.com/sites/sistersbrewing/imgs/logo-wide.png'}}">
 		</a>
 	</div>
 	<div class="card-body">
-		<div class="card-title">
-			<a href="https://www.facebook.com/{{post.id}}" target="_blank">{{post.message.length?(post.message | limitTo:100):(post.story | limitTo:100)}}...</a>
-		</div>
 		<div class="card-subheader">{{post.created_time | date}}{{post.place?' | At '+post.place.name:''}}</div>
-		<div class="card-text">{{post.message.length?(post.story | limitTo:200)+'...':''}} <a href="https://www.facebook.com/{{post.id}}" target="_blank">Read more on Facebook</a></div>
+		<div class="card-text">{{post.message.length?(post.message | limitTo:100):(post.story | limitTo:100)}}... <a href="https://www.facebook.com/{{post.id}}" target="_blank">Read more on Facebook</a></div>
 	</div>
 </div>
-
-
-<!-- MAX if no card-header, put description in card-text -->

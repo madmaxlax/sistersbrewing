@@ -4958,6 +4958,7 @@ a.text-danger:focus, a.text-danger:hover {
   text-align: left; }
   .card .card-image img {
     width: 100%;
+    min-height: 180px;
     max-height: 250px;
     object-fit: cover;
     object-position: 50% 40%; }
@@ -5275,8 +5276,7 @@ a.text-danger:focus, a.text-danger:hover {
   .beer-detail .beer-artist {
     font-size: 14px; }
   .beer-detail .rating {
-    font-weight: bold;
-    font-size: 18px; }
+    font-weight: bold; }
 
 #findmap #map {
   height: 500px;
