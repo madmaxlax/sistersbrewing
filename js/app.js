@@ -188,6 +188,9 @@ var brewery = false;
       $scope.eventsLimit = ($scope.isXL)()?4:3;
       $scope.$apply();
     });
+    // $scope.viewMoreEventsCount = function(){ 
+    //   return $scope.googleMapsService.events - $scope.eventsLimit;
+    // };
     //make the beersDB available to the main scope
     $scope.beersDB = beersDB;
 
