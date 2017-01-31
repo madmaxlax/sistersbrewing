@@ -96,6 +96,7 @@
 					<div class="row">
 						<div class="loader" id="loader-1" ng-if="posts === false"></div>
 						<sb-fb-event ng-repeat="event in googleMapsService.events | reverse | limitTo:eventsLimit"></sb-fb-event>
+						<div ng-show="googleMapsService.events.length===0" ng-class="eventsColClasses()">No upcoming events at this time!</div>
 					</div>
 					<a class="btn btn-primary btn-more-events" title="View events on our FB page" href="https://www.facebook.com/thesistersbrewery/events"
 						target="_blank"><span ng-show="((googleMapsService.events.length - eventsLimit)>0)">View more events ({{(googleMapsService.events.length - eventsLimit)}})</span><span ng-show="((googleMapsService.events.length - eventsLimit)<=0)">View events on Facebook</span></a>

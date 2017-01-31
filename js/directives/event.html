@@ -1,4 +1,4 @@
-<div class="col-xl-3 col-md-4 col-xs-12"><div class="event card">
+<div class="col-xs-12" ng-class="eventsColClasses()"><div class="event card">
 	<div class="event-date">
 		{{event.start_time | date}}
 	</div>
@@ -21,7 +21,7 @@
 				<i class="fa fa-map-marker"></i> Show on map
 			</a>
 		</div>
-		<div class="card-text">{{event.description | limitTo:200}}... <a href="https://www.facebook.com/events/{{event.id}}" target="_blank"> View event on Facebook</a></div>
+		<div class="card-text">{{event.description | limitTo:200}}... <span ng-show="googleMapsService.events.length===0">No upcoming events at this time!</span><a href="https://www.facebook.com/events/{{event.id}}" target="_blank"> View event on Facebook</a></div>
 		<div class="clearfix"></div>
 	</div>
 </div>

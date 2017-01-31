@@ -188,9 +188,30 @@ var brewery = false;
       $scope.eventsLimit = ($scope.isXL)()?4:3;
       $scope.$apply();
     });
-    // $scope.viewMoreEventsCount = function(){ 
-    //   return $scope.googleMapsService.events - $scope.eventsLimit;
-    // };
+    $scope.eventsColClasses = function(){ 
+      if ($scope.googleMapsService == null)
+      {
+        return;
+      }
+      //var limit = $scope.eventsLimit;
+      var totalEvents = $scope.googleMapsService.events.length;
+      if(totalEvents >= 4)
+      {
+        return "col-md-4 col-xl-3";
+      }
+      if(totalEvents === 3)
+      {
+        return "col-md-4";
+      }
+      if(totalEvents === 2)
+      {
+        return "col-md-6";
+      }
+      if(totalEvents <= 1)
+      {
+        return "col-md-6 offset-md-3";
+      }
+    };
     //make the beersDB available to the main scope
     $scope.beersDB = beersDB;
 
