@@ -17,6 +17,9 @@ $hex-jagged-spacing:100px;
     text-align: center;
     font-family: $sb-logo-font;
     color: #000;
+    &:focus {
+      outline: none;
+    }
     &:first-child {
       img {
         margin-left: 0;

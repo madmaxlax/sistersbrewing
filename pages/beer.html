@@ -1,9 +1,9 @@
 <div ng-style="{'background-color':beersDB[routeSelectedBeer].backgroundColor}" class="beer-detail" id="beer-detail">
   <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-12 col-md-4">
       <img ng-src="{{beersDB[routeSelectedBeer].labelImageUrl}}" height="200px" alt="beer label" class="beer-detail-label">
     </div>
-    <div class="col-sm-8 beer-description">
+    <div class="col-sm-12 col-md-8 beer-description">
       <h2>{{beersDB[routeSelectedBeer].name}} <sup>{{beersDB[routeSelectedBeer].new?"New!":""}}</sup></h2>
       <ul class="beer-meta">
         <li>{{beersDB[routeSelectedBeer].ABV}}% ABV</li>
@@ -11,7 +11,7 @@
         <li>{{beersDB[routeSelectedBeer].beerType}}</li>
       </ul>
       <p>
-        {{beersDB[routeSelectedBeer].longDesc}}
+        {{beersDB[routeSelectedBeer].shortDesc}}
       </p>
       <div class="beer-artist">
         <i class="fa fa-paint-brush" aria-hidden="true"></i> Label created by: <a ng-href="{{beersDB[routeSelectedBeer].artistUrl}}" target="_blank" class="beer-artist-link">{{beersDB[routeSelectedBeer].artist}}</a>
