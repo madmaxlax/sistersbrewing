@@ -5029,6 +5029,8 @@ a.text-danger:focus, a.text-danger:hover {
     text-align: center;
     font-family: "Old Standard TT", serif;
     color: #000; }
+    .hexs-container a:focus {
+      outline: none; }
     .hexs-container a:first-child img {
       margin-left: 0; }
     .hexs-container a:first-child .beer-name {
