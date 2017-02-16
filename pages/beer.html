@@ -1,9 +1,9 @@
 <div ng-style="{'background-color':beersDB[routeSelectedBeer].backgroundColor}" class="beer-detail" id="beer-detail">
   <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-12 col-md-4">
       <img ng-src="{{beersDB[routeSelectedBeer].labelImageUrl}}" height="200px" alt="beer label" class="beer-detail-label">
     </div>
-    <div class="col-sm-8 beer-description">
+    <div class="col-sm-12 col-md-8 beer-description">
       <h2>{{beersDB[routeSelectedBeer].name}} <sup>{{beersDB[routeSelectedBeer].new?"New!":""}}</sup></h2>
       <ul class="beer-meta">
         <li>{{beersDB[routeSelectedBeer].ABV}}% ABV</li>
