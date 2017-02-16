@@ -34,12 +34,30 @@ $hex-jagged-spacing:100px;
     &:nth-child(odd) img {
       margin-top: -5vw;
     }
+    &:nth-child(even) .new-beer {
+      top: 60px;
+    }
+    &:nth-child(odd) .new-beer {
+      top: -70px;
+    }
     img {
       width: 14vw;
       margin-left: -3vw;
       &:hover {
         transition: all .2s ease-in-out;
       }
+    }
+    .new-beer {
+      font-size: 1rem;
+      position: absolute;
+      display: inline-block;
+      z-index: 2;
+      background-color: #e46767;
+      color: white;
+      border-radius: 4px;
+      padding: 2px 5px;
+      font-family: "Raleway", sans-serif;
+      right: 20px;
     }
     .beer-name {
       display: block;

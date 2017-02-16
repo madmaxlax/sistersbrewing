@@ -5039,11 +5039,26 @@ a.text-danger:focus, a.text-danger:hover {
       margin-top: 5vw; }
     .hexs-container a:nth-child(odd) img {
       margin-top: -5vw; }
+    .hexs-container a:nth-child(even) .new-beer {
+      top: 60px; }
+    .hexs-container a:nth-child(odd) .new-beer {
+      top: -70px; }
     .hexs-container a img {
       width: 14vw;
       margin-left: -3vw; }
       .hexs-container a img:hover {
         transition: all .2s ease-in-out; }
+    .hexs-container a .new-beer {
+      font-size: 1rem;
+      position: absolute;
+      display: inline-block;
+      z-index: 2;
+      background-color: #e46767;
+      color: white;
+      border-radius: 4px;
+      padding: 2px 5px;
+      font-family: "Raleway", sans-serif;
+      right: 20px; }
     .hexs-container a .beer-name {
       display: block;
       opacity: 0;
