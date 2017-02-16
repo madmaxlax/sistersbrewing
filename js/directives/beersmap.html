@@ -1,6 +1,9 @@
 <div id="findmap">
   <div class="locations-count subtitle">
-    Available at <strong>{{googleMapsService.sellerLocations.length|| '[loading...]'}}</strong> locations in <a href="#" class="country">The Netherlands</a>, <a href="#" class="country">Germany</a>, <a href="#" class="country">Italy</a>, and <a href="#" class="country">France</a>.</div>
+    Available at <strong>{{googleMapsService.sellerLocations.length || '[loading...]'}}</strong> locations in <a href="#" ng-click="googleMapsService.setPosAndZoom(52.3665982, 4.8851904, 8)" class="country">The Netherlands</a>, 
+    <a href="#" ng-click="googleMapsService.setPosAndZoom(50.9876257,8.889455, 6)" class="country">Germany</a>, 
+    <a href="#" ng-click="googleMapsService.setPosAndZoom(42.6448224,11.5055115, 6)" class="country">Italy</a>, and 
+    <a href="#" ng-click="googleMapsService.setPosAndZoom(47.183159,1.7316718, 6)" class="country">France</a>.</div>
   <div id="map">
     <div class="subtitle" ng-hide="googleMapsService.googleLoaded">Loading Google Maps...</div>
   </div>
