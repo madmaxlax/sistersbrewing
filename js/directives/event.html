@@ -17,7 +17,7 @@
 			|
 			{{event.place.location.city}} {{event.place.location.country}}
 			|
-			<a class="" href="#FindUs" ng-click="googleMapsService.showInfoWindow(event.infoWindow, event.marker);linkTo('map', $event)">
+			<a class="" href="#FindUs" ng-if="event.place" ng-click="googleMapsService.showInfoWindow(event.infoWindow, event.marker);linkTo('map', $event)">
 				<i class="fa fa-map-marker"></i> Show on map
 			</a>
 		</div>

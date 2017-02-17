@@ -74,6 +74,7 @@ Saison is a Belgian type of beer (beer style) of top fermentation with an alcoho
     },
     smoker:{
         name:"Smoker",
+        new:true,
         urlName:'smoker',
         shortDesc: "Smoker (5.4% Abv.), a subtle Rauchbier. Very clean smokiness with pleasant sweetness and complex flavours of the malt.",
         longDesc: "",
