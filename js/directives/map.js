@@ -100,35 +100,26 @@ var map;
 
         //function for radians conversion
         var rad = function (x) { return x * Math.PI / 180; };
-        var tryLocWithIP = function () {
-            var url = "http://freegeoip.net/json/";
 
-            $http.get(url).
-                then(function (data, status, headers, config) {
-                    console.log(data);
-                    var position = { coords: data.data };
-                    geo_success(position);
-                }).catch(function (data, status, headers, config) {
-                    console.log("Error getting data " + status);
-                });
-        };
 
         var wpid = false;
         var currentLocMarker = false;
-        var geo_success = function (position) {
+        var geo_success = function (position, thenFindClosest) {
             // var pos = {
             //     lat: position.coords.latitude,
             //     lng: position.coords.longitude
             // };
             // serviceObj.map.setZoom(11);
             // serviceObj.map.panTo(pos);
-            serviceObj.setPosAndZoom(position.coords.latitude,position.coords.longitude,11);
-            findClosestMarker(position.coords.latitude, position.coords.longitude);
+            serviceObj.setPosAndZoom(position.coords.latitude, position.coords.longitude, 11);
+            if (thenFindClosest == null || thenFindClosest) {
+                findClosestMarker(position.coords.latitude, position.coords.longitude);
+            }
         };
         var geo_failure = function (error) {
             console.log('No geo location possible');
             console.log(error);
-            tryLocWithIP();
+            serviceObj.tryLocWithIP(true);
         };
         //math function for finding closest marker
         var findClosestMarker = function (lat, lng) {
@@ -255,6 +246,18 @@ var map;
                 serviceObj.map.setZoom(zoomLevel);
                 serviceObj.map.panTo(pos);
             },
+            tryLocWithIP: function (thenFindClosest) {
+                var url = "http://freegeoip.net/json/";
+
+                $http.get(url).
+                    then(function (data, status, headers, config) {
+                        //console.log(data);
+                        var position = { coords: data.data };
+                        geo_success(position, thenFindClosest);
+                    }).catch(function (data, status, headers, config) {
+                        console.log("Error getting data " + status);
+                    });
+            },
             mapsClickedOrFocused: false,
             mapsClickedListener: false,
             setupOutsideClickListener: function ($event) {
@@ -277,7 +280,7 @@ var map;
                     serviceObj.mapsClickedOrFocused = false;
                 }
             },
-            initiateMap: function () {
+            initiateMap: function (recenterToLocViaIP) {
                 serviceObj.googleLoaded = true;
                 //create the map, center it on Amsterdam
                 //eventually add way to get current location
@@ -350,6 +353,10 @@ var map;
 
                 //function to set up the find nearest beer spot button
                 serviceObj.setUpFindNearest();
+
+                if (recenterToLocViaIP) {
+                    serviceObj.tryLocWithIP(false);
+                }
             },
             //var for the last-opened info window to be able to close it later
             prev_infoWindow: false,
@@ -448,7 +455,7 @@ var map;
                     wpid = navigator.geolocation.getCurrentPosition(geo_success, geo_failure);
                 }
                 else {
-                    tryLocWithIP();
+                    tryLocWithIP(true);
                 }
             }
         };
@@ -465,7 +472,9 @@ var map;
 
                 //function to set up map
                 if (typeof (google) != 'undefined' && google != null) {
-                    googleMapsService.initiateMap();
+                    //optionally automatically re-center map based on IP Address
+                    //pass true
+                    googleMapsService.initiateMap(false);
                 } else {
                     // alert the user
                     console.log("google not ready yet");
@@ -477,7 +486,10 @@ var map;
                             // FB API loaded, make calls
                             console.log("google is ready");
                             //set up map
-                            googleMapsService.initiateMap();
+                            //optionally automatically re-center map based on IP Address
+                            //pass true
+                            googleMapsService.initiateMap(false);
+
                             //close the watcher
                             googleWatcher();
                         }
