@@ -365,36 +365,39 @@ var map;
             addEventsToMap: function () {
                 this.events.forEach(function (eventLocation) {
                     //set up the marker
-                    var marker = new google.maps.Marker({
-                        position: { lat: eventLocation.place.location.latitude, lng: eventLocation.place.location.longitude },
-                        map: serviceObj.map,
-                        title: eventLocation.name,
-                        icon: './imgs/EventLocationIcon.png'
-                    });
-                    eventLocation.marker = marker;
+                    //console.log(eventLocation.name, eventLocation);
+                    if (eventLocation.place != null) { //some events dont have a location
+                        var marker = new google.maps.Marker({
+                            position: { lat: eventLocation.place.location.latitude, lng: eventLocation.place.location.longitude },
+                            map: serviceObj.map,
+                            title: eventLocation.name,
+                            icon: './imgs/EventLocationIcon.png'
+                        });
+                        eventLocation.marker = marker;
 
 
-                    //set up the info window 
-                    var infoWindow = new google.maps.InfoWindow({
-                        content: '<h4>' + eventLocation.name + '</h4>' +
-                        '<br /> ' + facebookService.textShorten(eventLocation.description, 150) +
-                        '<br /> ' +
-                        //'<a href="https://maps.google.com/?f=d&daddr=' + encodeURIComponent(eventLocation.name + ',' + eventLocation.place.location.street, + ' ' + eventLocation.place.location.city) + '" target="_blank">Get Directions</a> ' +
-                        '<a href="https://www.facebook.com/events/' + eventLocation.id + '" target="_blank">View event in FB</a>'
-                    });
-                    //make it accessible later
-                    eventLocation.infoWindow = infoWindow;
+                        //set up the info window 
+                        var infoWindow = new google.maps.InfoWindow({
+                            content: '<h4>' + eventLocation.name + '</h4>' +
+                            '<br /> ' + facebookService.textShorten(eventLocation.description, 150) +
+                            '<br /> ' +
+                            //'<a href="https://maps.google.com/?f=d&daddr=' + encodeURIComponent(eventLocation.name + ',' + eventLocation.place.location.street, + ' ' + eventLocation.place.location.city) + '" target="_blank">Get Directions</a> ' +
+                            '<a href="https://www.facebook.com/events/' + eventLocation.id + '" target="_blank">View event in FB</a>'
+                        });
+                        //make it accessible later
+                        eventLocation.infoWindow = infoWindow;
 
-                    //make the info window open when clicked 
-                    //how to close?
-                    marker.addListener('click', function () {
-                        if (serviceObj.prev_infoWindow) {
-                            serviceObj.prev_infoWindow.close();
-                        }
+                        //make the info window open when clicked 
+                        //how to close?
+                        marker.addListener('click', function () {
+                            if (serviceObj.prev_infoWindow) {
+                                serviceObj.prev_infoWindow.close();
+                            }
 
-                        serviceObj.prev_infoWindow = infoWindow;
-                        infoWindow.open(serviceObj.map, marker);
-                    });
+                            serviceObj.prev_infoWindow = infoWindow;
+                            infoWindow.open(serviceObj.map, marker);
+                        });
+                    }
                 });
             },
             showInfoWindow: function (infoWindow, marker) {
