@@ -5296,6 +5296,14 @@ a.text-danger:focus, a.text-danger:hover {
     overflow-y: auto;
     overflow-x: hidden; } }
 
+#findmap .locations-count {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 10px; }
+#findmap .buy-from-websites {
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 30px; }
 #findmap #map {
   height: 500px;
   -webkit-box-sizing: content-box;

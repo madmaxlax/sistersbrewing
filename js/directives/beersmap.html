@@ -1,9 +1,17 @@
 <div id="findmap">
-  <div class="locations-count subtitle">
+  <p class="locations-count">
     Available at <strong>{{googleMapsService.sellerLocations.length || '[loading...]'}}</strong> locations in <a href="#" ng-click="googleMapsService.setPosAndZoom(52.3665982, 4.8851904, 8)" class="country">The Netherlands</a>, 
     <a href="#" ng-click="googleMapsService.setPosAndZoom(50.9876257,8.889455, 6)" class="country">Germany</a>, 
     <a href="#" ng-click="googleMapsService.setPosAndZoom(42.6448224,11.5055115, 6)" class="country">Italy</a>, and 
-    <a href="#" ng-click="googleMapsService.setPosAndZoom(47.183159,1.7316718, 6)" class="country">France</a>.</div>
+    <a href="#" ng-click="googleMapsService.setPosAndZoom(47.183159,1.7316718, 6)" class="country">France</a>.
+  </p>
+  <p class="buy-from-websites">You can find some of our beers, posters, and glasses online at
+    <a href="http://www.bierboetiek.nl/shop/brouwerij-the-sisters-brewery-utrecht-breukelen-speciaalbier" target="_blank">Bierboetiek</a>,
+    <a href="https://bierhut.com/brouwer/the-sisters-brewery.html" target="_blank">Bierhut</a>,
+    <a href="https://www.buurtbier.nl/" target="_blank">BuurtBier</a>, and
+    <a href="http://www.speciaalbierpakket.nl/website/index.php?Show=Search&KeyWord=the%20sisters" target="_blank">Speciaalbierpakket</a>!
+  </p>
+
   <div id="map">
     <div class="subtitle" ng-hide="googleMapsService.googleLoaded">Loading Google Maps...</div>
   </div>

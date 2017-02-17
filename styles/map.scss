@@ -3,6 +3,16 @@
 }
 #findmap{
     
+    .locations-count {
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .buy-from-websites {
+        text-align: center;
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
     #map {
         height: 500px;
         // display: none;
