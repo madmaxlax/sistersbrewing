@@ -19,8 +19,8 @@
 
 <body data-spy="scroll" data-target="#scrollSpy" data-offset="150" ng-cloak="" ng-controller="appController as ctrlr">
 	<div class="main-content">
-		<div class="header navbar navbar-fixed-top">
-			<a class="navbar-brand" href="#">
+		<div class="header navbar navbar-fixed-top" id="top">
+			<a class="navbar-brand" href="#/" ng-click="linkTo('top', $event)" >
 				<img class="logo" src="imgs/logo.png">
 			</a>
 			<div class="pull-right navbar-toggler-container">
