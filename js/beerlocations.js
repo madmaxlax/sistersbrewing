@@ -360,6 +360,46 @@ var BEERLOCATIONS = [
         "Longitude": 5.03747329999999
     },
     {
+        "Name": "Biervana",
+        "Address": "Hohenzollernstraße 61",
+        "City": "München",
+        "Full Address": "Hohenzollernstraße 61, München, Duitsland",
+        "Latitude": 48.160318,
+        "Longitude":11.573803 
+    },
+    {
+        "Name": "Braukunstwerk",
+        "Address": "Warendorfer Str. 44",
+        "City": "Münster",
+        "Full Address": "Warendorfer Str. 44, Münster",
+        "Latitude": 51.962560,
+        "Longitude": 7.645442
+    },
+    {
+        "Name": "BrauseSyndikat",
+        "Address": "Ellerstraße 36",
+        "City": "Bielefeld",
+        "Full Address": "Ellerstraße 36, Bielefeld, Duitsland",
+        "Latitude": 52.025943,
+        "Longitude": 8.521830
+    },
+    {
+        "Name": "Hopfen & Malz",
+        "Address": "Triftstraße 57",
+        "City": "Berlin",
+        "Full Address": "Triftstraße 57, Berlin, Duitsland",
+        "Latitude": 52.543010,
+        "Longitude": 13.355870
+    },
+    {
+        "Name": "The Castle Pub",
+        "Address": "Hochstraße 2",
+        "City": "Berlin",
+        "Full Address": "Hochstraße 2, Berlin, Duitsland",
+        "Latitude": 52.549551,
+        "Longitude": 13.384299
+    },
+    {
         "Name": "Bottleshop Eindhoven",
         "Address": "Geldropseweg 86a",
         "City": "Eindhoven",
