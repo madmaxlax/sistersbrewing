@@ -371,6 +371,7 @@ var map;
                             position: { lat: eventLocation.place.location.latitude, lng: eventLocation.place.location.longitude },
                             map: serviceObj.map,
                             title: eventLocation.name,
+                            zIndex:99999,
                             icon: './imgs/sisterlogoEvents.svg'
                         });
                         eventLocation.marker = marker;
