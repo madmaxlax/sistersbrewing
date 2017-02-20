@@ -261,7 +261,7 @@ var map;
             mapsClickedOrFocused: false,
             mapsClickedListener: false,
             setupOutsideClickListener: function ($event) {
-                console.log($event);
+                //console.log($event);
                 //console.log($event.target.firstChild.nodeName);
 
                 //clicked on something outside the map
@@ -296,7 +296,7 @@ var map;
                 //when map is clicked, enable drag and 
                 google.maps.event.addListener(serviceObj.map, "click", function (event) {
                     if (!serviceObj.mapsClickedOrFocused) {
-                        console.log('enabling scroll');
+                        //console.log('enabling scroll');
                         serviceObj.enableScrollingZoom();
 
                         //setup listeners for outside of map click
@@ -440,7 +440,7 @@ var map;
                 controlText.style.lineHeight = '38px';
                 controlText.style.paddingLeft = '10px';
                 controlText.style.paddingRight = '10px';
-                controlText.innerHTML = '<i class="fa fa-location-arrow" aria-hidden="true"></i> Find closest to me';
+                controlText.innerHTML = '<i class="fa fa-location-arrow" aria-hidden="true"></i> Find closest <span class="hidden-xs-down">to me</span>';
                 controlUI.appendChild(controlText);
 
                 // Setup the click event listeners: simply set the map to Chicago.
