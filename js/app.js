@@ -25,7 +25,7 @@ var brewery = false;
   js.id = id;
   js.src = "https://connect.facebook.net/en_US/sdk.js"; //added https for local testing
   fjs.parentNode.insertBefore(js, fjs);
-} (document, 'script', 'facebook-jssdk'));
+}(document, 'script', 'facebook-jssdk'));
 
 //angular app and directives
 (function () {
@@ -183,32 +183,27 @@ var brewery = false;
     $scope.isXL = function () {
       return $window.innerWidth > 1199;
     };
-    $scope.eventsLimit = ($scope.isXL)()?4:3;
+    $scope.eventsLimit = ($scope.isXL)() ? 4 : 3;
     angular.element($window).bind('resize', function () {
-      $scope.eventsLimit = ($scope.isXL)()?4:3;
+      $scope.eventsLimit = ($scope.isXL)() ? 4 : 3;
       $scope.$apply();
     });
-    $scope.eventsColClasses = function(){ 
-      if ($scope.googleMapsService == null)
-      {
+    $scope.eventsColClasses = function () {
+      if ($scope.googleMapsService == null) {
         return;
       }
       //var limit = $scope.eventsLimit;
       var totalEvents = $scope.googleMapsService.events.length;
-      if(totalEvents >= 4)
-      {
+      if (totalEvents >= 4) {
         return "col-md-4 col-xl-3";
       }
-      if(totalEvents === 3)
-      {
+      if (totalEvents === 3) {
         return "col-md-4";
       }
-      if(totalEvents === 2)
-      {
+      if (totalEvents === 2) {
         return "col-md-6";
       }
-      if(totalEvents <= 1)
-      {
+      if (totalEvents <= 1) {
         return "col-md-6 offset-md-3";
       }
     };
@@ -279,7 +274,11 @@ var brewery = false;
     $scope.posts = false;
     $scope.brewery = false;
 
-
+    $scope.newCountryClickedOnMap = function (lat, long, zoom, $event) {
+      googleMapsService.setPosAndZoom(lat, long, zoom);
+      $event.stopPropagation();
+      $event.preventDefault();
+    };
     //events
     $scope.getFBEvents = function () {
       facebookService.FBCall("/thesistersbrewery/events?fields=cover,name,start_time,description,place&access_token=1007778489291152|u2Rs03TsG_yGoAxzC8ZUdpgEOwA")
