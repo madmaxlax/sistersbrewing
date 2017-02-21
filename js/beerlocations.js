@@ -840,6 +840,22 @@ var BEERLOCATIONS = [
         "Longitude": 4.493131
     },
     {
+        "Name": "Brewberry Bar",
+        "Address": "11 rue du Pot-de-Fer",
+        "City": "Paris",
+        "Full Address": "11 rue du Pot-de-Fer, Paris",
+        "Latitude": 48.842914,
+        "Longitude": 2.348297
+    },
+    {
+        "Name": "Brewberry Store",
+        "Address": "18 rue du Pot-de-Fer",
+        "City": "Paris",
+        "Full Address": "18 rue du Pot-de-Fer, Paris",
+        "Latitude": 48.842970,
+        "Longitude": 2.348552
+    },
+    {
         "Name": "De Kaapse Brouwers",
         "Address": "Veerlaan 19D",
         "City": "Rotterdam",
