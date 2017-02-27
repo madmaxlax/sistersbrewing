@@ -39,7 +39,7 @@ Porter is a type of dark beer, coming from London, it was first made during the 
         order: 2
     },
     honeyblonde:{
-        name:"Honey Blonde",
+        name:"Honey",
         urlName:'honeyblonde',
         shortDesc: "Nice fruity blonde beer, the Honey (7.9% Abv.) with notes of lemon, orange and star anise. The Honey is light sweet and fresh bitter.",
         longDesc: "Honey is a Blonde.\
