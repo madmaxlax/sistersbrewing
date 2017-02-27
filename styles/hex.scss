@@ -35,10 +35,10 @@ $hex-jagged-spacing:100px;
       margin-top: -5vw;
     }
     &:nth-child(even) .new-beer {
-      top: 120px;
+      top: 5vw;
     }
     &:nth-child(odd) .new-beer {
-      top: -92px;
+      top: -5vw;
     }
     img {
       width: 14vw;
@@ -57,7 +57,7 @@ $hex-jagged-spacing:100px;
       border-radius: 4px;
       padding: 2px 5px;
       font-family: "Raleway", sans-serif;
-      right: 188px;
+      right: 2vw;
     }
     .beer-name {
       display: block;
@@ -117,6 +117,12 @@ $hex-jagged-spacing:100px;
         right: 0;
         margin-left: auto;
         margin-right: auto;
+      }
+      &:nth-child(even) .new-beer {
+        top: 10vw;
+      }
+      &:nth-child(odd) .new-beer {
+        top: -10vw;
       }
     }
   }
