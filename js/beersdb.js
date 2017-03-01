@@ -41,7 +41,7 @@ Porter is a type of dark beer, coming from London, it was first made during the 
     honeyblonde:{
         name:"Honey",
         urlName:'honeyblonde',
-        shortDesc: "Nice fruity blonde beer, the Honey (7.9% Abv.) with notes of lemon, orange and star anise. The Honey is light sweet and fresh bitter.",
+        shortDesc: "Nice fruity blonde beer, the Honey (7.9% ABV) with notes of lemon, orange and star anise. The Honey is strong and with a full body. The taste is light sweet and fresh bitter.",
         longDesc: "Honey is a Blonde.\
 \
 A Blonde is a beer with a golden yellow colour. Basically is a Blonde beer a beer of high fermentation. The taste of the beer is generally smooth. The light malts have usually not such a distinct flavor, so the flavor comes from the hops and the yeast.",
@@ -58,7 +58,7 @@ A Blonde is a beer with a golden yellow colour. Basically is a Blonde beer a bee
     worker:{
         name:"Worker",
         urlName:'worker',
-        shortDesc: "Our tasty Imperial Saison, the Worker (9.4% Abv.), prickly sweet, over-ripe peaches, dates, stone fruit and the rye is very apparent and gives the beer a spicy floral taste.",
+        shortDesc: "Our tasty Imperial Saison, the Worker (9.4% ABV) is prickly sweet with some spiciness. The Worker has aroma notes of over-ripe peaches, dates and stone fruit. The rye is very apparent and gives the beer a spicy floral taste.",
         longDesc: "Worker is an Imperial Saison.\
 \
 Saison is a Belgian type of beer (beer style) of top fermentation with an alcohol content of normally 5 to 6.5%. Saison is the French word for season because this is a seasonal beer. This beer was originally brewed in the winter by the farmers to be drunk by the seasonal workers in the harvest season. The Saison beer had to be brewed in the winter to prevent the beer would be bad during storage. Saison is originally a light, slightly acidic, dry (aftertaste), bitter, spicy/frutie beer, which was brewed during the winter to be drunk during the summer as a thirst quencher. Saisons are now brewed all year round.",
@@ -76,7 +76,7 @@ Saison is a Belgian type of beer (beer style) of top fermentation with an alcoho
         name:"Smoker",
         new:false,
         urlName:'smoker',
-        shortDesc: "Smoker (5.4% Abv.), a subtle Rauchbier. Very clean smokiness with pleasant sweetness and complex flavours of the malt.",
+        shortDesc: "Smoker (5.4% ABV) is a subtle Rauchbier. It has a very clean smokiness with pleasant sweetness and complex flavours of the malt.",
         longDesc: "",
         artist: "Bernadette Leijdekkers",
         artistUrl:"http://www.leijdekkers.nl/",
@@ -92,7 +92,7 @@ Saison is a Belgian type of beer (beer style) of top fermentation with an alcoho
         new:true,
         name:"Hive",
         urlName:'hive',
-        shortDesc: "New beer!",
+        shortDesc: "Hive (5,3% ABV) is a very fresh Hefeweizen. The Hive is made up of a lot of wheat and gives it a refreshing taste. It is cloudy and pale, with a foamy and frothy head. The taste is fruity and has some vanille flavors. ",
         longDesc: "",
         artist: "Bernadette Leijdekkers",
         artistUrl:"http://www.leijdekkers.nl/",
@@ -107,7 +107,7 @@ Saison is a Belgian type of beer (beer style) of top fermentation with an alcoho
     drone2:{
         name:"Drone²",
         urlName:'drone2',
-        shortDesc: "Drone² (8.5% Abv.), an Imperial version of the Drone. We increased the ingredients to get more aromas of roasted malt, chocolate, caramel and coffee!",
+        shortDesc: "Drone² (8.5% ABV) is an Imperial version of the Drone. We increased the ingredients to get more aromas of roasted malt, chocolate, caramel and coffee! And of course the percentage alcohol increased with it.",
         longDesc: "",
         artist: "Kiana Girigorie",
         artistUrl:"http://instagram.com/kiana.girigorie",
