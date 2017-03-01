@@ -14,19 +14,19 @@
 		</div>
 		<div class="card-subheader">
 			{{event.start_time | date}}
+			<span ng-if="event.place.location.city && event.place.location.country" >
 			|
-			{{event.place.location.city}} {{event.place.location.country}}
-			|
-			<a class="" href="#FindUs" ng-if="event.place" ng-click="googleMapsService.showInfoWindow(event.infoWindow, event.marker);linkTo('map', $event)">
-				<i class="fa fa-map-marker"></i> Show on map
-			</a>
+			{{event.place.location.city}}, {{event.place.location.country}}
+			</span>
+			<span ng-if="event.place.location" >
+				|
+				<a class="" href="#FindUs"ng-click="googleMapsService.showInfoWindow(event.infoWindow, event.marker);linkTo('map', $event)">
+					<i class="fa fa-map-marker"></i> Show on map
+				</a>
+			</span>
 		</div>
 		<div class="card-text">{{event.description | limitTo:200}}... <span ng-show="googleMapsService.events.length===0">No upcoming events at this time!</span><a href="https://www.facebook.com/events/{{event.id}}" target="_blank"> View event on Facebook</a></div>
 		<div class="clearfix"></div>
 	</div>
 </div>
 </div>
-
-<!-- MAXWELL -->
-<!-- if no card-title, put description in card-text -->
-<!-- hide past events, and put the most recent event first DONE -->

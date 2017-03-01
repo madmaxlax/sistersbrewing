@@ -366,7 +366,7 @@ var map;
                 this.events.forEach(function (eventLocation) {
                     //set up the marker
                     //console.log(eventLocation.name, eventLocation);
-                    if (eventLocation.place != null) { //some events dont have a location
+                    if (eventLocation.place != null && eventLocation.place.location) { //some events dont have a location
                         var marker = new google.maps.Marker({
                             position: { lat: eventLocation.place.location.latitude, lng: eventLocation.place.location.longitude },
                             map: serviceObj.map,
@@ -399,6 +399,9 @@ var map;
                             infoWindow.open(serviceObj.map, marker);
                         });
                     }
+                    // else{
+                    //     console.log("No location: ",eventLocation);
+                    // }
                 });
             },
             showInfoWindow: function (infoWindow, marker) {
