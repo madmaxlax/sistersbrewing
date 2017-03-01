@@ -5573,9 +5573,19 @@ p {
   .news-and-events-section a:hover, .footer a:hover {
     text-decoration: none; }
 
-.about-us-section .photo img {
-  width: 100%; }
+.about-us-section .photo {
+  text-align: right; }
+  .about-us-section .photo img {
+    width: 100%;
+    max-width: 461px;
+    margin-bottom: 10px; }
 
+@media (max-width: 991px) {
+  .about-us-section .photo {
+    text-align: center; }
+
+  .description {
+    padding: 0 30px; } }
 iframe {
   border: 0; }
 

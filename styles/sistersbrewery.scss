@@ -255,11 +255,26 @@ p {
 }
 
 .about-us-section {
-  .photo img {
-    width: 100%;
+  .photo{
+    text-align: right;
+    img {
+      width: 100%;
+      max-width: 461px;
+      margin-bottom: 10px;
+    }
   }
 }
 
+@include media-breakpoint-down(md) {
+  .about-us-section {
+    .photo{
+      text-align: center;
+    }
+  }
+  .description {
+    padding: 0 30px;
+  }
+}
 
 //stuff for testing site
 iframe{
