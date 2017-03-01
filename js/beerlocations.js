@@ -351,6 +351,14 @@ var BEERLOCATIONS = [
         "Latitude": 52.0111874,
         "Longitude": 4.3587661
     },
+	 {
+        "Name": "Topslijter van der Ende",
+        "Address": "Hoofdstraat 43",
+        "City": "De Lier",
+        "Full Address": "Hoofdstraat 43 De Lier ",
+        "Latitude": 51.974072,
+        "Longitude": 4.247623
+    },
     {
         "Name": "Slijterij-Wijnhandel W. van Schaik",
         "Address": "Mereveldplein 19",
@@ -358,6 +366,14 @@ var BEERLOCATIONS = [
         "Full Address": "Mereveldplein 19 De Meern ",
         "Latitude": 52.0793197,
         "Longitude": 5.03747329999999
+    },
+	{
+        "Name": "Stanislaus Brewskovitch | Craft Beer",
+        "Address": "De Heurne 44",
+        "City": "Enschede",
+        "Full Address": "De Heurne 44 Enschede ",
+        "Latitude": 52.221741,
+        "Longitude": 6.899396
     },
     {
         "Name": "Biervana",
@@ -424,7 +440,7 @@ var BEERLOCATIONS = [
         "Longitude": 5.4769415
     },
     {
-        "Name": "Mitra Slijterij M. van Bergen",
+        "Name": "EDrinks",
         "Address": "Hurksestraat 44",
         "City": "Eindhoven",
         "Full Address": "Hurksestraat 44 Eindhoven ",
@@ -438,6 +454,14 @@ var BEERLOCATIONS = [
         "Full Address": "Putterweg 45 Ermelo ",
         "Latitude": 52.2968556,
         "Longitude": 5.6312351
+    },
+	{
+        "Name": "Slijterij en Bierwinkel Den Gouwen Aar",
+        "Address": "Oosthaven 6",
+        "City": "Gouda",
+        "Full Address": "Oosthaven 6 Gouda ",
+        "Latitude": 52.010224,
+        "Longitude": 4.710945
     },
     {
         "Name": "Biercafé De Goudse Eend",
@@ -608,14 +632,6 @@ var BEERLOCATIONS = [
         "Longitude": 4.9634003
     },
     {
-        "Name": "Slijterij Staal úw topSlijter",
-        "Address": "Raadhuisplein 40b",
-        "City": "Heerhugowaard",
-        "Full Address": "Raadhuisplein 40b Heerhugowaard ",
-        "Latitude": 52.6705029,
-        "Longitude": 4.84343149999999
-    },
-    {
         "Name": "De Wijnhoeve",
         "Address": "Kapelstraat 29",
         "City": "Heeze",
@@ -702,14 +718,6 @@ var BEERLOCATIONS = [
         "Full Address": "Meeuwenlaan 45 Katwijk aan Zee ",
         "Latitude": 52.1996581999999,
         "Longitude": 4.4061244
-    },
-    {
-        "Name": "Slijterij Drinks & Gifts",
-        "Address": "Heiligeweg 15a",
-        "City": "Krommenie",
-        "Full Address": "Heiligeweg 15a Krommenie ",
-        "Latitude": 52.5002706,
-        "Longitude": 4.7672175
     },
     {
         "Name": "Bierschuur Laren",
@@ -911,6 +919,22 @@ var BEERLOCATIONS = [
         "Latitude": 52.1915243,
         "Longitude": 4.44255969999999
     },
+	{
+        "Name": "T Drinks",
+        "Address": "Heuvelpoort 318",
+        "City": "Tilburg",
+        "Full Address": "Heuvelpoort 318 Tilburg ",
+        "Latitude": 51.556547,
+        "Longitude": 5.090611
+    },
+	{
+        "Name": "Brouwerij De Schans",
+        "Address": "Schans 17-21",
+        "City": "Uithoorn",
+        "Full Address": "Schans 17-21 Uithoorn ",
+        "Latitude": 52.231673,
+        "Longitude": 4.829458
+    },
     {
         "Name": "Belgisch Bier Café Olivier",
         "Address": "Achter Clarenburg 6a",
@@ -920,7 +944,7 @@ var BEERLOCATIONS = [
         "Longitude": 5.1156592
     },
     {
-        "Name": "Bert's Bierhuis",
+        "Name": "Bierman&Bierman",
         "Address": "Biltstraat 46",
         "City": "Utrecht",
         "Full Address": "Biltstraat 46 Utrecht ",
@@ -1022,6 +1046,22 @@ var BEERLOCATIONS = [
         "Full Address": "Ganzenmarkt 24-26 Utrecht ",
         "Latitude": 52.0925477,
         "Longitude": 5.1196737
+    },
+	{
+        "Name": "Brasserie Vink",
+        "Address": "Biltsestraatweg 102",
+        "City": "Utrecht",
+        "Full Address": "Biltsestraatweg 102 Utrecht ",
+        "Latitude": 52.097773,
+        "Longitude": 5.151250
+    },
+	{
+        "Name": "dB's Oefenstudios",
+        "Address": "CAB-Rondom,",
+        "City": "Utrecht",
+        "Full Address": "CAB-Rondom, Utrecht ",
+        "Latitude": 52.101063,
+        "Longitude": 5.088552
     },
     {
         "Name": "De Fantast",
@@ -1126,5 +1166,13 @@ var BEERLOCATIONS = [
         "Full Address": "Laan van Cattenbroeck 7 Zeist ",
         "Latitude": 52.0785602,
         "Longitude": 5.2287678
-    }
+    },
+	{
+        "Name": "Stanislaus Brewskovitch | Craft Beer",
+        "Address": "Sassenstraat 13",
+        "City": "Zwolle",
+        "Full Address": "Sassenstraat 13 Zwolle ",
+        "Latitude": 52.511635,
+        "Longitude": 6.093423
+    },
 ];
