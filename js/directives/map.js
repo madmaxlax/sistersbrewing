@@ -326,7 +326,7 @@ var map;
                         position: { lat: beerSpot.Latitude, lng: beerSpot.Longitude },
                         map: serviceObj.map,
                         title: beerSpot.Name,
-                        icon: "./imgs/beerMapLogo.svg"
+                        icon: "./imgs/beerMapLogo.png"
                     });
                     serviceObj.locationMarkers.push(marker);
                     //set up the info window 
@@ -372,7 +372,7 @@ var map;
                             map: serviceObj.map,
                             title: eventLocation.name,
                             zIndex:99999,
-                            icon: './imgs/sisterlogoEvents.svg'
+                            icon: './imgs/sisterlogoEvents.png'
                         });
                         eventLocation.marker = marker;
 
