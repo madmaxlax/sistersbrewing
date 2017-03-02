@@ -269,7 +269,7 @@ var map;
                 //document.getElementById('findmap').contains($event.target)
                 //or
                 //
-                if (!(document.getElementById('findmap').contains($event.target) || ($event.target.firstChild != null && $event.target.firstChild.nodeName.toLowerCase() === "iframe"))) {
+                if (!(document.getElementById('map').contains($event.target) || ($event.target.firstChild != null && $event.target.firstChild.nodeName.toLowerCase() === "iframe"))) {
                     //console.log("clicked outside of map");
                     //disable scrolling on map
                     serviceObj.disableScrollingZoom();
