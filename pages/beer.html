@@ -21,7 +21,7 @@
         <span class="rating">
           {{brewery.beersById[beersDB[routeSelectedBeer].untappdId].rating_score |number:1}}/5
         </span>
-        out of {{brewery.beersById[beersDB[routeSelectedBeer].untappdId].rating_count}} ratings.
+        from {{brewery.beersById[beersDB[routeSelectedBeer].untappdId].rating_count}} ratings.
         <a ng-href="https://untappd.com/b/{{brewery.beersById[beersDB[routeSelectedBeer].untappdId].beer_slug}}/{{brewery.beersById[beersDB[routeSelectedBeer].untappdId].bid}}" target="_blank">
           See more on Untappd.
         </a>
