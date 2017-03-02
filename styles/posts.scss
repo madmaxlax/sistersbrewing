@@ -18,7 +18,6 @@
     }
   }
   .card-body {
-
     padding: 10px;
 
     .card-title {
@@ -43,6 +42,7 @@
     }
     .card-text {
       font-size: 14px;
+      overflow: hidden;
     }
   }
 }
