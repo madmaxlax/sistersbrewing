@@ -296,7 +296,7 @@ var brewery = false;
 
     //feed posts (only get 10?)
     $scope.getFBPosts = function () {
-      facebookService.FBCall("/thesistersbrewery/posts?fields=picture,place,full_picture,message,story,created_time&limit=10&access_token=1007778489291152|u2Rs03TsG_yGoAxzC8ZUdpgEOwA")
+      facebookService.FBCall("/thesistersbrewery/posts?fields=picture,place,full_picture,message,story,created_time&limit=12&access_token=1007778489291152|u2Rs03TsG_yGoAxzC8ZUdpgEOwA")
         .then(function (response) {
           //console.log(response);
 
