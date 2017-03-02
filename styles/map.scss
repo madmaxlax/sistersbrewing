@@ -13,6 +13,20 @@
         font-size: 15px;
         margin-bottom: 30px;
     }
+    .legend {
+        margin-bottom: 20px;
+        text-align: center;
+        .legend-title {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        .legend-item {
+            font-size: 15px;
+            img {
+                height: 30px;
+            }
+        }
+    }
     #map {
         height: 500px;
         // display: none;
