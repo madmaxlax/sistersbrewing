@@ -38,7 +38,9 @@ var brewery = false;
         //console.log(event);
         if (event && (event.start_time || event.created_time)) {
           var timest = event.start_time || event.created_time;
-          if (Date.parse(timest) > Date.now()) {
+          //uhhhg IE, had to use Moment because Date.Parse didnt work
+          //if (moment(timest) > Date.now()) {
+          if (moment(timest).isAfter(moment())) {
             filtered.push(event);
           }
         }
