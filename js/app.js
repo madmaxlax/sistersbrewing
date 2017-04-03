@@ -85,11 +85,14 @@ var brewery = false;
         return deferred.promise;
       },
       textShorten: function (str, chars) {
-        var useWordBoundary = true;
-        var isTooLong = str.length > chars,
-          s_ = isTooLong ? str.substr(0, chars - 1) : str;
-        s_ = (useWordBoundary && isTooLong) ? s_.substr(0, s_.lastIndexOf(' ')) : s_;
-        return isTooLong ? s_ + '&hellip;' : s_;
+        if (str != null) {
+          var useWordBoundary = true;
+          var isTooLong = str.length > chars,
+            s_ = isTooLong ? str.substr(0, chars - 1) : str;
+          s_ = (useWordBoundary && isTooLong) ? s_.substr(0, s_.lastIndexOf(' ')) : s_;
+          return isTooLong ? s_ + '&hellip;' : s_;
+        }
+        return "";
       }
     };
   });
