@@ -134,7 +134,38 @@ Saison is a Belgian type of beer (beer style) of top fermentation with an alcoho
         hexImageUrl:'imgs/hexes/nectar.png',
         order: 8
     },
-    
+    waggle:{
+        new:true,
+        name:"Waggle Dance",
+        urlName:'waggle',
+        shortDesc: "Waggle Dance is our new session IPA. Hoppy, spicy and full bodied with nice soft hoppy foam. Made with Nugget, Citra and Mosaic. Dry hopped with Citra and Mosaic",
+        longDesc: "",
+        artist: "",
+        artistUrl:"http://thesistersbrewery.com/",
+        backgroundColor: '#e7d3cc',
+        labelImageUrl: './imgs/waggle.jpg',
+        untappdId:'2008963',
+        ABV: 4.4,
+        beerType: 'Session IPA',
+        hexImageUrl:'imgs/hexes/genericlabel.png',
+        order: 9
+    },
+    test:{
+        new:true,
+        name:"New test",
+        urlName:'test',
+        shortDesc: "this is a made up beer",
+        longDesc: "",
+        artist: "",
+        artistUrl:"http://thesistersbrewery.com/",
+        backgroundColor: '#e7d3cc',
+        labelImageUrl: './imgs/waggle.jpg',
+        untappdId:'6341',
+        ABV: 0.0,
+        beerType: 'Fake',
+        hexImageUrl:'imgs/hexes/genericlabel.png',
+        order: 10
+    },
     // abelha:{
     //     name:"Abelha",
     //     urlName:'abelha',
