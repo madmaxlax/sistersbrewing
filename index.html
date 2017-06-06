@@ -10,6 +10,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Old+Standard+TT|Raleway" rel="stylesheet">
 	<link rel="stylesheet" href="styles/sistersbrewery.css">
+	<link rel="stylesheet" href="styles/slick.css">
+	<link rel="stylesheet" href="styles/slick-theme.css">
 	<meta name="theme-color" content="#f5f0e7">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 	<meta name="description" content="The Sisters Brewery is a small craft beer brewer from Breukelen, Netherlands. Besides making a delicious craft beer our aim is to make an artwork of every beer we produce.">
@@ -81,7 +83,9 @@
 		<div class="beer-section section col-xs-12" ng-style="{'background-color':beersDB[routeSelectedBeer].backgroundColor}" id="Beers">
 			<h2> Beers </h2>
 			<div class="hexs-container">
-				<sb-beer-hex ng-repeat="(beerId,beer) in beersDB | orderObjectBy:'order'"></sb-beer-hex>
+				<slick settings="slickConfig" ng-if="beersDB" slides-to-show=4 >
+					<sb-beer-hex ng-repeat="(beerId,beer) in beersDB | orderObjectBy:'order'"></sb-beer-hex>
+				</slick>
 			</div>
 			<div class="angular-view-section beer-info" ng-view="">
 				<!-- beers~! -->
@@ -192,7 +196,8 @@
 	<!-- Tether for Bootstrap -->
 	<script src="./js/bootstrap.min.js"></script>
 	<script src="./js/moment.min.js"></script>
-	<script src="./js/angular-slick.min.js"></script>
+	<script src="./js/slick.min.js"></script>
+	<script src="./js/angular-slick.js"></script>
 	<!--<script src="./js/angular-scroll.min.js"></script>-->
 	<script src="./js/beersdb.js"></script>
 	<script src="./js/beerlocations.js"></script>

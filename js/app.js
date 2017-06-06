@@ -29,7 +29,7 @@ var brewery = false;
 
 //angular app and directives
 (function () {
-  var app = angular.module('SistersBrewApp', ['ngAnimate', 'ngRoute', 'ngResource']);
+  var app = angular.module('SistersBrewApp', ['ngAnimate', 'ngRoute', 'ngResource', 'slickCarousel']);
   // var app = angular.module('SistersBrewApp', ['ngAnimate', 'ngRoute', 'ngResource', 'ngMap']);
   angular.module('SistersBrewApp').filter('future', function () {
     return function (items) {
@@ -177,8 +177,25 @@ var brewery = false;
       };
     };
 
+    //for carousel from https://github.com/devmark/angular-slick-carousel
+    $scope.slickConfig = {
+      enabled: true,
+      autoplay: true,
+      draggable: false,
+      autoplaySpeed: 3000,
+      method: {}
+      // ,
+      // event: {
+      //   beforeChange: function (event, slick, currentSlide, nextSlide) {
+      //   },
+      //   afterChange: function (event, slick, currentSlide, nextSlide) {
+      //   }
+      // }
+    };
+
     $scope.scrollIfSmallScreen = function ($event) {
       if ($scope.isMobile()) {
+
         $scope.linkTo('beer-detail', $event, true);
       }
     };
