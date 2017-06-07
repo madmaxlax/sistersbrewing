@@ -30,7 +30,7 @@ $hex-jagged-spacing:100px;
       }
     }
     &:nth-child(even) img {
-      margin-top: 5vw;
+      margin-top: 7vw;
     }
     &:nth-child(odd) img {
       // margin-top: -5vw;
@@ -42,7 +42,7 @@ $hex-jagged-spacing:100px;
       top: -5vw;
     }
     img {
-      width: 14vw;
+      width: 16vw;
       margin-left: -3vw;
       &:hover {
         transition: all .2s ease-in-out;
@@ -67,7 +67,7 @@ $hex-jagged-spacing:100px;
       font-size: 1.25rem;
       position: absolute;
       left: 0;
-      width: 8vw;
+      width: 10vw;
       border-bottom: 2px solid #000;
     }
     &:hover, &.active {
@@ -75,6 +75,26 @@ $hex-jagged-spacing:100px;
         display: block;
         opacity: 1;
       }
+    }
+  }
+  #dotshere {
+    display: none;
+  }
+  .slick-arrow {
+    height: 40px;
+    width: 40px;
+    z-index: 1;
+    top: 30%;
+    &:before {
+      font-size: 40px;
+      color: black;
+      opacity: .9;
+    }
+    &.slick-prev {
+      left: 10px;
+    }
+    &.slick-next {
+      right: 10px;
     }
   }
 }

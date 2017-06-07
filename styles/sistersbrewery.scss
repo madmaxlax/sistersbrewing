@@ -40,6 +40,7 @@ $font-family-base: $sb-main-font;//override bootstrap
 
 body {
   position: relative;
+  overflow-x: hidden;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: $header-font;
@@ -187,6 +188,9 @@ p {
 .section {
   padding-top: 25px;
   padding-bottom: 25px;
+  &.beer-section {
+    padding: 25px 0 25px 0;
+  }
 }
 
 .beer-section {
