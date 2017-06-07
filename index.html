@@ -83,8 +83,13 @@
 		<div class="beer-section section col-xs-12" ng-style="{'background-color':beersDB[routeSelectedBeer].backgroundColor}" id="Beers">
 			<h2> Beers </h2>
 			<div class="hexs-container" style="width:100%">
-				<slick settings="slickConfig" ng-if="beersDB"  >
+				<div id="dotshere"></div>
+				<slick settings="slickConfig" ng-if="beersDB">
+					
 					<sb-beer-hex ng-repeat="(beerId,beer) in beersDB | orderObjectBy:'order'"></sb-beer-hex>
+					<!--<div ng-repeat="(beerId,beer) in beersDB | orderObjectBy:'order'">
+						<sb-beer-hex></sb-beer-hex>						
+					</div>-->
 				</slick>
 			</div>
 			<div class="angular-view-section beer-info" ng-view="">

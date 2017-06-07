@@ -184,6 +184,7 @@ var brewery = false;
       dots:true,
       variableWidth: true,
       centerMode:true,
+      appendDots: "#dotshere",
       slidesToShow:4,
       draggable: false,
       autoplaySpeed: 3000,
