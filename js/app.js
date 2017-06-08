@@ -199,15 +199,19 @@ var brewery = false;
           breakpoint: 769,
           settings: 'unslick',
         }
-      ]
+      ],
       // method: {}
       // ,
-      // event: {
-      //   beforeChange: function (event, slick, currentSlide, nextSlide) {
-      //   },
-      //   afterChange: function (event, slick, currentSlide, nextSlide) {
-      //   }
-      // }
+      event: {
+        beforeChange: function (event, slick, currentSlide, nextSlide) {
+        },
+        afterChange: function (event, slick, currentSlide, nextSlide) {
+          // console.log(angular.element(slick.$slides[currentSlide]).scope());
+          // console.log(slick.$slides[currentSlide]);
+          console.log(Object.keys(beersDB)[currentSlide]);
+          window.location.href = '#/beers/'+Object.keys(beersDB)[currentSlide];
+        }
+      }
     };
 
     $scope.scrollIfSmallScreen = function ($event) {
