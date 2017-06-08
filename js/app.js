@@ -180,17 +180,24 @@ var brewery = false;
     //for carousel from https://github.com/devmark/angular-slick-carousel
     $scope.slickConfig = {
       enabled: true,
-      autoplay: true,
-      dots:true,
+      // dots:true,
       cssEase: 'linear',
-      speed: 5000,
+      // autoplay: true,
+      // speed: 5000,
+      // autoplaySpeed: 1,
       variableWidth: true,
-      centerMode:true,
+      // centerMode:true,
       appendDots: "#dotshere",
-      slidesToShow:4,
+      slidesToShow: 8,
       draggable: false,
-      autoplaySpeed: 1,
-      method: {}
+      pauseOnHover: true,
+      responsive: [
+        {
+          breakpoint: 769,
+          settings: 'unslick',
+        }
+      ]
+      // method: {}
       // ,
       // event: {
       //   beforeChange: function (event, slick, currentSlide, nextSlide) {

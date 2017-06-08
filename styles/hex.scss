@@ -37,9 +37,16 @@ $hex-jagged-spacing:100px;
     }
     &:nth-child(even) .new-beer {
       top: 5vw;
+      @include media-breakpoint-up(md) { 
+        top: 6.5vw;         
+      }
     }
     &:nth-child(odd) .new-beer {
       top: -5vw;
+      
+      @include media-breakpoint-up(md) { 
+        top: -.5vw;         
+      }
     }
     img {
       width: 16vw;
@@ -58,7 +65,10 @@ $hex-jagged-spacing:100px;
       border-radius: 4px;
       padding: 2px 5px;
       font-family: "Raleway", sans-serif;
-      right: 2vw;
+      right: 0vw;
+      @include media-breakpoint-up(md) { 
+        right: 2vw;         
+      }
     }
     .beer-name {
       display: block;

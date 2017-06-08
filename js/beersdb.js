@@ -134,7 +134,7 @@ Saison is a Belgian type of beer (beer style) of top fermentation with an alcoho
         hexImageUrl:'imgs/hexes/nectar.png',
         order: 8
     },
-    /*waggle:{
+    waggle:{
         new:true,
         name:"Waggle Dance",
         urlName:'waggle',
@@ -160,7 +160,7 @@ Saison is a Belgian type of beer (beer style) of top fermentation with an alcoho
         artistUrl:"http://thesistersbrewery.com/",
         backgroundColor: '#e7d3cc',
         labelImageUrl: './imgs/waggle.jpg',
-        untappdId:'6341',
+        untappdId:'2008963',
         ABV: 0.0,
         beerType: 'Fake',
         hexImageUrl:'imgs/hexes/genericlabel.png',
