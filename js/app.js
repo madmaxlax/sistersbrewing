@@ -187,7 +187,7 @@ var brewery = false;
     };
     $scope.slickConfig = {
       enabled: true,
-      // dots:true,
+      dots: false,
       cssEase: 'linear',
       infinite: true,
       focusOnSelect: true,
@@ -196,14 +196,16 @@ var brewery = false;
       //need to manually parse out the selected beer. derp. 
       initialSlide: $location.path().includes('/beers/') ? beersDB[$location.path().split('/')[2]].order - 1 : 3,
       speed: 500,
-      // autoplay: true,
-      // autoplaySpeed: 1000,
+      autoplay: !$location.path().includes('/beers/'),
+      autoplaySpeed: 1000,
       variableWidth: true,
       centerMode: true,
-      appendDots: "#dotshere",
-      slidesToShow: 8,
+      // appendDots: "#dotshere",
+      slidesToShow: 3,
       draggable: false,
+      swipeToSlide:true,
       pauseOnHover: true,
+      centerPadding: '0px',
       responsive: [
         {
           breakpoint: 769,
@@ -218,7 +220,9 @@ var brewery = false;
           // console.log(angular.element(slick.$slides[currentSlide]).scope());
           // console.log(slick.$slides[currentSlide]);
           // console.log(Object.keys(beersDB)[currentSlide]);
-          window.location.href = '#/beers/' + Object.keys(beersDB)[currentSlide];
+          if ($location.path().includes('/beers/')) {
+            window.location.href = '#/beers/' + Object.keys(beersDB)[currentSlide];
+          }
         },
         // init: $scope.recompile
         init: function (event) {

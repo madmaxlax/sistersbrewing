@@ -49,13 +49,14 @@
          -o-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
 }
-
+.slick-slider,.slick-track{
+    // padding-bottom: 70px; //for hex labels
+}
 .slick-track
 {
     position: relative;
     top: 0;
     left: 0;
-    padding-bottom: 70px; //for hex labels
     padding-top: 20px;//room for 'new' label on top hexes
     display: block;
     height:28vw;
