@@ -178,21 +178,28 @@ var brewery = false;
     };
 
     //for carousel from https://github.com/devmark/angular-slick-carousel
+    
+    $scope.recompile = function (elementToCompile) {
+    // $scope.recompile = function () {
+      console.log($('.slick-track').find('sb-beer-hex').length);
+      $compile(elementToCompile.target)($scope);
+      $('.slick-track').find('sb-beer-hex').length;
+    };
     $scope.slickConfig = {
       enabled: true,
       // dots:true,
       cssEase: 'linear',
       infinite: true,
-      focusOnSelect:true,
+      focusOnSelect: true,
       //$scope.routeSelectedBeer hasn't loaded yet
       // initialSlide: $scope.routeSelectedBeer?beersDB[$scope.routeSelectedBeer].order-1:3,
       //need to manually parse out the selected beer. derp. 
-      initialSlide: $location.path().includes('/beers/')?beersDB[$location.path().split('/')[2]].order-1:3,
+      initialSlide: $location.path().includes('/beers/') ? beersDB[$location.path().split('/')[2]].order - 1 : 3,
       speed: 500,
       // autoplay: true,
       // autoplaySpeed: 1000,
       variableWidth: true,
-      centerMode:true,
+      centerMode: true,
       appendDots: "#dotshere",
       slidesToShow: 8,
       draggable: false,
@@ -205,14 +212,15 @@ var brewery = false;
       ],
       method: {},
       event: {
-        beforeChange: function (event, slick, currentSlide, nextSlide) {
-        },
+        // beforeChange: function (event, slick, currentSlide, nextSlide) {
+        // },
         afterChange: function (event, slick, currentSlide, nextSlide) {
           // console.log(angular.element(slick.$slides[currentSlide]).scope());
           // console.log(slick.$slides[currentSlide]);
           // console.log(Object.keys(beersDB)[currentSlide]);
-          window.location.href = '#/beers/'+Object.keys(beersDB)[currentSlide];
-        }
+          window.location.href = '#/beers/' + Object.keys(beersDB)[currentSlide];
+        },
+        init: $scope.recompile
       }
     };
 
@@ -448,7 +456,7 @@ var brewery = false;
 
     //go to correct slide
     // $scope.$parent.slickConfig.method.slickGoTo(beersDB[selectedbeer].order-1);
-    
+
     //get checkin info if not already
     if ($scope.brewery.beersById != null && $scope.brewery.beersById[beersDB[selectedbeer].untappdId].checkinData == null) {
       var beerID = beersDB[selectedbeer].untappdId;
