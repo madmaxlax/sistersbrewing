@@ -184,6 +184,7 @@ var brewery = false;
       cssEase: 'linear',
       infinite: true,
       focusOnSelect:true,
+      initialSlide:3,
       speed: 500,
       // autoplay: true,
       // autoplaySpeed: 1000,

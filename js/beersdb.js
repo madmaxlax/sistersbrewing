@@ -38,23 +38,6 @@ Porter is a type of dark beer, coming from London, it was first made during the 
         hexImageUrl:'imgs/hexes/drone.png',
         order: 2
     },
-    honeyblonde:{
-        name:"Honey",
-        urlName:'honeyblonde',
-        shortDesc: "Nice, fruity blonde beer, the Honey has notes of lemon, orange and star anise. The Honey is strong and has a full body. The taste is light sweet and fresh bitter.",
-        longDesc: "Honey is a Blonde.\
-\
-A Blonde is a beer with a golden yellow colour. Basically is a Blonde beer a beer of high fermentation. The taste of the beer is generally smooth. The light malts have usually not such a distinct flavor, so the flavor comes from the hops and the yeast.",
-        artist: "Luna Bongers",
-        artistUrl:"http://instagram.com/LunaBongers",
-        backgroundColor: '#f5f0e7',
-        labelImageUrl: './imgs/wide-label-honey.jpg',
-        untappdId:'1372507',
-        ABV: 7.9,
-        beerType: 'Belgian Blonde',
-        hexImageUrl:'imgs/hexes/honey.png',
-        order: 3
-    },
     worker:{
         name:"Worker",
         urlName:'worker',
@@ -70,6 +53,23 @@ Saison is a Belgian type of beer (beer style) of top fermentation with an alcoho
         ABV: 9.4,
         beerType: 'Saison / Farmhouse Ale',
         hexImageUrl:'imgs/hexes/worker.png',
+        order: 3
+    },
+    honeyblonde:{
+        name:"Honey",
+        urlName:'honeyblonde',
+        shortDesc: "Nice, fruity blonde beer, the Honey has notes of lemon, orange and star anise. The Honey is strong and has a full body. The taste is light sweet and fresh bitter.",
+        longDesc: "Honey is a Blonde.\
+\
+A Blonde is a beer with a golden yellow colour. Basically is a Blonde beer a beer of high fermentation. The taste of the beer is generally smooth. The light malts have usually not such a distinct flavor, so the flavor comes from the hops and the yeast.",
+        artist: "Luna Bongers",
+        artistUrl:"http://instagram.com/LunaBongers",
+        backgroundColor: '#f5f0e7',
+        labelImageUrl: './imgs/wide-label-honey.jpg',
+        untappdId:'1372507',
+        ABV: 7.9,
+        beerType: 'Belgian Blonde',
+        hexImageUrl:'imgs/hexes/honey.png',
         order: 4
     },
     smoker:{
