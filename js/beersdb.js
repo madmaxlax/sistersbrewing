@@ -2,6 +2,23 @@
 //global var where a mongodb-like object is set up.
 
 var beersDB = {
+    drone:{
+        name:"Drone",
+        urlName:'drone',
+        shortDesc: "The Drone, our fantastic Porter (5.8% ABV), has aromas of roasted malt, chocolate, caramel and coffee. The color is dark brown and has a light brownish foam. The Drone is very drinkable and is smoothly balanced. The Drone (and Drone²) is our only beer with an artwork representing a male; we couldn’t put a female artwork on a male bee ;-)",
+        longDesc: 'Drone is a Porter.\
+\
+Porter is a type of dark beer, coming from London, it was first made during the 18th century. It is a derivative of brown beer, made from brown malt with a lot of hop. The beer is called Porter since it was very popular among the street and river porters. In 1802 the writer John Feltham wrote about the history of Porter, which was then used as the basis for most writings on this subject. However, there is very limited contemporary evidence on this version of the history of Porter. Feltham\'s story was based on a letter written by Obadiah Poundage (who for decades worked in the London brewing industry), in the 1760s. Feltham interpreted the text in a different way, most probably not correctly, because he was not familiar with the 18th century brewery terminology. He said that during the 18th century in London there was a popular drink called the "three threads". The three threads was made from a mixture of third of a pint of ale, beer and "twopenny" (the strongest beer, that costs two pence). Around 1730, wrote Feltham, there was a brewer called Harwood who brewed a beer called "Entire" which tasted very similar to the "three threads" which later was known as Porter. Porter is already mentioned in 1721, but only in Feltham\'s writing it states that this beer was made to create the "three threads". Instead, the beer seems to have evolved from the brown beer which was already brewed at that time in London. During 1700 beer brewers sold the beer when it was very young and it matured at the shop. Porter was the first beer that was already matured in the brewery and was ready to drink immediately. It was also the first beer that could be produced on a larger scale. A Porter is a full of flavor beer with lots of dark tones, one will often taste the chocolate flavor within.',
+        artist: "Kiana Girigorie",
+        artistUrl:"http://instagram.com/kiana.girigorie",
+        backgroundColor: '#59acda',
+        labelImageUrl: './imgs/wide-label-drone.jpg',
+        untappdId:'1234842',
+        ABV: 5.8,
+        beerType: 'Porter',
+        hexImageUrl:'imgs/hexes/drone.png',
+        order: 1
+    },
     queenbee:{
         name:"Queen Bee",
         urlName:'queenbee',
@@ -19,24 +36,7 @@ IPA is a very popular craft beer and a beer to enjoy quietly and slowly.",
         ABV: 7.7,
         beerType: 'IPA',
         hexImageUrl:'imgs/hexes/queen-bee.png',
-        order: 1 
-    },
-    drone:{
-        name:"Drone",
-        urlName:'drone',
-        shortDesc: "The Drone, our fantastic Porter (5.8% ABV), has aromas of roasted malt, chocolate, caramel and coffee. The color is dark brown and has a light brownish foam. The Drone is very drinkable and is smoothly balanced. The Drone (and Drone²) is our only beer with an artwork representing a male; we couldn’t put a female artwork on a male bee ;-)",
-        longDesc: 'Drone is a Porter.\
-\
-Porter is a type of dark beer, coming from London, it was first made during the 18th century. It is a derivative of brown beer, made from brown malt with a lot of hop. The beer is called Porter since it was very popular among the street and river porters. In 1802 the writer John Feltham wrote about the history of Porter, which was then used as the basis for most writings on this subject. However, there is very limited contemporary evidence on this version of the history of Porter. Feltham\'s story was based on a letter written by Obadiah Poundage (who for decades worked in the London brewing industry), in the 1760s. Feltham interpreted the text in a different way, most probably not correctly, because he was not familiar with the 18th century brewery terminology. He said that during the 18th century in London there was a popular drink called the "three threads". The three threads was made from a mixture of third of a pint of ale, beer and "twopenny" (the strongest beer, that costs two pence). Around 1730, wrote Feltham, there was a brewer called Harwood who brewed a beer called "Entire" which tasted very similar to the "three threads" which later was known as Porter. Porter is already mentioned in 1721, but only in Feltham\'s writing it states that this beer was made to create the "three threads". Instead, the beer seems to have evolved from the brown beer which was already brewed at that time in London. During 1700 beer brewers sold the beer when it was very young and it matured at the shop. Porter was the first beer that was already matured in the brewery and was ready to drink immediately. It was also the first beer that could be produced on a larger scale. A Porter is a full of flavor beer with lots of dark tones, one will often taste the chocolate flavor within.',
-        artist: "Kiana Girigorie",
-        artistUrl:"http://instagram.com/kiana.girigorie",
-        backgroundColor: '#59acda',
-        labelImageUrl: './imgs/wide-label-drone.jpg',
-        untappdId:'1234842',
-        ABV: 5.8,
-        beerType: 'Porter',
-        hexImageUrl:'imgs/hexes/drone.png',
-        order: 2
+        order: 2 
     },
     worker:{
         name:"Worker",
@@ -134,22 +134,6 @@ A Blonde is a beer with a golden yellow colour. Basically is a Blonde beer a bee
         hexImageUrl:'imgs/hexes/nectar.png',
         order: 8
     },
-    waggle:{
-        new:true,
-        name:"Waggle Dance",
-        urlName:'waggle',
-        shortDesc: "Waggle Dance is our new session IPA. Hoppy, spicy and full bodied with nice soft hoppy foam. Made with Nugget, Citra and Mosaic. Dry hopped with Citra and Mosaic",
-        longDesc: "",
-        artist: "",
-        artistUrl:"http://thesistersbrewery.com/",
-        backgroundColor: '#e7d3cc',
-        labelImageUrl: './imgs/waggle.jpg',
-        untappdId:'2008963',
-        ABV: 4.4,
-        beerType: 'Session IPA',
-        hexImageUrl:'imgs/hexes/genericlabel.png',
-        order: 9
-    },
     test:{
         new:true,
         name:"New test",
@@ -163,6 +147,22 @@ A Blonde is a beer with a golden yellow colour. Basically is a Blonde beer a bee
         untappdId:'2008963',
         ABV: 0.0,
         beerType: 'Fake',
+        hexImageUrl:'imgs/hexes/genericlabel.png',
+        order: 9
+    },
+    waggle:{
+        new:true,
+        name:"Waggle Dance",
+        urlName:'waggle',
+        shortDesc: "Waggle Dance is our new session IPA. Hoppy, spicy and full bodied with nice soft hoppy foam. Made with Nugget, Citra and Mosaic. Dry hopped with Citra and Mosaic",
+        longDesc: "",
+        artist: "",
+        artistUrl:"http://thesistersbrewery.com/",
+        backgroundColor: '#e7d3cc',
+        labelImageUrl: './imgs/waggle.jpg',
+        untappdId:'2008963',
+        ABV: 4.4,
+        beerType: 'Session IPA',
         hexImageUrl:'imgs/hexes/genericlabel.png',
         order: 10
     },
