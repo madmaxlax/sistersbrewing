@@ -158,7 +158,7 @@ var brewery = false;
   });
   //////Main controller
   //set up main app controller
-  angular.module('SistersBrewApp').controller('appController', function (facebookService, googleMapsService, $scope, $window, $http, futureFilter, $location, $document) {
+  angular.module('SistersBrewApp').controller('appController', function (facebookService, googleMapsService, $scope, $window, $http, futureFilter, $location, $document, $compile) {
 
     // window.fbAsyncInit = function () {
     //   FB.init({
@@ -178,12 +178,12 @@ var brewery = false;
     };
 
     //for carousel from https://github.com/devmark/angular-slick-carousel
-    
+
     $scope.recompile = function (elementToCompile) {
-    // $scope.recompile = function () {
+      // $scope.recompile = function () {
       console.log($('.slick-track').find('sb-beer-hex').length);
       $compile(elementToCompile.target)($scope);
-      $('.slick-track').find('sb-beer-hex').length;
+      console.log($('.slick-track').find('sb-beer-hex').length);
     };
     $scope.slickConfig = {
       enabled: true,
@@ -220,7 +220,21 @@ var brewery = false;
           // console.log(Object.keys(beersDB)[currentSlide]);
           window.location.href = '#/beers/' + Object.keys(beersDB)[currentSlide];
         },
-        init: $scope.recompile
+        // init: $scope.recompile
+        init: function (event) {
+          var $clonedSlides = angular.element(event.currentTarget).find('sb-beer-hex.slick-cloned');
+          if ($clonedSlides.length > 0) {
+            // iterrate through slides and compile with angular
+            angular.forEach($clonedSlides, function (slide) {
+              // get slide content and scope
+              var $slide = angular.element(slide);
+              var $scope = $slide.scope();
+              // compile html and digest
+              $compile($slide)($scope);
+              $scope.$root.$digest();
+            });
+          }
+        }
       }
     };
 
