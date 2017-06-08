@@ -11,6 +11,7 @@ $hex-jagged-spacing:100px;
   margin: auto;
   font-size: 0;
   display: inline-block;
+  width: 100%;
   // text-align: left;
   a {
     display:inline-block;
@@ -83,8 +84,10 @@ $hex-jagged-spacing:100px;
       position: absolute;
       left: 0;
       width: 10vw;
-      border-bottom: 2px solid #000;
     }
+    &.active .beer-name {
+        border-bottom: 2px solid #000;
+      }
     &:hover, &.active, &.slick-center{
       .beer-name {
         display: block;
