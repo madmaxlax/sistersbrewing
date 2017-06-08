@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="SistersBrewApp">
+<html lang="en" ng-app="SistersBrewApp" ng-controller="appController as ctrlr">
 <!--<html lang="en">-->
 
 <head>
-	<title>The Sisters Brewery</title>
+	<title ng-bind="routeSelectedBeer? ('Beers > '+beersDB[routeSelectedBeer].name + ' | The Sisters Brewery'):'The Sisters Brewery'">The Sisters Brewery</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
 	<link rel="shortcut icon" href="favicon.ico">
@@ -29,7 +29,7 @@
   ga('send', 'pageview');
 
 </script>
-<body data-spy="scroll" data-target="#scrollSpy" data-offset="150" ng-cloak="" ng-controller="appController as ctrlr">
+<body data-spy="scroll" data-target="#scrollSpy" data-offset="150" ng-cloak="">
 	<div class="main-content">
 		<div class="header navbar navbar-fixed-top" id="top">
 			<a class="navbar-brand" href="#/" ng-click="linkTo('top', $event)" >
