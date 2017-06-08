@@ -182,6 +182,8 @@ var brewery = false;
       enabled: true,
       // dots:true,
       cssEase: 'linear',
+      infinite: true,
+      focusOnSelect:true,
       speed: 500,
       // autoplay: true,
       // autoplaySpeed: 1000,
