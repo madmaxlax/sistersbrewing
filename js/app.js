@@ -195,7 +195,7 @@ var brewery = false;
       // initialSlide: $scope.routeSelectedBeer?beersDB[$scope.routeSelectedBeer].order-1:3,
       //need to manually parse out the selected beer. derp. 
       initialSlide: $location.path().includes('/beers/') ? beersDB[$location.path().split('/')[2]].order - 1 : 3,
-      speed: 7500,
+      speed: $location.path().includes('/beers/') ? 500:7500,
       autoplay: !$location.path().includes('/beers/'),
       autoplaySpeed: 0,
       variableWidth: true,
