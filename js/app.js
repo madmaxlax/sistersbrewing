@@ -176,7 +176,7 @@ var brewery = false;
         return item[Date.parse(event.start_time)] > Date.now();
       };
     };
-
+    $scope.beerHasBeenSelected = false;
     //for carousel from https://github.com/devmark/angular-slick-carousel
 
     $scope.recompile = function (elementToCompile) {
@@ -195,16 +195,16 @@ var brewery = false;
       // initialSlide: $scope.routeSelectedBeer?beersDB[$scope.routeSelectedBeer].order-1:3,
       //need to manually parse out the selected beer. derp. 
       initialSlide: $location.path().includes('/beers/') ? beersDB[$location.path().split('/')[2]].order - 1 : 3,
-      speed: $location.path().includes('/beers/') ? 500:7500,
+      speed: $location.path().includes('/beers/') ? 500 : 7500,
       autoplay: !$location.path().includes('/beers/'),
       autoplaySpeed: 0,
       variableWidth: true,
       centerMode: true,
       // appendDots: "#dotshere",
       slidesToShow: 3,
-      slidesToScroll: 1,
+      // slidesToScroll: 3,
       draggable: false,
-      swipeToSlide:true,
+      swipeToSlide: true,
       pauseOnHover: true,
       centerPadding: '0px',
       responsive: [
@@ -216,12 +216,13 @@ var brewery = false;
       method: {},
       event: {
         // beforeChange: function (event, slick, currentSlide, nextSlide) {
+          // console.log(event, slick, currentSlide, nextSlide);
         // },
         afterChange: function (event, slick, currentSlide, nextSlide) {
           // console.log(angular.element(slick.$slides[currentSlide]).scope());
           // console.log(slick.$slides[currentSlide]);
           // console.log(Object.keys(beersDB)[currentSlide]);
-          if ($location.path().includes('/beers/')) {
+          if ($location.path().includes('/beers/') && slick.settings.autoplay === false) {
             window.location.href = '#/beers/' + Object.keys(beersDB)[currentSlide];
           }
         },
@@ -241,6 +242,17 @@ var brewery = false;
           }
         }
       }
+    };
+
+    $scope.turnBeerAutoScrollOn = function () {
+      $scope.slickConfig.autoplay = true;
+      $scope.slickConfig.speed = 7500;
+    };
+
+    $scope.turnBeerAutoScrollOff = function () {
+      $scope.slickConfig.speed = 500;
+      // $scope.slickConfig.method.slickPause();
+      $scope.slickConfig.autoplay = false;
     };
 
     $scope.scrollIfSmallScreen = function ($event) {
@@ -462,12 +474,21 @@ var brewery = false;
   });
 
   angular.module('SistersBrewApp').controller('BeerController', function ($scope, $routeParams, $http) {
+    
+
     var selectedbeer = $routeParams.selectedbeer;
     //console.log($routeParams);
     //if no beer selected, choose drone
     if ($routeParams.selectedbeer == null || $routeParams.selectedbeer === '') {
       //console.log('using default drone');
       selectedbeer = "honeyblonde";
+    }
+    else{//a beer has actually been selected
+      //turn auto scroll off and regular scroll speeds normal
+      //$scope.$parent.slickConfig.method.slickPause();
+      setTimeout($scope.$parent.turnBeerAutoScrollOff(), 7600);
+      // setTimeout($scope.$parent.slickConfig.method.slickGoTo(beersDB[selectedbeer].order-1),7500);
+      $scope.$parent.beerHasBeenSelected = true;
     }
     //console.log(selectedbeer);
     $scope.routeSelectedBeer = selectedbeer;
