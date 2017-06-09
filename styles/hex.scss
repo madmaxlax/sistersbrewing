@@ -88,7 +88,7 @@ $hex-jagged-spacing:100px;
     &.active .beer-name {
         border-bottom: 2px solid #000;
       }
-    &:hover, &.active{//, &.slick-center{
+    &:hover, &.active, &.slick-center{
       .beer-name {
         display: block;
         opacity: 1;
