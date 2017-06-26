@@ -5779,7 +5779,8 @@ p {
   padding-top: 25px;
   padding-bottom: 25px; }
   .section.beer-section {
-    padding: 25px 0 25px 0; }
+    padding: 25px 0 25px 0;
+    transition: background-color 0.5s ease; }
 
 .beer-section {
   text-align: center; }

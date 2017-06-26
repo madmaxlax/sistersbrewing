@@ -190,6 +190,7 @@ p {
   padding-bottom: 25px;
   &.beer-section {
     padding: 25px 0 25px 0;
+    transition: background-color 0.5s ease;
   }
 }
 
