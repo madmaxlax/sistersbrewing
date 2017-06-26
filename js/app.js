@@ -224,9 +224,9 @@ var brewery = false;
           // console.log(angular.element(slick.$slides[currentSlide]).scope());
           // console.log(slick.$slides[currentSlide]);
           // console.log(Object.keys(beersDB)[currentSlide]);
-          if ($location.path().includes('/beers/')){// && slick.settings.autoplay === false) {
+          //if ($location.path().includes('/beers/')){// && slick.settings.autoplay === false) {
             window.location.href = '#/beers/' + Object.keys(beersDB)[currentSlide];
-          }
+          //}
         },
         // init: $scope.recompile
         init: function (event) {
