@@ -203,7 +203,7 @@ var brewery = false;
       variableWidth: true,
       centerMode: true,
       // appendDots: "#dotshere",
-      slidesToShow: 3,
+      slidesToShow: 4,
       // slidesToScroll: 3,
       draggable: false,
       swipeToSlide: true,
