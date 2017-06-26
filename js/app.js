@@ -185,6 +185,20 @@ var brewery = false;
       $compile(elementToCompile.target)($scope);
       console.log($('.slick-track').find('sb-beer-hex').length);
     };
+
+    $scope.getInitialSlide = function(){
+      if($location.path().includes('/beers/'))
+      {
+        var initSlide = beersDB[$location.path().split('/')[2]].order - 1; 
+        console.log('initial slide is '+initSlide);
+        return initSlide;
+      }
+      else{
+        console.log('initial slide is default 3');
+         return 3;
+      }
+    }
+
     $scope.slickConfig = {
       enabled: true,
       dots: false,
@@ -195,7 +209,7 @@ var brewery = false;
       //$scope.routeSelectedBeer hasn't loaded yet
       // initialSlide: $scope.routeSelectedBeer?beersDB[$scope.routeSelectedBeer].order-1:3,
       //need to manually parse out the selected beer. derp. 
-      initialSlide: $location.path().includes('/beers/') ? beersDB[$location.path().split('/')[2]].order - 1 : 3,
+      initialSlide:  $scope.getInitialSlide(),
       // speed: $location.path().includes('/beers/') ? 500 : 7500,
       speed: 500,
       autoplay: false, //!$location.path().includes('/beers/'),
@@ -217,14 +231,16 @@ var brewery = false;
       ],
       method: {},
       event: {
-        // beforeChange: function (event, slick, currentSlide, nextSlide) {
-          // console.log(event, slick, currentSlide, nextSlide);
-        // },
+        beforeChange: function (event, slick, currentSlide, nextSlide) {
+          console.log('current '+ currentSlide, 'next slide: '+ nextSlide);
+        },
         afterChange: function (event, slick, currentSlide, nextSlide) {
+          // console.log('current slide')
           // console.log(angular.element(slick.$slides[currentSlide]).scope());
           // console.log(slick.$slides[currentSlide]);
           // console.log(Object.keys(beersDB)[currentSlide]);
           //if ($location.path().includes('/beers/')){// && slick.settings.autoplay === false) {
+            console.log('new current slide is '+currentSlide);
             window.location.href = '#/beers/' + Object.keys(beersDB)[currentSlide];
           //}
         },
