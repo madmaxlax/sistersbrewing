@@ -198,7 +198,7 @@ var brewery = false;
       initialSlide: $location.path().includes('/beers/') ? beersDB[$location.path().split('/')[2]].order - 1 : 3,
       // speed: $location.path().includes('/beers/') ? 500 : 7500,
       speed: 500,
-      autoplay: !$location.path().includes('/beers/'),
+      autoplay: false, //!$location.path().includes('/beers/'),
       // autoplaySpeed: 0,
       variableWidth: true,
       centerMode: true,
