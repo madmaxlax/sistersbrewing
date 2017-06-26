@@ -188,16 +188,18 @@ var brewery = false;
     $scope.slickConfig = {
       enabled: true,
       dots: false,
-      cssEase: 'linear',
+      // cssEase: 'linear', //needed for auto scroll
+      // cssEase: 'ease-in-out',
       infinite: true,
       focusOnSelect: true,
       //$scope.routeSelectedBeer hasn't loaded yet
       // initialSlide: $scope.routeSelectedBeer?beersDB[$scope.routeSelectedBeer].order-1:3,
       //need to manually parse out the selected beer. derp. 
       initialSlide: $location.path().includes('/beers/') ? beersDB[$location.path().split('/')[2]].order - 1 : 3,
-      speed: $location.path().includes('/beers/') ? 500 : 7500,
+      // speed: $location.path().includes('/beers/') ? 500 : 7500,
+      speed: 500,
       autoplay: !$location.path().includes('/beers/'),
-      autoplaySpeed: 0,
+      // autoplaySpeed: 0,
       variableWidth: true,
       centerMode: true,
       // appendDots: "#dotshere",
@@ -205,7 +207,7 @@ var brewery = false;
       // slidesToScroll: 3,
       draggable: false,
       swipeToSlide: true,
-      pauseOnHover: true,
+      // pauseOnHover: true,
       centerPadding: '0px',
       responsive: [
         {
@@ -222,7 +224,7 @@ var brewery = false;
           // console.log(angular.element(slick.$slides[currentSlide]).scope());
           // console.log(slick.$slides[currentSlide]);
           // console.log(Object.keys(beersDB)[currentSlide]);
-          if ($location.path().includes('/beers/') && slick.settings.autoplay === false) {
+          if ($location.path().includes('/beers/')){// && slick.settings.autoplay === false) {
             window.location.href = '#/beers/' + Object.keys(beersDB)[currentSlide];
           }
         },
@@ -244,16 +246,16 @@ var brewery = false;
       }
     };
 
-    $scope.turnBeerAutoScrollOn = function () {
-      $scope.slickConfig.autoplay = true;
-      $scope.slickConfig.speed = 7500;
-    };
+    // $scope.turnBeerAutoScrollOn = function () {
+    //   $scope.slickConfig.autoplay = true;
+    //   $scope.slickConfig.speed = 7500;
+    // };
 
-    $scope.turnBeerAutoScrollOff = function () {
-      $scope.slickConfig.speed = 500;
-      // $scope.slickConfig.method.slickPause();
-      $scope.slickConfig.autoplay = false;
-    };
+    // $scope.turnBeerAutoScrollOff = function () {
+    //   $scope.slickConfig.speed = 500;
+    //   // $scope.slickConfig.method.slickPause();
+    //   $scope.slickConfig.autoplay = false;
+    // };
 
     $scope.scrollIfSmallScreen = function ($event) {
       if ($scope.isMobile()) {
@@ -486,7 +488,7 @@ var brewery = false;
     else{//a beer has actually been selected
       //turn auto scroll off and regular scroll speeds normal
       //$scope.$parent.slickConfig.method.slickPause();
-      setTimeout($scope.$parent.turnBeerAutoScrollOff(), 7600);
+      //setTimeout($scope.$parent.turnBeerAutoScrollOff(), 7600);
       // setTimeout($scope.$parent.slickConfig.method.slickGoTo(beersDB[selectedbeer].order-1),7500);
       $scope.$parent.beerHasBeenSelected = true;
     }
