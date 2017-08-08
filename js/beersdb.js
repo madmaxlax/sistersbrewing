@@ -134,22 +134,22 @@ A Blonde is a beer with a golden yellow colour. Basically is a Blonde beer a bee
         hexImageUrl:'imgs/hexes/nectar.png',
         order: 8
     },
-    test:{
-        new:true,
-        name:"New test",
-        urlName:'test',
-        shortDesc: "this is a made up beer",
-        longDesc: "",
-        artist: "",
-        artistUrl:"http://thesistersbrewery.com/",
-        backgroundColor: '#e7d3cc',
-        labelImageUrl: './imgs/hexes/genericlabel.png',
-        untappdId:'2008963',
-        ABV: 0.0,
-        beerType: 'Fake',
-        hexImageUrl:'imgs/hexes/genericlabel.png',
-        order: 9
-    },
+    // test:{
+    //     new:true,
+    //     name:"New test",
+    //     urlName:'test',
+    //     shortDesc: "this is a made up beer",
+    //     longDesc: "",
+    //     artist: "",
+    //     artistUrl:"http://thesistersbrewery.com/",
+    //     backgroundColor: '#e7d3cc',
+    //     labelImageUrl: './imgs/hexes/genericlabel.png',
+    //     untappdId:'2008963',
+    //     ABV: 0.0,
+    //     beerType: 'Fake',
+    //     hexImageUrl:'imgs/hexes/genericlabel.png',
+    //     order: 9
+    // },
     waggle:{
         new:true,
         name:"Waggle Dance",
@@ -158,13 +158,13 @@ A Blonde is a beer with a golden yellow colour. Basically is a Blonde beer a bee
         longDesc: "",
         artist: "",
         artistUrl:"http://thesistersbrewery.com/",
-        backgroundColor: '#e7d3cc',
-        labelImageUrl: './imgs/waggle.jpg',
+        backgroundColor: '#68a29a',
+        labelImageUrl: './imgs/WaggleDance-label.jpg',
         untappdId:'2008963',
         ABV: 4.4,
         beerType: 'Session IPA',
-        hexImageUrl:'imgs/hexes/genericlabel.png',
-        order: 10
+        hexImageUrl:'imgs/hexes/waggledance.png',
+        order: 9
     },
     // abelha:{
     //     name:"Abelha",
