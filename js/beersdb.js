@@ -150,7 +150,7 @@ A Blonde is a beer with a golden yellow colour. Basically is a Blonde beer a bee
     //     hexImageUrl:'imgs/hexes/genericlabel.png',
     //     order: 9
     // },
-    waggle:{
+/*    waggle:{
         new:true,
         name:"Waggle Dance",
         urlName:'waggle',
@@ -165,7 +165,7 @@ A Blonde is a beer with a golden yellow colour. Basically is a Blonde beer a bee
         beerType: 'Session IPA',
         hexImageUrl:'imgs/hexes/waggledance.png',
         order: 9
-    },
+    },*/
     // abelha:{
     //     name:"Abelha",
     //     urlName:'abelha',
@@ -179,20 +179,20 @@ A Blonde is a beer with a golden yellow colour. Basically is a Blonde beer a bee
     //     untappdId:'1635987',
     //     order: 9
     // },
-    // bzzz:{
-    //     name:"Bzzz",
-    //     urlName:'bzzz',
-    //     new:true,
-    //     shortDesc: "--",
-    //     longDesc: "",
-    //     artist: "  ",
-    //     artistUrl:"",
-    //     backgroundColor: '',
-    //     labelImageUrl: './imgs/bzzz.jpg',
-    //     untappdId:'1750801',
-    //     hexImageUrl:'',
-    //     order: 10
-    // }
+    bzzz:{
+         name:"Bzzz",
+         urlName:'bzzz',
+         new:true,
+         shortDesc: "Full bodied Doppelbock with a smooth malty finish.",
+         longDesc: "Full bodied Doppelbock with a smooth malty finish.",
+         artist: "  ",
+         artistUrl:"",
+         backgroundColor: '#f5f0e7',
+         labelImageUrl: './imgs/bzzz.jpg',
+         untappdId:'1750801',
+         hexImageUrl:'',
+         order: 10
+     }
     /*,
     newbeer:{
         name:"New Beer",
