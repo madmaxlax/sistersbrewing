@@ -158,7 +158,7 @@ A Blonde is a beer with a golden yellow colour. Basically is a Blonde beer a bee
         longDesc: "",
         artist: "",
         artistUrl:"http://thesistersbrewery.com/",
-        backgroundColor: '#68a29a',
+        backgroundColor: '#9AC1BB',
         labelImageUrl: './imgs/WaggleDance-label.jpg',
         untappdId:'2008963',
         ABV: 4.4,
