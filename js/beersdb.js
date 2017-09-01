@@ -5,7 +5,7 @@ var beersDB = {
     drone:{
         name:"Drone",
         urlName:'drone',
-        shortDesc: "The Drone, our fantastic Porter (5.8% ABV), has aromas of roasted malt, chocolate, caramel and coffee. The color is dark brown and has a light brownish foam. The Drone is very drinkable and is smoothly balanced. The Drone (and Drone²) is our only beer with an artwork representing a male; we couldn’t put a female artwork on a male bee ;-)",
+        shortDesc: "The Drone, our fantastic Porter (5.8% ABV), has aromas of roasted malt, chocolate, caramel and coffee. The color is dark brown and has a light brownish foam. The Drone is very drinkable and is smoothly balanced. The Drone (and DroneÂ²) is our only beer with an artwork representing a male; we couldnâ€™t put a female artwork on a male bee ;-)",
         longDesc: 'Drone is a Porter.\
 \
 Porter is a type of dark beer, coming from London, it was first made during the 18th century. It is a derivative of brown beer, made from brown malt with a lot of hop. The beer is called Porter since it was very popular among the street and river porters. In 1802 the writer John Feltham wrote about the history of Porter, which was then used as the basis for most writings on this subject. However, there is very limited contemporary evidence on this version of the history of Porter. Feltham\'s story was based on a letter written by Obadiah Poundage (who for decades worked in the London brewing industry), in the 1760s. Feltham interpreted the text in a different way, most probably not correctly, because he was not familiar with the 18th century brewery terminology. He said that during the 18th century in London there was a popular drink called the "three threads". The three threads was made from a mixture of third of a pint of ale, beer and "twopenny" (the strongest beer, that costs two pence). Around 1730, wrote Feltham, there was a brewer called Harwood who brewed a beer called "Entire" which tasted very similar to the "three threads" which later was known as Porter. Porter is already mentioned in 1721, but only in Feltham\'s writing it states that this beer was made to create the "three threads". Instead, the beer seems to have evolved from the brown beer which was already brewed at that time in London. During 1700 beer brewers sold the beer when it was very young and it matured at the shop. Porter was the first beer that was already matured in the brewery and was ready to drink immediately. It was also the first beer that could be produced on a larger scale. A Porter is a full of flavor beer with lots of dark tones, one will often taste the chocolate flavor within.',
@@ -89,7 +89,7 @@ A Blonde is a beer with a golden yellow colour. Basically is a Blonde beer a bee
         order: 5
     },
     hive:{
-        new:true,
+        new:false,
         name:"Hive",
         urlName:'hive',
         shortDesc: "Hive (5,3% ABV) is a very fresh Hefeweizen. The Hive is made up of a lot of wheat which gives it a refreshing taste. It is cloudy and pale, with a foamy and frothy head. The taste is fruity and has some vanilla flavors. ",
@@ -107,7 +107,7 @@ A Blonde is a beer with a golden yellow colour. Basically is a Blonde beer a bee
     drone2:{
         name:"Drone²",
         urlName:'drone2',
-        shortDesc: "Drone² (8.5% ABV) is an Imperial version of the Drone. We increased the ingredients to get more aromas of roasted malt, chocolate, caramel and coffee! And of course, the alcohol percentage increased with it.",
+        shortDesc: "DroneÂ² (8.5% ABV) is an Imperial version of the Drone. We increased the ingredients to get more aromas of roasted malt, chocolate, caramel and coffee! And of course, the alcohol percentage increased with it.",
         longDesc: "",
         artist: "Kiana Girigorie",
         artistUrl:"http://instagram.com/kiana.girigorie",
@@ -158,7 +158,7 @@ A Blonde is a beer with a golden yellow colour. Basically is a Blonde beer a bee
         longDesc: "",
         artist: "",
         artistUrl:"http://thesistersbrewery.com/",
-        backgroundColor: '#9AC1BB',
+        backgroundColor: '#68a29a',
         labelImageUrl: './imgs/WaggleDance-label.jpg',
         untappdId:'2008963',
         ABV: 4.4,
@@ -190,7 +190,9 @@ A Blonde is a beer with a golden yellow colour. Basically is a Blonde beer a bee
          backgroundColor: '#f5f0e7',
          labelImageUrl: './imgs/bzzz.jpg',
          untappdId:'1750801',
-         hexImageUrl:'',
+         ABV: 8,
+         beerType: 'Doppelbock',
+         hexImageUrl:'imgs/hexes/bzzz.png',
          order: 10
      }
     /*,
