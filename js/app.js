@@ -181,9 +181,9 @@ var brewery = false;
 
     $scope.recompile = function (elementToCompile) {
       // $scope.recompile = function () {
-      console.log($('.slick-track').find('sb-beer-hex').length);
+      //console.log($('.slick-track').find('sb-beer-hex').length);
       $compile(elementToCompile.target)($scope);
-      console.log($('.slick-track').find('sb-beer-hex').length);
+      //console.log($('.slick-track').find('sb-beer-hex').length);
     };
 
     $scope.getInitialSlide = function(){
