@@ -190,14 +190,14 @@ var brewery = false;
       if($location.path().includes('/beers/'))
       {
         var initSlide = beersDB[$location.path().split('/')[2]].order - 1; 
-        console.log('initial slide is '+initSlide);
+        //console.log('initial slide is '+initSlide);
         return initSlide;
       }
       else{
-        console.log('initial slide is default 3');
+        //console.log('initial slide is default 3');
          return 3;
       }
-    }
+    };
 
     $scope.slickConfig = {
       enabled: true,
