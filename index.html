@@ -84,7 +84,7 @@
 			<h2> Beers </h2>
 			<div class="hexs-container">
 				<!--<div id="dotshere"></div>-->
-				<slick settings="slickConfig" ng-if="beersDB">
+				<slick settings="slickConfig" ng-if="beersDB" class="flex-container">
 					
 					<sb-beer-hex ng-repeat="(beerId,beer) in beersDB | orderObjectBy:'order'"></sb-beer-hex>
 					<!--<div ng-repeat="(beerId,beer) in beersDB | orderObjectBy:'order'">
