@@ -260,26 +260,29 @@ var map;
             },
             mapsClickedOrFocused: false,
             mapsClickedListener: false,
-            setupOutsideClickListener: function ($event) {
-                //console.log($event);
-                //console.log($event.target.firstChild.nodeName);
+          
+              //DISABLED! Google now handles this
+              // https://developers.google.com/maps/documentation/javascript/interaction
+//             setupOutsideClickListener: function ($event) {
+//                 //console.log($event);
+//                 //console.log($event.target.firstChild.nodeName);
 
-                //clicked on something outside the map
-                //inside map if 
-                //document.getElementById('findmap').contains($event.target)
-                //or
-                //
-                if (!(document.getElementById('map').contains($event.target) || ($event.target.firstChild != null && $event.target.firstChild.nodeName.toLowerCase() === "iframe"))) {
-                    //console.log("clicked outside of map");
-                    //disable scrolling on map
-                    serviceObj.disableScrollingZoom();
-                    //console.log('disabling scroll');
-                    //cancel the listener
-                    //$document.off('click', serviceObj.setupOutsideClickListener);
+//                 //clicked on something outside the map
+//                 //inside map if 
+//                 //document.getElementById('findmap').contains($event.target)
+//                 //or
+//                 //
+//                 if (!(document.getElementById('map').contains($event.target) || ($event.target.firstChild != null && $event.target.firstChild.nodeName.toLowerCase() === "iframe"))) {
+//                     //console.log("clicked outside of map");
+//                     //disable scrolling on map
+//                     serviceObj.disableScrollingZoom();
+//                     //console.log('disabling scroll');
+//                     //cancel the listener
+//                     //$document.off('click', serviceObj.setupOutsideClickListener);
 
-                    serviceObj.mapsClickedOrFocused = false;
-                }
-            },
+//                     serviceObj.mapsClickedOrFocused = false;
+//                 }
+//             },
             initiateMap: function (recenterToLocViaIP) {
                 serviceObj.googleLoaded = true;
                 //create the map, center it on Amsterdam
@@ -288,36 +291,37 @@ var map;
                     center: { lat: 52.3665982, lng: 4.8851904 },//[52.3665982, 4.8851904]
                     zoom: 9,
                     styles: mapsStylesWhite,
-                    scrollwheel: false,
-                    draggable: false
+                    gestureHandling: 'cooperative'
                 });
 
                 serviceObj.prev_infoWindow = false;
                 //when map is clicked, enable drag and 
-                google.maps.event.addListener(serviceObj.map, "click", function (event) {
-                    if (!serviceObj.mapsClickedOrFocused) {
-                        //console.log('enabling scroll');
-                        serviceObj.enableScrollingZoom();
+              //DISABLED! Google now handles this
+              // https://developers.google.com/maps/documentation/javascript/interaction
+//                 google.maps.event.addListener(serviceObj.map, "click", function (event) {
+//                     if (!serviceObj.mapsClickedOrFocused) {
+//                         //console.log('enabling scroll');
+//                         serviceObj.enableScrollingZoom();
 
-                        //setup listeners for outside of map click
-                        //check for clicks anywhere
-                        mapsClickedListener = $document.on("click", serviceObj.setupOutsideClickListener);
+//                         //setup listeners for outside of map click
+//                         //check for clicks anywhere
+//                         mapsClickedListener = $document.on("click", serviceObj.setupOutsideClickListener);
 
-                        //mindful of cleanup
-                        $document.on('$destroy', function () {
-                            //$document.off('click', serviceObj.setupOutsideClickListener);
-                            mapsClickedListener();
-                        });
+//                         //mindful of cleanup
+//                         $document.on('$destroy', function () {
+//                             //$document.off('click', serviceObj.setupOutsideClickListener);
+//                             mapsClickedListener();
+//                         });
 
-                        //close any open infoWindows
-                        //disabled for now, sometimes annoying to lose the window
-                        // if (serviceObj.prev_infoWindow) {
-                        //     serviceObj.prev_infoWindow.close();
-                        //     serviceObj.prev_infoWindow = false;
-                        // }
-                        serviceObj.mapsClickedOrFocused = true;
-                    }
-                });
+//                         //close any open infoWindows
+//                         //disabled for now, sometimes annoying to lose the window
+//                         // if (serviceObj.prev_infoWindow) {
+//                         //     serviceObj.prev_infoWindow.close();
+//                         //     serviceObj.prev_infoWindow = false;
+//                         // }
+//                         serviceObj.mapsClickedOrFocused = true;
+//                     }
+//                 });
 
                 //add markers for beer locations
                 serviceObj.sellerLocations.forEach(function (beerSpot) {
