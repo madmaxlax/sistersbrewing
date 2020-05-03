@@ -1,0 +1,236 @@
+@charset "utf-8";
+body {
+	margin: 0%;
+	color: #151515;
+	background-color: #FFFFFF;
+	font-size: 16px;
+	padding: 0%;
+	height: auto;
+	width: auto;
+}
+#wrapper {
+	min-width: 740px;
+	max-width: 100%;
+	background-color: #CCCCCC;
+	font-size: 16px;
+	text-align: left;
+	margin-bottom: -5mm;
+	margin-left: 3mm;
+	margin-top: 5px;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+#top {
+	overflow: hidden;
+	font-size: 18px;
+}
+#hero img {
+	max-width: 100%;
+}
+h1, h2 {
+	font-family: source-sans-pro;
+	color: #399;
+	font-weight: 600;
+}
+
+
+h1 {
+	font-size: 36px;
+	text-align: center;
+	color: #695;
+	line-height: normal;
+	clip: rect(10px,auto,auto,auto);
+	position: static;
+	width: auto;
+	top: 10px;
+}
+.Titelsidebar {
+	font-size: 16px;
+	color: #480028;
+	margin-left: 3px;
+}
+h2 {
+	margin-top: 0.5em;
+}
+#main {
+	width: 100%;
+	padding-left: 2%;
+	float: left;
+	font-family: Verdana, Geneva, sans-serif;
+}
+#sidebar {
+	width: 34%;
+	padding-left: 4%;
+	float: left;
+}
+
+
+
+
+figure {
+	display: block;
+	width: 420px;
+}
+figure img {
+	padding: 10px;
+	-webkit-box-shadow: 1px 1px 15px #999999;
+	box-shadow: 1px 1px 15px #999999;
+}
+
+figcaption {
+	font-size: 0.875em;
+	font-weight: bold;
+	text-align: center;
+	display: block;
+	margin-top: 0.5em;
+}
+.centered {
+	margin-left: auto;
+	margin-right: auto;
+}
+.floatleft {
+	float: left;
+	margin-left: 0px;
+	margin-right: 10px;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	text-align: left;
+}
+.floatright {
+	float: right;
+	margin-left: 10px;
+	margin-right: 0px;
+}
+footer {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 2%;
+	background-color: #43a6cb;
+	color: #FFFFFF;
+	clear: left;
+}
+#mainnav ul {
+	list-style-type: none;
+	margin: 0px;
+	float: none;
+	display: inline;
+}
+
+a {
+	font-weight: bold;
+	text-decoration: none;
+}
+a:link {
+	color: #666666;
+}
+a:visited {
+	color: #666666;
+
+}
+a:hover, a:active, a:focus {
+	color: #999999;
+	text-align: left;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 18px;
+}
+#mainnav a {
+	width: 16.6%;
+	display: inline;
+	float: left;
+	text-transform: none;
+	text-align: center;
+	background-color: #333333;
+	font-family: Verdana, Geneva, sans-serif;
+	color: #999999;
+	margin-top: -6mm;
+	font-weight: bold;
+	height: 30px;
+	padding-top: 0px;
+	font-size: 24px;
+}
+#wrapper #Hero p {
+	font-size: 18px;
+}
+.z {
+	font-size: 36px;
+}
+.Top {
+	font-size: 60px;
+	color: #000000;
+	background-color: #FFF;
+	font-weight: bold;
+	font-family: "Modern No. 20";
+	padding-left: 20px;
+}
+Titel {
+	font-size: 18px;
+}
+#top tr td #main tr th p {
+	font-family: Verdana, Geneva, sans-serif;
+	color: #333;
+	font-weight: normal;
+	text-align: left;
+	padding-left: 2mm;
+	font-size: 20px;
+	margin-top: -5mm;
+}
+
+.navigatiekleur          {
+	color: #FFFFFF;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 24px;
+}
+.navigatiekleur a em strong {
+	color: #00A651;
+}
+td table tr th .Top {
+	font-size: 30px;
+	font-family: Verdana, Geneva, sans-serif;
+}
+#wrapper #top tr td #main tr .sidebaritalic p {
+	text-align: left;
+	padding: 7px;
+	margin: -20px;
+	font-family: Verdana, Geneva, sans-serif;
+
+}
+
+#wrapper #top tr td table tr th {
+	font-size: 12px;
+	vertical-align: top;
+	font-family: Verdana, Geneva, sans-serif;
+	margin-top: -20px;
+	margin-left: -20px;
+}
+#wrapper #top tr td #main tr .sidebaritalic #main2 tr th img {
+	font-family: "Modern No. 20";
+	margin-top: -20px;
+	margin-left: -20px;
+	margin-bottom: -30px;
+}
+Footer {
+	font-size: 12px;
+}
+.Footer {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+}
+#wrapper #top {
+	font-size: 70px;
+}
+#wrapper #top {
+	font-family: Verdana, Geneva, sans-serif;
+	margin-top: -5px;
+	background-image: url(../_images/foto/Drone%20kop%20uitgesneden.jpg);
+	background-repeat: no-repeat;
+}
+#wrapper table tr .sidebaritalic p {
+	text-align: center;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 18px;
+	font-weight: 500;
+	margin-left: 4px;
+}
+#wrapper table tr .sidebaritalic small #stadnav {
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 18px;
+	font-weight: normal;
+}

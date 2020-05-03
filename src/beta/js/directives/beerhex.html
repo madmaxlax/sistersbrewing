@@ -1,0 +1,5 @@
+<a ng-class="{active:beer.urlName===routeSelectedBeer, new:beer.new}" ng-href="#/beers/{{beer.urlName}}" ng-click="scrollIfSmallScreen($event)">
+  <img ng-src="{{beer.hexImageUrl}}"></img>
+  <span class="new-beer" ng-show="beer.new" >New!</span>
+  <span class="beer-name"> {{beer.name}} </span>
+</a>

@@ -1,0 +1,41 @@
+.beer-detail {
+	padding: 50px;
+  transition: background-color 0.5s ease;
+	// margin-top: 20px;
+  img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+  }
+  h2 {
+    margin: 5px 0 0 0;
+    text-align: left;
+    font-size: 2.25em;
+  }
+  .beer-meta {
+    padding: 0;
+    list-style: none;
+    li {
+      display: inline-block;
+      padding: 0 3px;
+      font-weight: bold;
+      &.sep {
+        font-weight: normal;
+      }
+    }
+  }
+  .beer-artist {
+    font-size: 14px;
+  }
+  .rating {
+    font-weight: bold;
+  }
+}
+.beer-description{
+    @include media-breakpoint-up(lg) {
+        max-height: 400px;//this is roughly the height of the beer labels
+        overflow-y: auto; //some, like drone, have huge descriptions
+        overflow-x: hidden;
+    }
+}

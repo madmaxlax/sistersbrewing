@@ -1,0 +1,182 @@
+@charset "utf-8";
+body {
+	margin: 0%;
+	color: #151515;
+	background-color: #FFFFFF;
+	font-size: 16px;
+	padding: 0%;
+	height: auto;
+	width: auto;
+}
+#wrapper {
+	width: 100%;
+	min-width: 740px;
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #FFFFFF;
+	margin-top: -3mm;
+}
+#top {
+	overflow: hidden;
+}
+#hero img {
+	max-width: 100%;
+}
+h1, h2 {
+	font-family: source-sans-pro;
+	color: #399;
+	font-weight: 600;
+}
+
+
+h1 {
+	font-size: 36px;
+	text-align: center;
+	color: #695;
+	line-height: normal;
+	clip: rect(10px,auto,auto,auto);
+	position: static;
+	width: auto;
+	top: 10px;
+}
+.Titelsidebar {
+	font-size: 16px;
+	color: #480028;
+	margin-left: 3px;
+}
+h2 {
+	margin-top: 0.5em;
+}
+#main {
+	width: auto;
+	padding-left: 2%;
+	float: left;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+}
+#sidebar {
+	width: 34%;
+	padding-left: 4%;
+	float: left;
+}
+
+
+
+
+figure {
+	display: block;
+	width: 420px;
+}
+figure img {
+	padding: 10px;
+	-webkit-box-shadow: 1px 1px 15px #999999;
+	box-shadow: 1px 1px 15px #999999;
+}
+
+figcaption {
+	font-size: 0.875em;
+	font-weight: bold;
+	text-align: center;
+	display: block;
+	margin-top: 0.5em;
+}
+.centered {
+	margin-left: auto;
+	margin-right: auto;
+}
+.floatleft {
+	float: left;
+	margin-left: 0px;
+	margin-right: 10px;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	text-align: left;
+}
+.floatright {
+	float: right;
+	margin-left: 10px;
+	margin-right: 0px;
+}
+footer {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 2%;
+	background-color: #43a6cb;
+	color: #FFFFFF;
+	clear: left;
+}
+#mainnav ul {
+	list-style-type: none;
+	margin: 0px;
+	float: none;
+	display: inline;
+}
+
+a {
+	font-weight: bold;
+	text-decoration: none;
+}
+a:link {
+	color: #FF6600;
+}
+a:visited {
+	color: #FF944C;
+
+}
+a:hover, a:active, a:focus {
+	color: #993366;
+	text-decoration: underline;
+	font-size: 14px;
+}
+#mainnav a {
+	width: 14%;
+	display: inline;
+	float: left;
+	text-transform: none;
+	text-align: center;
+	background-color: #999999;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	color: #0000C4;
+	margin-top: -3mm;
+	font-weight: bold;
+	height: 40px;
+	padding-top: 20px;
+}
+#wrapper #Hero p {
+	font-size: 18px;
+}
+.z {
+	font-size: 36px;
+}
+.Top {
+	font-size: 32px;
+	color: #00A651;
+	background-color: #FFF;
+	font-weight: bold;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	padding-left: 20px;
+}
+Titel {
+	font-size: 18px;
+}
+#top tr td #main tr th p {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	color: #333;
+	font-weight: normal;
+	float: none;
+	text-align: left;
+	padding-left: 2mm;
+}
+
+.Marja {
+	font-weight: bold;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	color: #0000C4;
+}
+.navigatiekleur          {
+	color: #00A651;
+	font-size: 16px;
+}
+.navigatiekleur a em strong {
+	color: #00A651;
+}
