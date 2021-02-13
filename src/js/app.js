@@ -414,7 +414,10 @@ var brewery = false;
       $scope.getFBEvents = function () {
         facebookService
           .FBCall(
-            "/thesistersbrewery/events?fields=cover,name,start_time,description,place&access_token=1007778489291152|u2Rs03TsG_yGoAxzC8ZUdpgEOwA"
+            "/thesistersbrewery/events?fields=cover,name,start_time,description,place&access_token=" +
+              atob(
+                "RUFBT1VrVUp3VWY0QkFHSjNBc1pBWkFCaERKNWcya3VySks2U1NmR0lCNm1qSXg4NFFKWFRCc3lmUDZJTXROeXJaQXMxaVpCdjVSZmlCbFRVN3BEUm9KZER1aHdNSGhOTVByV29rcW42ZnlIa05IV2J3ZUJIbGxOSDE2cGtaQmpZOFhRYlBXMzlCMnFGVTVqc2tWbVJMeFhqbWd3aElRWW1TU1k3MTJpWEFaQkFaRFpE"
+              )
           )
           .then(function (response) {
             //console.log(response);
@@ -424,6 +427,9 @@ var brewery = false;
             $scope.googleMapsService = googleMapsService;
             //stop watching FB
             //$scope.FBListener();
+          })
+          .catch(function () {
+            googleMapsService.events = [];
           });
         //$scope.FBListener();
       };
@@ -432,7 +438,10 @@ var brewery = false;
       $scope.getFBPosts = function () {
         facebookService
           .FBCall(
-            "/thesistersbrewery/posts?fields=picture,place,full_picture,message,story,created_time&limit=12&access_token=1007778489291152|u2Rs03TsG_yGoAxzC8ZUdpgEOwA"
+            "/thesistersbrewery/posts?fields=picture,place,full_picture,message,story,created_time&limit=12&access_token=" +
+              atob(
+                "RUFBT1VrVUp3VWY0QkFHSjNBc1pBWkFCaERKNWcya3VySks2U1NmR0lCNm1qSXg4NFFKWFRCc3lmUDZJTXROeXJaQXMxaVpCdjVSZmlCbFRVN3BEUm9KZER1aHdNSGhOTVByV29rcW42ZnlIa05IV2J3ZUJIbGxOSDE2cGtaQmpZOFhRYlBXMzlCMnFGVTVqc2tWbVJMeFhqbWd3aElRWW1TU1k3MTJpWEFaQkFaRFpE"
+              )
           )
           .then(function (response) {
             //console.log(response);
@@ -440,6 +449,9 @@ var brewery = false;
             $scope.posts = response.data.data;
             //stop watching FB
             //$scope.FBListener();
+          })
+          .catch(function () {
+            $scope.posts = [];
           });
       };
 

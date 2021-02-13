@@ -228,7 +228,7 @@ var beersDB = {
     hexImageUrl: "imgs/hexes/yellow_hex.png",
     order: 12,
   },
-	Pchela: {
+	pchela: {
     name: "Pchela",
     urlName: "pchela",
     new: true,
