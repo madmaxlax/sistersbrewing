@@ -1,19 +1,43 @@
 var BEERLOCATIONS = [
     {
-        "Name": "B-Amsterdam",
-        "Address": "Johan Huizingalaan 763A",
+        "Name": "Mata Hari",
+        "Address": "Oudezijds Achterburgwal 22",
         "City": "Amsterdam",
-        "Full Address": "Johan Huizingalaan 763A Amsterdam ",
-        "Latitude": 52.3431438,
-        "Longitude": 4.8291689
+        "Full Address": "Oudezijds Achterburgwal 22 Amsterdam ",
+        "Latitude": 52.374660,
+        "Longitude": 4.900100
+    },
+	{
+        "Name": "Café Vrijdag",
+        "Address": "Amsteldijk 137",
+        "City": "Amsterdam",
+        "Full Address": "Amsteldijk 137 Amsterdam ",
+        "Latitude": 52.346740,
+        "Longitude": 4.911090
+    },
+	{
+        "Name": "BRET",
+        "Address": "Orlyplein 76",
+        "City": "Amsterdam",
+        "Full Address": "Orlyplein 76 Amsterdam ",
+        "Latitude": 52.389822,
+        "Longitude": 4.836811
+    },
+	{
+        "Name": "Hotel Steeds aan Zee & Grand Café de Koningin",
+        "Address": "Kon. Wilhelminastraat 14",
+        "City": "Katwijk aan Zee",
+        "Full Address": "Kon. Wilhelminastraat 14 Katwijk aan Zee ",
+        "Latitude": 52.205770,
+        "Longitude": 4.396390
     },
     {
-        "Name": "De Bierkoning",
-        "Address": "Paleisstraat 125",
-        "City": "Amsterdam",
-        "Full Address": "Paleisstraat 125 Amsterdam ",
-        "Latitude": 52.372236,
-        "Longitude": 4.889848
+        "Name": "Local2Local Makro Vianen",
+        "Address": "Edisonweg 4",
+        "City": "Vianen",
+        "Full Address": "Edisonweg 4, Vianen ",
+        "Latitude": 51.977893, 
+        "Longitude": 5.093841
     },
     {
         "Name": "De Biertuin",
@@ -24,20 +48,20 @@ var BEERLOCATIONS = [
         "Longitude": 4.9242439
     },
     {
-        "Name": "Café Gollem",
-        "Address": "Daniel Stalpertstraat 74",
+        "Name": "Gollem Craft Beers",
+        "Address": "Amstelstraat 34",
         "City": "Amsterdam",
-        "Full Address": "Daniel Stalpertstraat 74 Amsterdam ",
-        "Latitude": 52.3560694,
-        "Longitude": 4.8908754
+        "Full Address": "Amstelstraat 34 Amsterdam ",
+        "Latitude": 52.366070,
+        "Longitude": 4.899900
     },
     {
-        "Name": "Craft & Draft",
-        "Address": "Overtoom 417",
+        "Name": "Tapperij de Eeuwige Jeugd",
+        "Address": "Linnaeusstraat 37A",
         "City": "Amsterdam",
-        "Full Address": "Overtoom 417 Amsterdam ",
-        "Latitude": 52.3590686,
-        "Longitude": 4.8611688
+        "Full Address": "Linnaeusstraat 37A, Amsterdam ",
+        "Latitude": 52.361580,
+        "Longitude": 4.924673
     },
     {
         "Name": "Delirium Café Amsterdam",
@@ -46,6 +70,14 @@ var BEERLOCATIONS = [
         "Full Address": "Piet Heinkade 4-6-8 Amsterdam ",
         "Latitude": 52.3775509,
         "Longitude": 4.912677
+    },
+	{
+        "Name": "Little Delirium",
+        "Address": "De Ruijterkade 42B",
+        "City": "Amsterdam",
+        "Full Address": "De Ruijterkade 42B Amsterdam ",
+        "Latitude": 52.380109,
+        "Longitude": 4.900435
     },
     {
         "Name": "In de Wildeman",
@@ -56,14 +88,6 @@ var BEERLOCATIONS = [
         "Longitude": 4.8951579
     },
     {
-        "Name": "Liquorstore The Pint",
-        "Address": "Middenweg 57a",
-        "City": "Amsterdam",
-        "Full Address": "Middenweg 57a Amsterdam ",
-        "Latitude": 52.354009,
-        "Longitude": 4.930540
-    },
-    {
         "Name": "Proeflokaal Arendsnest",
         "Address": "Herengracht 90",
         "City": "Amsterdam",
@@ -71,21 +95,13 @@ var BEERLOCATIONS = [
         "Latitude": 52.376700,
         "Longitude": 4.889394
     },
-    {
-        "Name": "Restaurant Dwars",
-        "Address": "Egelantiersstraat 24",
+   {
+        "Name": "De Biertuin Prinsengracht",
+        "Address": "Prinsengracht 494",
         "City": "Amsterdam",
-        "Full Address": "Egelantiersstraat 24 Amsterdam ",
-        "Latitude": 52.3771444,
-        "Longitude": 4.884261
-    },
-    {
-        "Name": "Slijterij 't Fust",
-        "Address": "Bilderdijkstraat 203",
-        "City": "Amsterdam",
-        "Full Address": "Bilderdijkstraat 203 Amsterdam ",
-        "Latitude": 52.3663806,
-        "Longitude": 4.8730292
+        "Full Address": "Prinsengracht 494 Amsterdam ",
+        "Latitude": 52.364104,
+        "Longitude": 4.885506
     },
     {
         "Name": "Sterk De Clercqstraat",
@@ -96,28 +112,12 @@ var BEERLOCATIONS = [
         "Longitude": 4.873873
     },
     {
-        "Name": "Slijterij Ton Overmars",
-        "Address": "Timorplein 62",
-        "City": "Amsterdam",
-        "Full Address": "Timorplein 62 Amsterdam ",
-        "Latitude": 52.3652376,
-        "Longitude": 4.9360324
-    },
-    {
-        "Name": "Studio/K",
-        "Address": "Hoofddorpplein 11",
-        "City": "Amsterdam",
-        "Full Address": "Hoofddorpplein 11 Amsterdam ",
-        "Latitude": 52.3508942,
-        "Longitude": 4.8499599
-    },
-    {
-        "Name": "Tabak's Notenbar",
-        "Address": "Rijnstraat 132H",
-        "City": "Amsterdam",
-        "Full Address": "Rijnstraat 132H Amsterdam ",
-        "Latitude": 52.343485,
-        "Longitude": 4.906276
+        "Name": "Local2Local Makro Nieuwegein",
+        "Address": "Laagraven 7 ",
+        "City": "Nieuwegein",
+        "Full Address": "Laagraven 7, Nieuwegein",
+        "Latitude": 52.052989, 
+        "Longitude": 5.122109
     },
     {
         "Name": "TAP ZUID",
@@ -128,36 +128,35 @@ var BEERLOCATIONS = [
         "Longitude": 4.8948366
     },
 	{
-        "Name": "Cause Beer loves Food",
-        "Address": "Lange Leidsedwarsstraat 4",
+        "Name": "MixTree",
+        "Address": "Schipluidenlaan 12",
         "City": "Amsterdam",
-        "Full Address": "Lange Leidsedwarsstraat 4 Amsterdam ",
-        "Latitude": 52.365625,
-        "Longitude": 4.882094
+        "Full Address": "Schipluidenlaan 12 Amsterdam ",
+        "Latitude": 52.357250,
+        "Longitude": 4.837340
     },
 	{
-        "Name": "Bar James",
-        "Address": "Javastraat 49",
+        "Name": "De Heks",
+        "Address": "Brink 63",
+        "City": "Deventer",
+        "Full Address": "Brink 63, Deventer ",
+        "Latitude": 52.251109,
+        "Longitude": 6.159327
+    },
+	{
+        "Name": "Café De Vergulde Kruik",
+        "Address": "Haarlemmerstraat 22",
+        "City": "Leiden",
+        "Full Address": "Haarlemmerstraat 22, Leiden ",
+        "Latitude": 52.161763,         "Longitude":  4.486410
+    },
+    {
+        "Name": "Frenzi",
+        "Address": "Zwanenburgwal 232",
         "City": "Amsterdam",
-        "Full Address": "Javastraat 49 Amsterdam ",
-        "Latitude": 52.363857,
-        "Longitude": 4.933527
-    },
-    {
-        "Name": "Slijterij-Wijnhandel W. van Schaik",
-        "Address": "Dorpsstraat 32",
-        "City": "Aalsmeer",
-        "Full Address": "Dorpsstraat 32 Aalsmeer ",
-        "Latitude": 52.2703925,
-        "Longitude": 4.7479555
-    },
-    {
-        "Name": "Bierenplezier",
-        "Address": "Schippergarage 13",
-        "City": "Almere",
-        "Full Address": "Schippergarage 13 Almere ",
-        "Latitude": 52.3507849,
-        "Longitude": 5.2647016
+        "Full Address": "Zwanenburgwal 232, Amsterdam ",
+        "Latitude": 52.368319,
+        "Longitude": 4.898507
     },
     {
         "Name": "Biercafé De Natte",
@@ -168,12 +167,12 @@ var BEERLOCATIONS = [
         "Longitude": 4.6615631
     },
     {
-        "Name": "Hendrick's Pub",
-        "Address": "Prins Hendrikstraat 119",
-        "City": "Alphen aan Den Rijn",
-        "Full Address": "Prins Hendrikstraat 119 Alphen aan Den Rijn ",
-        "Latitude": 52.1244874,
-        "Longitude": 4.6620474
+        "Name": "Café Persee Deventer",
+        "Address": "Brink 32",
+        "City": "Deventer",
+        "Full Address": "Brink 32, Deventer ",
+        "Latitude": 52.251604, 
+        "Longitude": 6.160622
     },
     {
         "Name": "Jelfra",
@@ -199,29 +198,29 @@ var BEERLOCATIONS = [
         "Latitude": 52.156666,
         "Longitude": 5.393708
     },
-    {
+	{
+        "Name": "Bierwinkel Hop",
+        "Address": "Achter Het Oude Stadhuis 2,",
+        "City": "Amersfoort",
+        "Full Address": "Achter Het Oude Stadhuis 2, Amersfoort ",
+        "Latitude": 52.156453,
+        "Longitude": 5.388823
+    },
+	{
+        "Name": "Hopdonders",
+        "Address": " Koninginnelaan 69b",
+        "City": "Apeldoorn",
+        "Full Address": " Koninginnelaan 69b Apeldoorn ",
+        "Latitude": 52.225356,
+        "Longitude": 5.956543
+    },
+	{
         "Name": "Café De Beugel",
         "Address": "Duizelsteeg 20",
         "City": "Arnhem",
         "Full Address": "Duizelsteeg 20 Arnhem ",
         "Latitude": 51.9819774,
         "Longitude": 5.9041521
-    },
-    {
-        "Name": "Café Den Koopman",
-        "Address": "Korenmarkt 12",
-        "City": "Arnhem",
-        "Full Address": "Korenmarkt 12 Arnhem ",
-        "Latitude": 51.9827407,
-        "Longitude": 5.9042545
-    },
-    {
-        "Name": "Restaurant Benjamin",
-        "Address": "Wezenstraat 3",
-        "City": "Arnhem",
-        "Full Address": "Wezenstraat 3 Arnhem ",
-        "Latitude": 51.9823685,
-        "Longitude": 5.9083432
     },
     {
         "Name": "Slijterij van Pernis",
@@ -232,46 +231,6 @@ var BEERLOCATIONS = [
         "Longitude": 5.9193377
     },
     {
-        "Name": "TAPE Espressobar, Cafe & Expo Arnhem",
-        "Address": "Hommelstraat 66",
-        "City": "Arnhem",
-        "Full Address": "Hommelstraat 66 Arnhem ",
-        "Latitude": 51.9854642,
-        "Longitude": 5.91442619999999
-    },
-    {
-        "Name": "Wijnhandel Barrique",
-        "Address": "Pauwstraat 9",
-        "City": "Arnhem",
-        "Full Address": "Pauwstraat 9 Arnhem ",
-        "Latitude": 51.9823499,
-        "Longitude": 5.90571199999999
-    },
-    {
-        "Name": "Café Broer & Zus",
-        "Address": "Schans 10",
-        "City": "Beverwijk",
-        "Full Address": "Schans 10 Beverwijk ",
-        "Latitude": 52.4837546,
-        "Longitude": 4.66191749999999
-    },
-    {
-        "Name": "Wijnhuis & Slijterij Meerwijck",
-        "Address": "Meerstraat 96",
-        "City": "Beverwijk",
-        "Full Address": "Meerstraat 96 Beverwijk ",
-        "Latitude": 52.4808616,
-        "Longitude": 4.6591533
-    },
-    {
-        "Name": "Speciaalbierwinkel",
-        "Address": "Overtocht 6",
-        "City": "Bodegraven",
-        "Full Address": "Overtocht 6 Bodegraven ",
-        "Latitude": 52.0844294,
-        "Longitude": 4.7448836
-    },
-    {
         "Name": "Leo's Drankenhuis",
         "Address": "Zijde 4 A",
         "City": "Boskoop",
@@ -280,44 +239,12 @@ var BEERLOCATIONS = [
         "Longitude": 4.65808139999999
     },
     {
-        "Name": "Wijnhandel A.G. van Uden",
-        "Address": "Kruisstraat 5",
-        "City": "Boxtel",
-        "Full Address": "Kruisstraat 5 Boxtel ",
-        "Latitude": 51.5882959,
-        "Longitude": 5.32597899999999
-    },
-    {
-        "Name": "Het Bierhuis Breda",
-        "Address": "Van Goorstraat 5",
-        "City": "Breda",
-        "Full Address": "Van Goorstraat 5 Breda ",
-        "Latitude": 51.5821306,
-        "Longitude": 4.7778955
-    },
-    {
-        "Name": "Slijterij Spraakwater",
-        "Address": "Brabantplein 6",
-        "City": "Breda",
-        "Full Address": "Brabantplein 6 Breda ",
-        "Latitude": 51.5908409,
-        "Longitude": 4.79956
-    },
-    {
-        "Name": "Jumbo",
-        "Address": "Karel Doormanweg 10-25",
+        "Name": "CQ Eten & Drinken",
+        "Address": "Kerkbrink 4",
         "City": "Breukelen",
-        "Full Address": "Karel Doormanweg 10-25 Breukelen ",
-        "Latitude": 52.180967,
-        "Longitude": 4.999106
-    },
-    {
-        "Name": "Same Same Restaurant",
-        "Address": "Herenstraat 25",
-        "City": "Breukelen",
-        "Full Address": "Herenstraat 25 Breukelen ",
-        "Latitude": 52.1738963,
-        "Longitude": 5.0024085
+        "Full Address": "Kerkbrink 4 Breukelen ",
+        "Latitude": 52.171730,
+        "Longitude": 5.002170
     },
     {
         "Name": "Buitenplaats Slangevegt",
@@ -336,28 +263,12 @@ var BEERLOCATIONS = [
         "Longitude": 5.0025765
     },
     {
-        "Name": "Flink Gegist",
-        "Address": "Oosteinde 227",
-        "City": "Delft",
-        "Full Address": "Oosteinde 227 Delft ",
-        "Latitude": 52.0123458,
-        "Longitude": 4.3626055
-    },
-    {
-        "Name": "De Wilde Hollander",
+        "Name": "De Kat in de Stad",
         "Address": "Markt 33",
         "City": "Delft",
         "Full Address": "Markt 33 Delft ",
         "Latitude": 52.0111874,
         "Longitude": 4.3587661
-    },
-	 {
-        "Name": "Topslijter van der Ende",
-        "Address": "Hoofdstraat 43",
-        "City": "De Lier",
-        "Full Address": "Hoofdstraat 43 De Lier ",
-        "Latitude": 51.974072,
-        "Longitude": 4.247623
     },
     {
         "Name": "Slijterij-Wijnhandel W. van Schaik",
@@ -368,26 +279,50 @@ var BEERLOCATIONS = [
         "Longitude": 5.03747329999999
     },
 	{
-        "Name": "Stanislaus Brewskovitch | Craft Beer",
-        "Address": "De Heurne 44",
-        "City": "Enschede",
-        "Full Address": "De Heurne 44 Enschede ",
-        "Latitude": 52.221741,
-        "Longitude": 6.899396
+        "Name": "The Wingman - Beer & Booze Bar",
+        "Address": "Annuntiatenbach 3",
+        "City": "Aachen",
+        "Full Address": "Annuntiatenbach 3, Aachen, Duitsland",
+        "Latitude": 50.776410,
+        "Longitude": 6.080880 
     },
-    {
+	{
+        "Name": "Craftprotz Kreativbierbar",
+        "Address": "Palaststraße 10",
+        "City": "Trier",
+        "Full Address": "Palaststraße 10, Trier, Duitsland",
+        "Latitude": 49.755120,
+        "Longitude": 6.641330 
+    },
+	{
         "Name": "Biervana",
         "Address": "Hohenzollernstraße 61",
         "City": "München",
         "Full Address": "Hohenzollernstraße 61, München, Duitsland",
         "Latitude": 48.160318,
-        "Longitude":11.573803 
+        "Longitude": 11.573803 
+    },
+	{
+        "Name": "BIER MACHT SCHÖN",
+        "Address": "Berrenrather Str. 206",
+        "City": "Köln",
+        "Full Address": "Berrenrather Str. 206, Köln, Duitsland",
+        "Latitude": 50.919520,
+        "Longitude": 6.926550 
+    },
+	{
+        "Name": "Bomto Craft Beer",
+        "Address": "Eisenbahnstraße 11",
+        "City": "Kaiserslautern",
+        "Full Address": "Eisenbahnstraße 11, Kaiserslautern, Duitsland",
+        "Latitude": 49.442579,
+        "Longitude": 7.770988 
     },
     {
         "Name": "Braukunstwerk",
         "Address": "Warendorfer Str. 44",
         "City": "Münster",
-        "Full Address": "Warendorfer Str. 44, Münster",
+        "Full Address": "Warendorfer Str. 44, Münster, Duitsland",
         "Latitude": 51.962560,
         "Longitude": 7.645442
     },
@@ -416,36 +351,12 @@ var BEERLOCATIONS = [
         "Longitude": 13.384299
     },
 	{
-        "Name": "Tante Frizzante",
-        "Address": "Hermannstraße 95",
-        "City": "Berlin",
-        "Full Address": "Hermannstraße 95, Berlin, Duitsland",
-        "Latitude": 52.470040,
-        "Longitude": 13.429430
-    },
-    {
-        "Name": "Bottleshop Eindhoven",
-        "Address": "Geldropseweg 86a",
-        "City": "Eindhoven",
-        "Full Address": "Geldropseweg 86a Eindhoven ",
-        "Latitude": 51.4330471,
-        "Longitude": 5.48951799999999
-    },
-    {
-        "Name": "De Bierbrigadier",
-        "Address": "Bergstraat 41",
-        "City": "Eindhoven",
-        "Full Address": "Bergstraat 41 Eindhoven ",
-        "Latitude": 51.4363384,
-        "Longitude": 5.4769415
-    },
-    {
-        "Name": "EDrinks",
-        "Address": "Hurksestraat 44",
-        "City": "Eindhoven",
-        "Full Address": "Hurksestraat 44 Eindhoven ",
-        "Latitude": 51.4362743,
-        "Longitude": 5.4297328
+        "Name": "Hopfen+Malz Beer Shop",
+        "Address": "Franzstraße 17",
+        "City": "Aachen",
+        "Full Address": "Franzstraße 17, Aachen, Duitsland",
+        "Latitude": 50.771160,
+        "Longitude": 6.085030
     },
     {
         "Name": "Burg Bieren",
@@ -454,14 +365,6 @@ var BEERLOCATIONS = [
         "Full Address": "Putterweg 45 Ermelo ",
         "Latitude": 52.2968556,
         "Longitude": 5.6312351
-    },
-	{
-        "Name": "Slijterij en Bierwinkel Den Gouwen Aar",
-        "Address": "Oosthaven 6",
-        "City": "Gouda",
-        "Full Address": "Oosthaven 6 Gouda ",
-        "Latitude": 52.010224,
-        "Longitude": 4.710945
     },
     {
         "Name": "Biercafé De Goudse Eend",
@@ -472,36 +375,12 @@ var BEERLOCATIONS = [
         "Longitude": 4.7123857
     },
     {
-        "Name": "Drankenservice Gouda",
-        "Address": "Willem en Marialaan 22",
-        "City": "Gouda",
-        "Full Address": "Willem en Marialaan 22 Gouda ",
-        "Latitude": 52.018964,
-        "Longitude": 4.716625
-    },
-    {
-        "Name": "Dranken- en Wijnhandel Versluis",
-        "Address": "Suezkade 48",
+        "Name": "Café Restaurant Rootz",
+        "Address": "Grote Marktstraat 14",
         "City": "Den Haag",
-        "Full Address": "Suezkade 48 Den Haag ",
-        "Latitude": 52.0785815,
-        "Longitude": 4.285945
-    },
-    {
-        "Name": "Liquor Store de filosoof | Slijterij de filosoof | Slijterij Den Haag",
-        "Address": "Papestraat 5",
-        "City": "Den Haag",
-        "Full Address": "Papestraat 5 Den Haag ",
-        "Latitude": 52.0792735,
-        "Longitude": 4.3082782
-    },
-    {
-        "Name": "Beekink & Co Brasserie",
-        "Address": "Valkenboskade 622",
-        "City": "Den Haag",
-        "Full Address": "Valkenboskade 622 Den Haag ",
-        "Latitude": 52.077625,
-        "Longitude": 4.266731
+        "Full Address": "Grote Marktstraat 14, Den Haag ",
+        "Latitude": 52.076060,
+        "Longitude": 4.309993
     },
 	{
         "Name": "Hoppzak",
@@ -512,20 +391,20 @@ var BEERLOCATIONS = [
         "Longitude": 4.307993
     },
 	{
-        "Name": "Slijterij Weber",
-        "Address": "Parijsplein 14",
+        "Name": "Slijterij J.P. Alsem",
+        "Address": "Loosduinseweg 693",
         "City": "Den Haag",
-        "Full Address": "Parijsplein 14 Den Haag ",
-        "Latitude": 52.019552,
-        "Longitude": 4.297352
+        "Full Address": "Loosduinseweg 693 Den Haag ",
+        "Latitude": 52.070846, 
+        "Longitude": 4.283192
     },
 	{
-        "Name": "Café De Keizer",
-        "Address": "Keizerstraat 14",
-        "City": "Gorinchem",
-        "Full Address": "Keizerstraat 14 Gorinchem ",
-        "Latitude": 51.830421,
-        "Longitude": 4.9786945
+        "Name": "Café Restaurant Poppodium De Zwarte Ruiter",
+        "Address": "Grote Markt 27",
+        "City": "Den Haag",
+        "Full Address": "Grote Markt 27, Den Haag ",
+        "Latitude": 52.075925, 
+        "Longitude": 4.309152
     },
     {
         "Name": "Café Pavlov",
@@ -591,6 +470,14 @@ var BEERLOCATIONS = [
         "Latitude": 53.2166781,
         "Longitude": 6.55805589999999
     },
+	{
+        "Name": "Het HeerenHuis",
+        "Address": "Spilsluizen 9",
+        "City": "Groningen",
+        "Full Address": "Spilsluizen 9 Groningen ",
+        "Latitude": 53.221990,
+        "Longitude": 6.564090
+    },
     {
         "Name": "bij Tessels",
         "Address": "Tesselschadeplein 6",
@@ -630,6 +517,22 @@ var BEERLOCATIONS = [
         "Full Address": "Dorpsstraat 75 Harmelen ",
         "Latitude": 52.0914937999999,
         "Longitude": 4.9634003
+    },
+	{
+        "Name": "Jack's Bier Café",
+        "Address": "Kerkweg 9",
+        "City": "Heemskerk",
+        "Full Address": "Kerkweg 9 Heemskerk ",
+        "Latitude": 52.510292,
+        "Longitude": 4.670178
+    },
+	{
+        "Name": "Slijterij Mitra 't Heuveltje",
+        "Address": "Het Dorp 88",
+        "City": "Heesch",
+        "Full Address": "Het Dorp 88 Heesch ",
+        "Latitude": 51.735526,
+        "Longitude": 5.526740
     },
     {
         "Name": "De Wijnhoeve",
@@ -672,12 +575,12 @@ var BEERLOCATIONS = [
         "Longitude": 5.29961249999999
     },
     {
-        "Name": "Jonghe Graef van Buuren",
-        "Address": "Laanstraat 37",
+        "Name": "Biercafé De BarBier",
+        "Address": "Groets 92",
         "City": "Hilversum",
-        "Full Address": "Laanstraat 37 Hilversum ",
-        "Latitude": 52.2227147,
-        "Longitude": 5.1746287
+        "Full Address": "Groest 92, Hilversum ",
+        "Latitude": 52.224457,
+        "Longitude": 5.177225
     },
     {
         "Name": "Kaaskamer Hooi en Klomp",
@@ -727,13 +630,21 @@ var BEERLOCATIONS = [
         "Latitude": 52.2502229,
         "Longitude": 5.23044209999999
     },
-    {
+	{
         "Name": "Bar Bruut",
         "Address": "Steenstraat 22",
         "City": "Leiden",
         "Full Address": "Steenstraat 22 Leiden ",
         "Latitude": 52.1628792,
         "Longitude": 4.48470099999999
+    },
+    {
+        "Name": "Drankenspeciaalzaak Jelle",
+        "Address": "Voorstreek 63",
+        "City": "Leeuwarden",
+        "Full Address": "Voorstreek 63 Leeuwarden ",
+        "Latitude": 53.203884,
+        "Longitude": 5.800593
     },
     {
         "Name": "Belgisch Bier Café Olivier",
@@ -783,6 +694,14 @@ var BEERLOCATIONS = [
         "Latitude": 52.1567953,
         "Longitude": 4.465123
     },
+	{
+        "Name": "Café De Uyl van Hoogland",
+        "Address": "Nieuwstraat 28",
+        "City": "Leiden",
+        "Full Address": "Nieuwstraat 28 Leiden ",
+        "Latitude": 52.157435,
+        "Longitude": 4.494430
+    },
     {
         "Name": "De Burgemeester",
         "Address": "Raadhuisstraat 17",
@@ -816,12 +735,12 @@ var BEERLOCATIONS = [
         "Longitude": 5.0235382
     },
     {
-        "Name": "Restaurant Opbuuren",
-        "Address": "De Hoopkade 51",
+        "Name": "Restaurant Auguste",
+        "Address": "Straatweg 144",
         "City": "Maarssen",
-        "Full Address": "De Hoopkade 51 Maarssen ",
-        "Latitude": 52.1286515,
-        "Longitude": 5.05845119999999
+        "Full Address": "Straatweg 144 Maarssen ",
+        "Latitude": 52.139227,
+        "Longitude": 5.036275
     },
     {
         "Name": "Slijterij-Wijnhandel W. van Schaik",
@@ -830,6 +749,14 @@ var BEERLOCATIONS = [
         "Full Address": "Johannes Vermeerstraat 29 Maarssen ",
         "Latitude": 52.1426568,
         "Longitude": 5.0408363
+    },
+	{
+        "Name": "Cafe Servaas",
+        "Address": "Cörversplein 10",
+        "City": "Maastricht",
+        "Full Address": "Cörversplein 10 Maastricht ",
+        "Latitude": 50.849066,
+        "Longitude": 5.697601
     },
     {
         "Name": "Bierboetiek",
@@ -863,6 +790,14 @@ var BEERLOCATIONS = [
         "Latitude": 51.8226334999999,
         "Longitude": 5.8511734
     },
+	{
+        "Name": "Café de Mug",
+        "Address": "Pauwelstraat 9",
+        "City": "Nijmegen",
+        "Full Address": "Pauwelstraat 9 Nijmegen ",
+        "Latitude": 51.845550,
+        "Longitude": 5.864156
+    },
     {
         "Name": "De Bierhoeder",
         "Address": "Bloemerstraat 86",
@@ -878,6 +813,14 @@ var BEERLOCATIONS = [
         "Full Address": "Havenstraat 12 Noordwijkerhout ",
         "Latitude": 52.2621856,
         "Longitude": 4.493131
+    },
+	{
+        "Name": "Speciaalbier café van der Geest",
+        "Address": "Zeestraat 7A",
+        "City": "Noordwijkerhout",
+        "Full Address": "Zeestraat 7A Noordwijkerhout ",
+        "Latitude": 52.262594,
+        "Longitude": 4.491252
     },
     {
         "Name": "Brewberry Bar",
@@ -895,6 +838,14 @@ var BEERLOCATIONS = [
         "Latitude": 48.842970,
         "Longitude": 2.348552
     },
+	{
+        "Name": "Speciaal Bier Cafe Den Heilige Cornelius",
+        "Address": "Zwartbroekplein 6",
+        "City": "Roermond",
+		"Full Address": "Zwartbroekplein 6 Roermond ",
+        "Latitude": 51.189809,
+        "Longitude": 5.988719
+    },
     {
         "Name": "De Kaapse Brouwers",
         "Address": "Veerlaan 19D",
@@ -904,12 +855,12 @@ var BEERLOCATIONS = [
         "Longitude": 4.4851426
     },
     {
-        "Name": "Plan B",
-        "Address": "s-Gravendijkwal 135",
+        "Name": "Bokaal Rotterdam",
+        "Address": "Nieuwemarkt 11",
         "City": "Rotterdam",
-        "Full Address": "s-Gravendijkwal 135 Rotterdam ",
-        "Latitude": 51.9131870999999,
-        "Longitude": 4.4634
+        "Full Address": "Nieuwemarkt 11 Rotterdam ",
+        "Latitude": 51.922490,
+        "Longitude": 4.488350
     },
     {
         "Name": "In de Hoftuin",
@@ -918,6 +869,14 @@ var BEERLOCATIONS = [
         "Full Address": "Anjelierenstraat 13 Rijnsburg ",
         "Latitude": 52.1915243,
         "Longitude": 4.44255969999999
+    },
+	{
+        "Name": "Café Le Carrefour",
+        "Address": "Hoofdstraat 23",
+        "City": "Sint Odiliënberg",
+        "Full Address": "Hoofdstraat 23 Sint Odiliënberg ",
+        "Latitude": 51.145830,
+        "Longitude": 6.004740
     },
 	{
         "Name": "T Drinks",
@@ -935,13 +894,109 @@ var BEERLOCATIONS = [
         "Latitude": 52.231673,
         "Longitude": 4.829458
     },
-    {
+	{
         "Name": "Belgisch Bier Café Olivier",
         "Address": "Achter Clarenburg 6a",
         "City": "Utrecht",
         "Full Address": "Achter Clarenburg 6a Utrecht ",
         "Latitude": 52.0906254999999,
         "Longitude": 5.1156592
+    },
+	{
+        "Name": "Restaurant Seven",
+        "Address": "Mariaplaats 7",
+        "City": "Utrecht",
+        "Full Address": "Mariaplaats 7 Utrecht ",
+        "Latitude": 52.089940,
+        "Longitude": 5.117720
+    },
+	{
+        "Name": "Local2Local Makro Amsterdam",
+        "Address": "De Flinesstraat 9",
+        "City": "Amsterdam",
+        "Full Address": "De Flinesstraat 9, Amsterdam ",
+        "Latitude": 52.325059, 
+        "Longitude": 4.927569
+    },
+	{
+        "Name": "LE:EN",
+        "Address": "Heuveloord 140",
+        "City": "Utrecht",
+        "Full Address": "Heuveloord 140 Utrecht ",
+        "Latitude": 52.075210,
+        "Longitude": 5.121430
+    },
+	{
+        "Name": "De Keuken van Gastmaal",
+        "Address": "Biltstraat 5",
+        "City": "Utrecht",
+        "Full Address": "Biltstraat 5 Utrecht ",
+        "Latitude": 52.094950,
+        "Longitude": 5.127050
+    },
+	{
+        "Name": "Klein Berlijn",
+        "Address": "Helling 22",
+        "City": "Utrecht",
+        "Full Address": "Helling 22 Utrecht ",
+        "Latitude": 52.076518,
+        "Longitude": 5.122330
+    },
+	{
+        "Name": "Café Lombok",
+        "Address": "Vleutenseweg 228",
+        "City": "Utrecht",
+        "Full Address": "Vleutenseweg 228 Utrecht ",
+        "Latitude": 52.093157,
+        "Longitude": 5.096816
+    },
+	{
+        "Name": "Bierverteller",
+        "Address": "Twijnstraat 47",
+        "City": "Utrecht",
+        "Full Address": "Twijnstraat 47 Utrecht ",
+        "Latitude": 52.082723,
+        "Longitude": 5.123293
+    },
+	{
+        "Name": "BROEI",
+        "Address": "Oosterkade 24",
+        "City": "Utrecht",
+        "Full Address": "Oosterkade 24 Utrecht ",
+        "Latitude": 52.079225,
+        "Longitude": 5.123267
+    },
+	{
+        "Name": "De Stadstuin ",
+        "Address": "Europalaan 20",
+        "City": "Utrecht",
+        "Full Address": "Europalaan 20 Utrecht ",
+        "Latitude": 52.071610,
+        "Longitude": 5.107290
+    },
+	{
+        "Name": "Hofman Café ",
+        "Address": "Janskerkhof 17A",
+        "City": "Utrecht",
+        "Full Address": "Janskerkhof 17A Utrecht ",
+        "Latitude": 52.093979,
+        "Longitude": 5.121087
+    },
+    {
+        "Name": "dB's Oefenstudios",
+        "Address": "CAB-Rondom",
+        "City": "Utrecht",
+        "Full Address": "CAB-Rondom Utrecht ",
+        "Latitude": 52.101063,
+        "Longitude": 5.088552
+    },
+	{
+        "Name": "Cafe Lijn 4",
+        "Address": "Twijnstraat 3",
+        "City": "Utrecht",
+        "Full Address": "Twijnstraat 3 Utrecht ",
+        "Latitude": 52.083583,
+        "Longitude": 5.123165
     },
     {
         "Name": "Bierman&Bierman",
@@ -982,14 +1037,94 @@ var BEERLOCATIONS = [
         "Full Address": "Burgemeester Reigerstraat 25 Utrecht ",
         "Latitude": 52.0897626,
         "Longitude": 5.1348421
+    }, 
+	{
+        "Name": "The Fiddler",
+        "Address": "Riviervismarkt 1",
+        "City": "Den Haag",
+        "Full Address": "Riviervismarkt 1, Den Haag ",
+        "Latitude": 52.077027, 
+        "Longitude": 4.307618
     },
-    {
-        "Name": "Kafé België",
-        "Address": "Oudegracht 196",
+	{
+        "Name": "Rabarber",
+        "Address": "Zadelstraat 20",
         "City": "Utrecht",
-        "Full Address": "Oudegracht 196 Utrecht ",
-        "Latitude": 52.089033,
-        "Longitude": 5.1215853
+        "Full Address": "Zadelstraat 20 Utrecht ",
+        "Latitude": 52.090002,
+        "Longitude": 5.119322
+    },
+	{
+        "Name": "Miyagi & Jones",
+        "Address": "Veemarktplein 42",
+        "City": "Utrecht",
+        "Full Address": "Veemarktplein 42 Utrecht ",
+        "Latitude": 52.086620,
+        "Longitude": 5.106450
+    },
+	{
+        "Name": "De Beyerd",
+        "Address": "Boschstraat 26",
+        "City": "Breda",
+        "Full Address": "Boschstraat 26, Breda ",
+        "Latitude": 51.590000,
+        "Longitude": 4.781405
+    },
+	{
+        "Name": "Taplokaal Gist",
+        "Address": "Helling 9",
+        "City": "Utrecht",
+        "Full Address": "Helling 9 Utrecht ",
+        "Latitude": 52.076344,
+        "Longitude": 5.122653
+    },
+	{
+        "Name": "Eetcafé Stathe",
+        "Address": "Rozenstraat 15",
+        "City": "Utrecht",
+        "Full Address": "Rozenstraat 15 Utrecht ",
+        "Latitude": 52.094482,
+        "Longitude": 5.115506
+    },
+	{
+        "Name": "Boulderhal Energiehaven",
+        "Address": "Elektronweg 10A",
+        "City": "Utrecht",
+        "Full Address": "Elektronweg 10A Utrecht ",
+        "Latitude": 52.099980,
+        "Longitude": 5.070900
+    },
+	{
+        "Name": "Braumarkt Experience Store",
+        "Address": "Markerkant 11",
+        "City": "Almere",
+        "Full Address": "Markerkant 11, Almere ",
+        "Latitude": 52.385310,
+        "Longitude": 5.218880
+    },
+	{
+        "Name": "Café De Hetebrij",
+        "Address": "Nieuwe Markt 9",
+        "City": "Zwolle",
+        "Full Address": "Nieuwe Markt 9, Zwolle ",
+        "Latitude": 52.511049,
+        "Longitude": 6.095252
+    },
+	{
+        "Name": "Café de Gezelligheid",
+        "Address": "Gasthuisplein 11",
+        "City": "Zwolle",
+        "Full Address": "Gasthuisplein 11, Zwolle ",
+        "Latitude": 52.512422,
+        "Longitude": 6.095770
+    },
+	{
+        "Name": "Bistro Karel 5",
+        "Address": "Geertebolwerk 1",
+        "City": "Utrecht",
+        "Full Address": "Geertebolwerk 1 Utrecht ",
+        "Latitude": 52.087520,
+        "Longitude": 5.118651
     },
     {
         "Name": "Key West Beachhouse",
@@ -1000,12 +1135,12 @@ var BEERLOCATIONS = [
         "Longitude": 5.0246507
     },
     {
-        "Name": "Klimmuur Utrecht",
-        "Address": "Vlampijpstraat 79",
+        "Name": "Café Fokus",
+        "Address": "Koekoekstraat 25",
         "City": "Utrecht",
-        "Full Address": "Vlampijpstraat 79 Utrecht ",
-        "Latitude": 52.1046706,
-        "Longitude": 5.0846718
+        "Full Address": "Koekoekstraat 25, Utrecht ",
+        "Latitude": 52.098468,
+        "Longitude": 5.120312
     },
     {
         "Name": "MCD Utrecht",
@@ -1032,7 +1167,7 @@ var BEERLOCATIONS = [
         "Longitude": 5.1029372
     },
     {
-        "Name": "Stan & Co",
+        "Name": "Miyagi & Jones Haarlem",
         "Address": "Ganzenmarkt 16A",
         "City": "Utrecht",
         "Full Address": "Ganzenmarkt 16A Utrecht ",
@@ -1040,20 +1175,28 @@ var BEERLOCATIONS = [
         "Longitude": 5.119383
     },
     {
-        "Name": "Ubica Utrecht",
-        "Address": "Ganzenmarkt 24-26",
-        "City": "Utrecht",
-        "Full Address": "Ganzenmarkt 24-26 Utrecht ",
-        "Latitude": 52.0925477,
-        "Longitude": 5.1196737
+        "Name": "Miyagi & Jones Arnhem",
+        "Address": "Ingenieur J.P. van Muijlwijkstraat 23",
+        "City": "Arnhem",
+        "Full Address": "Ingenieur J.P. van Muijlwijkstraat 23, Arnhem ",
+        "Latitude": 51.984342,  
+        "Longitude": 5.914020
     },
 	{
-        "Name": "Brasserie Vink",
-        "Address": "Biltsestraatweg 102",
+        "Name": "Nassau Zuylestein",
+        "Address": "Rijksstraatweg 3",
+        "City": "Leersum",
+        "Full Address": "Rijksstraatweg 3, Leersum",
+        "Latitude": 52.002776, 
+        "Longitude": 5.446752
+    },
+	{
+        "Name": "Kookabarra GroenteRestaurant",
+        "Address": "Burgemeester Reigerstraat 29",
         "City": "Utrecht",
-        "Full Address": "Biltsestraatweg 102 Utrecht ",
-        "Latitude": 52.097773,
-        "Longitude": 5.151250
+        "Full Address": "Burgemeester Reigerstraat 29, Utrecht ",
+        "Latitude": 52.089712, 
+        "Longitude": 5.134952
     },
 	{
         "Name": "dB's Oefenstudios",
@@ -1062,6 +1205,14 @@ var BEERLOCATIONS = [
         "Full Address": "CAB-Rondom, Utrecht ",
         "Latitude": 52.101063,
         "Longitude": 5.088552
+    },
+	{
+        "Name": "café brun",
+        "Address": "Lange Jansstraat 28,",
+        "City": "Utrecht",
+        "Full Address": "Lange Jansstraat 28, Utrecht ",
+        "Latitude": 52.093536,
+        "Longitude": 5.120263
     },
     {
         "Name": "De Fantast",
@@ -1080,28 +1231,44 @@ var BEERLOCATIONS = [
         "Longitude": 5.5764018
     },
     {
-        "Name": "Exbeerience",
+        "Name": "IJver Amsterdam",
         "Address": "Zandstraat 113",
         "City": "Veenendaal",
         "Full Address": "Zandstraat 113 Veenendaal ",
         "Latitude": 52.0291721,
         "Longitude": 5.5508406
     },
-    {
-        "Name": "Beej Benders",
-        "Address": "Monseigneur Nolensplein 54",
-        "City": "Venlo",
-        "Full Address": "Monseigneur Nolensplein 54 Venlo ",
-        "Latitude": 51.3726521,
-        "Longitude": 6.1718771
+	{
+        "Name": "Polpette",
+        "Address": " Groenendaalstraat 2 ",
+        "City": "Utrecht",
+        "Full Address": "Groenendaalstraat 2, Utrecht ",
+        "Latitude": 52.083397, 
+        "Longitude": 5.109754
     },
     {
-        "Name": "Slijterij-Wijnhandel W. van Schaik",
-        "Address": "Vijfheerenlanden 544",
-        "City": "Vianen",
-        "Full Address": "Vijfheerenlanden 544 Vianen ",
-        "Latitude": 51.9942565,
-        "Longitude": 5.102363
+        "Name": "Brasserie Pompidou",
+        "Address": "1e Etage, Bisonspoor 2061",
+        "City": "Maarssen",
+        "Full Address": "1e Etage, Bisonspoor 2061, Maarssen",
+        "Latitude": 52.135395, 
+        "Longitude": 5.029674
+    },
+	{
+        "Name": "Proeflokaal Goesting",
+        "Address": " Henseniusplein 13",
+        "City": "Venray",
+        "Full Address": "Henseniusplein 13 Venray ",
+        "Latitude": 51.524692,
+        "Longitude": 5.974869
+    },
+    {
+        "Name": "Cafe de Deut",
+        "Address": " Koningstraat 36",
+        "City": "Nijmegen",
+        "Full Address": "Koningstraat 36, Nijmegen ",
+        "Latitude": 51.845446, 
+        "Longitude": 5.864292
     },
     {
         "Name": "Voorburgse Bierwinkel",
@@ -1119,6 +1286,14 @@ var BEERLOCATIONS = [
         "Latitude": 52.1335385999999,
         "Longitude": 4.4525649
     },
+	{
+        "Name": "Jay's biercafé en restaurant",
+        "Address": "Markt 8b",
+        "City": "Waalwijk",
+        "Full Address": "Markt 8b Waalwijk ",
+        "Latitude": 51.690122,
+        "Longitude": 5.066345
+    },
     {
         "Name": "De Bierboutique",
         "Address": "Maaspoort 12",
@@ -1135,13 +1310,29 @@ var BEERLOCATIONS = [
         "Latitude": 52.1944852,
         "Longitude": 4.8979459
     },
+	{
+        "Name": "Mitra Wijchen",
+        "Address": "Zuiderpoort 16-A",
+        "City": "Wijchen",
+        "Full Address": "Zuiderpoort 16-A Wijchen ",
+        "Latitude": 51.799821,
+        "Longitude": 5.724619
+    },
     {
-        "Name": "Drank van Nap",
-        "Address": "La Fontaineplein 26",
+        "Name": "Bierloods22",
+        "Address": "Voorstraat 22",
         "City": "Woerden",
-        "Full Address": "La Fontaineplein 26 Woerden ",
-        "Latitude": 52.0857328,
-        "Longitude": 4.9041663
+        "Full Address": "Voorstraat 22 Woerden ",
+        "Latitude": 52.087030,
+        "Longitude": 4.884720
+    },
+	{
+        "Name": "Bierhuys-winkel",
+        "Address": "Meulmansweg 6",
+        "City": "Woerden",
+        "Full Address": "Meulmansweg 6 Woerden ",
+        "Latitude": 52.086424,
+        "Longitude": 4.882262
     },
     {
         "Name": "Slijterij Vonk",
@@ -1152,12 +1343,20 @@ var BEERLOCATIONS = [
         "Longitude": 4.8296505
     },
     {
-        "Name": "Bierwinkel Zeist",
-        "Address": "1e Hogeweg 160",
-        "City": "Zeist",
-        "Full Address": "1e Hogeweg 160 Zeist ",
-        "Latitude": 52.08494,
-        "Longitude": 5.24172489999999
+        "Name": "Bij Francois",
+        "Address": "Kreitenmolenstraat 57",
+        "City": "Udenhout",
+        "Full Address": "Kreitenmolenstraat 57 Udenhout ",
+        "Latitude": 51.610682,
+        "Longitude": 5.145053
+    },
+	{
+        "Name": "Mr.Hop",
+        "Address": "Raadhuisstraat 36A",
+        "City": "Venray",
+        "Full Address": "Raadhuisstraat 36A Venray ",
+        "Latitude": 51.530867,
+        "Longitude": 5.978174
     },
     {
         "Name": "de Mol DrankenSpecialist",
@@ -1166,13 +1365,5 @@ var BEERLOCATIONS = [
         "Full Address": "Laan van Cattenbroeck 7 Zeist ",
         "Latitude": 52.0785602,
         "Longitude": 5.2287678
-    },
-	{
-        "Name": "Stanislaus Brewskovitch | Craft Beer",
-        "Address": "Sassenstraat 13",
-        "City": "Zwolle",
-        "Full Address": "Sassenstraat 13 Zwolle ",
-        "Latitude": 52.511635,
-        "Longitude": 6.093423
     },
 ];

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="SistersBrewApp" ng-controller="appController as ctrlr">
+<!--<html lang="en">-->
+
+<head>
+	<title ng-bind="(beerHasBeenSelected)? ('Beers > '+beersDB[routeSelectedBeer].name + ' | The Sisters Brewery'):'The Sisters Brewery'">The Sisters Brewery</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Old+Standard+TT|Raleway" rel="stylesheet">
+	<link rel="stylesheet" href="styles/sistersbrewery.css">
+	<!--<link rel="stylesheet" href="styles/slick.css">-->
+	<!--<link rel="stylesheet" href="styles/slick-theme.css">-->
+	<meta name="theme-color" content="#f5f0e7">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="description" content="The Sisters Brewery is a small craft beer brewer from Breukelen, Netherlands. Besides making a delicious craft beer our aim is to make an artwork of every beer we produce.">
+	<meta name="author" content="Beijeman">
+	<meta name="keywords" content="thesistersbrewery, Sisters, Beijeman, QueenBeem, Beer, Brewery, Brewing, Amsterdam, Breukelen, Netherlands, local craft, craft beer, two sisters brewery, queen bee, drone, honey, worker, breukelen, speciaal bier, ipa, porter, vrouwelijk, bier, spijs, lekker, lekkerste, zussen, sisters, two sisters, twee zussen, beijeman, crowdfunding, wilfran, annamijn, josefien, amsterdam, utrecht, brooklyn, beer, vrouwenbier, vrouwelijk bier, prijswinnend,traditional craft beer, ambachtelijk, artwork, kunstwerk, female, beer drinkers,">
+</head>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67757868-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<body data-spy="scroll" data-target="#scrollSpy" data-offset="150" ng-cloak="">
+	<div class="main-content">
+		<div class="header navbar navbar-fixed-top" id="top">
+			<a class="navbar-brand" href="#/" ng-click="linkTo('top', $event)" >
+				<img class="logo" src="imgs/logo.png">
+			</a>
+			<div class="pull-right navbar-toggler-container">
+				<div class="navbar-toggler hidden-md-up pull-xs-right collapsed" id="menu-icon-toggler" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
+				<!--&#9776;-->
+					<div id="nav-icon4">
+					<span></span>
+					<span></span>
+					<span></span>
+					</div>
+				</div>
+			</div>
+				<div class="collapse navbar-toggleable-sm" id="exCollapsingNavbar2">
+					<!-- 					<ul class="nav navbar-nav hidden-sm-down" ng-if="eventresults.length > 0 ">
+						<li class="nav-item">
+							<a class="nav-link" href="https://www.facebook.com/events/{{eventresults[0].id}}">Next Event: <strong>{{eventresults[0].name}}</strong> ({{eventresults[0].start_time | date: 'EEE MMM d'}})</a>
+						</li>
+					</ul> -->
+					<div id="scrollSpy">
+						<ul class="nav navbar-nav">
+							<li class="nav-item">
+								<a class="nav-link" ng-click="linkTo('Beers', $event)" href="#Beers">Beers</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" ng-click="linkTo('FindUs', $event)" href="#FindUs">Find Our Beer</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" ng-click="linkTo('News', $event)" href="#News"> Events & News</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" ng-click="linkTo('About', $event)" href="#About">Our Story</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="merchsoon.html" target="_blank">Store</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+	  </div>
+	  <div class="header-text col-xs-12">
+			<img class="logo" src="imgs/logo.png">
+		<h1 class="logo-text">The Sisters Brewery</h1>
+		  <p>We are Annamijn and Josefien Beijeman; 
+			  <br/> Two sisters brewing craft beer with our father Wilfran.
+			  <br/> Besides making delicious craft beer, we create an artwork of every beer produced.</p>
+		  <p> <img src="imgs/alcoholsticker.png" width="237" height="118"></p>
+		</div>
+
+		<div class="beer-section section col-xs-12" ng-style="{'background-color':beersDB[routeSelectedBeer].backgroundColor}" id="Beers">
+			<h2> Beers </h2>
+			<div class="hexs-container">
+				<!--<div id="dotshere"></div>-->
+				<slick settings="slickConfig" ng-if="beersDB" class="flex-container">
+					
+					<sb-beer-hex ng-repeat="(beerId,beer) in beersDB | orderObjectBy:'order'"></sb-beer-hex>
+					<!--<div ng-repeat="(beerId,beer) in beersDB | orderObjectBy:'order'">
+						<sb-beer-hex></sb-beer-hex>						
+					</div>-->
+				</slick>
+			</div>
+			<div class="angular-view-section beer-info" ng-view="">
+				<!-- beers~! -->
+			</div>
+		</div>
+
+		<!--<div class="beer-hexes" id="Beers" hidden>
+			<ul id="hexGrid">
+				<sb-beer-hex ng-repeat="(beerId,beer) in beersDB | orderObjectBy:'order'"></sb-beer-hex>
+			</ul>
+			<div class="clearfix"></div>
+		</div>-->
+
+		<div class="find-us-section section col-xs-12" id="FindUs">
+			<h2>Find Our Beers</h2>
+			<sb-beers-map></sb-beers-map>
+		</div>
+
+		<div class="news-and-events-section section col-xs-12" id="News">
+			<div class="row">
+				<div class="upcoming-events col-sm-12">
+					<h2>Upcoming Events</h2>
+					<div class="row">
+						<div class="loader" id="loader-1" ng-if="posts === false"></div>
+						<sb-fb-event ng-repeat="event in googleMapsService.events | reverse | limitTo:eventsLimit"></sb-fb-event>
+						<div ng-show="googleMapsService.events.length===0" ng-class="eventsColClasses()">Look at upcoming events!</div>
+					</div>
+					<a class="btn btn-primary btn-more-events" title="View events on our FB page" href="https://www.facebook.com/thesistersbrewery/events"
+						target="_blank"><span ng-show="((googleMapsService.events.length - eventsLimit)>0)">View more events ({{(googleMapsService.events.length - eventsLimit)}})</span><span ng-show="((googleMapsService.events.length - eventsLimit)<=0)">View events on Facebook</span></a>
+				</div>
+
+				<div class="news-section col-sm-12">
+					<h2>Recent News</h2>
+					<div class="loader" id="loader-1" ng-if="posts === false"></div>
+					<div class="card-columns">
+						<sb-fb-post ng-repeat="post in posts | limitTo:(isMobile()?6:(isXL()?12:9))"></sb-fb-post>
+					</div>
+					<a class="btn btn-primary btn-more-posts" title="View events on our FB page" href="https://www.facebook.com/thesistersbrewery/"
+						target="_blank">Read more news</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="about-us-section section col-xs-12" id="About">
+			<div class="row">
+				<h2>Our Story</h2>
+				<div class="row">
+					<div class="offset-xl-1 col-xl-10 col-lg-12">
+						<div class="col-md-5 col-sm-12 photo-container">
+							<div class="col-sm-12 photo">
+								<img src="imgs/about-us.jpg">
+							</div>
+						</div>
+						<div class="col-md-7 col-sm-12 description">
+							<p>
+								We, as The Sisters Brewery, are a team of two sisters, Annamijn and Josefien, along with our father, Wilfran Beijeman. Together we have a great passion for brewing strong craft beers and to combine them with art. We like to say that we create an artwork out of the inside and outside of every bottle. For the perfect end result, we work together with (mainly female) artists. With our labels, we like to represent the human being in all its various ways, and in its purest form.
+							</p>
+							<p>
+								By making a combination between traditional recipes and our own modern view, we create an authentic taste and atmosphere. The authenticity of our beers is not only evident in our recipes and flavours, but can also be found in the labels and names of our beers. Each beer that The Sisters Brewery offers includes its own philosophy, story and high standards. Our aim is to deliver a piece of art with every beer produced.
+							</p>
+							<p>
+								The inspiration for the names of our beers come from our surname; Beijeman, which means Beekeeper in Dutch. All the names of our beers have something to do with bees and beekeeping. This focus on bees can also be found in our main logo.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+</div>
+	<div class="container-fluid footer-container col-xs-12">
+		<div class="row footer">
+			<div class="col-sm-2 col-xs-6">
+				<div class="footer-logo">
+					<img class="logo" src="imgs/logo.png">
+				</div>
+			</div>
+			<div class="col-sm-5 col-xs-12">
+				<div class="footer-contact-info">
+					<p><a href="mailto:info@thesistersbrewery.com">info@thesistersbrewery.com</a></p>
+					<p>+31 (6) 8123 42 21</p>
+					<p>The Sisters Brewery <br/> Proostwetering 22D <br/>  3543AE Utrecht</p>
+					<p>KvK 71872418</p>
+				</div>
+				<div class="footer-byline">
+					<p>&copy; 2018 The Sisters Brewery, All Rights Reserved.<br />
+					Site designed and built by <a href="http://alexakaminsky.com" target="_blank" title="Alexa Kaminsky">Alexa Kaminsky</a> & <a href="http://madmaxlax.com" target="_blank" title="Max Struever">Max Struever</a>.</p>
+				</div>
+			</div>
+			<div class="col-sm-5 col-xs-12">
+
+				<div class="footer-social-links">
+					<a href="http://www.facebook.com/thesistersbrewery" class="social-button facebook" target="_blank" title="Sisters Brewery on Facebook"><i class="fa fa-facebook"></i></a>
+					<a href="http://spotify.com" class="social-button spotify" target="_blank" title="Sisters Brewery on Spotify"><i class="fa fa-spotify"></i></a>
+					<a href="https://untappd.com/TheSistersBrewery" class="social-button untappd" target="_blank" title="Sisters Brewery on Untappd"><img src="imgs/untappd/untappdLogo.svg"></a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-resource.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-animate.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5SiYAd9p8Q_nixnwM8J0XjOmsttn28R0"></script>
+	<script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script>
+	<!-- Tether for Bootstrap -->
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/moment.min.js"></script>
+	<script src="./js/slick.min.js"></script>
+	<script src="./js/angular-slick.js"></script>
+	<!--<script src="./js/angular-scroll.min.js"></script>-->
+	<script src="./js/beersdb.js"></script>
+	<script src="./js/beerlocations.js"></script>
+	<script src="./js/app.js"></script>
+
+	<!--comment out this line for debugging-->
+	<!--<script src="./js/production.js"></script>-->
+	
+	<script src="./js/directives/map.js"></script>
+	<!--<script src="./js/ng-map.min.js"></script>-->
+
+</body>
+
+</html>

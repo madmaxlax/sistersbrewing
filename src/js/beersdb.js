@@ -7,12 +7,7 @@ var beersDB = {
     urlName: "queenbee",
     shortDesc:
       "The Queen Bee is a delicious dry hopped IPA (7.7% ABV) with a smooth citrus hoppy flavor. It has a yellow/orange color with a firm hoppy foam. The Queen Bee is an English style IPA with an American hop. We used a single hop, Cascade. The hop is used during the boil for bitterness, and during dry-hopping for aroma. It gives a nice, refreshing, fruity IPA with taste of grapefruit. ",
-    longDesc:
-      "Queen Bee is an India Pale Ale.\
-\
-India Pale Ale, abbreviated IPA is a style of beer within the category of Pale Ale. The beer was first brewed in England, destined for the London market in the 19th century. During the 17th century, England had many overseas colonies and the beer for the British soldiers and civilians was sent with ships to the other side of the world. A sailing vessel was on the road to India for nearly five months, far too long to keep normal beer. The English brewers in order to increase the shelf life of the beer, added more hops to the beer and increased the alcohol content of the beer. Hence, all the exported beer was heavily hopped, therefore was more bitter and higher in alcohol content. Thus India Ale, arose during the 18th century . India Pale Ale was created much later.\
-\
-IPA is a very popular craft beer and a beer to enjoy quietly and slowly.",
+    longDesc: "",
     artist: "Kiana Girigorie",
     artistUrl: "http://instagram.com/kiana.girigorie",
     backgroundColor: "#edefed",
@@ -28,10 +23,7 @@ IPA is a very popular craft beer and a beer to enjoy quietly and slowly.",
     urlName: "worker",
     shortDesc:
       "Our tasty Imperial Saison, the Worker (9.4% ABV), is prickly sweet with some spiciness. The Worker has aroma notes of over-ripened peaches, dates, and stone fruit. The rye is very apparent and gives the beer a spicy floral taste.",
-    longDesc:
-      "Worker is an Imperial Saison.\
-\
-Saison is a Belgian type of beer (beer style) of top fermentation with an alcohol content of normally 5 to 6.5%. Saison is the French word for season because this is a seasonal beer. This beer was originally brewed in the winter by the farmers to be drunk by the seasonal workers in the harvest season. The Saison beer had to be brewed in the winter to prevent the beer would be bad during storage. Saison is originally a light, slightly acidic, dry (aftertaste), bitter, spicy/frutie beer, which was brewed during the winter to be drunk during the summer as a thirst quencher. Saisons are now brewed all year round.",
+    longDesc: "",
     artist: "Kiana Girigorie",
     artistUrl: "http://instagram.com/kiana.girigorie",
     backgroundColor: "#c0bbdc",
@@ -47,10 +39,7 @@ Saison is a Belgian type of beer (beer style) of top fermentation with an alcoho
     urlName: "honeyblonde",
     shortDesc:
       "Nice, fruity blonde beer, the Honey has notes of lemon, orange and star anise. The Honey is strong and has a full body. The taste is light sweet and fresh bitter.",
-    longDesc:
-      "Honey is a Blonde.\
-\
-A Blonde is a beer with a golden yellow colour. Basically is a Blonde beer a beer of high fermentation. The taste of the beer is generally smooth. The light malts have usually not such a distinct flavor, so the flavor comes from the hops and the yeast.",
+    longDesc: "",
     artist: "Luna Bongers",
     artistUrl: "http://instagram.com/LunaBongers",
     backgroundColor: "#f5f0e7",
@@ -238,5 +227,22 @@ A Blonde is a beer with a golden yellow colour. Basically is a Blonde beer a bee
     beerType: "Vanilla Old Genever Milk Stout",
     hexImageUrl: "imgs/hexes/yellow_hex.png",
     order: 12,
+  },
+	Pchela: {
+    name: "Pchela",
+    urlName: "pchela",
+    new: true,
+    shortDesc:
+      "A deep black and powerful Russian Imperial Stout with a creamy dark foam head. Strong roasted complex aroma and taste. Silky mouthfeel with notes of chocolate, coffee, burnt grain and dark fruits.",
+    longDesc: "",
+    artist: "Luna Bongers",
+    artistUrl: "http://instagram.com/LunaBongers",
+    backgroundColor: "#E1D7CB",
+    labelImageUrl: "./imgs/wide-label-Pchela.jpg",
+    untappdId: "3575483",
+    ABV: 10.5,
+    beerType: "Russian Imperial Stout",
+    hexImageUrl: "imgs/hexes/Pchela.png",
+    order: 13,
   },
 };
