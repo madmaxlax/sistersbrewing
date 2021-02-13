@@ -43,7 +43,7 @@ var beersDB = {
     artist: "Luna Bongers",
     artistUrl: "http://instagram.com/LunaBongers",
     backgroundColor: "#f5f0e7",
-    labelImageUrl: "./imgs/wide-label-honey.jpg",
+    labelImageUrl: "./imgs/wide-label-Honey.jpg",
     untappdId: "1372507",
     ABV: 7.9,
     beerType: "Belgian Blonde",
