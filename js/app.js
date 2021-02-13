@@ -254,7 +254,7 @@ var brewery = false;
         method: {},
         event: {
           beforeChange: function (event, slick, currentSlide, nextSlide) {
-            console.log("current " + currentSlide, "next slide: " + nextSlide);
+            // console.log("current " + currentSlide, "next slide: " + nextSlide);
           },
           afterChange: function (event, slick, currentSlide, nextSlide) {
             // console.log('current slide')
@@ -262,7 +262,7 @@ var brewery = false;
             // console.log(slick.$slides[currentSlide]);
             // console.log(Object.keys(beersDB)[currentSlide]);
             //if ($location.path().includes('/beers/')){// && slick.settings.autoplay === false) {
-            console.log("new current slide is " + currentSlide);
+            // console.log("new current slide is " + currentSlide);
             window.location.href =
               "#/beers/" + Object.keys(beersDB)[currentSlide];
             //}
